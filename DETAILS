@@ -4,7 +4,7 @@ THE CONTEST
 The contest targets to evaluate tools that generate junit test cases for java programs at the class level.
 
 Each tool is applied on a set of java classes (the benchmarks) taken from open-source projects,
-which have been selected by the contest organisation without favouiring any specific tool.
+which have been selected by the contest organisation without favouring any specific tool.
 The participating tools have a fixed time budget to generate tests for java classes.
 The score is calculated based on efficiency and effectiveness.
 
