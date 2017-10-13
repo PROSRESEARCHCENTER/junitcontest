@@ -1,0 +1,92 @@
+<model>
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>5</version>
+    </parent>
+    
+    <name>FreeHEP AID Plugin Test</name>
+    <description>Test for FreeHEP AID plugin.</description>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-aid-plugin-test</artifactId>
+    <packaging>jar</packaging>
+    <version>1.7-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <!-- FIXME maybe move to common -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <includes>
+                                <include>**/*.java</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-aid-plugin</artifactId>
+                <version>1.7-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>java</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>cpp</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generator>CPPHeaderGenerator</generator>
+                            <targetDirectory>${project.build.directory}/generated-sources/aid/org/freehep/aid/include</targetDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/ITestGenericsDefine.java</exclude>
+                        <exclude>**/ITestGenericsUse.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-io</artifactId>
+            <version>1.7-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+    
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-util</artifactId>
+            <version>1.7.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+    
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+    </dependencies>
+    
+</model>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE MenuSystem PUBLIC "xxx" "../../xml/menus/menus.dtd">
+
+<MenuSystem>
+<MenuBar id="mainMenu">
+
+<Menu name="File" mnemonic="F" location="100">
+<Component type="default" name="Exit" mnemonic="E" command="exit"  location="990"/>
+</Menu>
+
+<Menu name="View" mnemonic="V" location="300">
+<Component type="checkbox" name="Tool Bar" mnemonic="T" description="Show the application tool bar" command="showToolBar" location="100"/>
+<Component type="checkbox" name="Status Bar" mnemonic="S" description="Show the application status bar" command="showStatusBar" location="110"/>
+<Menu name="Look and Feel" mnemonic="L" class="org.freehep.application.LookAndFeelMenu" location="700"/>
+<Menu name="Window Style" mnemonic="W" class="org.freehep.application.studio.PageManagerMenu" location="750"/>
+</Menu>
+
+<Menu name="Window" mnemonic="W" location="800">
+<Component type="default" name="Close" mnemonic="C" command="closePage"/>
+<Component type="default" name="Close All" mnemonic="A" command="closeAllPages"/>
+<Separator/>
+<Component type="default" name="Cascade" mnemonic="s" command="cascade"/>
+<Component type="default" name="Tile Horizontally" mnemonic="h" command="tileHorizontally"/>
+<Component type="default" name="Tile Vertically" mnemonic="v" command="tileVertically"/>
+<Separator/>
+</Menu>
+
+<Menu name="Help" mnemonic="H" location="900">
+<Component type="default" name="About" mnemonic="A" icon="/toolbarButtonGraphics/general/About16.gif" command="about">
+<Accelerator shift="false" meta="false" key="VK_F1" ctrl="false" alt="false"/>
+</Component>
+</Menu>
+
+
+</MenuBar>
+</MenuSystem>
+

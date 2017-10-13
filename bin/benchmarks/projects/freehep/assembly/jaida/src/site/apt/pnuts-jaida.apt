@@ -1,0 +1,70 @@
+    ---
+    Pnuts and JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Pnuts and JAIDA
+    
+    {{{https://pnuts.dev.java.net/}Pnuts}} is a nice java scripting language.
+
+*Code
+
+    An AIDA-Pnuts script looks like:
+
++---------------+
+IAnalysisFactory = class hep.aida.IAnalysisFactory
+factory = IAnalysisFactory::create()
+
+tree    = factory.createTreeFactory().create("UsingJAIDAFromPnuts.aida","xml",false,true);
+hf      = factory.createHistogramFactory(tree);
+
+tree.mkdir("/Histograms");
+tree.cd("/Histograms");
+
+h1 = hf.createHistogram1D("Histogram 1D",50,-3,3);
+h2 = hf.createHistogram2D("Histogram 2D",40,-3,3,40,-3,3);
+        
+tree.mkdir("/Clouds");
+tree.cd("/Clouds");
+
+c1 = hf.createCloud1D("Cloud 1D");
+c2 = hf.createCloud2D("Cloud 2D");
+
+page1 = factory.createPlotterFactory().create("Page1");
+
+page1.show();
+page1.createRegions(2,2);
+
+page1.region(0).plot(h1);
+page1.region(1).plot(h2);
+page1.region(2).plot(c1);
+page1.region(3).plot(c2);
+
+Random = class java.util.Random
+r = Random()
+
+for( i = 0; i < 10000; i++ ) {
+   h1.fill(r.nextGaussian())
+   h2.fill(r.nextGaussian(),r.nextGaussian())
+   c1.fill(r.nextGaussian())
+   c2.fill(r.nextGaussian(),r.nextGaussian())
+}
+
+tree.commit();
++---------------+
+
+*Execution
+
+    To execute the above script follow the steps below:
+
+    *save the Pnuts script in a file called "script.pnut"
+
+    *execute with
+
++-------+
+pnuts script.pnut
++-------+
+
+    where <pnuts> is the executable that comes with the Pnuts distribution appropriate for your platform.    

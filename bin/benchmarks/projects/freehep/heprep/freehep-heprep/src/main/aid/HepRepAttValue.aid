@@ -1,0 +1,128 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepAttValue interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepAttValue.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepAttValue extends HepRepConstants {
+
+    /**
+     * Constructor for the JHepRepAttValue interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepAttValue(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Returns name of the attvalue.
+     *
+     * @return Capitalized Name.
+     */
+    String getName();
+
+    /**
+     * Returns lowercased name of the attvalue.
+     *
+     * @return Lowercased Name.
+     */
+    String getLowerCaseName();
+
+    /**
+     * Returns type of the attvalue, defined in HepRepConstants with names TYPE_xxx.
+     *
+     * @return type.
+     */
+    int getType();
+
+    /**
+     * Returns the Java-like name for the type of this attvalue.
+     *
+     * @return type name.
+     */
+    String getTypeName();
+
+    /**
+     * Returns the flag bits for showing this attvalue as a label, defined in HepRepConstants with names SHOW_xxx.
+     *
+     * @return flag bits if should be shown as label.
+     */
+    int showLabel();
+
+    /**
+     * Returns value as string.
+     *
+     * @return value as string (if type is string).
+     * @throws HepRepTypeException if type is not string.
+     */
+    String getString() throws HepRepTypeException;
+
+    /**
+     * Returns value as lowercase string.
+     *
+     * @return value as string (if type is string).
+     * @throws HepRepTypeException if type is not string.
+     */
+    public String getLowerCaseString() throws HepRepTypeException;
+
+    /**
+     * Returns value as string.
+     *
+     * @return value (of any type) in string format.
+     */
+    String getAsString();
+
+    /**
+     * Returns value as Color.
+     *
+     * @return value as Color.
+     * @throws HepRepTypeException if type is not Color.
+     */
+    public Color getColor() throws HepRepTypeException;
+
+    /**
+     * Returns value as long.
+     *
+     * @return value as long.
+     * @throws HepRepTypeException if type is not long.
+     */
+    int64 getLong() throws HepRepTypeException;
+
+    /**
+     * Returns value as int.
+     *
+     * @return value as integer.
+     * @throws HepRepTypeException if type is not int.
+     */
+    int getInteger() throws HepRepTypeException;
+
+    /**
+     * Returns value as double.
+     *
+     * @return value as double.
+     * @throws HepRepTypeException if type is not double.
+     */
+    double getDouble() throws HepRepTypeException;
+
+    /**
+     * Returns value as boolean.
+     *
+     * @return value as boolean.
+     * @throws HepRepTypeException if type is not boolean.
+     */
+    boolean getBoolean() throws HepRepTypeException;
+
+    /**
+     * Returns a deep copy of this attvalue.
+     *
+     * @return copy of this attvalue.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepAttValue* copy() throws CloneNotSupportedException;
+}

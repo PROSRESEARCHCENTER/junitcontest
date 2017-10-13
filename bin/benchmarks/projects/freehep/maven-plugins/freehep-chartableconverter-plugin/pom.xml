@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.freehep</groupId>
+    <artifactId>maven-plugins</artifactId>
+    <version>4</version>
+  </parent>
+  
+  <artifactId>freehep-chartableconverter-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <version>2.0.1-SNAPSHOT</version>
+  
+  <name>FreeHEP Character Table Converter</name>
+  <description>
+    Converts 16 bit Unicode text files into lookup tables. These tables are used by the VectorGraphics
+    package to include and embed fonts in the output formats.
+  </description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-compiler-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-project</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+    </dependency>
+  </dependencies>
+  
+</project>

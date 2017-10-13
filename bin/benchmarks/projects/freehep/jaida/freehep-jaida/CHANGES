@@ -1,0 +1,34 @@
+AIDA
+- Change tests to not catch exceptions for 3.3, committed and tagged v3r3p0
+
+JAIDA
+- merged hep.aida.dev.IStoreFactory of remote with general one, and removed HBookStoreFactory
+- moved remote.test.remoteAida to test.remoteaida
+- renamed fitData to fitdata, fitMethod to fitmethod
+- Fitter refers to Minuit for Contour (removed cast).
+- Missing method createManagedObjectGenericFactory in BatchAnalysisFactory, added
+- Disabled main in IFunctionCoreNotNorm 
+- moved remote.idl to src/main/idl and corrected include statement
+- plotter.styleEditor renamed to plotter.style.editor
+- upgraded dependency of l2fprod-common-all from 0.1 to 6.2
+- moved pdf.test into ref.test.pdf
+- moved hbook into freehep-jaida-hbook
+- move root into freehep-jaida-root
+- moved jminuit into freehep-jaida-jminuit
+- moved minuit into freehep-jaidai-fminuit
+
+MATH
+- jminuit moved to freehep in category math, 
+- kept a version for jdk1.4 in branches
+
+HEPIO
+- redid rootio, stdhep, mcfio and xdr
+
+HEP
+- migrated java3d and hep3d
+- migrated physics 
+- migrated yappi
+
+To Be Done
+- jni part of fminuit
+- deployment of artifacts fails

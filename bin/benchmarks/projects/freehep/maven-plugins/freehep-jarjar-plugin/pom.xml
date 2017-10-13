@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+        <groupId>org.freehep</groupId>
+        <artifactId>maven-plugins</artifactId>
+        <version>6.3</version>
+        <relativePath />
+    </parent>
+  
+    <artifactId>freehep-jarjar-plugin</artifactId>
+    <version>2.0.2-SNAPSHOT</version>
+    <packaging>maven-plugin</packaging>
+  
+    <name>FreeHEP Jar Jar Plugin</name>
+    <description>
+        Plugin to create a jar from all dependencies. Unpacks all dependent jar files
+        and creates a full jar file out of it. The files in META-INF/services are properly merged.
+    </description>
+  
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jarjar-plugin</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/maven-plugins/freehep-jarjar-plugin</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/maven-plugins/freehep-jarjar-plugin</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/maven-plugins/freehep-jarjar-plugin</developerConnection>
+    </scm>
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-archiver</artifactId>
+        </dependency>
+    </dependencies>
+  
+</project>

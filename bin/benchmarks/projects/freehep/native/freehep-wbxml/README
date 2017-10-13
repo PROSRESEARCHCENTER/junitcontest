@@ -1,0 +1,68 @@
+AIDA WBXML Package
+------------------
+
+Author: Mark Donszelmann
+
+This package provides a Writer and a Reader/Parser for the AIDA Binary XML Format 
+documented under http://java.freehep.org/sandbox/aida-binary-xml/index.html.
+This is a C++ version. 
+
+The equivalent package for java is available from the 
+FreeHEP library in package freehep-jaida-xml, as part of the jaida distribution.
+
+To compile this package you could use maven 2.0.x and java 1.4.x or up.
+You could also use a makefile (not provided).
+
+
+Three tests (examples) are provided:
+
+- DumpWBXML, which reads and parses an AIDA Binary XML file and dumps
+its content showing values and meaning of each of the bytes (and other
+types) read. This Dump gives the best feedback for corrupt files.
+
+- TestWBXMLParser, which reads and parses an AIDA Binary XML file and dumps
+its content in an ASCII XML like fashion. For every attribute it lists also the type.
+
+- BinaryToBinary, which reads and parses an AIDA Binary XML file and writes
+the same file out again, while going through the SAX-like interface.
+
+
+Two valid data files are provided:
+
+- AIDATestFile.ascii.aida, containing all (or most of) the possible AIDA tags in
+ASCII XML form. This file is for reference.
+
+- AIDATestFile.binary.aida, containing the same content as AIDATestFile.ascii.aida
+in binary form. This file can be used for testing.
+
+
+NOTES:
+
+- when compiled in DEBUG mode on Windows (vc++ 2005 14.00.50727.762), the reader may fail
+in Reader.readUTF. It seems unable to construct a std::wstring reliably. The fault does 
+not always occur. In non-DEBUG mode things seem fine.
+
+
+Usage with EXPAT:
+
+There is a TestExpat.cpp in the root directory. You may compile it with make-test-expat.sh
+to create a TestExpat executable. This executable can read ascii AIDA files such as AIDATestFile.ascii.aida.
+This has only been tried/tested on i386-MacOSX-g++. Before compiling you need to unpack,
+configure and make expat-2.0.1 in the "expat-2.0.1" subdir of the root directory.
+
+TestExpat will parse an ascii xml aida file and callback methods for every tag found. The ascii tags
+and attributes are translated using the AttributesAdapter class into binary tags and attributes.
+This translation for Attributes is done on request only. After this, the binary TestContentHandler
+is called, with binary data, just in the same way it is called when reading an binary xml aida file.
+
+NOTE: When the file is printed we need to guess the "type" of the "VALUE" attribute used in ascii xml.
+In most cases we get it right, but sometimes we guess double for integer, ... This does not matter
+very much, as real usage will not print all attributes (and types) defined on a tag, but rather know
+what type to expect for attributes on a tag (a boolean column in ITuple will expect VALUE to be VALUE_BOOLEAN).
+
+
+ToDo:
+
+- The package needs array handling.
+
+- Need extra table for lookup by string in AidaWBXML. Two methods tend to be slower.

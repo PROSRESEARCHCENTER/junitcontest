@@ -1,0 +1,16 @@
+    ---
+FreeHEP Use with Eclipse IDE
+    ---
+
+Use with Eclipse IDE
+
+	We use Eclipse together with Maven 2. You need to install the m2eclipse plugin in eclipse for this to work.
+	This plugin is available from {{http://m2eclipse.codehaus.org/}}.
+	
+	It tends to work reasonably. It allows you to search for dependencies and compile from inside eclipse.
+	
+	You need to enable Maven2 via the popup menu for each of the projects for which you want to use the 
+	m2eclipse plugin.
+	
+	Each of the FreeHEP projects can just be imported into eclipse and should work with maven 2.
+	 

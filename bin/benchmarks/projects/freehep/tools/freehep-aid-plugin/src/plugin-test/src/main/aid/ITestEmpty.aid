@@ -1,0 +1,36 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestEmpty to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestEmpty.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestEmpty {
+
+    /*
+     * Test for comments
+     */
+
+    /** @link aggregation
+     * @supplierRole <<internal copy>>
+     * @label fittedFunction*/
+    /*#  IFunction lnkIFunction; */
+
+    /** @link aggregation
+     * @supplierRole <<internal copy>>*/
+    /*#  IFitParameterSettings lnkIFitParameterProperty; */
+
+    /**
+     * Final comment
+     */
+}
+
+/**
+ * Really Final comment
+ */
+    

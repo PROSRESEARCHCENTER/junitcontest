@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-update-child-modules</actionName>
+            <displayName>update-child-modules</displayName>
+            <goals>
+                <goal>versions:update-child-modules</goal>
+                <goal>-DgenerateBackupPoms=false</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Build Without Modules</actionName>
+            <displayName>Build Without Modules</displayName>
+            <recursive>false</recursive>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+        </action>
+    </actions>

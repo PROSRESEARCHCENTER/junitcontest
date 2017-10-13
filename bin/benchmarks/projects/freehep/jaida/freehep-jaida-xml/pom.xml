@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>jaida-pom</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>3.4.14-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>freehep-jaida-xml</artifactId>
+  
+  <name>FreeHEP JAIDA XML</name>
+  <description>FreeHEP JAIDA XML</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jaida-xml</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/jaida/freehep-jaida-xml</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-jaida-xml</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-jaida-xml</developerConnection>
+    </scm>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-xml</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-argv</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.java.dev</groupId>
+      <artifactId>truezip</artifactId>
+      <version>6.6</version>
+    </dependency>    
+  </dependencies>    
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-wbxml-plugin</artifactId>
+        <version>2.0</version>
+        <configuration>
+          <source>AidaWBXML</source>
+        </configuration>
+        <executions>
+          <execution>
+            <id>java</id>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <pkg>hep.aida.ref.xml.binary</pkg>
+              <targetDirectory>${basedir}/src/main/java</targetDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>cpp</id>
+            <configuration>
+              <namespace>WBXML</namespace>
+            </configuration>
+            <goals>
+              <goal>cpp</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>doc</id>
+            <goals>
+              <goal>doc</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.0.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>hep.aida.ref.xml.converters.Aida</mainClass>
+          <arguments>
+            <argument>out.ascii</argument>
+            <argument>out2.binary</argument>
+          </arguments>        
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>
+

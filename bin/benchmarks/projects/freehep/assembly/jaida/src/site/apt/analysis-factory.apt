@@ -1,0 +1,33 @@
+    ---
+    Analysis Factories
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Analysis Factories
+    
+    Before you can use any of the AIDA interfaces you must start by creating an Analysis Factory. You can do this in the standard way using the following line of code:
+
++------+
+IAnalysisFactory factory = IAnalysisFactory.create();
++------+
+
+    JAIDA includes two analysis factories:
+
+    *<<hep.aida.ref.AnalysisFactory>> - the default. It provides a minimal implementation of IPlotter using the {{{http://jas.freehep.org}JAS}} plotter. 
+Each IPlotter will appear in its own top level window. Minimal interaction with the plots is allowed through popup menus.
+
+    *<<hep.aida.ref.BatchAnalysisFactory>> - It has no GUI support. This is suitable for use in completely non-graphical environments, such as batch processing. 
+A dummy IPlotter implementation is provided to satisfy the AIDA interface requirements, but no plots will be displayed.
+
+    []
+
+    You can explicitly select which analysis factory to use by setting the Java property <hep.aida.IAnalysisFactory>, e.g.:
+
++-----+
+java -Dhep.aida.IAnalysisFactory=hep.aida.ref.BatchAnalysisFactory
++-----+
+
+
+    The built-in plotter is intended mainly as a simple viewer for AIDA plots, for a full-featured GUI implementation based on JAIDA see {{{http://jas.freehep.org/jas3}JAS3}}.

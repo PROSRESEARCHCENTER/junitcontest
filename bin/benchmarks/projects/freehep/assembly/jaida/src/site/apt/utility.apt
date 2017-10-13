@@ -1,0 +1,97 @@
+    ---
+    JAIDA Utility Classes
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+JAIDA Utility Classes
+
+    JAIDA distribution comes with several utility classes in hep.aida.util package. While those classes are not described by the AIDA standard, they can be useful to the user. 
+
+*HistUtils
+
+    Compares two IHistogram1D objects using Kolmogorov algorithm. The result is between 0 and 1; 1 is for identical histograms
+
+    * public static double kolmogorovTest( IHistogram1D h1, IHistogram1D h2 )
+
+    []
+
+
+* MCUtils
+
+    This class generates distribution based on a given IFunction and fills user-provided object – IHistogram or ICloud. Can also create and fill ITuple. IFunction is assumed to be non negative. 
+
+** Using IHistogram
+
+    Fill IHistogram1D, IHistogram2D, or IHistogram3D according to a given IFunction. User has to create histogram and function first. Some methods use histogram limits ( hist.axis().lowerEdge() and hist.axis().uppedEdge() ) to determine function domain. Other methods explicitly use min and max to determine function domain
+
+    * public static void generateMCDistribution( IHistogram hist, IFunction f, int entries )
+
+    * public static void generateMCDistribution( IHistogram hist, IFunction f, int entries, long seed )
+
+    * public static void generateMCDistribution( IHistogram hist, IFunction f, int entries, double[] min, double[] max  )
+
+    * public static void generateMCDistribution( IHistogram hist, IFunction f, int entries, double[] min, double[] max, long seed  ) 
+
+    * public static void generateMCDistribution( IHistogram hist, IFunction f, int entries, double[] min, double[] max, long seed, double maxHeight  ) 
+
+    []
+
+** Using ICloud
+
+    Fill ICloud1D, ICloud2D, or ICloud3D according to a given IFunction. User has to create cloud and function first. Since ICloud does not a priori have lower and upper limits, those methods use min and max to determine function domain
+
+    * public static void generateMCDistribution( ICloud cloud, IFunction f, int entries, double[] min, double[] max )
+    
+    * public static void generateMCDistribution( ICloud cloud, IFunction f, int entries, double[] min, double[] max, long seed )
+    
+    * public static void generateMCDistribution( ICloud cloud, IFunction f, int entries, double[] min, double[] max, double maxHeight )
+    
+    * public static void generateMCDistribution( ICloud cloud, IFunction f, int entries, double[] min, double[] max, long seed, double maxHeight )
+
+    []
+
+** Using ITuple
+
+    Create and fill ITuple according to a given IFunction. ITuple is created as un-managed object - it will not appear in the AIDA Tree.
+     
+    * public static ITuple generateMCTuple( IFunction f, int entries, double[] min, double[] max )
+        
+    * public static ITuple generateMCTuple( IFunction f, int entries, double[] min, double[] max, double maxHeight )
+   
+    * public static ITuple generateMCTuple( IFunction f, int entries, double[] min, double[] max, long seed )
+            
+    * public static ITuple generateMCTuple( IFunction f, int entries, double[] min, double[] max, long seed, double maxHeight )
+
+    []
+
+* XMLUtils
+
+    Converts AIDA IManagedObject or IFitResult to XML string and back. Can also write AIDA ITree to file.
+
+    * public static void writeToFile( ITree tree, String fileName, String options ) throws IOException
+
+    * public static void addToTree( String xmlString, ITree tree ) throws IOException
+
+    []
+
+    * public static String createXMLString( IManagedObject mo ) throws IOException 
+    
+    * public static String createXMLString( IManagedObject mo, ITree tree ) throws IOException 
+    
+    * public static String createXMLString( IManagedObject mo, String path ) throws IOException 
+    
+    * public static IManagedObject createManagedObject( String xmlString ) throws IOException 
+    
+    [] 
+
+    * public static String createXMLString( IFitResult fitResult ) throws IOException
+    
+    * public static String createXMLString( IFitResult fitResult, String path ) throws IOException
+ 
+    * public static IFitResult createFitResult( String xmlString ) throws IOException
+
+    []
+
+    Back to the {{{features.html}JAIDA features}}.

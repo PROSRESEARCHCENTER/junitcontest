@@ -1,0 +1,167 @@
+    ---
+    HepRep Attributes
+    ---
+    Mark Donszelmann
+    ---
+    ---
+
+Attributes
+
+* General Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| DrawAs                | String  | See DrawAsValues                | Point     |       | Draw       | Representation for this instance.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| DrawAsOption          | String  | See DrawAsValues                | Point     |       | Draw       | Possible representations for this instance.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Visibility            | boolean |                                 | true      |       | Draw       | Is this instance visible?
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+* Label Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Label                 | String  |                                 |           |       | Draw       | Unicode text to be displayed with instance. 
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontName              | String  | SansSerif, Serif, Monospace     | SansSerif |       | Draw       | Font for label.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontStyle             | String  | Any combination of              | Plain     |       | Draw       | Font style for label.
+|                       |         | Plain, Bold, Italic             |           |       |            |
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontSize              | int     |                                 | 12        |       | Draw       | Font size for label.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontColor             | Color   |                                 | White     |       | Draw       | Color for font.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontHasFrame          | boolean |                                 | false     |       | Draw       | Draw a frame around the font for better contrast.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontFrameColor        | Color   |                                 | White     |       | Draw       | Color of font frame.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontFrameWidth        | double  |                                 | 1         |       | Draw       | Width of font frame.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontHasBanner         | boolean |                                 | false     |       | Draw       | Draw a banner behind the label.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FontBannerColor       | Color   |                                 | Black     |       | Draw       | Color for banner.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+* Single Point Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Color                 | Color   |                                 | White     |       | Draw       | Color for lines, markers, etc.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Layer                 | String  | Any valid name in LayerOrder    | default   |       | Draw       | Layer in which this instance is drawn.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| MarkName              | String  | Circle, Box, UpTriangle,        | Circle    |       | Draw       | Type of marker which is drawn for this instance.                    
+|                       |         | DnTriangle, Diamond, Cross,     |           |       |            | All of these markers are available from the     
+|                       |         | Star, Plus, HLine, VLine        |           |       |            | FreeHEP VectorGraphics library. 
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| MarkSize              | double  |                                 | 5         |       | Draw       | Size of the marker.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| MarkSizeMultiplier    | double  | Any number above 0              | 1         |       | Draw       | Factor to multiply the size of the marker with.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| MarkType              | String  | Symbol, Real                    | Symbol    |       | Draw       | Symbol specifies that the markersize if fixed,
+|                       |         |                                 |           |       |            | Real specifies that the symbol resizes. 
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| HasFrame              | boolean |                                 | true      |       | Draw       | Draw a frame around the representation for better contrast.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FrameColor            | Color   |                                 | Black     |       | Draw       | Color for frame.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FrameWidth            | double  |                                 | 1         |       | Draw       | Width of the frame.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+
+* Multiple Point Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| LineStyle             | String  | Solid, Dotted, Dashed, DotDash  | Solid     |       | Draw       | Style for lines.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| LineWidth             | double  |                                 | 2         |       | Draw       | Width for lines.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| LineWidthMultiplier   | double  | Any number above 0              | 1         |       | Draw       | Factor for lineWidth.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| LineHasArrow          | String  | None, Start, End, Both          | None      |       | Draw       | Add arrows on either side of a line.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+
+* Fill Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FillColor             | Color   |                                 | White     |       | Draw       | Color used for fill.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FillType              | String  | NonZero, EvenOdd                | EvenOdd   |       | Draw       | Method to use for filling complex shapes.
+|                       |         |                                 |           |       |            | NonZero fills everything inside outer boundery,
+|                       |         |                                 |           |       |            | while EvenOdd fills like a checkerboard.  
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Fill                  | boolean |                                 | false     |       | Draw       | Should instance be filled.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+
+* Specific Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Radius                | double  |                                 | 5.0       |       | Draw       | Radius for Circles, Cylinders.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Phi                   | double  |                                 | 0.0       | Rad   | Draw       | Angle from YZ-axis towards X-axis.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Theta                 | double  |                                 | 0.0       | Rad   | Draw       | Angle from the Z axis.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Omega                 | double  |                                 | 0.0       | Rad   | Draw       | Rotation over the normal specified by Phi and Theta.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Radius1               | double  |                                 | 5.0       |       | Draw       | Radius for Circles, Cylinders.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Radius2               | double  |                                 | 5.0       |       | Draw       | Radius for Circles, Cylinders.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Radius3               | double  |                                 | 5.0       |       | Draw       | Radius for Circles, Cylinders.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Curvature             | double  |                                 | 0.02      |       | Draw       | Curvature of Helix.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| FlyLength             | double  |                                 | 10.0      |       | Draw       | Distance along Helix.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Faces                 | int     |                                 | 4         |       | Draw       | Number of faces to draw (or dividers).
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+
+* Text Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| Text                  | String  |                                |           |       | Draw       | Unicode text displayed in position relative to Window.
+|                       |         |                                 |           |       |            | Greek chars and simple tags such as <b>, <sup> and <sub>
+|                       |         |                                 |           |       |            | are allowed.  
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| HPos                  | double  | 0 equals to left                | 0.5       |       | Draw       | Relative horizontal position.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| VPos                  | double  | 0 equals to top                 | 1.0       |       | Draw       | Relative vertical position.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| HAlign                | String  | Left, Center, Right             | Left      |       | Draw       | Horizontal text alignment.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| VAlign                | String  | Top, BaseLine, Center, Bottom   | BaseLine  |       | Draw       | Vertical text alignment.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+
+
+* Picking Attributes
+
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| <<Name>>              | <<Type>> | <<Valid Values>>                | <<Default>> | <<Unit>> | <<Category>> | <<Description>>
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| IsPickable            | boolean |                                 | true      |       | PickAction | Specifies if the instance can be picked.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| ShowParentAttributes  | boolean |                                 | false     |       | PickAction | Specifies if the parent instance attributes
+|                       |         |                                 |           |       |            | should be shown.
+|                       |         |                                 |           |       |            | Works recursively if specified.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+
+| PickParent            | boolean |                                 | false     |       | PickAction | Specifies if the parent instance should
+|                       |         |                                 |           |       |            | be picked rather than the instance itself.
+|                       |         |                                 |           |       |            | Works recursively if specified.
+*-----------------------+---------+---------------------------------+-----------+-------+------------+------+

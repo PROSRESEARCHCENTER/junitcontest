@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="JAIDA">
+    <bannerLeft>
+        <name>JAIDA - AIDA in Java</name>
+        <href>./</href>
+    </bannerLeft>
+        
+    <body>
+        <links>
+            <item name="AIDA" href="http://aida.freehep.org"/>
+        </links>
+
+        <menu name="Introduction">
+            <item name="Overview"        href="index.html"/>
+            <item name="License"         href="license.html"/>
+            <item name="Mailing Lists"   href="mail-lists.html"/>
+            <item name="Contributors"    href="contributors.html"/>
+            <item name="Users"           href="users.html"/>
+        </menu>
+        <menu name = "User Documentation">
+            <item name = "Release Notes"        href = "release-notes.html">
+                <item name = "Changes"          href = "changes.html"/>
+            </item>
+            <item name = "Getting Started"          href = "getting-started.html"/>
+            <item name = "Analysis Factory"          href = "analysis-factory.html"/>
+            <item name = "Features"             href = "features.html"/>
+            <item name = "Fit Methods"          href = "fit-methods.html"/>
+            <item name = "Statistical Comparison"          href = "statistical-comparison.html"/>
+            <item name = "Examples" href="examples.html">
+                <item name = "Java Application" href = "java-application-jaida.html"/>
+                <item name = "Java Servlet"     href = "servlet-jaida.html"/>
+                <item name = "JSP"              href = "jsp-jaida.html"/>
+                <item name = "JAS3"             href = "jas3-jaida.html"/>
+                <item name = "Pnuts"            href = "pnuts-jaida.html"/>
+                <item name = "Jython"           href = "jython-jaida.html"/>
+                <item name = "C++"              href = "cpp-jaida.html"/>
+                <item name = "Geant4"           href = "geant4-jaida.html"/>
+            </item>            
+            <item name = "AIDA Manual"          href = "http://aida.freehep.org/doc/v3.3.0/UsersGuide/"/>
+            <item name = "AIDA API"             href = "http://aida.freehep.org/doc/v3.3.0/api/index.html"/>
+        </menu>
+        <menu name = "Distribution">
+            <item name = "Binary" href = "binary-distribution.html"/>
+            <item name = "Repository" href = "source-repository.html"/>
+        </menu>
+    </body>
+</project>

@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft FrontPage 4.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+
+CommandLine parses a command line for parameters and options.
+<p>
+It allows the user
+to set up a command line for a command, and specify what options can be used,
+what these options mean, what parameters can be specified and what they mean, 
+the minimum number of needed parameters, and if the parameter list is variable.
+ *
+The CommandLine is created with the name and description of the command:
+<p>
+CommandLine cl = new CommandLine("java", "Java Virtual Machine (version 1.2)");
+<p>
+Possible options are added by calling one of the following methods:
+<ul>
+<li>Flag: -v, -verbose cl.addOption("verbose", "v", "switches on verbose mode");
+<li>Option: -d, -dir &lt;directory&gt; cl.addOption("dir", "d", "directory", "set output directory");
+<li>Qualifier: -o, -opt{lo|mi|hi} cl.addOption("opt", "o", new String {"lo", "mi", "hi"}, "set optimization factor");
+<li>BailOutOption: -h, -help cl.addBailOutOption("help", "h", "show help for this command");
+</ul>
+<p>
+The following methods are available to access the definitions of the command line:
+<ul>
+<li>getName()
+<li>getDescription()
+<li>getOptions()
+<li>getParameters()
+<li>isLegalOption(optionName)
+</ul>
+<p>
+To parse a commandline call: cl.parse(args); which returns true if parsing was ok,
+throws a CommandLineException if something went wrong, and returns false, if a BailOut 
+option was provided. BailOut options allow the program to give feedback to the user
+for for instance -help or -version options.
+<p>
+The exception can also be retrieved by calling: getException()
+<p>
+The method getHelp() returns a multi-line string describing the full command and its options.
+<p>
+Once parsing succeeds the following methods can be used to see if options were set and to
+retrieve the parameters:
+<ul>
+<li>String[] getArguments();
+<li>String getArgument(name);
+<li>boolean b = cl.hasOption("v");
+<li>String value = cl.getOption("d");
+<li>String value = cl.getOption("o");
+</ul>
+<p>
+See the table below to find out what each of these methods returns:
+<pre>
+FLAGS
+-version         : hasOption(&quot;version&quot;)              -&gt; true
+-x-y             : hasOption(&quot;x&quot;)                    -&gt; true 
+                   hasOption(&quot;y&quot;)                    -&gt; true
+                   hasOption(&quot;notSetFlag&quot;)           -&gt; false
+                   hasOption(&quot;unknown&quot;)              -&gt; NoSuchOptionException
+ *
+QUALIFIED FLAGS
+-verbose         : hasOption(&quot;verbose&quot;)              -&gt; true
+                 : getOption(&quot;verbose&quot;)              -&gt; &quot;&quot;
+-verbose:gc      : hasOption(&quot;verbose&quot;)              -&gt; true
+                 : getOption(&quot;verbose&quot;)              -&gt; &quot;gc&quot;
+                 : getOption(&quot;notSetQualifiedFlag&quot;)  -&gt; null
+                 : getOption(&quot;unknown&quot;)              -&gt; NoSuchOptionException
+ *
+OPTIONS
+-cp classpath    : getOption(&quot;cp&quot;)                   -&gt; &quot;classpath&quot;
+-startup=now     : getOption(&quot;startup&quot;)              -&gt; &quot;now&quot;
+                 : getOption(&quot;notSetOption&quot;)         -&gt; null
+                 : getOption(&quot;unknown&quot;)              -&gt; NoSuchOptionException
+</pre> 
+ *
+lookups of flags will return the boolean value of that flag
+<p>
+lookups of options will return the value of that option.
+If this value cannot be found, then if the flag is set
+to true an empty string will be returned. If not found 
+at all, null will be returned.
+<p>
+@Status Stable
+<p>
+</BODY>
+</HTML>

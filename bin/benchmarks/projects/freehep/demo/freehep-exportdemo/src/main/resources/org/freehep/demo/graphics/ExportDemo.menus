@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE MenuSystem SYSTEM "http://java.freehep.org/schemas/menus/1.0/menus.dtd">
+<MenuSystem>
+	<MenuBar id="mainMenu">
+		<Menu name="File" mnemonic="F">
+			<Component name="Export..." command="export" mnemonic="E" icon="/toolbarButtonGraphics/general/Save16.gif"/>
+			<Separator/>
+			<Component name="Exit" mnemonic="X" command="exit"/>
+		</Menu>
+		<Menu name="Edit" mnemonic="E">
+			<Component type="default" name="Copy" mnemonic="C" icon="/toolbarButtonGraphics/general/Copy16.gif" command="copy">
+				<Accelerator shift="false" meta="false" key="VK_C" ctrl="true" alt="false"/>
+			</Component>
+		</Menu>
+		<Menu name="Help" mnemonic="H">
+ 			<Component name="Help" mnemonic="H" icon="/toolbarButtonGraphics/general/Help16.gif" command="help">
+				<Accelerator key="VK_F1" ctrl="false"/>
+			</Component>               
+			<Component name="About" mnemonic="A" icon="/toolbarButtonGraphics/general/About16.gif" command="about"/>
+		</Menu>
+	</MenuBar>
+</MenuSystem>

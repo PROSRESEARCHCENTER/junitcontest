@@ -1,0 +1,177 @@
+import java_cup.runtime.*;
+import org.freehep.commons.lang.AST;
+import org.freehep.commons.lang.AST.Node;
+import java.util.ArrayList;
+import java.util.HashMap;
+import com.google.common.collect.Multiset;
+import com.google.common.collect.HashMultiset;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.util.Arrays;
+
+ parser code {: 
+
+     public void report_error(String message, Object info) { 
+         report_fatal_error(message, info); 
+     } 
+
+     public void report_fatal_error(String message, Object info) { 
+         if(info != null){
+            System.out.println(stack);
+            Symbol s = (Symbol) info;
+            String errorText =  ((Lexer) getScanner()).errorText(s.left, s.right);
+            
+            
+            throw new RuntimeException(new ParseException( "\n" + errorText, 0 ));
+         }
+     } 
+
+    /* Convenience code for generating nodes */
+    public java.util.Stack stack(){ return this.stack; }
+    public int tos(){ return this.tos; }
+
+ :};
+
+action code {:
+     Multiset<String> identSet = HashMultiset.create();
+:}
+
+/* Ordered so they more or less line up with BoolOp */
+terminal Integer UNDEFINED, AND, OR, EQ, NOT_EQ, GT, GTEQ, LT, LTEQ;
+terminal Integer IN, NOT_IN, MATCHES, NOT_MATCHES;
+terminal Integer LPAREN, RPAREN, COMMA, RANGE;
+terminal Number  NUMBER;
+terminal Boolean BOOLEAN;
+terminal String STRING, SQSTRING, DATESTRING, SQDATESTRING;
+terminal NUMLIST, STRINGLIST, DATELIST;
+terminal NUMRANGE, STRINGRANGE, DATERANGE;
+terminal ERROR;
+terminal IDENTIFIER;
+terminal NULL;
+
+non terminal AST        ast;
+non terminal Node       expr, expr_or;
+non terminal Node       simple_expr, rel_expr;
+non terminal Node       rel_eq, rel_comp, rel_in, rel_null, rel_matches;
+non terminal Node       ident, value;
+non terminal Node       safe_list, num_list, str_list, date_list;
+non terminal Node       safe_range;
+non terminal Timestamp  date;
+non terminal String     simple_string;
+start with ast;
+
+ast             ::=  
+                expr:e                                  {: e.setMetadata("idents", identSet); RESULT = new AST(e); :} 
+        ;
+
+expr            ::=            
+                expr_or:t                               {: RESULT = t; :}
+        |       expr:e1 AND:o1 expr_or:e2               {: RESULT = new Node(new Op(o1), o1, e1, e2); :} 
+        ;
+
+expr_or         ::=
+                simple_expr:t                           {: RESULT = t; :}
+        |       expr_or:e1 OR:o1 simple_expr:e2         {: RESULT = new Node(new Op(o1), o1, e1, e2); :} 
+        ;
+
+simple_expr     ::=
+                rel_expr:e1                             {: identSet.add( (String) e1.getLeft().getValue() ); RESULT = e1; :}
+        |       LPAREN expr:e1 RPAREN                   {: e1.setMetadata("enclosed", true); RESULT = e1; :}
+        ;
+
+
+rel_expr        ::=
+                rel_eq:n1        value:v1               {: n1.setRight(v1); RESULT = n1; :}
+        |       rel_eq:n1        BOOLEAN:b1             {: n1.setRight(new Node(b1, sym.BOOLEAN)); RESULT = n1; :}
+        |       rel_eq:n1        NULL:o1                {: n1.setRight(new Node(Void.TYPE, sym.NULL)); RESULT = n1; :}
+        |       rel_matches:n1   simple_string:s1       {: n1.setRight(new Node(s1, sym.STRING)); RESULT = n1; :}
+        |       rel_comp:n1      value:v1               {: n1.setRight(v1); RESULT = n1; :}
+        |       rel_in:n1        safe_list:v1           {: n1.setRight(v1); RESULT = n1; :}
+        |       rel_in:n1 LPAREN safe_list:v1 RPAREN    {: n1.setRight(v1); RESULT = n1; :}
+        |       rel_in:n1        safe_range:v1          {: n1.setRight(v1); RESULT = n1; :}
+        |       rel_in:n1 LPAREN safe_range:v1 RPAREN   {: n1.setRight(v1); RESULT = n1; :}
+        ;
+
+rel_matches     ::=
+                ident:i1 MATCHES:o1                     {: RESULT = new Node(new Op(o1), o1, i1); :}
+        |       ident:i1 NOT_MATCHES:o1                 {: RESULT = new Node(new Op(o1), o1, i1); :}
+        ;
+
+rel_eq          ::=
+                ident:i1 EQ:o1                          {: RESULT = new Node(new Op(o1), o1, i1); :}
+        |       ident:i1 NOT_EQ:o1                      {: RESULT = new Node(new Op(o1), o1, i1); :}
+        ;
+
+rel_comp        ::=
+                ident:i1 LT:o1                          {: RESULT = new Node(new Op(o1), o1, i1); :}
+        |       ident:i1 LTEQ:o1                        {: RESULT = new Node(new Op(o1), o1, i1); :}
+        |       ident:i1 GT:o1                          {: RESULT = new Node(new Op(o1), o1, i1); :}
+        |       ident:i1 GTEQ:o1                        {: RESULT = new Node(new Op(o1), o1, i1); :}
+        ;
+
+rel_in          ::=
+                ident:i1 IN:o1                          {: RESULT = new Node(new Op(o1), o1, i1); :}
+        |       ident:i1 NOT_IN:o1                      {: RESULT = new Node(new Op(o1), o1, i1); :}
+        ;
+
+ident           ::=
+                IDENTIFIER:i1                           {: RESULT = new Node(i1, sym.IDENTIFIER); :}
+        ;
+
+safe_list       ::=
+                num_list:n1                             {: RESULT = n1; :}
+        |       str_list:s1                             {: RESULT = s1; :}
+        |       date_list:d1                            {: RESULT = d1; :}
+        ;
+
+safe_range      ::=
+                NUMBER:n1 RANGE NUMBER:n2               {: RESULT = new Node(Arrays.asList(n1,n2), sym.NUMRANGE); :}
+        |       date:d1 RANGE date:d2                   {: RESULT = new Node(Arrays.asList(d1,d2), sym.DATERANGE); :}
+        |       simple_string:s1 RANGE simple_string:s2 {: RESULT = new Node(Arrays.asList(s1,s2), sym.STRINGRANGE); :}
+        ;
+
+num_list        ::=
+                NUMBER:n1
+                    {: 
+                        ArrayList<Number> nlist = new ArrayList<Number>();
+                        nlist.add(n1);
+                        RESULT = new Node(nlist, sym.NUMLIST);
+                    :}
+        |       num_list:n1 COMMA NUMBER:n2             {: ((ArrayList<Number>) n1.getValue()).add((Number) n2); RESULT = n1; :}
+        ;
+
+str_list        ::=
+                simple_string:s1
+                    {: 
+                        ArrayList<String> slist = new ArrayList<String>();
+                        slist.add(s1);
+                        RESULT = new Node(slist, sym.STRINGLIST);
+                    :}
+        |       str_list:s1 COMMA simple_string:s2      {: ((ArrayList<String>) s1.getValue()).add((String) s2); RESULT = s1; :}
+        ;
+
+date_list       ::=
+                date:d1
+                    {: 
+                        ArrayList<Timestamp> slist = new ArrayList<Timestamp>();
+                        slist.add(d1);
+                        RESULT = new Node(slist, sym.DATELIST);
+                    :}
+        |       date_list:d1 COMMA date:d2              {: ((ArrayList<Timestamp>) d1.getValue()).add((Timestamp) d2); RESULT = d1; :}
+        ;
+
+value           ::=
+                NUMBER:n1                               {: RESULT = new Node(n1, sym.NUMBER); :}
+        |       date:d1                                 {: RESULT = new Node(d1, sym.DATESTRING); :}
+        |       simple_string:s1                        {: RESULT = new Node(s1, sym.STRING); :}
+        ;
+
+date            ::=
+                DATESTRING:d1                           {: RESULT = DateTimeConverter.getTime(d1); :}
+        |       SQDATESTRING:d1                         {: RESULT = DateTimeConverter.getTime(d1); :}
+        ;
+
+simple_string   ::=
+                STRING:s1                               {: RESULT = s1; :}
+        |       SQSTRING:s1                             {: RESULT = s1; :}
+        ;

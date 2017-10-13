@@ -1,0 +1,21 @@
+<document>
+  <properties>
+    <title>FreeHEP Java Library - Root Object Browser</title>
+  </properties>
+  <body>
+    <section name="FreeHEP Root Object Browser">
+
+<p>The following demo requires that your have <a href="http://java.sun.com/products/javawebstart">JavaWebStart
+1.0</a> (or later) installed.</p>
+
+<p>The root object browser allows you to browse objects and data stored inside a Root
+file. It can read any Root file written with Root 3.00/6 or later,
+including files containing user-defined objects.</p>
+<form method="GET" action="RootObjectBrowser.jnlp">
+  <p><input type="submit" value="Launch Root Object Browser" name="go"/></p>
+</form>
+
+</section>
+</body>
+</document>
+

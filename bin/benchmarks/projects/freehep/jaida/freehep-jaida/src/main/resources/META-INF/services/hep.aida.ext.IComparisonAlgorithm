@@ -1,0 +1,7 @@
+hep.aida.util.comparison.AndersonDarlingComparisonAlgorithm
+hep.aida.util.comparison.KolmogorovSmirnovComparisonAlgorithm
+hep.aida.util.comparison.FiszCramerVonMisesComparisonAlgorithm
+hep.aida.util.comparison.TikuComparisonAlgorithm
+hep.aida.util.comparison.Chi2ComparisonAlgorithm
+hep.aida.util.comparison.GoodmanComparisonAlgorithm
+hep.aida.util.comparison.KuiperComparisonAlgorithm

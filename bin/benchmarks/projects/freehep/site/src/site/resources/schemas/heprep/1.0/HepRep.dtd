@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- $Id: HepRep.dtd 8613 2006-08-16 06:56:44Z duns $ -->
+<!-- Document Type Definition for the HEPREP Descriptions -->
+
+<!ELEMENT   attdef      EMPTY >
+<!ATTLIST   attdef      name        CDATA           #REQUIRED
+                        desc        CDATA           #IMPLIED
+                        type        CDATA           #REQUIRED
+                        extra       CDATA           ""
+>
+
+<!ELEMENT   attvalue    EMPTY >
+<!ATTLIST   attvalue    name        CDATA           #REQUIRED
+                        value       CDATA           #REQUIRED
+                        showLabel   CDATA           "0"
+>
+
+<!ELEMENT   point       (attdef | attvalue)* >
+<!ATTLIST   point       x           CDATA           #REQUIRED
+                        y           CDATA           #REQUIRED
+                        z           CDATA           #REQUIRED
+>
+
+<!ELEMENT   primitive   (attdef | attvalue | point)* >
+
+<!ELEMENT   instance    (attdef | attvalue | type | primitive | point)* >
+
+<!ELEMENT   type        (attdef | attvalue | type | instance | primitive | point)* >
+<!ATTLIST   type        name        CDATA           #REQUIRED
+                        version     CDATA           ""
+>
+
+<!ELEMENT   heprep      (attdef | attvalue | type)* >
+

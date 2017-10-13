@@ -1,0 +1,24 @@
+<html>
+
+<head>
+<title>AID - Users</title>
+</head>
+
+<body>
+
+<h1>Users</h1>
+<p>The following users and projects use AID for some or all of the definitions
+of their interfaces:</p>
+<ul>
+  <li><a href="http://aida.freehep.org">AIDA</a> - Abstract Interfaces for Data
+  Analysis</li>
+  <li><a href="http://heprep.freehep.org">HepRep</a> - High Energy Physics
+  Representables for Event Display</li>
+  <li>
+  <a href="http://www-it.desy.de/physics/projects/simsoft/lcio/index.html">
+  LCIO</a> - Linear Collider IO Format</li>
+</ul>
+
+</body>
+
+</html>

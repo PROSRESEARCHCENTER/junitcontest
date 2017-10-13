@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.freehep</groupId>
+        <artifactId>base</artifactId>
+        <version>14.0.2</version>
+    </parent>
+  
+    <artifactId>freehep-util</artifactId>
+    <name>FreeHEP Util</name>
+    <description>FreeHEP Utility Library</description>
+    <version>2.1.3-SNAPSHOT</version>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-util</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/base/freehep-util</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-util</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-util</developerConnection>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans</groupId>
+            <artifactId>openide-lookup</artifactId>
+            <version>1.9-patched-1.0</version>
+        </dependency>
+    </dependencies>
+  
+</project>

@@ -1,0 +1,38 @@
+	---
+FreeHEP IDLJ Plugin
+	---
+	---
+Mark Donszelmann
+	---
+	
+Usage
+
+	Add the following fragment to your pom file to execute the aid plugin as part of the
+"generate-sources" phase.
+
++--
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-aid-plugin</artifactId>
+        <version>2.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <targetDirectory>${basedir}/src/main/java</targetDirectory>
+              <timestampDirectory>${project.build.directory}/generated-sources/aid</timestampDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++--

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<document>
+   <properties>
+      <title>JXPath Home</title>
+      <author email="dev@commons.apache.org">Commons Documentation Team</author>
+      <author email="dmitri@apache.org">Dmitri Plotnikov</author>
+      <revision>$Id: index.xml 561417 2007-07-31 18:13:25Z niallp $</revision>
+   </properties>
+
+   <body>
+      <section name="The JXPath Component">
+          <p>
+             The <code>org.apache.commons.jxpath</code> package defines a simple
+             interpreter of an expression language called XPath. JXPath applies <em>XPath</em>
+             expressions to graphs of objects of all kinds: JavaBeans, Maps, Servlet contexts, DOM etc,
+             including mixtures thereof.
+          </p>
+          <p>
+             Consider this example:
+          </p>
+<blockquote><pre>
+Address address = (Address)JXPathContext.newContext(vendor).
+         getValue("locations[address/zipCode='90210']/address");
+</pre></blockquote>
+          <p>
+            This XPath expression is equivalent to the following Java code:
+          </p>
+<blockquote><pre>
+Address address = null;
+Collection locations = vendor.getLocations();
+Iterator it = locations.iterator();
+while (it.hasNext()){
+    Location location = (Location)it.next();
+    String zipCode = location.getAddress().getZipCode();
+    if (zipCode.equals("90210")){
+      address = location.getAddress();
+      break;
+    }
+}
+</pre></blockquote>
+          <p>
+            XPath was standardized by W3C and is used in both XSLT and XPointer.
+          </p>
+          <p>
+            If you want to find out more about XPath, a good place to start
+            is an excellent XPath Tutorial by <a href="http://www.w3schools.com/xpath">W3Schools</a>
+          </p>
+          <p>
+            The official definition of XPath by W3C can be found at
+            <a href="http://www.w3.org/TR/xpath">XML Path Language (XPath) Version 1.0</a>
+          </p>
+          <p>
+            Primary applications of JXPath are in scripting: JSP and similar template/script based technologies.
+            However, programmers who prefer XML-flavored APIs, should consider JXPath as
+            an alternative to other expression languages as well. JXPath is a must-have tool
+            for those who work with mixtures of Java objects and XML and need to frequently
+            traverse through graphs of those.
+          </p>
+          <p>
+            JXPath documentation currently contains:
+            <ul>
+              <li><a href="users-guide.html">User's Guide</a></li>
+              <li><a href="apidocs/index.html">JavaDoc API Documentation</a></li>
+<!--              <li><a href="design.html">JXPath Design</a>, which is a document
+                primarily intended for those who are interested in extending JXPath.
+                It could also be quite useful if you are debugging a tough problem.
+              </li>
+-->
+            </ul>
+          </p>
+      </section>
+
+      <section name="Releases">
+        <p>See the <a href="http://commons.apache.org/downloads/download_jxpath.cgi">JXPath Downloads</a>
+           page for current/previous releases.
+        </p>
+      </section>
+
+   </body>
+</document>

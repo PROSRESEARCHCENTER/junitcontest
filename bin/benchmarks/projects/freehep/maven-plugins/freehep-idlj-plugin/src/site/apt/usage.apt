@@ -1,0 +1,37 @@
+	---
+FreeHEP IDLJ Plugin
+	---
+	---
+Mark Donszelmann
+	---
+	
+Usage
+
+	Add the following fragment to your pom file to execute the idlj plugin as part of the
+"generate-sources" phase. Modify the idl file specified to your own idl.
+
++--
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-idlj-plugin</artifactId>
+        <version>2.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <source>YourFile.idl</source>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++--

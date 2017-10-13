@@ -1,0 +1,2 @@
+hep.aida.ref.remote.corba.CorbaStoreFactory
+hep.aida.ref.remote.rmi.client.RmiStoreFactory

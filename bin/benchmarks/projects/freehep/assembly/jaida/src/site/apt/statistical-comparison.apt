@@ -1,0 +1,130 @@
+    ---
+    Statistical Comparison
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Statistical Comparison
+
+    In the following we describe the statistical comparison we provide in JAIDA to assess if two data sets (either binned or unbinned) are 
+distributed according to the same distribution. This work used as a reference the Goodness-of-Fit tests provided by the
+{{{http://www.ge.infn.it/geant4/analysis/HEPstatistics/}Statistical Toolkit}}; please refer to it for the general documentation on the comparison algorithms.
+
+    The main code to perform statistical comparison is contained in the package <hep.aida.util.comparison> whose classes implement some 
+of the interfaces in <hep.aida.ext>. Please refer to the FreeHEP {{{http://java.freehep.org/lib/freehep/api/index.html}API}} for a 
+general overview of the available classes.
+
+*Comparing Datasets
+
+    The abstract class to perform comparisons is <StatisticalComparison>. It provides a set of static methods with which it is 
+possible to compare binned and unbinned datasets. Currently it is only possible to compare IHistogram1D and ICloud1D objects. The result of such a comparison is 
+an <IComparisonResult> object that contains the result of the comparison. For example:
+
++------------------+
+    //Check if the algorithm "AndersonDarling" can compare the two histograms
+    if ( StatisticalComparison.canCompare(hist1, hist2,"AD") ); 
+
+    //Compare the two histograms with the "AndersonDarling" algorithm
+    result = StatisticalComparison.compare(hist1, hist2,"AD","");
++------------------+
+
+    The last argument of the <compare> method is an option string. Currently the only option available is <rejectionLevel> that specifies the percentage level at which a comparison is considered to have 
+failed. The default value is 5%. Please note that not all algorithms support a continuous set of rejection levels. Not all tests give as a result a probability. Some give distributions for which rejection levels are tabulated. 
+Please refer to the description of the algorithms below to see which levels are supported.
+
++------------------+
+    //Compare the two histograms with the "Chi2" algorithm with rejection level at 1%.
+    StatisticalComparison.compare(hist1, hist2,"chi2","rejectionLevel=0.01"); 
++------------------+
+
+*Comparison Algorithms
+
+    We list here the comparison algorithms that are provided by the JAIDA implementation. Please refer to the {{{http://www.ge.infn.it/geant4/analysis/HEPstatistics}Statistical Toolkit}}
+ web page for a description of the various algorithms.
+
+    *Anderson-Darling
+
+    *Kolmogorov-Smirnov
+
+    *Fisz-Cramer-Von Mises
+
+    *Goodman
+
+    *Kuiper
+
+    *Tiku
+
+    *Chi2
+
+    []
+
+    For each of the comparison algorithms we provide some plots to illustrate their performance. To generate such plots we created the following sets of data:
+
+    *<reference>: an IHistogram1D (or ICloud1D) with 1000 entries generated according to a gaussian distribution
+
+    *<comparison>: an IHistogram1D (or ICloud1D) with 3000 entries generated according to a gaussian distribution
+
+    *<weighted>: an IHistogram1D (or ICloud1D) filled with the same data as the <comparison> dataset, but with 0.9 weight
+
+    []
+
+    We compared the <reference> data with the <comparison> data and the <weighted>data. We generate 1000 of such datasets with corresponding comparisons. From the "<reference vs comparison>" plot it is possible to 
+see the probability distribution of a give algorithm and from it determine the accuracy level cut to be applied. The "<reference vs weighted>" plot was 
+generated as a consistency check as it should be identical to the "<reference vs comparison>" for those algorithms that are testing the shape of a 
+distribution.
+
+**Anderson-Darling
+
+    This algorithm applies to both binned and unbinned data and measures the quadratic deviation between the two distributions; below are 
+the distributions of the comparison results for both sets of data:
+
+[images/statistical-comparison/ad_comparison.gif]
+
+    The result of a comparison with the Anderson-Darling algorithm is not a probability. The rejection probability can be extrapolated by 
+the above distributions. Currently the only tabulated (and available) rejection 
+level is at 5% that corresponds to a comparison result value of 1.993.
+
+**Kolmogorov-Smirnov
+
+    It measures the maximum vertical distance between two distributions. This algorithm should apply ONLY to unbinned data but it is 
+commonly used for binned data as well. The outcome of a Kolmogorov-Smirnov test is a probability, whose distribution is shown below for binned and unbinned 
+data. Please notice that in the binned case the test becomes conservative.
+
+[images/statistical-comparison/ks_comparison.gif]
+
+**Fizs-Cramer-Von Mises
+
+    It also measures the quadratic deviation between two distributions. It applies to binned and unbinned data (see the distributions below).
+
+[images/statistical-comparison/fcvm_comparison.gif]
+
+    The available tabulated rejection levels are for 10%, 5%, 1% and 0.1% that corresponds to comparison result's values of 0.347, 0.461, 
+0.743 and 1.168 respectively.
+
+**Goodman
+
+    It approximate the Kolmogorov-Smirnov algorithm to a chi squared statistics. Deriving from the Kolmogorov-Smirnov test it should be only 
+applied to unbinned distributions.
+
+[images/statistical-comparison/g_comparison.gif]
+
+**Kuiper
+
+    It measures the directional deviation of two distributions. It can only be applied to unbinned distributions.
+
+[images/statistical-comparison/k_comparison.gif]
+
+**Tiku
+
+    Approximates the Fisz-Cramer-Von Mises algorithm to a chi squared distribution.
+
+[images/statistical-comparison/t_comparison.gif]
+
+**Chi2
+
+    Calculates the chi squared deviation of the two distributions. It can only be applied to binned data. This test is the only one 
+that does apply to shapes but to the actual height of a distributions.
+
+[images/statistical-comparison/chi2_comparison.gif]
+

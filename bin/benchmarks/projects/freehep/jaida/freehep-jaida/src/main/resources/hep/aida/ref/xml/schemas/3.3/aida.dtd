@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--This is the document type defintion file for hep.aida histogram xml files-->
+
+<!--
+******  Path and name convention  *******
+
+Each IManagedObejct element has a path and a name attribute.
+We adopt the following convention:
+    - "name" is the name of the object
+    - "path" is the full path of the object, it does not include the name
+    and it might or not end with a "/"
+    
+-->
+
+
+<!--
+The aida element parents an implementation element and 1 or more histogram1d, 
+histogram2d, histogram3d, tuple, cloud1d, cloud2d and cloud3d elements. It serves the same purpose as, 
+for example, the opening and closing HTML elements do in HTML: to 
+identify a file as conforming to the appropriate Document Type
+Definition (DTD). The aida element has a single attribute: the AIDA version.
+-->
+<!ELEMENT aida (implementation,(histogram1d|histogram2d|histogram3d|tuple|cloud1d|cloud2d|cloud3d|profile1d|profile2d|dataPointSet|function)*)>
+<!ATTLIST aida 
+version CDATA #REQUIRED 
+>
+
+<!--
+The implementation element is used to describe the specific AIDA's implementation used.
+It is empty and has two required attributes: the package and its version. 
+-->
+<!ELEMENT implementation EMPTY>
+<!ATTLIST implementation
+package CDATA #REQUIRED
+version CDATA #REQUIRED
+>
+
+<!--
+The histogram1d element is parent to an axis, a statistics, and a data1d
+element which contain all of the available information pertaining to 1d 
+histograms. The histogram1d element has the path and histogram name as its 
+attributes.
+-->
+<!ELEMENT histogram1d ((annotation?),axis, statistics, data1d)>
+<!ATTLIST histogram1d
+name  CDATA #REQUIRED 
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+options CDATA #IMPLIED
+>
+
+<!-- 
+The histogram2d element is parent to two axis, a statistics and a data2d
+element which contain all of the available information pertaining to 2d 
+histograms. Two axis elements are required for 2d histograms. The axis 
+elements should always be listed as the first child element of 
+histogram2d in the xml file so that the number of bins and bounds can be
+determined before the bin data is parsed. The histogram2d element has 
+the path and histogram name as its attributes. 
+-->
+<!ELEMENT histogram2d ((annotation?),(axis, axis), statistics, data2d)>
+<!ATTLIST histogram2d
+name  CDATA #REQUIRED
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+options CDATA #IMPLIED
+>
+
+<!-- 
+The histogram3d element is parent to three axis, a statistics and a 
+data3d element which contain all of the available information pertaining
+to 3d histograms. Three axis elements are required for 3d histograms. 
+The axis elements should always be listed as the first child element of
+histogram3d in the xml file so that the number of bins and bounds can be
+determined before the bin data is parsed. The histogram3d element has 
+the path and histogram name as its attributes. 
+-->
+<!ELEMENT histogram3d ((annotation?),(axis, axis, axis), statistics, data3d)>
+<!ATTLIST histogram3d
+name  CDATA #REQUIRED 
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+options CDATA #IMPLIED
+>
+ 
+<!--
+The axis element is parent to optional binBorder element(s). It has 4 
+attributes: 
+direction = which axis does this apply to? (currently x, y or z), 
+default of x is assumed if the attribute is not found in the xml file.
+min = the smallest value on the axis.
+max = the largest value on the axis.
+numberOfBins = number of bins to divide the axis into (integer).
+-->
+<!ELEMENT axis (binBorder*)>
+<!ATTLIST axis
+direction    (x | y | z) "x"
+min          CDATA #REQUIRED
+max          CDATA #REQUIRED
+numberOfBins CDATA #REQUIRED
+>
+ 
+<!--
+The binBorder element is empty and has one attribute value which 
+indicates the borders of bins (in variable width bin histograms).If 
+there are n bins, there should be n-1 binBorder elements.
+-->
+<!ELEMENT binBorder EMPTY>
+<!ATTLIST binBorder
+value CDATA #REQUIRED
+>
+
+<!--
+The statistics element is parent to statistic element(s) and has one 
+attribute entries. It is a place to consider if optional 
+InRangeBinHeights, OutOfRangeBinHeights and EquivalentBinEntries 
+attributes are needed.
+--> 
+<!ELEMENT statistics (statistic+)>
+<!ATTLIST statistics 
+entries CDATA #REQUIRED
+equivalentBinEntries CDATA #IMPLIED
+>
+
+<!--
+The statistic element is empty and has 4 attributes: direction, mean, 
+rms and skewness. The direction attribute indicates the axis the rest 
+of attributes pertain to.
+--> 
+<!ELEMENT statistic EMPTY>
+<!ATTLIST statistic
+direction (x | y | z) "x"
+mean      CDATA #REQUIRED
+rms       CDATA #REQUIRED
+skewness  CDATA #IMPLIED
+>
+
+<!-- data elements -->
+
+<!--
+The data1d element is parent to bin1d element(s) and has no attributes.
+-->
+<!ELEMENT data1d (bin1d*)>
+
+<!--
+The bin1d element is empty and has a number of attributes defining 
+parameters of bins of 1d histogram. Each element pertain to one bin. 
+If error2 attribute exists, it means error=pluserror and 
+error2=minuserror. The bin1d element with attribute binNum="UNDERFLOW" 
+or binNum="OVERFLOW" defines underflow or overflow bin.
+If height and error are not provided the bin has been filled with no weight and
+the two can be derived from the entries.
+-->
+<!ELEMENT bin1d EMPTY>
+<!ATTLIST bin1d
+binNum        CDATA #REQUIRED
+weightedMean  CDATA #IMPLIED
+weightedRms   CDATA #IMPLIED
+height        CDATA #IMPLIED
+error         CDATA #IMPLIED
+error2        CDATA #IMPLIED
+entries       CDATA #REQUIRED
+rms           CDATA #IMPLIED
+>
+
+<!--
+The data2d element is parent to bin2d element(s) and has no attributes.
+-->
+<!ELEMENT data2d (bin2d*)>
+
+<!--
+The bin2d element is empty and has a number of attributes defining 
+parameters of bins of 2d histogram. Each element pertain to one bin. 
+If error2 attribute exists, it means error=pluserror and 
+error2=minuserror. Every bin is indicated by two coordinates: binNumX
+and binNumY. The bin2d elements with binNumX="UNDERFLOW" ("OVERFLOW") 
+or/and binNumY="UNDERFLOW" ("OVERFLOW") define underflow or overflow 
+bins.
+If height and error are not provided the bin has been filled with no weight and
+the two can be derived from the entries.
+-->
+<!ELEMENT bin2d EMPTY>
+<!ATTLIST bin2d
+binNumX       CDATA #REQUIRED
+binNumY       CDATA #REQUIRED
+weightedMeanX CDATA #IMPLIED
+weightedMeanY CDATA #IMPLIED
+weightedRmsX CDATA #IMPLIED
+weightedRmsY CDATA #IMPLIED
+height        CDATA #IMPLIED
+error         CDATA #IMPLIED
+error2        CDATA #IMPLIED
+entries       CDATA #REQUIRED
+rms           CDATA #IMPLIED
+>
+ 
+<!--
+The data3d element is parent to bin3d element(s) and has no attributes.
+--> 
+<!ELEMENT data3d (bin3d*)>
+
+<!--
+The bin3d element is empty and has a number of attributes defining 
+parameters of bins of 3d histogram. Each element pertain to one bin. 
+If error2 attribute exists, it means error=pluserror and 
+error2=minuserror. Every bin is indicated by three coordinates: 
+binNumX, binNumY and binNumZ. The bin3d elements with 
+binNumX="UNDERFLOW" ("OVERFLOW") and/or binNumY="UNDERFLOW" 
+("OVERFLOW") and/or binNumZ="UNDERFLOW" ("OVERFLOW") define underflow 
+or overflow bins.
+If height and error are not provided the bin has been filled with no weight and
+the two can be derived from the entries.
+-->
+<!ELEMENT bin3d EMPTY>
+<!ATTLIST bin3d
+binNumX       CDATA #REQUIRED
+binNumY       CDATA #REQUIRED
+binNumZ       CDATA #REQUIRED
+weightedMeanX CDATA #IMPLIED
+weightedMeanY CDATA #IMPLIED
+weightedMeanZ CDATA #IMPLIED
+weightedRmsX  CDATA #IMPLIED
+weightedRmsY  CDATA #IMPLIED
+weightedRmsZ  CDATA #IMPLIED
+height        CDATA #IMPLIED
+error         CDATA #IMPLIED
+error2        CDATA #IMPLIED
+entries       CDATA #REQUIRED
+rms           CDATA #IMPLIED
+>
+
+<!--
+Instead of using UNDERFLOW/OVERFLOW strings to define underflow and 
+overflow bins, the entities can be used.
+To discuss.
+-->
+<!ENTITY UNDERFLOW "-2">
+<!ENTITY OVERFLOW "-1">
+ 
+<!--
+The tuple element is parent to a columns element and to a rows element; 
+alternatively, for merged tuples, the element can be parent to one or more tuple
+element specifying the path of the merged tuples.
+The attributes of tuple are the title, the name, the path and the options.
+They are all optional.
+-->
+<!ELEMENT tuple ((annotation?),((columns, rows)|(tuple)+))> 
+<!ATTLIST tuple
+name       CDATA #REQUIRED
+title      CDATA #IMPLIED
+path       CDATA #IMPLIED
+options    CDATA #IMPLIED
+>
+
+<!--
+The columns element is parent to column elements.
+It has no attributes
+-->
+<!ELEMENT columns (column+) >
+
+<!--
+The column element could contains more columns elements. Its arguments are the
+column's name and the column's type.
+-->
+<!ELEMENT column (columns*)>
+<!ATTLIST column
+name CDATA #REQUIRED
+type CDATA "double"
+>
+
+<!--
+The rows element is parent to row elements.
+It has no attributes
+-->
+<!ELEMENT rows (row)* >
+
+<!--
+The row element is parent to entry and entryITuple elements.
+It has no attributes
+-->
+<!ELEMENT row (entry|entryITuple)* >
+
+<!--
+The entry element is empty.
+Its attribute is the row's value
+-->
+<!ELEMENT entry EMPTY >
+<!ATTLIST entry
+value   CDATA #REQUIRED
+>
+
+<!--
+The entryITuple element contains row elements.
+It has no attributes.
+-->
+<!ELEMENT entryITuple (row*)>
+
+<!--
+The cloud1d element is parent either to a entries1d element or to a histogram1d element.
+The attributes of a cloud1d are the name, the title and maxEntries.
+The path, options, lowerEdgeX and upperEdgeX are optional.
+-->
+<!ELEMENT cloud1d ((annotation?),(entries1d|histogram1d))>
+<!ATTLIST cloud1d
+name       CDATA #REQUIRED
+maxEntries CDATA #REQUIRED
+title      CDATA #IMPLIED
+path       CDATA #IMPLIED
+options    CDATA #IMPLIED
+lowerEdgeX CDATA #IMPLIED
+upperEdgeX CDATA #IMPLIED
+conversionBins      CDATA #IMPLIED
+conversionLowerEdge CDATA #IMPLIED
+conversionUpperEdge CDATA #IMPLIED
+>
+
+<!--
+The cloud2d element is parent either to a entries2d element or to a histogram2d element.
+The attributes of a cloud2d are the name, the title and maxEntries.
+The path, options, lowerEdgeX, upperEdgeX, lowerEdgeY and upperEdgeY are optional.
+-->
+<!ELEMENT cloud2d ((annotation?),(entries2d|histogram2d))>
+<!ATTLIST cloud2d
+name       CDATA #REQUIRED
+maxEntries CDATA #REQUIRED
+title      CDATA #IMPLIED
+path       CDATA #IMPLIED
+options    CDATA #IMPLIED
+lowerEdgeX CDATA #IMPLIED
+upperEdgeX CDATA #IMPLIED
+lowerEdgeY CDATA #IMPLIED
+upperEdgeY CDATA #IMPLIED
+conversionBinsX      CDATA #IMPLIED
+conversionLowerEdgeX CDATA #IMPLIED
+conversionUpperEdgeX CDATA #IMPLIED
+conversionBinsY      CDATA #IMPLIED
+conversionLowerEdgeY CDATA #IMPLIED
+conversionUpperEdgeY CDATA #IMPLIED
+>
+
+<!--
+The cloud3d element is parent either to a entries3d element or to a histogram3d element.
+The attributes of a cloud3d are the name, the title and maxEntries.
+The path, options, lowerEdgeX, upperEdgeX, lowerEdgeY, upperEdgeY, lowerEdgeZ, and upperEdgeZ are optional.
+-->
+<!ELEMENT cloud3d ((annotation?),(entries3d|histogram3d))>
+<!ATTLIST cloud3d
+name       CDATA #REQUIRED
+maxEntries CDATA #REQUIRED
+title      CDATA #IMPLIED
+path       CDATA #IMPLIED
+options    CDATA #IMPLIED
+lowerEdgeX CDATA #IMPLIED
+upperEdgeX CDATA #IMPLIED
+lowerEdgeY CDATA #IMPLIED
+upperEdgeY CDATA #IMPLIED
+lowerEdgeZ CDATA #IMPLIED
+upperEdgeZ CDATA #IMPLIED
+conversionBinsX      CDATA #IMPLIED
+conversionLowerEdgeX CDATA #IMPLIED
+conversionUpperEdgeX CDATA #IMPLIED
+conversionBinsY      CDATA #IMPLIED
+conversionLowerEdgeY CDATA #IMPLIED
+conversionUpperEdgeY CDATA #IMPLIED
+conversionBinsZ      CDATA #IMPLIED
+conversionLowerEdgeZ CDATA #IMPLIED
+conversionUpperEdgeZ CDATA #IMPLIED
+>
+
+<!--
+The entries1d element is parent to entry1d elements.
+It has no attributes
+-->
+<!ELEMENT entries1d (entry1d*) >
+
+<!--
+The entries2d element is parent to entry2d elements.
+It has no attributes
+-->
+<!ELEMENT entries2d (entry2d*) >
+
+<!--
+The entries3d element is parent to entry3d elements.
+It has no attributes
+-->
+<!ELEMENT entries3d (entry3d*) >
+<!--
+The entry1d element is EMPTY.
+The attribute of an entry1d is the valueX and an optional weight
+-->
+<!ELEMENT entry1d EMPTY >
+<!ATTLIST entry1d
+valueX     CDATA #REQUIRED
+weight     CDATA #IMPLIED
+>
+
+<!--
+The entry2d element is EMPTY.
+The attribute of an entry2d is the valueX, the valueY and an optional weight
+-->
+<!ELEMENT entry2d EMPTY >
+<!ATTLIST entry2d
+valueX     CDATA #REQUIRED
+valueY     CDATA #REQUIRED
+weight     CDATA #IMPLIED
+>
+
+<!--
+The entry3d element is EMPTY.
+The attribute of an entry3d is the valueX, the valueY, the valueZ and an optional weight
+-->
+<!ELEMENT entry3d EMPTY >
+<!ATTLIST entry3d
+valueX     CDATA #REQUIRED
+valueY     CDATA #REQUIRED
+valueZ     CDATA #REQUIRED
+weight     CDATA #IMPLIED
+>
+
+<!-- 
+The profile1d element is parent to one axis, a statistics and a data1d
+element which contain all of the available information pertaining to 1d 
+histograms. The axis elements should always be listed as the first child element of 
+profile1d in the xml file so that the number of bins and bounds can be
+determined before the bin data is parsed. The profile1d element has 
+the path and profile name as its attributes. 
+-->
+<!ELEMENT profile1d ((annotation?),axis, statistics, data1d)>
+<!ATTLIST profile1d
+name  CDATA #REQUIRED
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+options CDATA #IMPLIED
+>
+
+<!-- 
+The profile2d element is parent to two axis, a statistics and a data2d
+element which contain all of the available information pertaining to 2d 
+histograms. The two axis elements should always be listed as the first child element of 
+profile2d in the xml file so that the number of bins and bounds can be
+determined before the bin data is parsed. The profile2d element has 
+the path and profile name as its attributes. 
+-->
+<!ELEMENT profile2d ((annotation?),(axis,axis), statistics, data2d)>
+<!ATTLIST profile2d
+name  CDATA #REQUIRED
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+options CDATA #IMPLIED
+> 
+
+<!-- 
+The dataPointSet element is parent to dataPoints, none if it is empty.
+The dataPointSet element has the name, the path and the title as its attributes. 
+-->
+<!ELEMENT dataPointSet ((annotation?),(dataPoint*))>
+<!ATTLIST dataPointSet
+name  CDATA #REQUIRED
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+dimension CDATA #REQUIRED
+> 
+
+<!-- 
+The dataPoint element is parent to at least one measurement.
+It has no attributes. 
+-->
+<!ELEMENT dataPoint (measurement+)>
+
+<!-- 
+The measurement element is EMPTY.
+Its attributes are the value, the errorPlus and the errorMinus. If the
+errorMinus is not present it is taken to be equal to the errorPlus.
+-->
+<!ELEMENT measurement EMPTY>
+<!ATTLIST measurement
+value  CDATA #REQUIRED
+errorPlus CDATA #IMPLIED
+errorMinus CDATA #IMPLIED
+> 
+
+
+<!-- 
+The annotation element contains zero or more item elements.
+It does not have any attributes.
+-->
+<!ELEMENT annotation (item*)>
+
+
+<!-- 
+The item element is empty. Its attributes are
+the name, the value and the sticky flag.
+-->
+<!ELEMENT item EMPTY>
+<!ATTLIST item
+key CDATA #REQUIRED
+value CDATA #REQUIRED
+sticky CDATA "false"
+>
+
+
+<!--
+The function element is parent to annotation, codelet, arguments and parameters.
+It has attributes: name, title, path, codelet and isNormalized 
+-->
+<!ELEMENT function ((annotation?), codelet, arguments, parameters)>
+<!ATTLIST function
+name  CDATA #REQUIRED 
+title CDATA #IMPLIED
+path  CDATA #IMPLIED
+isNormalized CDATA "false"
+>
+
+<!ELEMENT codelet (#PCDATA)>
+<!--
+The arguments element contains zero or more argument elements
+-->
+<!ELEMENT arguments (argument*)>
+
+<!--
+The argument element is parent to range element and has name attribute
+-->
+<!ELEMENT argument (range*)>
+<!ATTLIST argument
+name  CDATA #REQUIRED 
+>
+
+<!ELEMENT range EMPTY>
+<!ATTLIST range
+min CDATA #IMPLIED
+max CDATA #IMPLIED
+>
+
+<!--
+The parameters element contains zero or more parameter elements
+-->
+<!ELEMENT parameters (parameter*)>
+
+<!--
+The parameter element has name, value, min and max attributes
+-->
+<!ELEMENT parameter EMPTY>
+<!ATTLIST parameter
+name  CDATA #REQUIRED
+value CDATA #REQUIRED
+>

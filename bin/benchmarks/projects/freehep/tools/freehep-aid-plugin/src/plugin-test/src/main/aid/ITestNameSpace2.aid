@@ -1,0 +1,13 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test.dev;
+
+/**
+ * TestInterface to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+interface ITestNameSpace2 extends ITestNameSpace {
+
+}
+

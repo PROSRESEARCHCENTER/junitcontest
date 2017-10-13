@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<heprep xmlns="http://java.freehep.org/schemas/heprep/2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.freehep.org/schemas/heprep/2.0 http://java.freehep.org/schemas/heprep/2.0/HepRep.xsd">
+
+    <layer order="Geometry"/>
+        
+    <typetree name="Types">
+        <type name="TextType">
+            <attvalue name="layer" value="Geometry" />
+            <attvalue name="drawAs" value="Text" />
+            <attvalue name="HPos" value="0.9" />
+            <attvalue name="VPos" value="0.1" />
+        </type>
+        <type name="CylinderType">
+            <attvalue name="layer" value="Geometry" />
+            <attvalue name="fontHasBanner" value="true" />
+            <attvalue name="hasFrame" value="true" />
+            <attvalue name="drawAs" value="Cylinder" />
+            <attvalue name="radius" value="40" />
+        </type>
+    </typetree>
+
+    <instancetree name="TestCylinder" typetreename="Types">
+        <instance type="TextType">
+            <attvalue name="Text" value="Cylinder" />
+        </instance>
+        <instance type="CylinderType">
+            <attvalue name="Color" value="cyan" />
+            <attvalue name="label" value="x-axis" showlabel="NAME" />
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="80.0" y="0.0" z="0.0" />
+        </instance>
+        <instance type="CylinderType">
+            <attvalue name="Color" value="orange" />
+            <attvalue name="label" value="y-axis" showlabel="NAME" />
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="80.0" z="0.0" />
+        </instance>
+        <instance type="CylinderType">
+            <attvalue name="Color" value="green" />
+            <attvalue name="label" value="z-axis" showlabel="NAME" />
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="80.0" />
+        </instance>
+        
+        <instance type="CylinderType">
+            <point x="200.0" y="200.0" z="200.0">
+                <attvalue name="Phi" value="0.0" showlabel="NAME" />
+                <attvalue name="radius" value="50" />
+            </point>
+            <point x="280" y="280" z="280">
+                <attvalue name="Phi" value="0.0" showlabel="NAME" />
+                <attvalue name="radius" value="50" />
+            </point>            
+        </instance>
+    </instancetree>
+
+</heprep>

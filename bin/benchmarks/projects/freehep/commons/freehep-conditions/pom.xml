@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <artifactId>global</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>20.7</version>
+    <relativePath />
+  </parent>
+
+  <groupId>org.freehep</groupId>
+  <artifactId>freehep-conditions</artifactId>
+  <version>2.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>FreeHEP Conditions Framework</name>
+  <url>http://java.freehep.org/</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <javaVersion>1.7</javaVersion>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>freehep-maven2-public</id>
+      <name>Maven FreeHEP</name>
+      <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <site>
+      <id>freehep-site</id>
+      <name>FreeHep Maven2 centreal site repository</name>
+      <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-conditions</url>
+    </site>
+  </distributionManagement>
+
+  <scm>
+    <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/commons/freehep-conditions</url>
+    <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/commons/freehep-conditions</connection>
+    <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/commons/freehep-conditions</developerConnection>
+  </scm>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.28</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+            <source>${javaVersion}</source>
+            <target>${javaVersion}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.9.1</version>
+          <configuration>
+            <show>public</show>
+            <source>${javaVersion}</source>
+          </configuration>
+        </plugin>        
+      </plugins>
+    </pluginManagement>
+    
+  </build>
+  
+</project>

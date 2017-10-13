@@ -1,0 +1,143 @@
+	---
+FreeHEP Application Framework
+	---
+	---
+Mark Donszelmann
+	---
+	
+Introduction	
+
+	The {{{../../} FreeHEP}} application framework provides a set of framework classes for
+building applications. The framework is organized into 4 layers, each building
+on the layer below.
+
+  [[1]] Application - A framework for general purpose GUI applications.
+  
+  [[2]] MDIApplication - extends Application to provide support for 
+    "MDI style" applications.
+  
+  [[3]] Studio - Extends MDIApplication to provide support for plugins, which can
+    be dynamically loaded and extend the functionality of the application.
+  
+  [[4]] Data Studio - Extends the functionality of studio to provide support for
+    data analysis specific functionality, including Data Interface Modules's.
+	
+  []
+
+	The entire package is still under development and should not be considered
+stable.
+
+* Application
+
+	The Application package ({{{./apidocs/org/freehep/application/package-summary.html}org.freehep.application}}) provides the following
+capabilities. In many cases the individual functions are provided by other parts
+of the freehep library, but the application package brings these capabilities
+all together in one place. The application package makes some assumptions about
+the application design, but provides many ways in which it can be customized.
+
+  * Setting of properties via an "application properties" file
+  
+  * Maintenance of user preferences between sessions using a "user
+    properties" file.
+
+  * A services package which provides for writing applications which can run
+    as standalone applications, trusted JNLP applications, or untrusted JNLP
+    applications.
+  
+  * Use of XML to define menus and toolbars
+  
+  * Use of a command manager for dispatching commands to command targets.
+  
+  * Command line parsing
+  
+  * About dialog
+  
+  * Print Preview capabilities
+
+  * Recent File menu(s) maintained between sessions
+  
+  * Reporting of errors to the user.
+  
+  * JDK compatibility testing.
+  
+  * Dynamic Look and Feel switching and persistency between sessions
+  
+  * Window size and position maintained between sessions
+  
+  * Splash Screen
+
+  * Status bar with message area and progress meter - including support for
+    canceling time consuming operations.
+  
+  * Help system using JavaHelp
+
+  []
+	
+	As an alternative to customization by overriding methods, much of the
+application functionality can be controlled using the application property file.
+
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| <<Property>>              | <<Purpose>>                  | <<Default>>                | <<User overide>> | <<Legal values>>
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| version                   | Version #                    | 1.0                        | no               | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| fullVersion               | Version description          | {title} {version}          | no               | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| confirmQuit               | Ask before quit?             | maybe                      | yes              | never \| maybe \| always
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| confirmQuitMessage        | Confirm quit message         | Do youreally wantto quit?  | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| confirmQuitTitle          | Title for confirm quit dialog| Confirm Quit               | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| showSplash                | Should splash screen appear at startup | true             | yes              | true \| false
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| splashTitle               | Title for splash screen      | {title}                    | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| splashImage               | Image for splash screen      | {aboutImage}               | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| numberOfInitializationStages | Automatically set after first application invokation | 10 | yes           | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| lookAndFeel               | Look and Feel                | System                     | yes              | System \| Java \| <name>
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| title                     | Application title            | {appName}                  | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| icon                      | Application icon             | null                       | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| topLevelToolBar           | Name of default tool bar in XML file | null               | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| topLevelMenuBar           | Name of default menu bar in XML file | null               | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| topLevelPopupMenu         | Name of default popup menu in XML file | null             | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| showToolBar               | Is tool bar visible          | true                       | yes              | true \| false
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| showStatusBar             | Is status bar visible        | true                       | yes              | true \| false
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| window                    | Position/size of top level window |                       | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| SAXParser                 | Class for XML parser         | org.apache.xerces.parsers.SAXParser | yes     | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+| menuXML                   | Name of XML file which defines menus | {appName}.menus    | yes              | 
+*---------------------------+------------------------------+----------------------------+------------------+--------------------------+
+Application Properties
+
+	For a demonstration of the application framework see the {{{http://java.freehep.org/../../freehep-iconbrowser/latestRelease/}IconBrowser}}
+demo.
+
+
+* MDI Application
+
+	The MDI application package ({{{./apidocs/org/freehep/application/mdi/package-summary.html}org.freehep.application.mdi}})
+provides support for:
+
+  * pages, control(s) and console(s) areas.
+
+  * dynamic switching of page managers to allow pages to be organized as
+    tabbed panes, or as movable windows on a desktop.
+  * multiple toolbars.
+
+
+* Studio
+
+	While MDI applications are typically customized by subclassing, Studio
+applications are typically extended by the use of one or more plugins.

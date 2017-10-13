@@ -1,0 +1,10 @@
+    ---
+FreeHEP - Native Code
+    ---
+
+Native Code
+
+    We use the {{{http://duns.github.io/maven-nar-plugin/}freehep-nar-plugin}} to compile, test and deploy Native Archives
+    for usage by other modules on different platforms.
+    
+    

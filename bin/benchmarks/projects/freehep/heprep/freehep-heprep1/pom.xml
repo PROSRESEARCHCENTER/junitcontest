@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <artifactId>global</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>20.7</version>
+    <relativePath />
+  </parent>
+  
+  <groupId>org.freehep</groupId>
+  <artifactId>freehep-heprep1</artifactId>
+  <version>1.0.4-SNAPSHOT</version>
+
+  <name>HepRep1 Interfaces</name>  
+  <description>HEP Representables for Event Display.</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-heprep1</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/heprep/freehep-heprep1</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-heprep1</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-heprep1</developerConnection>
+    </scm>
+  
+  <build>
+    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-source-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <phase>never-to-be-reached-phase</phase>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/idl/*Factory.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-idlj-plugin</artifactId>
+        <version>2.0.2</version>
+        <executions>
+          <execution>
+            <id>HepRep-idl</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <oldImplBase>true</oldImplBase>
+              <source>HepRep.idl</source>
+              <pkgPrefixes>
+                <pkgPrefix>HepRep hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepAttDef hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepAttDefList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepAttName hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepAttNameList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepAttValue hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepAttValueList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepCut hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepCutList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepInstance hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepInstanceList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepPoint hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepPointList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepPrimitive hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepPrimitiveList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepType hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepTypeList hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepTypeInfo hep.graphics.heprep1.corba.idl</pkgPrefix>
+                <pkgPrefix>HepRepTypeInfoList hep.graphics.heprep1.corba.idl</pkgPrefix>
+              </pkgPrefixes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <profiles>
+    <profile>
+      <id>release-profile</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <inherited>true</inherited>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>2.2.1</version>
+            <executions>
+              <execution>
+                <id>attach-sources-no-fork</id>
+                <inherited>true</inherited>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  
+</project>

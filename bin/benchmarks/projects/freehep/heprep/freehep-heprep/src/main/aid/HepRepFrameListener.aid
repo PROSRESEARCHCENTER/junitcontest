@@ -1,0 +1,30 @@
+// Copyright 2004-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepFrameListener interface. The implementor is called back for changes in
+ * drawing in or out of the frame layer.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepFrameListener.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepFrameListener {
+
+    /**
+     * Constructor for the JHepRepFrameListener interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepFrameListener(HepRepFactory *factory, jobject obj);
+   
+    /**
+     * Called if we switch from a normal layer to a frame layer, and back.
+     *
+     * @param inFrame true if in a frame layer
+     */
+    void setFrameLayer(boolean inFrame);
+}

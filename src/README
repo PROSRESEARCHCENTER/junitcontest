@@ -1,0 +1,22 @@
+Requirements
+------------
+
+Maven: apt-get install maven
+
+Building the Contest tool
+-------------------------
+
+mvn package
+
+ output: benchmarktool/target/benchmarktool-1.0.0-shaded.jar
+replace: ../bin/lib/benchmarktool-1.0.0-shaded.jar
+
+Cleaning
+--------
+
+mvn clean
+
+Sample contest infrastructure PROTOCOL implementation
+-----------------------------------------------------
+
+At runtool/

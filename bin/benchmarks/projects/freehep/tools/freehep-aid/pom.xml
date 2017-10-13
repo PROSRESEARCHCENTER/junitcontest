@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>global</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>20.7</version>
+    <relativePath />
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.freehep</groupId>
+  <artifactId>freehep-aid</artifactId>
+  <packaging>jar</packaging>
+  <name>FreeHEP AID Compiler</name>
+  <version>2.0.2-SNAPSHOT</version>
+  <description>Compiler for Abstract Interface Definition files.</description>
+  <url>http://java.freehep.org/aid</url>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-aid</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/tools/freehep-aid</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/tools/freehep-aid</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/tools/freehep-aid</developerConnection>
+    </scm>
+
+    <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptor>src/descriptor.xml</descriptor>
+          <finalName>aid-${project.version}</finalName>
+          <outputDirectory />
+          <workDirectory>target/assembly/work</workDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>javacc-maven-plugin</artifactId>
+		<version>2.1</version>
+        <executions>
+          <execution>
+            <id>aid</id>
+            <goals>
+              <goal>javacc</goal>
+            </goals>
+            <configuration>
+              <packageName>org.freehep.aid.parser</packageName>
+              <javaUnicodeEscape>true</javaUnicodeEscape>
+              <isStatic>false</isStatic>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-nar-plugin</artifactId>
+        <version>2.0-alpha-10</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <touch file=".settings/org.eclipse.jdt.core.prefs" mkdirs="true" />
+                <propertyfile file=".settings/org.eclipse.jdt.core.prefs">
+                  <entry key="org.eclipse.jdt.core.compiler.problem.unusedPrivateMember" value="ignore" />
+                  <entry key="org.eclipse.jdt.core.compiler.problem.unusedImport" value="ignore" />
+                  <entry key="org.eclipse.jdt.core.compiler.problem.unusedLabel" value="ignore" />
+                  <entry key="org.eclipse.jdt.core.compiler.problem.unusedLocal" value="ignore" />
+                  <entry key="org.eclipse.jdt.core.compiler.problem.unusedParameter" value="ignore" />
+                </propertyfile>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant-nodeps</artifactId>
+            <version>1.6.5</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-io</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-util</artifactId>
+      <version>2.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-argv</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-rtti</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+  </dependencies>
+</project>

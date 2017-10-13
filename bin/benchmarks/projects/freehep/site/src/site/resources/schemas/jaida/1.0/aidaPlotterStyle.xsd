@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://java.freehep.org/schemas/jaida/1.0"
+            xmlns="http://java.freehep.org/schemas/jaida/1.0"
+            elementFormDefault="unqualified">
+
+   <xs:element name="aidaStyleAttribute" type="aidaStyleAttributeType"/>
+   
+    <xs:complexType name="aidaStyleAttributeType">
+       <xs:attribute name="attributeName"  type="xs:string" use="required"/>
+       <xs:attribute name="attributeValue" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+   <xs:element name="aidaStyle" type="aidaStyleType"/>
+ 
+   <xs:complexType name="aidaStyleType">
+      <xs:sequence>
+         <xs:element ref="aidaStyleAttribute" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="type" type="xs:string" use="required"/>
+   </xs:complexType>
+ 
+   <xs:element name="aidaPlotterStyle" type="aidaPlotterStyleType"/>
+ 
+   <xs:complexType name="aidaPlotterStyleType">
+      <xs:sequence>
+         <xs:element ref="aidaStyleAttribute" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="aidaStyle" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+ 
+</xs:schema>

@@ -1,0 +1,54 @@
+    ---
+FreeHEP - Compile, Test and Install
+    ---
+
+Compile, Test and Install
+
+    As of version 2.0 FreeHEP uses {{{http://maven.apache.org}Maven 2}} to handle compilation, 
+    packaging, releasing and building of the websites. 
+    In future it will also build the native parts of FreeHEP using maven.
+    FreeHEP also uses the binary (jar) dependency mechanism of maven to be able to do a partial build
+    of the library without downloading all the code, but just referring to downloaded jar files.
+    
+    If you checked out (part of) the source of FreeHEP you will need a copy of Maven 2 to be able to
+    compile it. 
+    
+    For instructions to install maven 2 refer to {{http://maven.apache.org}}.
+    
+    Maven 2 keeps all its meta-information in a Project Object Model file called pom.xml. This file lists
+    among others, the name, group and version of the artifact that will be produced, the dependencies on 
+    other modules and general settings. Pom files can inherit from eachother and FreeHEP uses this feature.
+    The individual libraries define specific information in their pom file, and inherit more general 
+    information from the pom file of the global lib they are part of. This pom file in turn inherits 
+    FreeHEP wide settings from the general pom.
+    
+    Pom files are published in the maven repository and can thus be found even if you only check out
+    a small submodule. 
+        
+* Installing the artifact of a module    
+    
+    The default target FreeHEP specifies is "install" which will compile, package and copy the artifacts
+    into your local maven repository (on your machine) by executing on of the following commands:
+    
++--
+mvn
+mvn install
++--
+    
+* Running Tests
+
+ 		Most modules will have unit and or integration tests, which run atomatically before install. 
+ 		The tests may be skipped using the command
+ 		
++--
+mvn -Dmaven.test.skip=true
++--
+
+		The result of the tests is normally written into some xml files for processing into the website
+		for publication. However if you want to see why a test fails and see the output on the screen you
+		should use
+		
++--
+mvn -Dsurefire.useFile=false
++--
+

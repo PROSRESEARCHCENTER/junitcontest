@@ -1,0 +1,369 @@
+	---
+FreeHEP ROOTIO
+	---
+	---
+Mark Donszelmann
+	---
+	
+Introduction
+
+* Contents
+ 
+  * {{{#Introduction}Introduction}}
+
+  * {{{#Reporting Bugs}Reporting Bugs}}
+
+  * {{{#Performance}Performance}}
+
+  * {{{#Demos}Demos}}
+
+  * {{{#Download}Download}}
+
+  * {{{#Root Object Browser}Root Object Browser}}
+
+  * {{{#Reading Root files in Java Analysis Studio}Reading Root files in Java Analysis Studio}}
+
+  * {{{#Using Root IO in your own Java Programs}Using Root IO in your own Java Programs}}
+
+  *  {{{#Links for More Information}Links}}
+  
+  []
+  
+  * See the {{{relnotes.html}release notes}} for the latest news and {{{relnotes.html}known bugs}}!
+  
+  * Talk presented at Fermilab - {{{http://jas.freehep.org/Writeup/root/RootJAS.htm} "Root IO for Java, and using JAS to analyze Root Files"}}
+
+
+* {Introduction}
+
+	The {{{apidocs/hep/io/root/package-summary.html}hep.io.root
+package}} contains a simple Java interface for reading Root files. The
+package is not designed to duplicate the functionality of Root, just to
+allow the data in root files to be read from Java. The package is valuable
+for data-centric classes, for which access to the data without the associated
+C++ classes is useful. Examples include viewing Root histograms from Java,
+accessing Root data from Java based event displays, and using Root files
+from Java based data analysis tools. Another potential use of the package
+is to access Root files from Java based scripting languages such as {{{http://www.jython.org/}Jython}},
+{{{http://www.beanshell.org/}Beanshell}}
+or {{{http://www-sop.inria.fr/koala/djava/}DynamicJava}}.
+
+	The package allows Java to read any Root file, including files containing
+user defined objects, by exploiting the {{{http://root.cern.ch/root/SchemaEvolution.html}StreamerInfo}}
+objects embedded in Root files. If you use the default Root streamer mechanism
+then the StreamerInfo objects are created by Root automatically. (If you
+write your own object streamer for Root then you must also provide a StreamerInfo
+object for your class, or the Java interface will not be able to read it).
+Since the StreamerInfo objects were extensively redesigned for Root 3.0,
+the current Java IO package can only read files created with Root 3.00/6
+or later.
+
+* {Reporting Bugs}
+
+	The Root IO format is quite complex, and there is little documentation
+on the internal format, so getting everything to work correctly takes quite
+a bit of trial and error. Since this is an early release it is quite likely
+that the package may have problems reading your particular Root files.
+If this happens please e-mail me, {{{mailto:tonyj@slac.stanford.edu}tonyj@slac.stanford.edu}},
+and if at all possible make your Root file available so that I can debug
+the problem. Once we have enough different Root files for testing the package
+should ultimately become very reliable.
+
+* {Performance}
+
+	In the interests of getting something available as quickly as possible,
+very little effort has been made to make the current release efficient.
+In particular in future releases of the hep.io.root package we will dynamically
+create root classes, and believe this will give several orders of magnitude
+gain in performance.
+
+* {Demos}
+
+	Several {{{http://java.freehep.org/demo/Root/}demos}} of the hep.io.root
+package are available.
+
+* {Download}
+
+	To use the Java package you only need to download a single file, 
+{{{http://jas.freehep.org/plugins/root/0.2.0/root.jar}root.jar}}
+(you may need to right-click and select <i>Save As</i> to prevent your
+browser trying to run the jar file instead when you click on the link).
+
+	This file contains:
+
+  * The basic root IO (hep.io.root) package
+
+  * A Root Object Browser, demo/debug application
+
+  * A Java "interface builder" for dynamically creating Java Interfaces for
+user defined objects in the file
+
+  * A Data Interface Module (DIM) for Java Analysis Studio (JAS)
+
+  []
+  
+	You can also build the root IO package yourself by downloading the source
+code, which is distributed as part of the {{{http://java.freehep.org}FreeHEP
+Java Library}}.
+
+* {Root Object Browser}
+
+	As an illustration of the use of the Java interface, we have built a sample
+application which is a simple Root Object Browser. It can be used to open
+any Root file and look at all the objects inside the file. If you already
+have Java 2 installed (JDK 1.3), you can {{{#Download}download}}
+the root.jar file containing the application, and run it using the command:
+
++--
+java -jar root.jar
++--
+
+	(on Windows you can just double-click on the root.jar file). A screen shot
+of the application is show below. The pane on the left shows the
+directory structure of the file. The object browser knows how to navigate
+directories (TDirectories), trees (TTrees and TBranches) and these will
+all be shown in the left pane. Clicking on any object in the left pane
+will cause the details of the object to be shown in the right pane. The
+right pane knows how to follow embedded pointers to other objects.
+
+[images/RootObjectBrowser.gif] Root Object Browser
+
+	It is a good idea to try out the Object Browser on any root file you
+are interested in using, before trying any of the examples below. If the
+Object Browser is not able to display your file correctly, then you have
+probably discovered a bug in the Java package, and should {{{#Reporting Bugs}report
+it}}. It is unlikely any of the following example programs will work
+if the object browser does not work.
+
+
+* {Reading Root files in Java Analysis Studio}
+
+	This is now covered in a {{{rootjas.html}separate document}}.
+
+* {Using Root IO in your own Java Programs}
+
+	Before running any of these examples make sure you have root.jar in your
+CLASSPATH, by typing something like:
+
++--
+set CLASSPATH=.;root.jar (windows)
++--
+
++--
+setenv CLASSPATH .:root.jar (unix, csh)
++--
+
+** Opening a Root file and Accessing a Histogram.
+
+	This example requires the file Example.root file, which you can download
+{{{ftp://ftp.slac.stanford.edu/software/jas/RootData/Example.root}here}}.
+
+	Root files can contain many objects, each referenced by a key (TKey).
+To access a particular object you must know its key. You can use the RootObjectBrowser
+described above to browse the contents of a file and discover what keys
+are contained in it. In this example we access the Histogram whose key
+is "mainHistogram":
+
++--
+import hep.io.root.*;
+import hep.io.root.interfaces.*;
+import java.io.IOException;
+
+public class RootTest
+{
+    public static void main(String[] argv) throws IOException
+    {
+        RootFileReader rfr = new RootFileReader("Example.root");
+        TKey key = rfr.getKey("mainHistogram");
+        TH1 histogram = (TH1) key.getObject();
+
+        double entries= histogram.getEntries();
+        System.out.println("entries="+entries);
+   }    
+}
++--
+
+	{{examples/RootTest.java}}
+
+	To compile and run this example just issue the commands:
+
++--
+javac RootTest.java
+java RootTest
++--
+
+	A {{{RootWithJAS.html}more interesting example}} which actually
+displays histograms is also available.
+
+** Reading User Defined Objects
+
+	This example requires that your have the file Moy.root file, which you
+can download {{{ftp://ftp.slac.stanford.edu/software/jas/RootData/Moy.root}here}}.
+
+	Before reading the file you must first use the Interface Builder to
+create the Java Interface for the user-defined objects contained in your
+file. To do
+this run the following command:
+
++--
+java hep.io.root.util.InterfaceBuilder Moy.root
++--
+
+	This should create a file hep/io/root/interfaces/Moyennes.java. (The sub-directories
+follow Java's normal convention of putting source files into subdirectories
+corresponding to the package). If you look inside the file created you
+will see that it looks like this:
+
++--
+package hep.io.root.interfaces;
+
+public interface Moyennes extends RootObject, TObject
+{
+	/**  */
+	int getSize();
+	/**  */
+	double[] getMoy();
+	/**  */
+	double[] getSig();
+	/**  */
+	int[] getNEntries();
+	/**  */
+	int getBid();
+
+	public final static int rootIOVersion=1;
+}
++--
+
+	{{examples/Moyennes.java}}
+
+	As you can see that the InterfaceBuilder has created an interface with
+accessor methods for each data member inside the user defined object (Moyennes
+in this case). Using this interface it is now easy to write a routine to
+access the objects from the file:
+
++--
+import hep.io.root.*;
+import hep.io.root.interfaces.*;
+import java.io.IOException;
+
+public class MoyTest
+{
+    public static void main(String[] argv) throws IOException
+    {
+        RootFileReader rfr = new RootFileReader("Moy.root");
+
+        TKey key = rfr.getKey("MeanPedBF_0");
+        Moyennes moy = (Moyennes) key.getObject();
+        
+        // Now we have the user define object we can call any method 
+        // we like.
+        int size = moy.getSize();
+        System.out.println("Size="+size);
+   } 
+}
++--
+
+	{{examples/MoyTest.java}}
+
+	You can compile and run this routine by typing:
++--
+javac MoyTest.java
+java MoyTest
++--
+
+** Reading Files Containing TTrees.
+
+	The following example shows how to read user-defined objects contained
+in a Root TTree. This example uses the file Event.root created by {{{http://root.cern.ch/root/html/examples/Event.C.html}this
+Root example}}. (You can download this file {{{ftp://ftp.slac.stanford.edu/software/jas/RootData/Event.root}here}},
+but it is 17MB, so maybe you should recreate it yourself using Root).
+
+	As before the first step is to create the Java Interfaces corresponding
+to the user defined objects. You do this by issuing the command:
+
++--
+java hep.io.root.util.InterfaceBuilder Event.root
++--
+
+	Now you can compile and run the following program:
+
++--
+import hep.io.root.*;
+import hep.io.root.interfaces.*;
+import java.io.IOException;
+import java.util.*;
+
+/**
+ * An example of how to read events from a Root file.
+ * @author  tonyj
+ * @version $Id: index.apt 8980 2006-09-14 23:37:36Z duns $
+ */
+public class EventTest 
+{
+    public static void main (String args[]) throws IOException
+    {
+        RootFileReader reader = new RootFileReader("Event.root");
+        TTree tree = (TTree) reader.get("T");
+        TBranch branch = tree.getBranch("event");
+        int n = branch.getNEntries();
+        System.out.println("nEntries="+n);
+        long start = System.currentTimeMillis(); 
+        for (int i=0; i<n; i++)
+        {
+            Event e = (Event) branch.getEntry(i);
+            List l = e.getTracks();
+            System.out.println("NTracks="+e.getNtrack()+" "+l.size());
+            Iterator it = l.iterator();
+            while (it.hasNext())
+            {
+               Track t = (Track) it.next();
+               double px = t.getPx();
+               //System.out.println("px="+px);
+            }
+        }
+        long stop = System.currentTimeMillis();
+        System.out.println("ms/event="+((stop-start)/n));
+    }
+}
++--
+
+	{{examples/EventTest.java}}
+
+	If you compare this program to the {{{http://root.cern.ch/root/html/examples/eventa.cxx.html}equivalent
+Root script}}, you will see that in the Java example it is not necessary
+to say in advance which branches of the tree should be read. This is because
+the hep.io.root package returns "Hollow Objects" for Event and Track,
+and the data is only fetched from the file as needed by calls to accessor
+methods (e.g. getXXX()) on these objects. This means Java gains the efficiency
+of only reading the required branches without the user having to explicitly
+list the branches. (The efficiency gains made possible are not fully realized
+in the current implementation, due to the early nature of this release,
+but in subsequent releases we expect the speed of this demo to increase
+dramatically).
+
+* {Links for More Information}}}
+
+
+  * The API documentation
+  
+    * {{{apidocs/hep/io/root/package-summary.html}hep.io.root package}}
+
+    * {{{apidocs/hep/io/root/interfaces/package-summary.html}hep.io.root.interfaces package}}
+
+    * {{{apidocs/hep/io/root/util/package-summary.html}hep.io.root.util package}}
+  
+    []
+
+  * {{{http://java.freehep.org/svn/repobrowser.svn?path=%2ffreehep%2ftrunk%2fhepio%2ffreehep-rootio%2fsrc%2fmain%2fjava%2fhep%2fio%2froot/&revision=HEAD}The Source code}}
+
+  * {{{http://root.cern.ch}The Root home page}}
+
+  * {{{http://jas.freehep.org}The JAS home page}}
+
+  []
+  
+	The Java interface to Root is part of the {{{http://java.freehep.org}FreeHEP Java library}}.
+
+===
+
+	{{{mailto:tonyj@slac.stanford.edu}Tony Johnson}} - Version: $Id: index.apt 8980 2006-09-14 23:37:36Z duns $

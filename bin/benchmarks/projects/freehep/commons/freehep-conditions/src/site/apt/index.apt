@@ -1,0 +1,173 @@
+	---
+FreeHEP Conditions Framework
+	---
+Tony Johnson, Dmitry Onoprienko
+	---
+	
+Introduction	
+
+  The framework allows retrieval of parameters describing data taking conditions: 
+  detector geometry, DAQ settings, calibration constants, etc. 
+
+  At the API level, no restrictions are placed on the type of conditions data and
+  no assumptions are made about how the data is stored or read. A generic implementation
+  is provided. The implementation supports some commonly used data structures as well as
+  custom objects. It also includes machinery for updating conditions and notifying users.
+  Data readers are provided for several frequently used types of storage and data formats. 
+
+Framework design
+
+* Packages
+
+    * <<org.freehep.conditions>>
+
+    Defines public API of the framework.
+
+    * <<org.freehep.conditions.base>>
+
+    Contains default implementation that can be used directly or as a base for customized 
+    project-specific implementations of the framework.
+
+    * <<org.freehep.conditions.readers>>
+
+    Provides classes that simplify retrieving data from specific types of storage. 
+    These readers are designed to work with the default implementation or its derivatives.
+
+    * <<org.freehep.conditions.util>>
+
+    This package and its sub-packages contain miscellaneous tools and utilities.
+
+    * <<org.freehep.conditions.demo>>
+
+    An example that demonstrates customizing the framework for a specific project and
+    using it to access conditions data.
+
+  See {{{./apidocs/index.html}API documentations}} for details on specific classes.
+
+
+* Using the framework
+
+  To access conditions data, the user will typically obtain an instance of <ConditionsManager>
+  either by calling <ConditionsManager.defaultInstance()> or in some other project-specific way.
+  Specific <Conditions> are identified by name can be obtained from the conditions manager by 
+  calling on of the following methods:
+
+  * <getRawConditions(String name)> - returns an instance of <RawConditions> that can be used to
+    read conditions data from a stream.
+
+  * <getConditions(String name)> - returns an instance of <ConditionsSet> that encapsulates a map
+    of string keys to values and tabular data.
+
+  * <getCachedConditions(Class type, String name)> - returns an instance of <CachedConditions> 
+    that wraps an arbitrary Java object.
+
+  []
+
+  Clients can register themselves on any <Conditions> object and get notified when that object changes.
+
+  
+* Note on error handling
+
+  <<org.freehep.conditions.ConditionsNotFoundException>> is thrown by <update(...)> methods 
+  in various classes to indicate that conditions data specified by an update triggering event could 
+  not be found. The fact that this exception has not been thrown in a call to <update(...)> 
+  does not guarantee that every existing Conditions object has been successfully updated. 
+  It is up to specific framework implementations to decide whether an issue encountered while 
+  updating is serious enough to inform the client immediately by throwing <ConditionsNotFoundException>. 
+  If a specific <Conditions> object has not been successfully updated, it will remain in 
+  invalid state until the next update, and any attempt to extract data from it will result in 
+  <ConditionsSetNotFoundException>. 
+
+  <<org.freehep.conditions.ConditionsSetNotFoundException>> is thrown by getters of <Conditions>
+  objects to indicate that the object has not been successfully updated and is currently invalid. 
+  It may also be thrown by <ConditionsManager>'s <getXXXConditions(name)> methods if it 
+  is immediately known that conditions with the specified name cannot exist.
+
+
+* Default implementation
+
+  The <org.freehep.conditions.base> package contains default implementation of the 
+  conditions framework. Besides implementing all types of conditions, the package provides
+  <DefaultConditionsManager> class that handles conditions retrieval, updates, and 
+  listener notification. <DefaultConditionsManager> delegates reading conditions data to classes
+  implementing <ConditionsReader> interface. This class is expected to be either configured
+  or subclassed in a project-specific application to customize its behavior and attach
+  one or more readers required to retrieve project-spacific conditions data
+  from storage. The <org.freehep.conditions.readers> package provides readers for several
+  commonly used storage types and formats as well as utilities that can be useful in
+  implementing custom readers.
+
+** Conditions and Listeners. 
+
+  Once any <Conditions> object is created by obtaining it from the <DefaultConditionsManager>, 
+  it remains registered with the manager and kept up to date until its <destroy()> method is called. 
+  Any <ConditionsListener>s registered on a <Conditions> object will be notified whenever 
+  that object changes. <ConditionsEvent> received by a listener will have the <Conditions> 
+  object that fired set as its source. Listeners registered on the <ConditionsManager> will 
+  be notified of possible changes to any <Conditions>, and the <ConditionsManager> will be 
+  the source of events they receive. If a listener is registered on multiple <Conditions>, 
+  it will receive multiple notifications. 
+
+** Accessing Conditions. 
+
+  When the <DefaultConditionsManager> receives request for <Conditions>, it first checks whether 
+  <Conditions> object with the given name and type already exists, and returns it if it does. 
+  If it does not, the manager selects one of the registered <ConditionsReaders> based on the 
+  conditions name prefix, and calls one of its <createXXX(...)> methods, supplying the 
+  appropriate <ConditionsConverter> if necessary. 
+
+  The prefix is the part of the name before the first occurrence of the ":" symbol if it 
+  matches one of the prefixes known to this <DefaultConditionsManager>; otherwise, the
+  prefix is an empty string; if an empty string is not a known prefix either,
+  <ConditionsInvalidException> is thrown.
+
+** Updating. 
+
+  Client code in the project-specific application triggers an update by calling one of 
+  the conditions manager's <update(...)> methods.
+  If the triggering event passes the filter set on the conditions manager, it is forwarded to
+  registered <ConditionsReader>s by calling their <update(ConditionsEvent)> methods. 
+  Readers should update themselves based on the data in the triggering event, and return true 
+  or false depending on whether or not the conditions they handle might have changed as a 
+  result of the update. The manager then goes through all <Conditions> object whose readers 
+  indicated a possibility of changes, and calls their <update(ConditionsEvent)> methods. 
+  <Conditions> update themselves (by forwarding the call to their <ConditionsReader>s 
+  unless they have already been updated, if the default implementation is used) and 
+  return true or false depending on whether or not they changed. Listeners of changed 
+  <Conditions> are notified by the conditions manager once all conditions have been updated.
+
+
+* Readers
+
+  Project-specific applications that use the default implementation of the conditions
+  framework can implement <ConditionsReader> from scratch, or use one of the adapters 
+  and readers provided by the <org.freehep.conditions.readers> package.
+  See {{{./apidocs/org/freehep/conditions/readers/package-summary.html}API documentations}} 
+  for details on specific readers. 
+
+** AbstractConditionsReader
+
+  General purpose adapter for implementing conditions readers. 
+  Provides generic machinery for creating and updating various types of <Conditions> objects,
+  as well as filtering update-triggering events.
+
+** URLConditionsReader
+
+  A reader that provides access to conditions data contained in archive files, directories, 
+  or classpath resources. It is also capable of reading data from arbitrary URLs.
+  The reader can be configured to cache remote archives for subsequent use.
+
+** DatabaseConditionsReader
+
+  A reader that reads conditions data from a relational database.
+  This class can be used directly or as an adapter for implementing specialized database readers.
+  It also provides utilities that can be used by <ConditionsConverter>s for fetching
+  data from databases.
+
+** SpecialDatabaseConditionsReader
+
+  A reader that provides additional functionality for working with databases
+  that have a specific structure. Such databases are currently employed by Fermi, EXO, and 
+  several other projects. See 
+  {{{https://confluence.slac.stanford.edu/display/exo/Calibration+Metadata+Database}the description of the EXO calibration database}}.
+

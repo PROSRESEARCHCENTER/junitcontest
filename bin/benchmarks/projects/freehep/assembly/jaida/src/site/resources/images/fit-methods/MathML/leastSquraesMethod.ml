@@ -1,0 +1,32 @@
+<math>
+  <mstyle fontsize="25">
+    <mrow>
+      <mtext>LS</mtext>
+      <mo>=</mo>
+      <munder>
+        <mi>&sum;</mi>
+        <mi>i</mi>
+      </munder>
+      <msup>
+        <mfenced>
+          <mrow>
+            <mi>f</mi>
+            <mfenced>
+              <msub>
+                <mi>x</mi>
+                <mi>i</mi>
+              </msub>
+            </mfenced>
+            <mi>-</mi>
+            <msub>
+              <mi>h</mi>
+              <mi>i</mi>
+            </msub>
+          </mrow>
+        </mfenced>
+        <mi>2</mi>
+      </msup>
+    </mrow>
+  </mstyle>
+</math>
+

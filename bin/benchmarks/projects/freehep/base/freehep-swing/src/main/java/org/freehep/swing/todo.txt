@@ -1,0 +1,3 @@
+TriState
+- tristates with icons seem to show no tickmark (problem in JDK?)
+- tristates do all use Metal L&F

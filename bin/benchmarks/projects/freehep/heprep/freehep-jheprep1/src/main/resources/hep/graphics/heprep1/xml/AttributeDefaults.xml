@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<heprep:heprep xmlns:heprep='http://java.freehep.org/schemas/heprep/1.0'
+               xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+               xsi:schemaLocation='http://java.freehep.org/schemas/heprep/1.0 http://java.freehep.org/schemas/heprep/1.0/HepRep.xsd'>
+
+    <heprep:attvalue name="DrawAs"              value="PolyPoint" />
+    <heprep:attvalue name="DrawAsOptions"       value="PolyPoint" />
+
+<!-- to be placed correctly ... -->
+    <heprep:attvalue name="Label"               value="" />
+    <heprep:attvalue name="Visibility"          value="True" />
+
+<!-- TextAtts -->
+    <heprep:attvalue name="FontName"            value="SansSerif" />
+    <heprep:attvalue name="FontStyle"           value="Plain" />
+    <heprep:attvalue name="FontSize"            value="12" />
+    <heprep:attvalue name="FontColor"           value="White" />
+    <heprep:attvalue name="FontHasFrame"        value="True" />
+    <heprep:attvalue name="FontFrameColor"      value="Black" />
+    <heprep:attvalue name="FontFrameWidth"      value="2" />
+    <heprep:attvalue name="FontHasBanner"       value="False" />
+    <heprep:attvalue name="FontBannerColor"     value="Black" />
+
+<!-- SinglePointAtts -->
+    <heprep:attvalue name="Layer"               value="100" />
+    <heprep:attvalue name="MarkName"            value="Dot" />
+    <heprep:attvalue name="MarkSize"            value="6" />
+    <heprep:attvalue name="MarkColor"           value="White" />
+    <heprep:attvalue name="MarkHasFrame"        value="True" />
+    <heprep:attvalue name="MarkFrameColor"      value="Black" />
+    <heprep:attvalue name="MarkFrameWidth"      value="2" />
+
+<!-- MultiPointsAtts -->
+    <heprep:attvalue name="LineColor"           value="White" />
+    <heprep:attvalue name="LineStyle"           value="Solid" />
+    <heprep:attvalue name="LineWidth"           value="2" />
+    <heprep:attvalue name="LineHasFrame"        value="True" />
+    <heprep:attvalue name="LineFrameColor"      value="Black" />
+    <heprep:attvalue name="LineFrameWidth"      value="2" />
+
+<!-- FillAtts -->
+    <heprep:attvalue name="FillColor"           value="White" />
+    <heprep:attvalue name="Fill"                value="False" />
+    
+<!-- SpecificAtts -->
+    <heprep:attvalue name="Radius"              value="6" />
+    <heprep:attvalue name="Phi"                 value="0" />
+    <heprep:attvalue name="Theta"               value="0" />
+    <heprep:attvalue name="Omega"               value="0" />
+    <heprep:attvalue name="Radius1"             value="5" />
+    <heprep:attvalue name="Phi1"                value="0" />
+    <heprep:attvalue name="Theta1"              value="0" />
+    <heprep:attvalue name="Radius2"             value="5" />
+    <heprep:attvalue name="Phi2"                value="0" />
+    <heprep:attvalue name="Theta2"              value="0" />
+    <heprep:attvalue name="Sum"                 value="5" />
+    <heprep:attvalue name="Sum1"                value="5" />
+    <heprep:attvalue name="Sum2"                value="5" />
+    <heprep:attvalue name="RadiusX"             value="5" />
+    <heprep:attvalue name="RadiusY"             value="5" />
+    <heprep:attvalue name="RadiusZ"             value="5" />
+    <heprep:attvalue name="Curvature"           value="0.02" />
+    <heprep:attvalue name="FlyLength"           value="10" />
+
+<!-- 2D TextAtts -->
+    <heprep:attvalue name="Text"                value="" />
+    <heprep:attvalue name="HPos"                value="1.0" />
+    <heprep:attvalue name="VPos"                value="0.5" />
+    <heprep:attvalue name="HAlign"              value="Center" />
+    <heprep:attvalue name="VAlign"              value="Bottom" />
+
+</heprep:heprep>

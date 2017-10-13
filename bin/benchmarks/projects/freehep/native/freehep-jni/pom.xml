@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+        <relativePath />
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <name>FreeHEP jni</name>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-jni</artifactId>
+    <version>2.1-SNAPSHOT</version>
+    <packaging>nar</packaging>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jni</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/native/freehep-jni</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/native/freehep-jni</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/native/freehep-jni</developerConnection>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-nar-plugin</artifactId>
+                <version>2.0-alpha-10</version>
+                <configuration>
+                    <libraries>
+                        <library>
+                            <type>static</type>
+                        </library>
+                    </libraries>
+                    <java>
+                        <include>true</include>
+                    </java>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.14.1</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

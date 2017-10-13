@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+        <relativePath />
+    </parent>
+
+    <groupId>org.freehep.commons</groupId>  
+    <artifactId>freehep-lang</artifactId>
+    <version>0.5-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>FreeHEP Commons Language Utils</name>
+    <url>http://java.freehep.org/</url>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 central site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-lang</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/commons/freehep-lang</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/commons/freehep-lang</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/commons/freehep-lang</developerConnection>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.squirrel-sql.thirdparty-non-maven</groupId>
+            <artifactId>java-cup</artifactId>
+            <version>0.11a</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>de.jflex</groupId>
+                <artifactId>maven-jflex-plugin</artifactId>
+                <version>1.4.3</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/generated-sources/flexcup</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                    </execution>
+                </executions>
+
+                <!-- Java CUP goal to generate parser -->
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>-cp</argument>
+                        <classpath>
+                            <dependency>net.sf.squirrel-sql.thirdparty-non-maven:java-cup</dependency>
+                        </classpath>
+                        <argument>java_cup.Main</argument>
+                        <argument>-package</argument>
+                        <argument>org.freehep.commons.lang.bool</argument>
+                        <argument>-destdir</argument>
+                        <argument>${project.build.directory}/generated-sources/flexcup/org/freehep/commons/lang/bool</argument>
+                        <argument>-parser</argument>
+                        <argument>Parser</argument>
+                        <argument>src/main/cup/parser.cup</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

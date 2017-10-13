@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.6</version>
+        <relativePath />
+    </parent>
+  
+    <artifactId>maven-plugins</artifactId>
+    <version>6.4-SNAPSHOT</version>
+    <packaging>pom</packaging>
+  
+    <name>FreeHEP Maven Plugins</name>
+    <description>FreeHEP Plugins for Maven 2</description>
+    <url>http://java.freehep.org/</url>
+   
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/maven-plugins-pom</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/maven-plugins</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/maven-plugins</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/maven-plugins</developerConnection>
+    </scm>
+  
+    
+
+    <modules>
+        <module>freehep-idlj-plugin</module>
+        <module>freehep-filter-plugin</module>
+        <module>freehep-jarjar-plugin</module>
+        <module>freehep-jas-plugin</module>
+        <!-- Build broken FIXME   <module>freehep-project-archetype</module>-->
+        <module>freehep-rmic-plugin</module>
+        <module>freehep-wbxml-plugin</module>
+    </modules>
+  
+
+</project>

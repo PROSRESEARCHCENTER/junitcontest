@@ -1,0 +1,86 @@
+    ------
+    Tab Tags
+
+Tab Tags
+
+    This set of tags allow to easily embed tabs in a web application. The rounded edges of the tabs are
+    created on the fly by a servlet so that it is very easy to customize the way the tabs look.
+    
+* Set up
+
+    The following steps are required to setup the tags and get started witht he first example:
+
+** Import the utilities
+
+    Import the FreeHEP Web Utils as described {{{index.html}here}}.
+
+** Add the Servlet
+
+    To add the servlet to your application add the following lines to your web.xml
+
++--------------------------+
+  <servlet>
+    <servlet-name>tabCornerServlet</servlet-name>
+    <servlet-class>org.freehep.webutil.tabs.servlet.TabCornerServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>tabCornerServlet</servlet-name>
+    <url-pattern>/tabCornerServlet.jsp</url-pattern>
+  </servlet-mapping>
++--------------------------+
+
+** Import the tags
+
+    Include the tags in any jsp page you want to use them by adding
+
++---------------------------+
+<%@taglib prefix="tab" uri="http://java.freehep.org/tabs-taglib" %>
++---------------------------+
+
+* Adding tabs
+
+    To add tabs to a JSP page include the following code:
+
++-----------------------------+
+    <tab:tabs name="myTabs">
+        <tab:tab name="foo" >Body of tab foo</tab:tab>
+        <tab:tab name="blah" >body of tab blah</tab:tab>
+    </tab:tabs>
++-----------------------------+
+
+    This should produce two tabs and a box displaying the text of the selected tab. For customizing the way the tabs
+    look, please refer to the {{{tlddoc/index.html}tld documentation}}.
+
+* Customizing the tabs
+
+    The default values of the tabs look and feel can be overwritten at the tabs tag level by setting the appropriate
+    attributes. This approach might be time consuming if a lot ot tabs are present in your application and global changes
+    are required. To overcome this problem it is possible to overwrite the tags defaults in the <WEB-INF/classes/freehepWebapp.properties>
+    file by setting one of the following properties:
+
+*------------------------------------------+
+| <<Name>>                                 |
+*------------------------------------------+
+| freehep.tabs.color          |
+*------------------------------------------+
+| freehep.tabs.bkgColor          |
+*------------------------------------------+
+| freehep.tabs.selectedColor          |
+*------------------------------------------+
+| freehep.tabs.position          |
+*------------------------------------------+
+| freehep.tabs.margin         |
+*------------------------------------------+
+| freehep.tabs.textstyle         |
+*------------------------------------------+
+| freehep.tabs.selectedtextstyle         |
+*------------------------------------------+
+| freehep.tabs.showline         |
+*------------------------------------------+
+| freehep.tabs.id         |
+*------------------------------------------+
+| freehep.tabs.usestylesheet         |
+*------------------------------------------+
+

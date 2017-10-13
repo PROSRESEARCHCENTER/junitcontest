@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<document>
+   <properties>
+      <title>Contributors</title>
+      <author email="dev@commons.apache.org">Commons Documentation Team</author>
+      <author email="dmitri@apache.org">Dmitri Plotnikov</author>
+      <revision>$Id: contributors.xml 560804 2007-07-29 20:14:22Z bayard $</revision>
+   </properties>
+
+   <body>
+      <section name="Contributors">
+         <p>
+            The original code of <em>JXPath</em> was developed by Dmitri Plotnikov of PLOTNIX, Inc and
+            contributed to Jakarta.
+         </p>
+         <p>
+            After the original contribution, the following volunteers have contributed code,
+            documentation, testing and support to <em>JXPath</em>.
+         </p>
+         <!-- alphabetical by last name please -->
+         <ul>
+            <li>Matt Benson</li>
+            <li>Craig R. McClanahan</li>
+            <li>Dmitri Plotnikov</li>
+         </ul>
+         <p>
+            Special thanks to <i>James Strachan</i>, whose help in
+            bringing JXPath to Apache cannot be overestimated.
+         </p>
+      </section>
+   </body>
+</document>

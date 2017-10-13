@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <description>
+        The AIDA Tag Library allows you to insert live plots into Java Server Pages (.jsp) files. 
+        The AIDA Tag Library is designed to work in containers supporting JSP 2.0.
+    </description>
+    <tlib-version>1.1</tlib-version>
+    <short-name>aida20</short-name>
+    <uri>http://aida.freehep.org/jsp20</uri>
+    <function>
+        <name>printPlotRegistry</name>
+        <function-class>hep.aida.web.taglib.util.PlotUtils</function-class>
+        <function-signature>java.lang.String printPlotRegistry(javax.servlet.http.HttpSession)</function-signature>
+    </function>
+    <function>
+        <name>clearPlotRegistry</name>
+        <function-class>hep.aida.web.taglib.util.PlotUtils</function-class>
+        <function-signature>void clearPlotRegistry(javax.servlet.http.HttpSession)</function-signature>
+    </function>
+    <function>
+        <name>statCompareAlgorithmNames</name>
+        <function-class>hep.aida.web.taglib.util.StyleUtils</function-class>
+        <function-signature>java.lang.String[] statCompareAlgorithmNames()</function-signature>
+    </function>
+    <function>
+        <name>createList</name>
+        <function-class>hep.aida.web.taglib.util.AidaTLDUtils</function-class>
+        <function-signature>java.util.List createList(java.util.SortedMap[], java.lang.String, boolean)</function-signature>
+    </function>
+    <function>
+        <name>sortList</name>
+        <function-class>hep.aida.web.taglib.util.AidaTLDUtils</function-class>
+        <function-signature>void sortList(java.util.List, boolean)</function-signature>
+    </function>
+    <function>
+        <name>objectName</name>
+        <function-class>hep.aida.web.taglib.util.AidaTLDUtils</function-class>
+        <function-signature>java.lang.String objectName(java.lang.Object)</function-signature>
+    </function>
+    <function>
+        <name>objectType</name>
+        <function-class>hep.aida.web.taglib.util.AidaTLDUtils</function-class>
+        <function-signature>java.lang.String objectType(java.lang.Object)</function-signature>
+    </function>
+    <tag>
+        <name>plotsetbar</name>
+            <description>
+                Creates a Navigation Bar to browse through the multiple plot pages.
+                Must be inside the plotSet tag
+            </description>
+        <tag-class>hep.aida.web.taglib.jsp20.PlotSetBarTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description>
+                The page to link the Navigation Bar to.
+            </description>
+            <name>url</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                The name of the variable where the current Navigation Bar links are stored.
+                Default is "href".
+            </description>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            Displays several plots on one plot page with a navigation bar.
+        </description>
+        <name>plotset</name>
+        <tag-class>hep.aida.web.taglib.jsp20.PlotSetTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description>
+                Objects to plot. Can be List, Array, single object, or
+                a String name of the variable that holds those objects.
+                It is required if "nplots" attribute is not set.
+            </description>
+            <name>plots</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>
+                The number of plots to browse.
+                It is required if "plots" attribute is not set.
+            </description>
+            <name>nplots</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>
+                the name of the variable that is going to keep the 
+                information about the current status of the PlotSetTag 
+                processing. Default is "status".
+            </description>
+            <name>statusvar</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The maximum number of plots in a page. Default is 9.</description>
+            <name>maxplots</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>
+                The id for the browsing when multiple plotSet tags are present in a page.
+            </description>
+            <name>id</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                The layout of the plot page. Must be in a form of "nHxnW",
+                "3x4" means 3 plots in Height direction, 4 plots in Width direction.
+            </description>
+            <name>layout</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        
+        <!-- same attributes as in "plotter" tag down from here -->
+        <attribute>
+            <description>
+                The width of the generated image, in pixels.
+                Default is 300/region.
+            </description>
+            <name>width</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>
+                The height of the generated image, in pixels.
+                Default is 200/region.
+            </description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>
+                The format of the generated image (pdf, svg, eps, swf, png, gif, or jpg).
+                Default is "png"
+            </description>
+            <name>format</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                Whether to display links below the generated image to 
+                allow downloading in other formats. Default is true
+            </description>
+            <name>allowDownload</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>
+                Controls if the image is mapped into clickable regions.
+                Default is false.
+            </description>
+            <name>createImageMap</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description>A top level tag which generates an image containing one or more plots.</description>
+        <name>plotter</name>
+        <tag-class>hep.aida.web.taglib.jsp20.PlotterTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description>The name of the generated image.</description>
+            <name>name</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The width of the generated image, in pixels</description>
+            <name>width</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>The height of the generated image, in pixels</description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>The number of horizontal cells in the region grid.</description>
+            <name>nx</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>The number of vertical cells in the region grid.</description>
+            <name>ny</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>The format of the generated image (pdf, svg, eps, swf, png, gif, or jpg).</description>
+            <name>format</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Whether to display links below the generated image to allow downloading in other formats.</description>
+            <name>allowDownload</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[Set the plotter to translate into an
+image. This can be an instance of hep.aida.IPlotter, or the name of a
+variable in a JSP scope holding an hep.aida.IPlotter. This is an
+optional attribute. The hep.aida.IPlotter generated by any nested
+region and plot tags will
+take precedence]]></description>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description>Controls if the image is mapped into regions</description>
+            <name>createImageMap</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description><![CDATA[A plot region within a plotter.]]></description>
+        <name>region</name>
+        <tag-class>hep.aida.web.taglib.jsp20.RegionTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description>Relative horizontal position of the region
+within the plotter (a number between 0 and 1).</description>
+            <name>x</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>double</type>
+        </attribute>
+        <attribute>
+            <description>Relative vertical position of the region
+within the plotter (a number between 0 and 1).</description>
+            <name>y</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>double</type>
+        </attribute>
+        <attribute>
+            <description>Relative width of the region within the
+plotter (a number between 0 and 1).</description>
+            <name>width</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>double</type>
+        </attribute>
+        <attribute>
+            <description>Relative height of the region within the
+plotter (a number between 0 and 1).</description>
+            <name>height</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>double</type>
+        </attribute>
+        <attribute>
+            <description>The number of horizontal cells spanned in the region grid.</description>
+            <name>rowSpan</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>The number of vertical cells spanned in the region grid.</description>
+            <name>colSpan</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>int</type>
+        </attribute>
+        <attribute>
+            <description>If the plotter has a clickable image map, this is the reference for the given region.</description>
+            <name>href</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The variable's scope.</description>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The region's title</description>
+            <name>title</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The region's output variable</description>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description><![CDATA[An individual plot within a
+region. A region may contain multiple plot tags, in which case the data
+corresponding to each plot tag will be overlaid in the region. 
+Each plot may contain a style tag; if style "type" attribute 
+is ommitted, default style type "data" is assumed. The only possible value for 
+explisit style type is "plotter", in such case the full IPlotterStyle is used.
+Such type arrangement is confusing and is kept for backward compatibility only;
+ will be changed in future releases.]]></description>
+        <name>plot</name>
+        <tag-class>hep.aida.web.taglib.jsp20.PlotTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description><![CDATA[Set the object to plot. This must
+either be an hep.aida.IManagedObject, or the name of a variable in a
+JSP scope holding an hep.aida.IManagedObject.]]></description>
+            <name>var</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description><![CDATA[The style tag is
+used to control plot styles (colors, labels, etc). A
+style tag can appear inside either
+plotter, region or
+plot tags, and can be arbitrarily nested. For
+example, a style element for an axis can occur
+inside a style element corresponding to a
+region.]]></description>
+        <name>style</name>
+        <tag-class>hep.aida.web.taglib.jsp20.StyleTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description><![CDATA[Only used when one style is nested
+within another. Legal values depend on the context where this tag is
+used. For example, a style tag inside a
+region tag can specify xAxis and yAxis. See the
+examples and AIDA documentation for more details.]]></description>
+            <name>type</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description><![CDATA[Used to set individual
+style elements, and must be nested inside
+style tags.]]></description>
+        <name>attribute</name>
+        <tag-class>hep.aida.web.taglib.jsp20.StyleAttributeTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description>The name of the parameter to set. Legal values
+depend on the context in which the tag is being used. Consult the AIDA
+documentation and examples for more details.</description>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The value to associate with the given value.</description>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+    </tag>
+    <tag>
+        <name>displaytree</name>
+        <tag-class>hep.aida.web.taglib.jsp20.DisplayTreeTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>storeName</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>rootVisible</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>rootLabel</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>showItemCount</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>showFolderHrefForNodesWithLeavesOnly</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>leafHref</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>folderHref</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description>A top level tag which provides read-only access any AIDA ITree.</description>
+        <name>tree</name>
+        <tag-class>hep.aida.web.taglib.jsp20.TreeTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <description>The AIDA store name.</description>
+            <name>storeName</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The AIDA store type.</description>
+            <name>storeType</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The AIDA store options.</description>
+            <name>options</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description><![CDATA[A tag to create tuples from the Database.]]></description>
+        <name>tuple</name>
+        <tag-class>hep.aida.web.taglib.jsp20.TupleTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+          <description>Name of the output variable.</description>
+          <name>var</name>
+          <required>true</required>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>Input Sql result query.</description>
+          <name>query</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[The scope to store the output variable. Can be
+one of "page", "request", "session" or "application". The default is
+"page".]]></description>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description><![CDATA[A tag to create projections from a tuple.]]></description>
+        <name>tupleProjection</name>
+        <tag-class>hep.aida.web.taglib.jsp20.TupleProjectionTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+          <description>Name of the output variable.</description>
+          <name>var</name>
+          <required>true</required>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>Name of the created projection.</description>
+          <name>name</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The tuple from which to project.</description>
+          <name>tuple</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>hep.aida.ITuple</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[The scope to store the output variable. Can be
+one of "page", "request", "session" or "application". The default is
+"page".]]></description>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The projection along x.</description>
+          <name>xprojection</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The projection along y.</description>
+          <name>yprojection</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The filter.</description>
+          <name>filter</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The bins along x.</description>
+          <name>xbins</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>int</type>
+        </attribute>
+        <attribute>
+          <description>The bins along y.</description>
+          <name>ybins</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>int</type>
+        </attribute>        
+        <attribute>
+          <description>The lower edge along x.</description>
+          <name>xmin</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>double</type>
+        </attribute>        
+        <attribute>
+          <description>The upper edge along x.</description>
+          <name>xmax</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>double</type>
+        </attribute>        
+        <attribute>
+          <description>The lower edge along y.</description>
+          <name>ymin</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>double</type>
+        </attribute>        
+        <attribute>
+          <description>The upper edge along y.</description>
+          <name>ymax</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>double</type>
+        </attribute>        
+   </tag>
+    <tag>
+        <description><![CDATA[A tag to create a data point set from a tuple.]]></description>
+        <name>datapointset</name>
+        <tag-class>hep.aida.web.taglib.jsp20.DataPointSetTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+          <description>Name of the output variable.</description>
+          <name>var</name>
+          <required>true</required>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The tuple from which to project.</description>
+          <name>tuple</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[The scope to store the output variable. Can be
+one of "page", "request", "session" or "application". The default is
+"page".]]></description>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The projection along x.</description>
+          <name>xaxisColumn</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The projection along y.</description>
+          <name>yaxisColumn</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The title of the DataPointSet.</description>
+          <name>title</name>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+   </tag>
+    <tag>
+        <description><![CDATA[A tag to close a tree.]]></description>
+        <name>closetree</name>
+        <tag-class>hep.aida.web.taglib.jsp20.CloseTreeTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+          <description>Name of the store to be closed.</description>
+          <name>storeName</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+   </tag>   
+    <tag>
+        <description><![CDATA[A tag to fetch objects from the tree.]]></description>
+        <name>objects</name>
+        <tag-class>hep.aida.web.taglib.jsp20.ManagedObjectsTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+          <description>Name of the output variable.</description>
+          <name>var</name>
+          <required>true</required>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description><![CDATA[The scope to store the output variable. Can be
+one of "page", "request", "session" or "application". The default is
+"page".]]></description>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>Name of the store from where to fetch objects.</description>
+          <name>storeName</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+          <description>The path of the objects to fetch.</description>
+          <name>path</name>
+          <required>true</required>
+          <rtexprvalue>true</rtexprvalue>
+          <type>java.lang.String</type>
+        </attribute>
+   </tag>
+    <tag>
+        <description>
+            Performs the statistical comparison
+            of two objects and prints the result. So far supported
+            objects are ICloud1D and IHistogram1D.
+        </description>
+        <name>statcompare</name>
+        <tag-class>hep.aida.web.taglib.jsp20.StatCompareTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>var1</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <name>var2</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Object</type>
+        </attribute>
+        <attribute>
+            <name>algorithm</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>options</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+                If set, the IComparisonResult will be added to the 
+                pageContext under that name
+            </description>
+            <name>resultVar</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>Whether to print anything on the page or not</description>
+            <name>verbose</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+     <tag>
+        <name>plotterStyleEditor</name>
+        <description>
+            Displays interactive form that allows to edit the plotter style.
+            Resulting object is saved in session scope under the name of "${var}"
+        </description>
+        <tag-class>hep.aida.web.taglib.jsp20.PlotterStyleEditorTagImpl</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>name</name>
+            <description>Name of the form that will be generated. Default is "plotterStyleEditorForm"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>action</name>
+            <description>action attribute for the form</description>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <description>Name of the variable to save the resulting object. Default is "plotterStyleEditorObject"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>background</name>
+            <description>Background color for the form. Default is "orange"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>selectorBackground</name>
+            <description>Background color for the selector. Default is "D0D0D0"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>selectorText</name>
+            <description>Text for the selector. Default is "Change Plot Style"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>showAlways</name>
+            <description>Disables show/hide feature. Default is "false"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>includeStatistics</name>
+            <description>Include or not Statistics box in the style form. Default is "true"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>includeLegend</name>
+            <description>Include or not Legend box in the style form. Default is "true"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>includeError</name>
+            <description>Include or not Errors box in the style form. Default is "true"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>includeMarker</name>
+            <description>Include or not Marker box in the style form. Default is "true"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>includeNormalization</name>
+            <description>Include or not plot Normalization box in the style form. Default is "true"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>includeComparison</name>
+            <description>Include or not plot Stat Comparison box in the style form. Default is "false"</description>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+   
+    <listener>
+        <listener-class>hep.aida.web.taglib.util.TreeUtils</listener-class>
+    </listener>
+</taglib>

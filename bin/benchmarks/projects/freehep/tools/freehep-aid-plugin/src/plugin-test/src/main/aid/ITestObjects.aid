@@ -1,0 +1,124 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestInterface to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestObjects.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestObjects extends AIDRef {
+
+    /**
+     * return string method
+     *
+     * @return name
+     */
+    String returnObject();
+
+    /**
+     * return string reference method
+     *
+     * @return name
+     */
+    String & returnReference();
+
+    /**
+     * return string pointer method
+     *
+     * @return name
+     */
+    String * returnPointer();
+
+    /**
+     * return Color method
+     *
+     * @return name
+     */
+    Color returnColor();
+
+    /**
+     * return const string reference method
+     *
+     * @return name
+     */
+    const String & returnConstReference();
+
+    /**
+     * return const string reference const method
+     *
+     * @return name
+     */
+    const String & returnConstReferenceConst() const;
+
+    /**
+     * return const string reference method throwing exceptions
+     *
+     * @throws IllegalArgumentException in case of argument error
+     * @throws IOException in case of IO error
+     * @return name
+     */
+    const String & returnConstReferenceThrows() throws IOException, IllegalArgumentException;
+
+    /**
+     * return const string reference const method throwing exceptions
+     *
+     * @throws IllegalArgumentException in case of argument error
+     * @return name of something
+     */
+    const String & returnConstReferenceConstThrows() const throws IllegalArgumentException;
+
+    /**
+     * Method with 1 parameter
+     *
+     * @param path path to find
+     * @return name
+     */
+    String * find(const String & path);
+
+    /**
+     * Method with 1 parameter
+     *
+     * @param path path to find
+     * @return name
+     */
+    ITestInterface * find(Color color);
+
+    /**
+     * Method with 1 default parameter
+     *
+     * @param path to change directory to
+     * @return true on succes
+     */
+    boolean cd(const String & path = "~");
+
+    /**
+     * Method with 3 default parameters and special init values
+     *
+     * @param path path to list
+     * @param recursive list files recursively
+     * @param os output stream to list file to
+     */
+    void ls(const String & path = ".", boolean recursive = false, OutputStream & os = stdout) const;
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir(const String & path) throws IllegalArgumentException;
+
+    /**
+     * Method with 2 parameters of which 1 default.
+     *
+     * @param oldPath old path for file
+     * @param newPath new path for file
+     */
+    void mv(const String & oldPath, const String & newPath = "dummy");
+
+}
+    

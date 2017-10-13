@@ -1,0 +1,44 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepAction interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepAction.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepAction {
+
+    /**
+     * Constructor for the JHepRepAction interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepAction(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Returns name of this action.
+     *
+     * @return name of this action.
+     */
+    String getName();
+
+    /**
+     * Returns expression associated with this action.
+     *
+     * @return expression of this action.
+     */
+    String getExpression();
+
+    /**
+     * Returns a deep copy of this action.
+     *
+     * @return copy of this action.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepAction* copy() throws CloneNotSupportedException;
+}

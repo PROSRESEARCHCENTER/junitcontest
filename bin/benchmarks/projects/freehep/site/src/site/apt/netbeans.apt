@@ -1,0 +1,10 @@
+    ---
+FreeHEP Use with NetBeans IDE
+    ---
+
+Use with NetBeans IDE
+
+	We use NetBeans together with Maven 2. You need to install the MevenIDE plugin in NetBeans for this to work.
+	The plugin is available from {{http://maven.apache.org/netbeans-module.html}}.
+	
+	

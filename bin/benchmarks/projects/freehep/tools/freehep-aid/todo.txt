@@ -1,0 +1,19 @@
+0.9.5
+- Added PythonClassGenerator
+
+todo
+- look for overloaded inherited methods, so not only in the current class but also in
+all superclasses. If found, then single method in current class becomes already overloaded.
+The dispatch method would replace final else clause with a call to its superclass (in order),
+catching illegal argument exceptions until the final superclass has been called.
+Order is depth first, left-to-right.
+
+- The order of the dispatch method is not equal to the order of the declaration of the methods.
+
+- Due to filtered methods, the comment of the resulting leftover method may not be the one of
+the first declared method.
+
+- List arguments which are empty will call the first found method, rather than generating 
+an ambiguous call exception, if there were overloaded methods.
+
+

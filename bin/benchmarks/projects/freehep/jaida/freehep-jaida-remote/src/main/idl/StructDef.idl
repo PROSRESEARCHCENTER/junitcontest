@@ -1,0 +1,132 @@
+#ifndef AIDA_STRUCTEDEF_IDL
+#define AIDA_STRUCTEDEF_IDL
+
+
+//
+// This is IDL spec for structures and typedef-s that are
+// used to access AIDA ITree remotely via CORBA.
+//
+
+module hep {
+  module aida {
+    module ref {
+      module remote {
+        module corba {
+          module generated {
+
+   typedef sequence<string> StringList;
+   typedef sequence<long> IntList;
+   typedef sequence<double> DoubleList;
+
+   enum Status {
+      Success,
+      PathDoesNotExist
+   };
+
+
+   // Specify what kind of change happened in ITree
+   enum EventID {
+      NODE_UPDATED,
+      NODE_ADDED,
+      NODE_DELETED
+   };
+
+   // Specify if IManagedObject or Directory has been changed
+   enum EventFlags {
+      OBJECT_MASK,
+      FOLDER_MASK
+   };
+
+   // EventStruct is passed to the TreeClient to notify it about changes in ITree
+   struct EventStruct {
+      EventID id;
+      string path;
+      string nodeType;
+      EventFlags flags;
+   };
+   typedef sequence<EventStruct> EventList;
+
+   struct AnnotationItem {
+      string key;
+      string value;
+      boolean sticky;
+   };
+   typedef sequence<AnnotationItem> Annotation;
+
+   struct Axis {
+      string direction;
+      double min;
+      double max;
+      long nBins;
+   };
+
+   struct Statistics {
+      string direction;
+      double mean;
+      double rms;
+      boolean skewness;
+   };
+   typedef sequence<Statistics> StatisticsList;
+
+   struct Bin1D {
+      long binNum;
+      double weightedMean;
+      double weightedRms;
+      double height;
+      double error;
+      double error2;
+      long entries;
+      double rms;
+   };
+   typedef sequence<Bin1D> Bin1DList;
+
+   struct HistInfo1D {
+      long entries;
+      long allEntries;
+      double equivalentBinEntries;
+      double maxBinHeight;
+      double minBinHeight;
+      double sumBinHeights;
+      double sumAllBinHeights;
+   };
+   //typedef sequence<HistInfo1D> HistInfo1DList;
+
+   struct Hist1DData {
+      string name;
+      Annotation annotation;
+      Axis axis;
+      Statistics statistics;
+      Bin1DList bins;
+      Bin1D underflowBin;
+      Bin1D  overflowBin;
+      HistInfo1D info;
+   };
+
+   struct MeasurementData {
+      double value;
+      double errorPlus;
+      double errorMinus;
+   };
+   typedef sequence<MeasurementData> MeasurementDataList;
+
+   struct DataPointData {   
+      long dimension;
+      MeasurementDataList measurements;
+   };
+   typedef sequence<DataPointData> DataPointDataList;
+
+   struct DataPointSetData {
+      string name;
+      long dimension;
+      Annotation annotation;
+      DataPointDataList points;
+   };
+
+          };
+        };
+      };
+    };
+  };
+};
+
+#endif

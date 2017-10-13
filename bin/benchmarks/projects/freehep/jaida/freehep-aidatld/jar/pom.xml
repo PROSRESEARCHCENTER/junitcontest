@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>freehep-jaidatld-pom</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>1.4.4-SNAPSHOT</version>
+    </parent>
+    
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-aidatld</artifactId>
+    <packaging>jar</packaging>
+    
+    <name>FreeHEP AIDATLD</name>
+    <description>AIDATLD Library JAR</description>
+    
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-aidatld-jar</url>
+        </site>
+    </distributionManagement>
+    
+    
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>jas-plotter</artifactId>
+            <version>2.2.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-webutil</artifactId>
+            <version>1.11.4</version>
+        </dependency>
+        <dependency>
+            <artifactId>freehep-graphicsbase</artifactId>
+            <groupId>org.freehep</groupId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jaida</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils-core</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE redirect PUBLIC "xxx" "http://java.freehep.org/schemas/redirect/1.0/RedirectData.dtd">
+
+<!--
+    Document   : RedirectData.xml
+    Created on : January 28, 2004, 2:46 PM
+    Author     : tonyj
+    Description:
+        Simple database for redirecting URL's.
+    
+        After modifying this file go to http://java.freehep.org/redirect?init to reload it.
+-->
+
+<redirect>
+  <project name="Java">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10012"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=index&amp;c=2:0_1:1_3:1&amp;rid=4"/>
+  </project>
+  <project name="VectorGraphics">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/IssueNavigator.jspa?reset=true&amp;mode=hide&amp;pid=10012&amp;sorter/order=ASC&amp;sorter/field=priority&amp;resolutionIds=-1&amp;component=10017"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=8&amp;rid=0"/>
+  </project>
+  <project name="PSViewer">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/IssueNavigator.jspa?reset=true&amp;mode=hide&amp;pid=10012&amp;sorter/order=ASC&amp;sorter/field=priority&amp;resolutionIds=-1&amp;component=10042"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=2&amp;rid=4"/>
+  </project>
+  <project name="AIDA">
+     <area name="bugs"        href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10014"/>
+     <area name="forum"       href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=4"/>
+     <area name="api"         href="http://aida.freehep.org/doc/v3.2.1/api/index.html"/>
+     <area name="manual"      href="http://aida.freehep.org/doc/v3.2.1/UsersGuide/"/>
+     <area name="mailingList" href="http://aida.freehep.org/mailing_list.thtml"/>
+  </project>
+  <project name="JAIDA">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10015"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=4"/>
+     <area name="changelog"   href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10015&amp;report=changelog"/>
+  </project>
+  <project name="AIDAJNI">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10016"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=4"/>
+  </project>
+  <project name="HEPREP">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10012"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=13&amp;rid=4"/>
+  </project>
+  <project name="CERNLIBAdapter">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10070"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=4"/>
+  </project>
+  <project name="WIRED">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10011"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=12&amp;rid=0"/>
+     <area name="changelog"   href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10011&amp;report=changelog"/>
+  </project>
+  <project name="NARPlugin">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10120"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=14&amp;rid=4"/>
+     <area name="changelog"   href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10120&amp;report=changelog"/>
+  </project>
+  
+  <project name="freehep-jminuit">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10100"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=4"/>
+     <area name="changelog"   href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10100&amp;report=changelog"/>
+  </project>
+
+  <project name="aidatld">
+     <area name="bugs"  href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10090"/>
+     <area name="forum" href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=6"/>
+  </project>
+</redirect>
+

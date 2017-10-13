@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<heprep:heprep xmlns:heprep='http://java.freehep.org/schemas/heprep/1.0'
+               xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+               xsi:schemaLocation='http://java.freehep.org/schemas/heprep/1.0 http://java.freehep.org/schemas/heprep/1.0/HepRep.xsd'>
+
+    <heprep:type name="TestPolygon">
+        <heprep:attvalue name="drawAs" value="Polygon" />
+        <heprep:instance>
+            <heprep:primitive>
+                <heprep:attvalue name="Fill" value="True"/>
+                <heprep:point x="0.0" y="0.0" z="0.0" />
+                <heprep:point x="1.0" y="5.0" z="2.0" />
+                <heprep:point x="2.0" y="3.0" z="4.0" />
+                <heprep:point x="3.0" y="1.0" z="2.0" />
+            </heprep:primitive>
+            <heprep:primitive>
+                <heprep:attvalue name="LineWidth" value="4"/>
+                <heprep:point x="10.0" y="10.0" z="10.0" />
+                <heprep:point x="11.0" y="15.0" z="12.0" />
+                <heprep:point x="12.0" y="13.0" z="14.0" />
+                <heprep:point x="13.0" y="11.0" z="12.0" />
+            </heprep:primitive>            
+            <heprep:primitive>
+                <heprep:attvalue name="LineStyle" value="Dashed"/>
+                <heprep:point x="-10.0" y="10.0" z="10.0" />
+                <heprep:point x="-11.0" y="15.0" z="12.0" />
+                <heprep:point x="-12.0" y="13.0" z="14.0" />
+                <heprep:point x="-13.0" y="11.0" z="12.0" />
+            </heprep:primitive>            
+        </heprep:instance>        
+    </heprep:type>
+
+</heprep:heprep>

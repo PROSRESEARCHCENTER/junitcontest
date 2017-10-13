@@ -1,0 +1,5 @@
+hep.aida.ref.xml.AidaXMLStoreFactory
+#hep.aida.ref.xml.AidaBackupXMLStoreFactory
+# FIXME, move to remote
+#hep.aida.ref.remote.corba.CorbaStoreFactory
+#hep.aida.ref.remote.rmi.client.RmiStoreFactory

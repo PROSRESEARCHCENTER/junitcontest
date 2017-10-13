@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE MenuSystem SYSTEM "http://java.freehep.org/schemas/menus/1.0/menus.dtd">
+<MenuSystem>
+   <MenuBar id="mainMenu">
+      <Menu name="File" mnemonic="F">
+         <Component type="default" name="Open File..." mnemonic="O" icon="/toolbarButtonGraphics/general/Open16.gif" description="Open an Image File" command="open">
+            <Accelerator shift="false" meta="false" key="VK_O" ctrl="true" alt="false"/>
+         </Component>
+         <Component type="default" name="Open URL..." mnemonic="U" description="Read an image from a URL" command="openURL">
+            <Accelerator shift="false" meta="false" key="VK_U" ctrl="true" alt="false"/>
+         </Component>
+         <Component type="default" name="Close" command="close"/>
+         <Separator/>
+         <Component type="default" name="Print" mnemonic="P" icon="/toolbarButtonGraphics/general/Print16.gif" command="print"/>
+         <Component type="default" name="Print Preview ..." mnemonic="R" icon="/toolbarButtonGraphics/general/PrintPreview16.gif" command="printPreview"/>
+         <Separator/>
+         <Component type="default" name="Exit" mnemonic="E" command="exit"/>
+      </Menu>
+      <Menu name="View" mnemonic="V">
+         <Component type="checkbox" name="Tool Bar" mnemonic="T" description="Show the application tool bar" command="showToolBar"/>
+         <Component type="checkbox" name="Status Bar" mnemonic="S" description="Show the application status bar" command="showStatusBar"/>
+         <Menu name="Look and Feel" mnemonic="L" class="org.freehep.application.LookAndFeelMenu"/>
+         <Separator/>
+         <Component type="default" name="Test Image" mnemonic="T" description="Load a test image" command="test">
+            <Accelerator shift="false" meta="false" key="VK_T" ctrl="true" alt="false"/>
+         </Component>
+      </Menu>
+      <Menu name="Help" mnemonic="H">
+         <Component type="default" name="About" mnemonic="A" icon="/toolbarButtonGraphics/general/About16.gif" command="about">
+            <Accelerator shift="false" meta="false" key="VK_F1" ctrl="false" alt="false"/>
+         </Component>
+      </Menu>
+   </MenuBar>
+   <ToolBar name="mainToolBar" id="mainToolBar">
+      <Component type="default" name="Open File..." mnemonic="O" icon="/toolbarButtonGraphics/general/Open16.gif" description="Open an image file" command="open"/>
+      <Separator/>
+      <Component type="default" name="Print" mnemonic="P" icon="/toolbarButtonGraphics/general/Print16.gif" command="print"/>
+      <Component type="default" name="Print Preview ..." mnemonic="R" icon="/toolbarButtonGraphics/general/PrintPreview16.gif" command="printPreview"/>
+      <Separator/>
+      <Component type="default" name="About" mnemonic="A" icon="/toolbarButtonGraphics/general/About16.gif" command="about"/>
+   </ToolBar>
+   <PopupMenu name="mainPopupMenu" id="mainPopupMenu">
+      <Component type="default" name="Open..." mnemonic="O" icon="/toolbarButtonGraphics/general/Open16.gif" description="Open an Image File" command="open"/>
+      <Component type="default" name="Close" command="close"/>
+      <Separator/>
+      <Component type="default" name="Exit" mnemonic="E" command="exit"/>
+   </PopupMenu>
+</MenuSystem>

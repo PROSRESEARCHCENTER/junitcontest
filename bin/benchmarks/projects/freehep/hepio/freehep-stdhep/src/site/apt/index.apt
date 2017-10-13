@@ -1,0 +1,28 @@
+	---
+FreeHEP STDHep
+	---
+	---
+Mark Donszelmann
+	---
+	
+Introduction
+
+        A pure Java implementation of the stdhep event 
+format.
+
+	Note, this package does not attempt to provide an OO abstraction for the 
+event data. It is stored and retrieved in a fashion very analogous to the 
+original stdhep common block (although without fixed size limitations).
+
+	This is a deliberate choice since:
+
+  [[1]] It does not introduce a dependency between this package and any 
+  particular event representation.
+  
+  [[2]] It gives maximum performance.
+  
+  []
+  
+  	The package has been designed to allow an OO event description to be 
+superimposed on it. See the package hep.io.stdhep.adapter for an example of a 
+mapping to/from the standard FreeHEP event representation.

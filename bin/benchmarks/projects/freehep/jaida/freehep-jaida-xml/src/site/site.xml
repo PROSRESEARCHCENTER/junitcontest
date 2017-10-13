@@ -1,0 +1,16 @@
+<project name="freehep">
+  <body>
+   
+    <menu name="(J)AIDA Binary XML">
+      <item name="Introduction" href="index.html"/>
+      <item name="Format Spec" href="Format.html"/>
+      <item name="Tag Table" href="AidaWBXMLTags.html"/>
+      <item name="Attributes Table" href="AidaWBXMLAttributes.html"/>
+    </menu>
+
+
+    ${reports}
+
+    
+  </body>
+</project>

@@ -1,0 +1,54 @@
+#tabs {
+    clear: both;
+    padding-left: 10px;
+    margin: 0;   
+    list-style: none;
+}
+
+#tabs li {
+    float: left;
+    background-image: url(images/tabs/tabtopright.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #00000;
+    margin: 0 3px 0 0;
+    padding: 0;
+}
+
+#tabs li a {
+    float: left;
+    display: block;
+    font-family: verdana, arial, sans-serif;
+    font-size : 70%;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    background-image: url(images/tabs/tabtopleft.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding: 5px 15px 4px;
+}
+
+#tabs > li a { width: auto; }
+
+#tabs .selected {
+    background-color: #AA0000;
+    background-image: url(images/tabs/selectedtabtopright.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+#tabs .selected a {
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: white;
+    background-image: url(images/tabs/selectedtabtopleft.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+ 
+#tabs li      { background-color: #FF9999 ;} 
+#tabs li a:link {  color: #0F3660;  }
+#tabs li a:visited { color: #0F3660; }
+#tabs li a:hover { color: #000066; }
+

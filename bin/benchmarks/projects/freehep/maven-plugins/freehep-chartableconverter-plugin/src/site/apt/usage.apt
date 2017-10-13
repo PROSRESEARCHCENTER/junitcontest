@@ -1,0 +1,41 @@
+	---
+FreeHEP Character Table Converter Plugin
+	---
+	---
+Mark Donszelmann
+	---
+	
+Usage
+
+	Add the following fragment to your pom file to execute the chartableconverter plugin as part of the
+the specified phase. Modify the Table.utf-16 file specified to your own file.
+
++--
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-chartableconverter-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Table</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <source>Table.utf-16</source>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <packageName>com.yourcompany</packageName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++--

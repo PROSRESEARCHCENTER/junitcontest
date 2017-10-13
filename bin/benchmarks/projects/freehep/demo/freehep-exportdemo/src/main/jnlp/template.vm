@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for Export Demo--> 
+<jnlp 
+  spec="1.0" 
+  codebase="http://java.freehep.org/freehep-exportdemo" 
+  href="$outputFile"
+  version ="2.0-SNAPSHOT">
+<!-- look into https://svn.codehaus.org/mojo/trunk/mojo/webstart-maven-plugin/plugin/src/test/projects/project2/src/main/jnlp/template.vm for examples --> 
+  <information> 
+    <title>Export Demo</title> 
+    <vendor>FreeHEP</vendor> 
+    <homepage href="freehep-exportdemo/index.html"/> 
+    <description>FreeHEP Export Demo</description> 
+    <description kind="short">A demonstration of the FreeHEP Export (Save As).</description>
+    <offline-allowed/> 
+  </information> 
+  <resources> 
+    <j2se version="1.4+"/>
+    $dependencies
+    <property name="jnlp.org.freehep.application.ServiceManager" value="org.freehep.application.services.jnlp.JNLPServiceManager"/>
+  </resources> 
+  <application-desc main-class="$mainClass"/> 
+</jnlp> 

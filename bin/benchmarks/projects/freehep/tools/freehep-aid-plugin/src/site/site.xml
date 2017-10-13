@@ -1,0 +1,14 @@
+<project name="freehep">
+
+    <bannerLeft>
+        <name>${project.name}</name>
+        <href>./</href>
+    </bannerLeft>
+
+
+    <body>
+
+
+    
+    </body>
+</project>

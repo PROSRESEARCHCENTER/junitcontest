@@ -1,0 +1,7 @@
+How-to
+------
+
+Copy the contest tools to a folder with write rights
+
+Execute the contest scripts (../bin/scripts) from the tool's root folder (where the runtool script resides)
+

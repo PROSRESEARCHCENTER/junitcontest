@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>jaida-pom</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>3.4.14-SNAPSHOT</version>
+  </parent>
+    
+  <artifactId>freehep-jaida</artifactId>
+    
+  <name>FreeHEP JAIDA</name>
+  <description>FreeHEP JAIDA Core</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jaida</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/jaida/freehep-jaida</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-jaida</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-jaida</developerConnection>
+    </scm>
+
+    <dependencies>
+    
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>jas-plotter</artifactId>
+      <version>2.2.9</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-application</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-argv</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-swing</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-xml</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>hep.aida</groupId>
+      <artifactId>aida</artifactId>
+      <version>3.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>hep.aida</groupId>
+      <artifactId>aida-dev</artifactId>
+      <version>3.3</version>
+    </dependency>
+    <dependency>
+      <groupId>hep.aida</groupId>
+      <artifactId>aida-test</artifactId>
+      <!-- re-add as test scope once we move aida diff out of the way 
+            <scope>test</scope>
+      -->
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida-xml</artifactId>
+      <version>3.4.14-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-math</groupId>
+      <artifactId>commons-math</artifactId>
+      <version>1.2</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.gnu</groupId>
+      <artifactId>jel</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.l2fprod</groupId>
+      <artifactId>l2fprod-common-all</artifactId>
+      <version>6.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>hep.optimization</groupId>
+      <artifactId>optimizers</artifactId>
+      <version>20020927</version>
+    </dependency>
+    <dependency>
+      <groupId>net.java.dev</groupId>
+      <artifactId>truezip</artifactId>
+      <version>6.6</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphics2d</artifactId>
+      <version>${graphics.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio</artifactId>
+      <version>${graphics.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsbase</artifactId>
+      <version>${graphics.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+  </dependencies>
+    
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.13</version>
+        <configuration>
+          <skip>true</skip>
+          <systemProperties>
+            <property>
+              <name>hep.aida.test.data.lizard.aida</name>
+              <value>
+                ${localRepository}/hep/testdata/aida/lizard/1.0/lizard-1.0.aida
+              </value>
+            </property>
+            <property>
+              <name>hep.aida.test.data.T01.aida</name>
+              <value>
+                ${localRepository}/hep/testdata/aida/T01/1.0/T01-1.0.aida
+              </value>
+            </property>
+            <property>
+              <name>hep.aida.test.output.dir</name>
+              <value>
+                ./target/testOutput/
+              </value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+    
+</project>

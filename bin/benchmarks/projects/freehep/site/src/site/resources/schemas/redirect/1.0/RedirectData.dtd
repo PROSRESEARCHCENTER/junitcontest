@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!ELEMENT area EMPTY>
+<!ATTLIST area
+    href CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+
+<!ELEMENT project (area)*>
+<!ATTLIST project
+    name CDATA #REQUIRED
+  >
+
+<!ELEMENT redirect (project)*>

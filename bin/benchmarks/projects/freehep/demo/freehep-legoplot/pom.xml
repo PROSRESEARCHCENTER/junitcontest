@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-legoplot</artifactId>
+    <name>FreeHEP Java 3D Lego Plot Demo</name>
+    <version>2.0.2-SNAPSHOT</version>
+    <description>FreeHEP Java 3D Lego Plot Demo</description>
+    <packaging>pom</packaging>
+    
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-legoplot</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/demo/freehep-legoplot</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/demo/freehep-legoplot</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/demo/freehep-legoplot</developerConnection>
+    </scm>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.4.1</version>
+                    <configuration>
+                        <goals>install site-deploy deploy</goals>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <defaultGoal>install webstart:jnlp-inline</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>webstart-maven-plugin</artifactId>
+                <version>1.0-beta-3</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jnlp-inline</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <excludeTransitive>false</excludeTransitive>
+                    <jnlp>
+                        <outputFile>LegoPlot.jnlp</outputFile>
+                        <mainClass>org.freehep.j3d.plot.demo.DemoGUI</mainClass>
+                    </jnlp>
+                    <verbose>true</verbose>
+                    <workDirectory>${project.reporting.outputDirectory}/${project.version}</workDirectory>
+                    <sign>
+                        <keystore>${jar.signing.keystore.location}</keystore>
+                        <alias>${jar.signing.alias}</alias>
+                        <storepass>${jar.signing.storepass}</storepass>
+                        <keypass>${jar.signing.keypass}</keypass>
+                    </sign>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-java3d</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
+</project>
+

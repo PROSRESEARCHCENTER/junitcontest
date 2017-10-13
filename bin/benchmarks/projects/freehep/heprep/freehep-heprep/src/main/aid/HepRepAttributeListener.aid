@@ -1,0 +1,94 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepAttributeListener interface. The implementor is called back for changes
+ * of attributes while using the HepRepIterator to iterate over all the HepRepInstances.
+ *
+ * All names are lowercased.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepAttributeListener.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepAttributeListener {
+
+    /**
+     * Constructor for the JHepRepAttributeListener interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepAttributeListener(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Called if attribute key changes its value.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the changed attribute.
+     * @param value value of the changed attribute.
+     * @param lowerCaseValue lower case value of the changed attribute.
+     * @param showLabel value of showLabel.
+     */
+    void setAttribute(HepRepInstance* instance, String key, String value, String lowerCaseValue, int showLabel);
+
+    /**
+     * Called if attribute key changes its value.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the changed attribute.
+     * @param value value of the changed attribute.
+     * @param showLabel value of showLabel.
+     */
+    void setAttribute(HepRepInstance* instance, String key, Color value, int showLabel);
+
+    /**
+     * Called if attribute key changes its value.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the changed attribute.
+     * @param value value of the changed attribute.
+     * @param showLabel value of showLabel.
+     */
+    void setAttribute(HepRepInstance* instance, String key, long value, int showLabel);
+
+    /**
+     * Called if attribute key changes its value.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the changed attribute.
+     * @param value value of the changed attribute.
+     * @param showLabel value of showLabel.
+     */
+    void setAttribute(HepRepInstance* instance, String key, int value, int showLabel);
+
+    /**
+     * Called if attribute key changes its value.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the changed attribute.
+     * @param value value of the changed attribute.
+     * @param showLabel value of showLabel.
+     */
+    void setAttribute(HepRepInstance* instance, String key, double value, int showLabel);
+
+    /**
+     * Called if attribute key changes its value.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the changed attribute.
+     * @param value value of the changed attribute.
+     * @param showLabel value of showLabel.
+     */
+    void setAttribute(HepRepInstance* instance, String key, boolean value, int showLabel);
+
+    /**
+     * Called if attribute key is removed from the attribute set.
+     *
+     * @param instance instance for which this attribute is set.
+     * @param key name of the removed attribute.
+     */
+    void removeAttribute(HepRepInstance* instance, String key);
+}

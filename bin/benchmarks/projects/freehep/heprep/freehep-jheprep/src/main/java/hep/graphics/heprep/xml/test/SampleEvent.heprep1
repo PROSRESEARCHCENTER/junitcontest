@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- DOCTYPE heprep SYSTEM "HepRep.dtd" -->
+<!-- $Id: SampleEvent.heprep1 8617 2006-08-16 07:39:12Z duns $ -->
+
+<heprep xmlns="http://java.freehep.org/schemas/heprep/2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.freehep.org/schemas/heprep/2.0 http://java.freehep.org/schemas/heprep/2.0/HepRep.xsd">
+
+    <layer order="Geometry"/>
+        
+    <typetree name="sample" version="1.0">
+        <type name="Event">
+            <attdef name="drawAs" desc="representation" category="Draw"/>
+
+            <attvalue name="no" value="0" type="int"/>
+
+            <type name="Track">
+                <attvalue name="drawAs" value="HelixSegment" type="String"/>
+            </type>
+            <type name="HitOnTrack">
+                <attvalue name="drawAs" value="Point" type="String"/>
+                <attvalue name="marker" value="Circle" type="String"/>
+            </type>
+            <type name="KalManPoint">
+                <attvalue name="drawAs" value="HelixSegment" type="String"/>
+            </type>
+            <type name="Cluster">
+                <attvalue name="drawAs" value="Point" type="String"/>
+                <attvalue name="marker" value="Box" type="String"/>
+            </type>
+            <type name="HitStrip">
+                <attvalue name="drawAs" value="Line" type="String"/>
+            </type>
+        </type>
+    </typetree>
+
+
+
+    <instancetree name="event" version="0001" typename="sample" typeversion="1.0">
+
+        <instance type="Track">
+            <attvalue name="no" value="5" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+
+            <instance type="HitOnTrack">
+                <attvalue name="no" value="6" type="int"/>
+                <point x="0.0" y="0.0" z="0.0" />
+            </instance>
+        </instance>
+
+        <instance type="KalManPoint">
+            <attvalue name="phi" value="10.98" type="double"/>
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+        <instance type="Cluster">
+            <attvalue name="no" value="12" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+        <instance type="HitStrip">
+            <attvalue name="no" value="324" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+    </instancetree>
+
+</heprep>

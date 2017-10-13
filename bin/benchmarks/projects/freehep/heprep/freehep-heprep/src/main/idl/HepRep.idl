@@ -1,0 +1,125 @@
+#ifndef HEPREP_IDL
+#define HEPREP_IDL
+
+//
+// To compile this IDL for java:
+//      jidl --package hep.graphics.heprep.corba.idl hep/graphics/heprep/HepRep.idl
+//
+// To compile this IDL for C++:
+//      idl hep/graphics/heprep/HepRep.idl
+//
+// Author: J.Perl
+// Author: M.Donszelmann
+//
+// $Id: HepRep.idl 8617 2006-08-16 07:39:12Z duns $
+//
+
+    // General
+    typedef sequence<string> StringArray;
+
+    // Attribute Definition
+    struct HepRepAttDef {
+        string name;
+        string desc;
+        string category;
+        string extra;
+    };
+    typedef sequence<HepRepAttDef> HepRepAttDefList;
+
+    // Attribute Value
+    struct HepRepAttValue {
+        string name;
+        any value;
+        long showLabel;
+    };
+    typedef sequence<HepRepAttValue> HepRepAttValueList;
+
+    // Point
+    struct HepRepPoint {
+        double x;
+        double y;
+        double z;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepPoint> HepRepPointList;
+
+    // Instance
+    struct HepRepInstance {
+        string typeName;
+          // The following would ideally be "HepRepInstanceList instances",
+          // but that sort of recursion doesn't work.
+        sequence<HepRepInstance> instances;
+        HepRepPointList points;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepInstance> HepRepInstanceList;
+
+    // TreeID
+    struct HepRepTreeID {
+        string name;
+        string version;
+    };
+    typedef sequence<HepRepTreeID> HepRepTreeIDList;
+
+    // InstanceTree
+    struct HepRepInstanceTree {
+        HepRepTreeID id;
+        HepRepTreeID typeTreeID;
+        HepRepTreeIDList instanceTreeIDs;
+        HepRepInstanceList instances;
+    };
+
+    // Type
+    struct HepRepType {
+        string name;
+        string desc;
+        string infoURL;
+          // The following would ideally be "HepRepTypeList types",
+          // but that sort of recursion doesn't work.
+        sequence<HepRepType> types;
+        HepRepAttDefList attDefs;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepType> HepRepTypeList;
+
+
+    // TypeTree
+    struct HepRepTypeTree {
+        HepRepTreeID id;
+        HepRepTypeList types;
+    };
+
+    // Action
+    struct HepRepAction {
+        string name;
+        string expression;
+    };
+    typedef sequence<HepRepAction> HepRepActionList;
+
+    // HepRep
+    interface HepRep {
+        HepRepInstanceTree getInstanceTreeTop(
+				in string instanceTreeName,
+				in string instanceTreeVersion);
+        HepRepTypeTree getTypeTree(
+				in string typeTreeName,
+				in string typeTreeVersion);
+        HepRepInstanceTree getInstances(
+				in string instanceTreeName,
+				in string instanceTreeVersion,
+				in StringArray typeNames);
+        HepRepInstanceTree getInstancesAfterAction(
+                                in string instanceTreeName,
+                                in string instanceTreeVersion,
+                                in StringArray typeNames,
+                                in HepRepActionList actions,
+                                in boolean getPoints,
+                                in boolean getDrawAtts,
+                                in boolean getNonDrawAtts,
+                                in StringArray invertAtts);
+        StringArray getLayerOrder();
+        string checkForException();
+    };
+
+#endif
+

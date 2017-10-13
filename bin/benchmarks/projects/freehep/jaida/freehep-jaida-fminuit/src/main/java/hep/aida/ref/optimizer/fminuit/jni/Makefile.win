@@ -1,0 +1,32 @@
+#
+# 
+# Makefile for win32.
+#
+
+# point this at a *stable* JDK
+JDK=e:\java\jdk1.3.1_03
+DEBUG=1
+
+f77=df -Ox -G5 /Zd /nologo /4Nportlib /dll /c
+cpp=cl -c -nologo -G5 /O1 /Zd -D_DLL -D_NTSDK -D_X86_=1 -DVISUAL_CPLUSPLUS -DWINVER=0x0400 -DWIN32 -D_WIN32 -D_X86_=1 -DCERNLIB_WINNT -DCERNLIB_UNIX -DCERNLIB_QFMSOFT -DCERNLIB_MSSTDCALL
+jni=-I$(JDK)\include\win32 -I$(JDK)\include
+link=df -Ox -G5 /Zd /nologo /4Nportlib /dll 
+libs= libc.lib packlib.lib
+linkopts=/link /map 
+
+dll: minuitAdapter.obj fclose.obj fopen.obj 
+	$(link) minuitAdapter.obj fclose.obj fopen.obj $(libs) $(linkopts)
+
+clean:
+	rm *.obj *.lib *.map  *.exp 
+
+minuitAdapter.obj: minuitAdapter.cpp
+	$(cpp) $(jni) minuitAdapter.cpp
+
+fclose.obj: fclose.f
+	$(f77) fclose.f
+
+fopen.obj: fopen.f
+	$(f77) fopen.f
+
+

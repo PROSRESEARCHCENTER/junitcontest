@@ -1,0 +1,147 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+@cpp {
+#include "HEPREP/HepRepConstants.h"
+}
+
+/**
+ * HepRepAttribute interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepAttribute.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepAttribute extends HepRepConstants {
+
+    /**
+     * Constructor for the JHepRepAttribute interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepAttribute(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Adds an attValue.
+     *
+     * @param attValue to be added.
+     */
+    void addAttValue(HepRepAttValue* attValue);
+
+@cpp {
+    /**
+     * Adds a char* attValue as a String.
+     * This call should be mapped to addAttValue(std::string, std::string, int); and necessary
+     * because C++ converts char* into bool and would thus call addAttValue(std::string, bool, int)
+     * for a call such as addAttValue("drawAs", "Cylinder", 0);
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    virtual void addAttValue(std::string key, char* value, int showLabel = HepRepConstants::SHOW_NONE) = 0;
+}
+
+    /**
+     * Adds an attValue.
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, String value, int showLabel = HepRepAttValue.SHOW_NONE);
+
+    /**
+     * Adds an attValue.
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, int64 value, int showLabel = HepRepAttValue.SHOW_NONE);
+
+    /**
+     * Adds an attValue.
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, int value, int showLabel = HepRepAttValue.SHOW_NONE);
+
+    /**
+     * Adds an attValue.
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, double value, int showLabel = HepRepAttValue.SHOW_NONE);
+
+    /**
+     * Adds an attValue.
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, boolean value, int showLabel = HepRepAttValue.SHOW_NONE);
+
+    /**
+     * Adds a Color attValue.
+     *
+     * @param key name of attValue
+     * @param value value of attValue
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, Color value, int showLabel = HepRepAttValue.SHOW_NONE);
+
+@ifdef cpp
+    /**
+     * Adds a Color attValue.
+     *
+     * @param key name of attValue
+     * @param red color
+     * @param green color
+     * @param blue color
+     * @param alpha value
+     * @param showLabel show this as label
+     */
+    void addAttValue(String key, double red, double green, double blue, double alpha = 1.0, int showLabel = HepRepAttValue.SHOW_NONE);
+@endif
+
+    /**
+     * Remove the attvalue named by key.
+     *
+     * @param key name of the attValue to be removed.
+     * @return removed HepRepAttValue, or null if not removed.
+     */
+    HepRepAttValue* removeAttValue(String key);
+
+    /**
+     * Returns the attValue specified by name. This attValue is normally searched
+     * on the node itself and then on its type, moving up the typetree.
+     *
+     * @param name of attribute value.
+     * @return attribute value.
+     */
+    HepRepAttValue* getAttValue(String name);
+
+    /**
+     * Returns a collection of all attribute values from this node.
+     *
+     * @return collection of HepRepAttValues.
+     */
+    Set<HepRepAttValue*> getAttValuesFromNode();
+
+    /**
+     * Returns a named attribute value from this node.
+     *
+     * @param lowerCaseName name in all lowercase.
+     * @return corresponding HepRepAttValue.
+     */
+    HepRepAttValue* getAttValueFromNode(String lowerCaseName);
+}

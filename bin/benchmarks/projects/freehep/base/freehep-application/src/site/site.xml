@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep-application">
+    
+    <bannerLeft>
+        <name>FreeHEP Application Framework</name>
+        <href>./</href>
+    </bannerLeft>
+
+    <body>
+    
+                
+        <menu name="User Info">
+            <item name="Summary" href="project-summary.html"/>
+            <item name="API Doc" href="apidocs/index.html"/>
+            <item name="Dependencies" href="dependencies.html"/>
+        </menu>
+        
+        <menu name="Developer Info">
+            <item name="Source Code" href="source-repository.html"/>
+        </menu>       
+        
+    </body>
+</project>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- $Id: HepRep.dtd 8613 2006-08-16 06:56:44Z duns $ -->
+<!-- Document Type Definition for the HEPREP Descriptions -->
+
+<!ELEMENT   attdef          EMPTY >
+<!ATTLIST   attdef          name        CDATA           #REQUIRED
+                            desc        CDATA           #IMPLIED
+                            category    CDATA           #REQUIRED
+                            extra       CDATA           ""
+>
+
+<!ELEMENT   attvalue        EMPTY >
+<!ATTLIST   attvalue        name        CDATA           #REQUIRED
+                            value       CDATA           #REQUIRED
+                            type        CDATA           #REQUIRED
+                            showLabel   CDATA           "NAME"
+>
+
+<!ELEMENT   point           (attdef | attvalue)* >
+<!ATTLIST   point           x           CDATA           #REQUIRED
+                            y           CDATA           #REQUIRED
+                            z           CDATA           #REQUIRED
+>
+
+<!ELEMENT   treeid          EMPTY >
+<!ATTLIST   treeid          qualifier   CDATA           "top-level"
+                            name        CDATA           #REQUIRED
+                            version     CDATA           ""
+>
+
+<!ELEMENT   action          EMPTY >
+<!ATTLIST   action          name        CDATA           #REQUIRED
+                            expression  CDATA           ""
+>
+
+<!ELEMENT   instance        (attvalue | instance | point)* >
+<!ATTLIST   instance        type        CDATA           #REQUIRED
+>
+
+<!ELEMENT   instancetree    (instance | treeid)* >
+<!ATTLIST   instancetree    name            CDATA           #REQUIRED
+                            version         CDATA           ""
+                            typetreename    CDATA           #REQUIRED
+                            typetreeversion CDATA           ""
+>
+
+<!ELEMENT   type            (attdef | attvalue | type)* >
+<!ATTLIST   type            name        CDATA           #REQUIRED
+>
+
+<!ELEMENT   typetree        (type)* >
+<!ATTLIST   typetree        name        CDATA           #REQUIRED
+                            version     CDATA           ""
+>
+
+<!ELEMENT   layer           EMPTY >
+<!ATTLIST   layer           order       CDATA           #REQUIRED
+>
+
+<!ELEMENT   heprep          (layer | typetree | instancetree)* >
+<!ATTLIST   heprep          version     CDATA           #IMPLIED
+>

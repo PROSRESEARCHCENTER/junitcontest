@@ -1,0 +1,61 @@
+    ---
+    Fit Methods
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Fit Methods
+
+    The following <fit methods> are supported by JAIDA; they are divided in <binned> and <unbinned> fit methods 
+depending on whether they apply to the bins or to the content of a given distribution; so a fit to an histogram will be performed with a binned fit 
+method, while a fit to a column of a tuple will be unbinned.
+
+*Binned Fit Methods
+
+    Given a function f and a binned distribution we define:
+
+[images/fit-methods/height.gif] 
+
+    to be the height of the ith bin
+
+[images/fit-methods/variable.gif] 
+    
+    to be the center of the ith bin
+
+[images/fit-methods/function.gif] 
+
+    the function's value at the ith bin
+
+[images/fit-methods/sigma.gif] 
+
+    the error on the ith bin
+
+
+
+    With the above we define the following fit methods, where the sums are performed over all the bins:
+
+**LeastSquares
+
+[images/fit-methods/leastSquaredMethod.gif]
+  
+**Chi2
+  
+[images/fit-methods/chi2Method.gif]
+  
+**CleverChi2
+  
+[images/fit-methods/cleverChi2Method.gif]
+  
+**BinnedMaximumLikelihood
+
+[images/fit-methods/binnedMaximumLikelihood.gif]
+
+*Unbinned Fit Methods
+
+    Given a probability distribution function f and a set of data we define the following unbinned fit method:
+
+**UnbinnedMaximumLikelihood
+
+[images/fit-methods/unbinnedMaximumLikelihood.gif]
+  

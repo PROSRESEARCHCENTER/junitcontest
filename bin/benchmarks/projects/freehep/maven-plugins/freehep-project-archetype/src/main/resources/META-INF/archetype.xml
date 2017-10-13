@@ -1,0 +1,16 @@
+<archetype>
+  <id>freehep-project-archetype</id>
+  <allowPartial>true</allowPartial>
+  <sources>
+    <source>src/main/java/DUMMY</source>
+    <source>src/main/resources/DUMMY</source>
+  </sources>
+  <testSources>
+    <source>src/test/java/DUMMY</source>
+    <source>src/test/resources/DUMMY</source>
+  </testSources>
+  <siteResources>
+    <resource>src/site/site.xml</resource>
+    <resource>src/site/apt/DUMMY</resource>
+  </siteResources>
+</archetype>

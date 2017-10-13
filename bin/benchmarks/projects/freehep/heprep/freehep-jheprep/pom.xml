@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+        <relativePath />
+    </parent>
+  
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-jheprep</artifactId>
+    <version>2.0.9-SNAPSHOT</version>
+
+    <name>FreeHEP HepRep Java Implementation</name>
+    <description>HEP Representables for Event Display (Java Implementation).</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jheprep</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/heprep/freehep-jheprep</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-jheprep</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-jheprep</developerConnection>
+    </scm>
+  
+  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-rmic-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <classes>
+                                <class>hep.graphics.heprep.rmi.RMIHepRep</class>
+                            </classes>
+                            <keep>true</keep>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-record</artifactId>
+            <version>3.0.8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-xml</artifactId>
+            <version>2.1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>hep.aida</groupId>
+            <artifactId>aida</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kxml2</groupId>
+            <artifactId>kxml2</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-heprep</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+    </dependencies>
+  
+</project>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- DOCTYPE heprep SYSTEM "HepRep.dtd" -->
+<!-- $Id: IteratorTest.heprep 8617 2006-08-16 07:39:12Z duns $ -->
+
+<heprep xmlns='http://www.freehep.org/HepRep'
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:noNamespaceSchemaLocation='HepRep.xsd'>
+
+    <layer order="Geometry, Event, CalHit, Track, Hit"/>
+    <typetree name="sample" version="1.0">
+        <type name="Event">
+            <attvalue name="layer" value="Event" type="String"/>
+            <attvalue name="No" value="0" type="int"/>
+
+            <type name="Track">
+                <attvalue name="layer" value="Track" type="String"/>
+                <attvalue name="DrawAs" value="HelixSegment" type="String"/>
+            </type>
+            <type name="HitOnTrack">
+                <attvalue name="layer" value="Hit" type="String"/>
+                <attvalue name="DrawAs" value="Point" type="String"/>
+                <attvalue name="MarkName" value="Circle" type="String"/>
+            </type>
+            <type name="KalManPoint">
+                <attvalue name="layer" value="Hit" type="String"/>
+                <attvalue name="DrawAs" value="Point" type="String"/>
+            </type>
+            <type name="Cluster">
+                <attvalue name="layer" value="CalHit" type="String"/>
+                <attvalue name="DrawAs" value="Point" type="String"/>
+                <attvalue name="MarkName" value="Box" type="String"/>
+            </type>
+            <type name="HitStrip">
+                <attvalue name="layer" value="Hit" type="String"/>
+                <attvalue name="DrawAs" value="Line" type="String"/>
+            </type>
+        </type>
+        <type name="Geometry">
+            <attvalue name="layer" value="Geometry" type="String"/>
+            <attvalue name="drawAs" value="Line" type="String"/>
+            <attvalue name="Color" value="0.75, 0.75, 0.75" type="Color"/>
+        </type>
+    </typetree>
+
+
+
+    <instancetree name="event" version="0001" typename="sample" typeversion="1.0">
+
+        <instance type="Track">
+            <attvalue name="No" value="5" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+
+            <instance type="HitOnTrack">
+                <attvalue name="No" value="6" type="int"/>
+                <point x="0.0" y="0.0" z="0.0" />
+            </instance>
+        </instance>
+
+        <instance type="KalManPoint">
+            <attvalue name="Phi" value="10.98" type="double"/>
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+        <instance type="Cluster">
+            <attvalue name="No" value="12" type="int"/>
+            <attvalue name="Undefined" value="255" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+        <instance type="HitStrip">
+            <attvalue name="No" value="324" type="int"/>
+            <attvalue name="Undefined" value="0" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+        <instance type="Geometry">
+            <attvalue name="No" value="325" type="int"/>
+            <attvalue name="Undefined" value="100" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+        <instance type="Geometry">
+            <attvalue name="No" value="326" type="int"/>
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+
+    </instancetree>
+
+</heprep>

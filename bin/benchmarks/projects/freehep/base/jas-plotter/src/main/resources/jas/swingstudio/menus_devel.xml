@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<!DOCTYPE menuSystem SYSTEM "../util/xmlmenus/menus.dtd">
+
+<menuSystem id="jas.util.menus.menuSystem">
+	<menuBar id="mainMenu">
+		<menu id="file" name="File" mnemonic="F">
+			<menu id="new" name="New" mnemonic="W">
+				<component name="Job..." icon="images/New_Job.gif" command="NewJob"	mnemonic="J"></component>
+				<menu id="histogramPage" name="Histogram Page" mnemonic="H">
+					<component name="1 x 1" 		command="1x1" mnemonic="1"></component>
+					<component name="2 x 1" 		command="2x1"></component>
+					<component name="1 x 2" 		command="1x2"></component>
+					<component name="2 x 2" 		command="2x2" mnemonic="2"></component>
+					<component name="3 x 3" 		command="3x3" mnemonic="3"></component>
+					<component name="4 x 4" 		command="4x4" mnemonic="4"></component>
+				</menu>			
+				<component name="Program Using Wizard..." icon="images/New_Program_Wizard.gif" command="ProgramUsingWizard" mnemonic="P">
+					<accelerator key="VK_W"></accelerator>
+				</component>
+				<component name="MFP" command="MFP">
+					<accelerator key="VK_F6" ctrl="false"></accelerator>
+				</component>
+				<component name="Blank Program Page" command="BlankProgramPage" mnemonic="B"></component>
+			</menu>
+			<component name="Open..."				icon="images/Open.gif" 		command="Open"			mnemonic="O">
+				<accelerator key="VK_O"></accelerator>
+			</component>
+			<component name="Save" 					icon="images/Save.gif" 		command="Save"			mnemonic="S">
+				<accelerator key="VK_S"></accelerator>
+			</component>
+			<component name="Save As..."			  							command="SaveAs"		mnemonic="A">
+				<accelerator key="VK_A"></accelerator>
+			</component>
+			<separator></separator>
+			<component name="Compile"				icon="images/Compile.gif"	command="Compile"		mnemonic="C">
+				<accelerator key="VK_F4" ctrl="false"></accelerator>
+			</component>
+			<separator></separator>
+			<component name="Reconnect..."			command="Reconnect"			mnemonic="R">
+				<accelerator key="VK_R"></accelerator>
+			</component>
+			<component name="Disconnect"			command="Disconnect"		mnemonic="D">
+				<accelerator key="VK_D"></accelerator>
+			</component>
+			<separator></separator>
+			<component name="Print..."				icon="images/Print.gif"	command="Print"				mnemonic="P">
+				<accelerator key="VK_P"></accelerator>
+			</component>
+			<separator></separator>
+			<menu id="recentFiles"	name="Recent files"		class="jas.swingstudio.RecentFilesMenu"	mnemonic="F"></menu>
+			<menu id="recentJobs"	name="Recent jobs"		class="jas.swingstudio.RecentJobsMenu"	mnemonic="B"></menu>
+			<separator></separator>
+			<component name="Exit"					command="Exit"				mnemonic="E">
+				<accelerator key="VK_E"></accelerator>
+			</component>
+		</menu>
+	
+		<menu id="edit" name="Edit" mnemonic="E">
+			<component name="Undo" icon="images/Undo.gif" command="Undo" mnemonic="U">
+				<accelerator key="VK_Z"></accelerator>	
+			</component>
+			<component name="Redo" icon="images/Redo.gif" command="Redo" mnemonic="R">
+				<accelerator key="VK_Y"></accelerator>	
+			</component>
+			<component name="Cut"					icon="images/Cut.gif" 	command="Cut"			mnemonic="T">
+				<accelerator key="VK_X"></accelerator>
+			</component>
+			<component name="Copy"					icon="images/Copy.gif" 	command="Copy"			mnemonic="C">
+				<accelerator key="VK_C"></accelerator>
+			</component>
+			<component name="Paste"					icon="images/Paste.gif" command="Paste"			mnemonic="P">
+				<accelerator key="VK_V"></accelerator>
+			</component>
+			<component name="Go To Line..."			command="GoToLine"		mnemonic="G">
+				<accelerator key="VK_G"></accelerator>
+			</component>
+		</menu>
+	
+		<menu id="job" name="Job" mnemonic="J">
+			<component name="New Job..."			icon="images/New_Job.gif" command="NewJob"		mnemonic="N">
+				<accelerator key="VK_J"></accelerator>
+			</component>
+			<component name="Open Job..."			command="OpenJob"		mnemonic="O"></component>
+			<component name="Save Job"				command="SaveJob"		mnemonic="S"></component>
+			<component name="Save Job As..."		command="SaveJobAs"		mnemonic="A"></component>
+			<component name="Close Current Job" 	command="CloseCurrentJob" mnemonic="C"></component>
+			<separator></separator>
+			<component name="Load Program..."		icon="images/Load_Program.gif" command="LoadProgram"	mnemonic="L">
+				<accelerator key="VK_L"></accelerator>
+			</component>
+			<component name="Unload All Programs"	command="UnloadAllPrograms" mnemonic="U">
+				<accelerator key="VK_U"></accelerator>
+			</component>
+			<separator></separator>
+			<component name="Open Dataset..."		command="OpenDataset"></component>
+			<component name="Close Dataset"			command="CloseDataset"></component>
+			<separator></separator>
+			<component name="Rewind"				icon="images/Rewind.gif" command="Rewind"		mnemonic="W">
+				<accelerator key="VK_F3" ctrl="false"></accelerator>
+			</component>
+			<component name="Go"					icon="images/Go.gif"	command="Go"			mnemonic="G">
+				<accelerator key="VK_F5" ctrl="false"></accelerator>
+			</component>
+			<component name="Step"					icon="images/Step.gif"	command="Step"			mnemonic="T">
+				<accelerator key="VK_F11" ctrl="false"></accelerator>
+			</component>
+			<component name="Stop"					icon="images/Stop.gif"	command="Stop"			mnemonic="P">
+				<accelerator key="VK_F5"></accelerator>
+			</component>
+			<component name="Kill"											command="Kill"			mnemonic="K">
+			</component>
+			<separator></separator>
+			<component name="Load Plugin..."		command="LoadPlugin"	mnemonic="P"></component>
+		</menu>
+	
+		<menu id="histogram" name="Histogram" mnemonic="H">
+			<component name="Show Data"				command="ShowData"		mnemonic="S"></component>
+			<component name="Overlay Data"			command="OverlayData"	mnemonic="O"></component>
+			<component name="Delete" 				command="Delete"		mnemonic="D"></component>
+			<component name="Auto Overlay"			command="AutoOverlay"	mnemonic="A"></component>
+			<separator></separator>
+			<menu id="functions" name="Functions"	class="jas.swingstudio.FunctionsMenu"	mnemonic="F"></menu>
+			<menu id="slices" name="Slices/Projections"	class="jas.swingstudio.SliceMenu"	mnemonic="L"></menu>
+			<separator></separator>
+			<component name="Properties..."			command="Properties"	mnemonic="P"></component>
+		</menu>
+	
+		<menu id="view" name="View" mnemonic="V">
+			<component name="Application Toolbar"	command="ApplicationToolBar" type="checkbox" mnemonic="A"></component>
+			<component name="Job Toolbar"			command="JobToolbar"	type="checkbox"		mnemonic="T"></component>
+			<component name="Code Toolbar"			command="CodeToolbar"	type="checkbox"		mnemonic="C"></component>
+			<component name="Web Toolbar"			command="WebToolbar"	type="checkbox"		mnemonic="W"></component>
+			<component name="Rebin Slider"			command="RebinSlider"	type="checkbox"		mnemonic="R"></component>
+			<component name="Status Bar"			command="StatusBar"		type="checkbox"		mnemonic="S"></component>
+			<separator></separator>
+			<component name="Back"		icon="images/Back.gif"		command="Back"		mnemonic="B"></component>
+			<component name="Forward"	icon="images/Forward.gif"	command="Forward"	mnemonic="F"></component>
+			<component name="Refresh"	icon="images/Refresh.gif"	command="Refresh"	mnemonic="R"></component>
+			<component name="Home"		icon="images/Home.gif"		command="Home"		mnemonic="H"></component>
+			<component name="Web Page ..." icon="images/Web.gif"       command="WebPage"   mnemonic="W"></component>
+			<separator></separator>
+			<menu id="lookAndFeel" name="Look and Feel" mnemonic="L">
+				<component name="Windows" 			command="Windows"		type="radio"		mnemonic="W"></component>
+				<component name="Motif" 			command="Motif"			type="radio"		mnemonic="M"></component>
+				<component name="Java" 				command="Java"			type="radio"		mnemonic="J"></component>
+				<separator></separator>
+				<component name="Enable Tool Tips"	command="EnableToolTips" type="checkbox"		mnemonic="E"></component>
+			</menu>
+			<menu id="windowStyle" name="Window Style" mnemonic="W">
+				<component name="Tabbed Panels" 	command="TabbedPanels"		type="radio"		mnemonic="P"></component>
+				<component name="Internal Frames"	command="InternalFrames"	type="radio"		mnemonic="I"></component>
+			</menu>
+			<separator></separator>
+			<component name="Options..."				command="Options"			mnemonic="O"></component>
+			<component name="Registries..."				command="Registries"		></component>
+		</menu>
+
+		<menu id="window" name="Window" class="jas.swingstudio.WindowMenu" mnemonic="W"></menu>
+		
+		<menu id="help" name="Help" mnemonic="H">
+			<component name="Help Contents..."		command="HelpContents"	mnemonic="C"></component>
+			<component name="Help Index..." 		command="HelpIndex"		mnemonic="I"></component>
+			<component name="Tutorial..." 			command="Tutorial"		mnemonic="T"></component>
+			<component name="Release Notes..." 		command="ReleaseNotes"	mnemonic="R"></component>
+			<component name="Search..." 			command="Search"		mnemonic="S"></component>
+			<separator></separator>
+			<menu id="programming" name="Programming" mnemonic="P">
+				<component name="hep packages..."	command="heppackages"	mnemonic="H"></component>
+				<component name="jas packages..."	command="jaspackages"	mnemonic="J"></component>
+			</menu>
+			<separator></separator>
+			<component name="Submit Bug Report..."	command="SubmitBugReport" mnemonic="B"></component>
+			<component name="About..."				command="About"			mnemonic="A"></component>
+		</menu>
+	</menuBar>
+
+	<toolBar id="applicationToolBar" name="Application Toolbar">
+		<component name="Open..."				icon="images/Open.gif" 		command="Open"			mnemonic="O"></component>
+		<component name="Save" 					icon="images/Save.gif" 		command="SaveAs"		mnemonic="S"></component>
+		<separator></separator>
+		<component name="Cut"					icon="images/Cut.gif" 		command="Cut"			mnemonic="T"></component>
+		<component name="Copy"					icon="images/Copy.gif" 		command="Copy"			mnemonic="C"></component>
+		<component name="Paste"					icon="images/Paste.gif" 	command="Paste"			mnemonic="P"></component>
+		<separator></separator>
+		<component name="Print..."				icon="images/Print.gif"		command="Print"			mnemonic="P"></component>
+	</toolBar>
+
+	<toolBar id="jobToolBar" name="Job Toolbar" class="jas.swingstudio.JobToolBar">
+		<component name="New Job..."			icon="images/New_Job.gif"	command="NewJob"		mnemonic="N"></component>
+		<component name="Program Using Wizard..." icon="images/New_Program_Wizard.gif" command="ProgramUsingWizard" mnemonic="P"></component>
+		<component name="Load Program..."		icon="images/Load_Program.gif" command="LoadProgram"	mnemonic="L"></component>
+		<separator></separator>
+		<component name="Rewind"				icon="images/Rewind.gif"	command="Rewind"		mnemonic="W"></component>
+		<component name="Go"					icon="images/Go.gif"		command="Go"			mnemonic="G"></component>
+		<component name="Step"					icon="images/Step.gif"		command="Step"			mnemonic="T"></component>
+		<component name="Stop"					icon="images/Stop.gif"		command="Stop"			mnemonic="P"></component>
+	</toolBar>
+	
+	<toolBar id="codeToolBar" name="Code Toolbar">
+		<component name="Compile"				icon="images/Compile.gif"	command="Compile"		mnemonic="C"></component>
+	</toolBar>
+	
+	<toolBar id="webToolBar" name="Web Toolbar">
+		<component name="Back"		icon="images/Back.gif"		command="Back"		mnemonic="B"></component>
+		<component name="Forward"	icon="images/Forward.gif"	command="Forward"	mnemonic="F"></component>
+		<component name="Refresh"	icon="images/Refresh.gif"	command="Refresh"	mnemonic="R"></component>
+		<component name="Home"		icon="images/Home.gif"		command="Home"		mnemonic="H"></component>
+	</toolBar>
+
+	<toolBar id="rebinSlider" name="Rebin Slider" class="jas.swingstudio.RebinSlider"></toolBar>
+
+	<popupMenu id="consolePopupMenu" name="Console Popup Menu">
+		<component name="Copy"					command="CopyConsoleSelection"	mnemonic="C"></component>
+		<component name="Clear"					command="Clear"					mnemonic="R"></component>
+		<component name="Select All"			command="SelectAll"				mnemonic="A"></component>
+		<component name="Set Buffer Size..."	command="SetBufferSize"			mnemonic="T"></component>
+			<menu id="logging" name="Logging" mnemonic="L">
+				<component name="Open Log File..."		command="OpenLogFile"	mnemonic="O"></component>
+				<component name="Enable Logging"		command="EnableLogging"	type="checkbox"	mnemonic="E"></component>
+				<component name="Close Log File"		command="CloseLogFile"	mnemonic="C"></component>
+			</menu>
+		<component name="Close Tab"			command="CloseTab"	mnemonic="B"></component>
+	</popupMenu>
+
+	<popupMenu id="toolbarPopupMenu" name="Toolbar Popup Menu">
+		<component name="Application Toolbar"	command="ApplicationToolbar"	type="checkbox"	mnemonic="A"></component>
+		<component name="Job Toolbar"			command="JobToolbar"	type="checkbox"		mnemonic="T"></component>
+		<component name="Code Toolbar"			command="CodeToolbar"	type="checkbox"		mnemonic="C"></component>
+		<component name="Web Toolbar"			command="WebToolbar"	type="checkbox"		mnemonic="W"></component>
+		<component name="Rebin Slider"			command="RebinSlider"	type="checkbox"		mnemonic="R"></component>
+	</popupMenu>
+	
+</menuSystem>

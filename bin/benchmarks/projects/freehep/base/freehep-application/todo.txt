@@ -1,0 +1,9 @@
+Documentation
+Recent File List's - Should support JAS style menus too.
+How to put special items into a toolbar (such as a JChooser)
+App doesnt cleanly exit after error
+Thread safety for status model
+Finish implementing service models
+Rationalize initialization scheme
+Download dialog is kinda ugly
+First time a message is displayed in the status bar it "jiggles"

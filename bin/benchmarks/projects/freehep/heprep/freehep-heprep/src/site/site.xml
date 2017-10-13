@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="HepRep">
+
+    <bannerLeft>
+        <name>${project.name}</name>
+        <href>./</href>
+    </bannerLeft>
+
+    <body>
+
+        <menu name="HepRep 2">
+            <item name="Introduction"           href="index.html"/>
+        </menu>
+        
+        <menu name="User's Guide">
+            <item name="API Docs"               href="apidocs/index.html"/>
+            <item name="Representations"        href="DrawAsValues.html"/>
+            <item name="Attribute Defaults"     href="AttributeDefaults.html"/>
+            <item name="Binary HepRep"          href="BinaryHepRep.html"/>
+        </menu>
+
+        <menu name="Reference">
+            <item name="HepRep 1"               href="http://www.slac.stanford.edu/~perl/heprep/index.html"/>
+            <item name="HepRep Source"               href="source-repository.html"/>
+        </menu>
+    </body>
+</project>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aidaStyleStore SYSTEM "http://java.freehep.org/schemas/jaida/1.0/StyleStoreDTD.dtd">
+<aidaStyleStore storeName="system" storeType="XMLStyleStore"
+  isReadOnly="true">
+  <aidaStyleStoreEntry entryName="Overlay_Extras"
+    entryType="hep.aida.IHistogram1D">
+    <aidaStyleRule ruleValue="OverlayTotal &gt; 1"/>
+    <aidaPlotterStyle>
+      <aidaStyle type="dataStyle">
+        <aidaStyle type="fillStyle">
+          <aidaStyleAttribute
+            attributeName="colorRotateMethod" attributeValue="regionOverlayIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="colorRotate"
+            attributeValue="fuchsia, green, orange, cyan, blue, red"/>
+        </aidaStyle>
+        <aidaStyle type="markerStyle">
+          <aidaStyleAttribute
+            attributeName="shapeRotateMethod" attributeValue="regionOverlayIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="shapeRotate"
+            attributeValue="dot, box, triangle, diamond, star, circle, square"/>
+          <aidaStyleAttribute
+            attributeName="colorRotateMethod" attributeValue="regionOverlayIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="colorRotate"
+            attributeValue="fuchsia, green, orange, cyan, blue, red"/>
+          <aidaStyleAttribute attributeName="size"
+            attributeValue="6"/>
+        </aidaStyle>
+      </aidaStyle>
+      <aidaStyle type="statisticsBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyle type="legendBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyleAttribute attributeName="plotterStyleName"
+        attributeValue="system.Overlay_Extras"/>
+    </aidaPlotterStyle>
+  </aidaStyleStoreEntry>
+  <aidaStyleStoreEntry entryName="H1D"
+    entryType="hep.aida.IHistogram1D">
+    <aidaStyleRule
+      ruleValue="ObjectAIDAType.endsWith(&quot;IHistogram1D&quot;) || ObjectAIDAType.endsWith(&quot;ICloud1D&quot;)"/>
+    <aidaPlotterStyle>
+      <aidaStyle type="dataStyle">
+        <aidaStyle type="lineStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="thickness"
+            attributeValue="2"/>
+        </aidaStyle>
+        <aidaStyle type="fillStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="opacity"
+            attributeValue="1.0"/>
+          <aidaStyleAttribute
+            attributeName="colorRotateMethod" attributeValue="globalIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="colorRotate"
+            attributeValue="fuchsia, green, orange, cyan, blue, red"/>
+        </aidaStyle>
+        <aidaStyle type="markerStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="size"
+            attributeValue="6"/>
+        </aidaStyle>
+        <aidaStyle type="outlineStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="thickness"
+            attributeValue="2"/>
+        </aidaStyle>
+        <aidaStyle type="errorBarStyle">
+          <aidaStyleAttribute attributeName="color"
+            attributeValue="black"/>
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="thickness"
+            attributeValue="2"/>
+        </aidaStyle>
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyle type="statisticsBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyle type="legendBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyleAttribute attributeName="plotterStyleName"
+        attributeValue="system.H1D"/>
+    </aidaPlotterStyle>
+  </aidaStyleStoreEntry>
+  <aidaStyleStoreEntry entryName="DPS"
+    entryType="hep.aida.IHistogram1D">
+    <aidaStyleRule
+      ruleValue="ObjectAIDAType.endsWith(&quot;IDataPointSet&quot;)"/>
+    <aidaPlotterStyle>
+      <aidaStyle type="dataStyle">
+        <aidaStyle type="lineStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="thickness"
+            attributeValue="2"/>
+        </aidaStyle>
+        <aidaStyle type="fillStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+        </aidaStyle>
+        <aidaStyle type="markerStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="shape"
+            attributeValue="dot" attributeOptions="&quot;dot&quot;, &quot;box&quot;, &quot;triangle&quot;, &quot;diamond&quot;, &quot;star&quot;, &quot;verticalLine&quot;, &quot;horizontalLine&quot;, &quot;cross&quot;, &quot;circle&quot;, &quot;square&quot;"/>
+        </aidaStyle>
+        <aidaStyle type="outlineStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="thickness"
+            attributeValue="2"/>
+          <aidaStyleAttribute
+            attributeName="colorRotateMethod" attributeValue="regionOverlayIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="colorRotate"
+            attributeValue="fuchsia, green, orange, cyan, blue, red"/>
+        </aidaStyle>
+        <aidaStyle type="errorBarStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="opacity"
+            attributeValue="1.0"/>
+        </aidaStyle>
+      </aidaStyle>
+      <aidaStyle type="statisticsBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyle type="legendBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyleAttribute attributeName="plotterStyleName"
+        attributeValue="system.DPS"/>
+    </aidaPlotterStyle>
+  </aidaStyleStoreEntry>
+  <aidaStyleStoreEntry entryName="Function"
+    entryType="hep.aida.IHistogram1D">
+    <aidaStyleRule
+      ruleValue="ObjectAIDAType.endsWith(&quot;IFunction&quot;)"/>
+    <aidaPlotterStyle>
+      <aidaStyle type="dataStyle">
+        <aidaStyle type="outlineStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute attributeName="thickness"
+            attributeValue="2"/>
+          <aidaStyleAttribute
+            attributeName="colorRotateMethod" attributeValue="globalIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="colorRotate"
+            attributeValue="fuchsia, green, orange, cyan, blue, red"/>
+        </aidaStyle>
+      </aidaStyle>
+      <aidaStyleAttribute attributeName="plotterStyleName"
+        attributeValue="system.Function"/>
+    </aidaPlotterStyle>
+  </aidaStyleStoreEntry>
+  <aidaStyleStoreEntry entryName="H2D"
+    entryType="hep.aida.IHistogram1D">
+    <aidaStyleRule
+      ruleValue="ObjectAIDAType.endsWith(&quot;IHistogram2D&quot;) || ObjectAIDAType.endsWith(&quot;ICloud2D&quot;)"/>
+    <aidaPlotterStyle>
+      <aidaStyle type="dataStyle">
+        <aidaStyle type="markerStyle">
+          <aidaStyleAttribute attributeName="isVisible"
+            attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+          <aidaStyleAttribute
+            attributeName="colorRotateMethod" attributeValue="globalIndex"
+            attributeOptions="&quot;globalIndex&quot;, &quot;regionOverlayIndex&quot;"/>
+          <aidaStyleAttribute attributeName="colorRotate"
+            attributeValue="fuchsia, green, orange, cyan, blue, red"/>
+        </aidaStyle>
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyle type="statisticsBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="true" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyle type="legendBoxStyle">
+        <aidaStyleAttribute attributeName="isVisible"
+          attributeValue="false" attributeOptions="&quot;true&quot;, &quot;false&quot;"/>
+      </aidaStyle>
+      <aidaStyleAttribute attributeName="plotterStyleName"
+        attributeValue="system.H2D"/>
+    </aidaPlotterStyle>
+  </aidaStyleStoreEntry>
+</aidaStyleStore>

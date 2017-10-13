@@ -1,0 +1,16 @@
+// Copyright 2005, FreeHEP.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestGenericsUse to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+interface ITestGenericsUse {
+
+    Object column(String name);
+    boolean addRow();
+
+    <T> ITestGenericsDefine<T>* findColumn(String name);
+}

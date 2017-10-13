@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <relativePath />
+        <groupId>org.freehep</groupId>
+        <artifactId>global</artifactId>
+        <version>20.7</version>
+    </parent>
+
+    <artifactId>freehep-webutil-base</artifactId>
+    <version>1.11.6-SNAPSHOT</version>
+    <packaging>pom</packaging>
+  
+    <name>FreeHEP Web Util Library Base</name>
+    <description>Utilities for Web Applications</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/base/freehep-webutil</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-webutil</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-webutil</developerConnection>
+    </scm>
+  
+    <modules>
+        <module>jar</module>
+        <module>war</module>
+    </modules>
+  
+</project>

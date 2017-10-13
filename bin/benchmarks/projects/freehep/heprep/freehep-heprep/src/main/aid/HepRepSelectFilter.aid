@@ -1,0 +1,30 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepSelectFilter interface used in copying HepReps.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepSelectFilter.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepSelectFilter {
+
+    /**
+     * Constructor for the JHepRepSelectFilter interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepSelectFilter(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Selects if the given instance will pass.
+     *
+     * @param instance to be checked.
+     * @return true if instance passes.
+     */
+    boolean select(HepRepInstance* instance);
+}

@@ -1,0 +1,17 @@
+    ---
+    JAS3 and JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+JAS3 and JAIDA
+    
+    JAIDA is intended for use in simple standalone Java applications. It provides the full {{{http://aida.freehep.org/}AIDA}} 
+functionality for Java, but only limited "GUI" functionality. 
+{{{http://jas.freehep.org/jas3}JAS3}} builds on the functionality of JAIDA and 
+adds many GUI based interactive analysis tools. JAS3 is available from 
+{{{http://jas.freehep.org/jas3}http://jas.freehep.org/jas3}}.
+
+    In {{{http://jas.freehep.org/jas3}JAS3}} it is possible to execute any {{{http://aida.freehep.org/}AIDA}} 
+program written in either Java, Jython or Pnuts.

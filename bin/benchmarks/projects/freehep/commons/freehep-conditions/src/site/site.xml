@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep-conditions">
+    
+  <bannerLeft>
+    <name>FreeHEP Conditions Framework</name>
+    <href>./</href>
+  </bannerLeft>
+
+  <body>
+                
+    <menu name="Conditions Framework">
+      <item name="Description" href="index.html"/>
+      <item name="Demo" href="demo.html"/>
+      <item name="API Doc" href="apidocs/index.html"/>
+      <item name="Dependencies" href="dependencies.html"/>
+      <item name="Source Code" href="source-repository.html"/>
+    </menu>       
+        
+  </body>
+  
+</project>

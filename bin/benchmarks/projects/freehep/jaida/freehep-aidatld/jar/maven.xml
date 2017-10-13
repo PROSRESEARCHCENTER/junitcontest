@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project >
+<project xmlns:j="jelly:core" xmlns:u="jelly:util" xmlns:a="jelly:ant" default="war">
+
+    <goal name="rebuild-all" prereqs="pom,clean,jar:jar,war:war,dist:build" />
+    <goal name="nightly" prereqs="rebuild-all,prepare-snapshot,site:sshdeploy" />
+
+    <!-- set up tlds before test -->
+    <preGoal name="jar:jar">
+        <!-- generated tld should be ready before tests -->
+        <!-- copy tlds to build dest -->
+        <a:echo message="copying tld files in ${maven.src.dir}/tld to ${maven.build.dir}/tld" />
+        <a:copy todir="${maven.build.dir}/tld">
+            <a:fileset dir="${maven.src.dir}/tld">
+                <a:include name="*.tld" />
+            </a:fileset>
+        </a:copy>
+        <!-- add tlds to taglib jar -->
+        <a:echo message="copying tld files ${maven.build.dir}/tld to ${maven.build.dest}/META-INF" />
+        <a:copy todir="${maven.build.dest}/META-INF">
+            <a:fileset dir="${maven.build.dir}/tld">
+                <a:include name="*.tld" />
+            </a:fileset>
+        </a:copy>
+    </preGoal>
+    
+    <!-- build the documentation -->
+    <preGoal name="site:generate"/>
+    
+    <preGoal name="war:webapp">
+        <attainGoal name="jar:jar" />
+        <attainGoal name="site:generate" />
+        <a:echo message="copying tld file ${maven.build.dir}/${maven.final.name}.jar to ${maven.war.webapp.dir}\WEB-INF\lib/" />
+        <a:copy todir="${maven.war.webapp.dir}\WEB-INF\lib/">
+            <a:fileset dir="${maven.build.dir}">
+                <a:include name="${maven.final.name}.jar" />
+            </a:fileset>
+        </a:copy>
+    </preGoal>
+
+    <postGoal name="dist:prepare-src-filesystem">
+        <a:copy todir="${maven.dist.src.assembly.dir}">
+            <a:fileset dir=".">
+                <a:include name="xdocs/**/*.*" />
+            </a:fileset>
+        </a:copy>
+    </postGoal>
+
+    <postGoal name="dist:prepare-bin-filesystem">
+        <a:copy todir="${maven.dist.bin.assembly.dir}">
+            <a:fileset dir="${maven.build.dir}/tld">
+                <a:include name="*.tld" />
+            </a:fileset>
+            <a:fileset dir="${maven.build.dir}">
+                <a:include name="${pom.artifactId}.war" />
+            </a:fileset>
+        </a:copy>
+    </postGoal>
+
+</project>

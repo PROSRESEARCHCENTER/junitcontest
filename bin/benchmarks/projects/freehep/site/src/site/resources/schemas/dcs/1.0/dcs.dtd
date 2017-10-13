@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    An example how to use this DTD from your XML document:
+    <?xml version="1.0"?>
+    <!DOCTYPE catalog SYSTEM "dcs.dtd">
+    <catalog>
+    ...
+    </catalog>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT meta (meta)*>
+<!ATTLIST meta
+    value CDATA #IMPLIED
+    name CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT dataset (meta)*>
+<!ATTLIST dataset
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT folder (dataset|folder)*>
+<!ATTLIST folder
+    name CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT catalog (dataset|folder)*>
+<!ATTLIST catalog
+    name CDATA #REQUIRED
+  >

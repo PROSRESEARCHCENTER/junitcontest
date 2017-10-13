@@ -1,0 +1,41 @@
+// Copyright 2002-2005, FreeHEP.
+// AID - Compiler Test File
+package org.freehep.aid.test {
+
+/**
+ * package named enumeration
+ */
+enum ITestScreenSize { NORMAL = 0, BIG = 1, HUGE = 2 };
+
+/**
+ * TestInterface to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestEnumerations.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestEnumerations extends AIDRef {
+
+    /**
+     * Sample enum
+     */
+    enum { UNDERFLOW_BIN = -2 , OVERFLOW_BIN = -1 };
+
+    /**
+     * Sample enum
+     */
+    enum { FIVE = 5 , SIX, SEVEN, NINE = 9, TEN };
+
+    /**
+     * Sample enum
+     */
+    enum { ONE = 1 };
+
+    /**
+     * Named Enum
+     */
+    enum Unit {PIXELS = 0 , PERCENT = 1 , DATA_VALUE = 2};
+}
+
+}    

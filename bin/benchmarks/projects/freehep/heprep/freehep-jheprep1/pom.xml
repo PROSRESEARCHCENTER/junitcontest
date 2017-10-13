@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <artifactId>global</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>20.6</version>
+    <relativePath />
+  </parent>
+  
+  <groupId>org.freehep</groupId>
+  <artifactId>freehep-jheprep1</artifactId>
+  <version>1.1.4-SNAPSHOT</version>
+
+  <name>FreeHEP HepRep1 Java Implementation</name>
+  <description>HEP Representables for Event Display (Java Implementation).</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jheprep1</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/heprep/freehep-jheprep1</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-jheprep1</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-jheprep1</developerConnection>
+    </scm>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-xml</artifactId>
+      <version>2.1.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-heprep1</artifactId>
+      <version>1.0.3</version> 
+    </dependency>
+  </dependencies>
+  
+</project>

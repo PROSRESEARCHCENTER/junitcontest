@@ -1,0 +1,31 @@
+# point this at a *stable* JDK
+JDK=/afs/slac.stanford.edu/package/java/@sys/jdk1.3
+CERNLIB=/afs/slac.stanford.edu/package/cernlib/@sys/cern/pro/lib
+
+f77=g77 -O99 -c
+cpp=g++ -O99 -c -DCERNLIB_UNIX -fno-strength-reduce -fomit-frame-pointer -ansi
+jni=-I$(JDK)/include/linux -I$(JDK)/include
+link=g77
+libs=-L$(CERNLIB) -lpacklib -lpawlib -lnsl
+linkopts=-shared -o libminuitAdapter.so
+
+dll: minuitAdapter.o fclose.o fopen.o
+	$(link) minuitAdapter.o fclose.o fopen.o $(libs) $(linkopts)
+
+rel: dll
+	strip libminuitAdapter.so
+	cp libminuitAdapter.so $(LD_LIBRARY_PATH)
+clean:
+	rm *.o *.so
+
+minuitAdapter.o: minuitAdapter.cpp
+	$(cpp) $(jni) minuitAdapter.cpp
+
+fclose.o: fclose.f
+	$(f77) fclose.f
+
+fopen.o: fopen.f
+	$(f77) fopen.f
+
+
+

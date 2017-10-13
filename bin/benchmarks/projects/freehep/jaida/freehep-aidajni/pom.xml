@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>org.freehep</groupId>
+        <artifactId>jaida-pom</artifactId>
+        <version>3.4.7-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-aidajni</artifactId>
+    <version>3.2.7-SNAPSHOT</version>
+    <packaging>nar</packaging>
+    <name>FreeHEP AIDAJNI</name>
+    <description>FreeHEP JNI Adapter for AIDA</description>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-aidajni</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/jaida/freehep-aidajni</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-aidajni</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-aidajni</developerConnection>
+    </scm>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-swig-plugin</artifactId>
+                <version>1.3.31-3-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>swig</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <groupId>org.swig</groupId>
+                            <artifactId>swig</artifactId>
+                            <version>1.3.31-2-SNAPSHOT</version>
+                            <force>true</force>
+                            <defines>
+                                <define>AID_EXCEPTION=void</define>
+                            </defines>
+                            <cpp>true</cpp>
+                            <packageName>hep.aida.swig</packageName>
+                            <javaTargetDirectory>src/main/java</javaTargetDirectory>
+                            <!-- do not use since it deletes .svn
+                                          <cleanOutputDirectory>true</cleanOutputDirectory>
+                            -->
+                            <source>AIDAJNI.swg</source>
+                            <noWarn>473</noWarn>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-nar-plugin</artifactId>
+                <version>2.0-alpha-10</version>
+                <configuration>
+                    <cpp>
+                        <debug>true</debug>
+                        <defines>
+                            <define>AID_EXCEPTION=void</define>
+                        </defines>
+                        <includePaths>
+                            <includePath>src/main/include</includePath>
+                            <includePath>src/test/include</includePath>
+                            <includePath>target/swig/c++</includePath>
+                        </includePaths>
+                    </cpp>
+                    <libraries>
+                        <library>
+                            <type>shared</type>
+                        </library>
+                        <library>
+                            <type>jni</type>
+                            <narSystemDirectory>src/main/java</narSystemDirectory>
+                            <narSystemPackage>hep.aida.jni</narSystemPackage>
+                        </library>
+                    </libraries>
+                    <java>
+                        <include>true</include>
+                        <link>true</link>
+                    </java>
+                    <javah>
+                        <excludes>
+                            <exclude>**/AIDAJNI.class</exclude>
+                        </excludes>
+                    </javah>
+                    <tests>
+                        <test>
+                            <name>TestCallFromCpp</name>
+                            <link>shared</link>
+                        </test>
+                    </tests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>hep.aida</groupId>
+            <artifactId>aida</artifactId>
+            <version>3.2.1-1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

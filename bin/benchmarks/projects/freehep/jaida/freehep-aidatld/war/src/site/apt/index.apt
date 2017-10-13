@@ -1,0 +1,13 @@
+    ---
+    AIDA TLD
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Overview
+
+        The AIDA tag library is an open source suite of custom tags that provide access to AIDA functionality from
+JSP pages. It provides easy access to dynamically creating high quality physics and
+astronomy plots, as well as providing access to histograms and ntuples stored in any AIDA store (which
+includes ROOT files via rootd or xrootd).

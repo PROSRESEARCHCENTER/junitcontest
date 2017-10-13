@@ -1,0 +1,16 @@
+	---
+FreeHEP AID Compiler
+	---
+	---
+Mark Donszelmann
+	---
+	
+Related Projects
+
+	AID is part of the FreeHEP Java Library and makes use of the RTTI (RunTime
+Type Information) classes.
+
+	AID itself is a compiler generated with the "Java Compiler
+Compiler (JavaCC) - The Java Parser Generator" available from
+{{http://javacc.dev.java.net/}}.
+

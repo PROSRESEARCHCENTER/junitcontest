@@ -1,0 +1,25 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * The HasHepRep interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HasHepRep.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HasHepRep {
+
+    /**
+     * Constructor
+     */
+    HepRep(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Returns the associated HepRep to this object.
+     * @return associated HepRep
+     */
+    HepRep& getHepRep();
+}

@@ -1,0 +1,97 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+@java {
+import java.util.Set;
+}
+
+/**
+ * HepRepInstanceTree interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepInstanceTree.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepInstanceTree extends HepRepTreeID {
+
+    /**
+     * Constructor for the JHepRepInstanceTree interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepInstanceTree(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Overlays the instance tree on the current tree.
+     *
+     * The list of instances of the instanceTree has to be the same as the current tree.
+     * @param instanceTree tree to overlay
+     */
+    void overlay(HepRepInstanceTree* instanceTree);
+
+    /**
+     * Adds an instance to this instancetree.
+     *
+     * @param instance to be added.
+     */
+    void addInstance(HepRepInstance* instance);
+
+    /**
+     * Removes an instance from this instancetree.
+     *
+     * @param instance to be removed.
+     */
+    void removeInstance(HepRepInstance* instance);
+
+    /**
+     * Returns a collection of instances.
+     *
+     * @return collection of HepRepInstances.
+     */
+    List<HepRepInstance*> getInstances();
+
+    /**
+     * Adds a related instance tree to this instancetree.
+     *
+     * @param instanceTree related instancetree.
+     */
+    void addInstanceTree(HepRepTreeID* instanceTree);
+
+@java {
+    /**
+     * Returns a collection of associated instance trees.
+     *
+     * @deprecated use getInstanveTreeList()
+     * @return collection of HepRepTreeIDs.
+     */
+    Set/*<HepRepTreeID>*/ getInstanceTrees();
+}
+
+    /**
+     * Returns a collection of associated instance trees.
+     *
+     * @return collection of HepRepTreeIDs.
+     */
+    List<HepRepTreeID*> getInstanceTreeList();
+
+    /**
+     * Returns the associated typetree.
+     *
+     * @return TreeID of the associated typetree.
+     */
+    HepRepTreeID* getTypeTree();
+
+    /**
+     * Returns a deep copy of this instancetree.
+     *
+     * @param typeTree associated type tree.
+     * @param filter to filter the instances.
+     * @return copy of this instancetree.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepInstanceTree* copy(HepRepTypeTree* typeTree, HepRepSelectFilter* filter = null) throws CloneNotSupportedException;
+
+}

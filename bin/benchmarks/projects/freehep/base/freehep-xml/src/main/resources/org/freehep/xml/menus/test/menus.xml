@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<!DOCTYPE MenuSystem SYSTEM "http://java.freehep.org/schemas/menus/1.1/menus.dtd">
+
+<MenuSystem>
+   <MenuBar id="mainMenu">
+      <Menu name="File" mnemonic="F">
+         <Menu name="New" mnemonic="W">
+            <Component name="Job..." icon="images/New_Job.gif" command="NewJob" mnemonic="J"/>
+            <Menu name="Histogram Page" mnemonic="H">
+               <Component name="1 x 1" command="1x1" mnemonic="1"/>
+               <Component name="2 x 1" command="2x1"/>
+               <Component name="1 x 2" command="1x2"/>
+               <Component name="2 x 2" command="2x2" mnemonic="2"/>
+               <Component name="3 x 3" command="3x3" mnemonic="3"/>
+               <Component name="4 x 4" command="4x4" mnemonic="4"/>
+            </Menu> 
+            <Component name="Program Using Wizard..." icon="images/New_Program_Wizard.gif" command="ProgramUsingWizard" mnemonic="P">
+               <Accelerator key="VK_W"></Accelerator>
+            </Component>
+            <Component name="Blank Program Page" command="BlankProgramPage" mnemonic="B"/>
+         </Menu>
+         <Component name="Open..." icon="images/Open.gif" command="Open" mnemonic="O">
+            <Accelerator key="VK_O"></Accelerator>
+         </Component>
+         <Component name="Save" icon="images/Save.gif" command="Save" mnemonic="S">
+            <Accelerator key="VK_S"></Accelerator>
+         </Component>
+         <Component name="Save As..." command="SaveAs" mnemonic="A">
+            <Accelerator key="VK_A"></Accelerator>
+         </Component>
+         <Separator/>
+         <Component name="Compile" icon="images/Compile.gif" command="Compile" mnemonic="C">
+            <Accelerator key="VK_F4" command="false"></Accelerator>
+         </Component>
+         <Separator/>
+         <Component name="Reconnect..." command="Reconnect" mnemonic="R">
+            <Accelerator key="VK_R"></Accelerator>
+         </Component>
+         <Component name="Disconnect" command="Disconnect" mnemonic="D">
+            <Accelerator key="VK_D"></Accelerator>
+         </Component>
+         <Separator/>
+         <Component name="Print..." icon="images/Print.gif" command="Print" mnemonic="P">
+            <Accelerator key="VK_P"></Accelerator>
+         </Component>
+         <Component name="Enable Print" command="EnablePrint" type="checkbox"/>
+         <Separator/>
+         <Component name="Exit" command="Exit" mnemonic="E">
+            <Accelerator key="VK_E"></Accelerator>
+         </Component>
+      </Menu>
+ 
+      <Menu name="Edit" mnemonic="E">
+         <Component name="Undo" icon="images/Undo.gif" command="Undo" mnemonic="U">
+            <Accelerator key="VK_Z"></Accelerator> 
+         </Component>
+         <Component name="Redo" icon="images/Redo.gif" command="Redo" mnemonic="R">
+            <Accelerator key="VK_Y"></Accelerator> 
+         </Component>
+         <Component name="Cut" icon="images/Cut.gif" command="Cut" mnemonic="T">
+            <Accelerator key="VK_X"></Accelerator>
+         </Component>
+         <Component name="Copy" icon="images/Copy.gif" command="Copy" mnemonic="C">
+            <Accelerator key="VK_C"></Accelerator>
+         </Component>
+         <Component name="Paste" icon="images/Paste.gif" command="Paste" mnemonic="P">
+            <Accelerator key="VK_V"></Accelerator>
+         </Component>
+         <Component name="Go To Line..." command="GoToLine" mnemonic="G">
+            <Accelerator key="VK_G"></Accelerator>
+         </Component>
+      </Menu>
+ 
+      <Menu name="Job" mnemonic="J">
+         <Component name="New Job..." icon="images/New_Job.gif" command="NewJob" mnemonic="N">
+            <Accelerator key="VK_J"></Accelerator>
+         </Component>
+         <Component name="Open Job..." command="OpenJob" mnemonic="O"/>
+         <Component name="Save Job" command="SaveJob" mnemonic="S"/>
+         <Component name="Save Job As..." command="SaveJobAs" mnemonic="A"/>
+         <Component name="Close Current Job" command="CloseCurrentJob" mnemonic="C"/>
+         <Separator/>
+         <Component name="Load Program..." icon="images/Load_Program.gif" command="LoadProgram" mnemonic="L">
+            <Accelerator key="VK_L"></Accelerator>
+         </Component>
+         <Component name="Unload All Programs" command="UnloadAllPrograms" mnemonic="U">
+            <Accelerator key="VK_U"></Accelerator>
+         </Component>
+         <Separator/>
+         <Component name="Open Dataset..." command="OpenDataset"/>
+         <Component name="Close Dataset" command="CloseDataset"/>
+         <Separator/>
+         <Component name="Rewind" icon="images/Rewind.gif" command="Rewind" mnemonic="W">
+            <Accelerator key="VK_F3" command="false"></Accelerator>
+         </Component>
+         <Component name="Go" icon="images/Go.gif" command="Go" mnemonic="G">
+            <Accelerator key="VK_F5" command="false"></Accelerator>
+         </Component>
+         <Component name="Step" icon="images/Step.gif" command="Step" mnemonic="T">
+            <Accelerator key="VK_F11" command="false"></Accelerator>
+         </Component>
+         <Component name="Stop" icon="images/Stop.gif" command="Stop" mnemonic="P">
+            <Accelerator key="VK_F5"></Accelerator>
+         </Component>
+         <Component name="Kill" command="Kill" mnemonic="K">
+         </Component>
+         <Separator/>
+         <Component name="Load Plugin..." command="LoadPlugin" mnemonic="P"/>
+      </Menu>
+ 
+      <Menu name="Histogram" mnemonic="H">
+         <Component name="Show Data" command="ShowData" mnemonic="S"/>
+         <Component name="Overlay Data" command="OverlayData" mnemonic="O"/>
+         <Component name="Delete" command="Delete" mnemonic="D"/>
+         <Component name="Auto Overlay" command="AutoOverlay" mnemonic="A"/>
+         <Separator/>
+         <Component name="Properties..." command="Properties" mnemonic="P"/>
+      </Menu>
+ 
+      <Menu name="View" mnemonic="V">
+         <Component name="Application Toolbar" command="ApplicationToolBar" type="checkbox" mnemonic="A"/>
+         <Component name="Job Toolbar" command="JobToolbar" type="checkbox" mnemonic="T"/>
+         <Component name="Code Toolbar" command="CodeToolbar" type="checkbox" mnemonic="C"/>
+         <Component name="Web Toolbar" command="WebToolbar" type="checkbox" mnemonic="W"/>
+         <Component name="Rebin Slider" command="RebinSlider" type="checkbox" mnemonic="R"/>
+         <Component name="Status Bar" command="StatusBar" type="checkbox" mnemonic="S"/>
+         <Separator/>
+         <Component name="Back" icon="images/Back.gif" command="Back" mnemonic="B"/>
+         <Component name="Forward" icon="images/Forward.gif" command="Forward" mnemonic="F"/>
+         <Component name="Refresh" icon="images/Refresh.gif" command="Refresh" mnemonic="R"/>
+         <Component name="Home" icon="images/Home.gif" command="Home" mnemonic="H"/>
+         <Component name="Web Page ..." icon="images/Web.gif" command="WebPage" mnemonic="W"/>
+         <Separator/>
+         <Menu name="Look and Feel" mnemonic="L">
+            <Component name="Windows" command="Windows" type="radio" mnemonic="W"/>
+            <Component name="Motif" command="Motif" type="radio" mnemonic="M"/>
+            <Component name="Java" command="Java" type="radio" mnemonic="J"/>
+            <Separator/>
+            <Component name="Enable Tool Tips" command="EnableToolTips" type="checkbox" mnemonic="E"/>
+         </Menu>
+         <Menu name="Window Style" mnemonic="W">
+            <Component name="Tabbed Panels" command="TabbedPanels" type="radio" mnemonic="P"/>
+            <Component name="Internal Frames" command="InternalFrames" type="radio" mnemonic="I"/>
+         </Menu>
+         <Separator/>
+         <Component name="Options..." command="Options" mnemonic="O"/>
+         <Component name="Registries..." command="Registries" />
+      </Menu>
+ 
+      <Menu name="Help" mnemonic="H">
+         <Component name="Help Contents..." command="HelpContents" mnemonic="C"/>
+         <Component name="Help Index..." command="HelpIndex" mnemonic="I"/>
+         <Component name="Welcome..." command="Welcome" mnemonic="W"/>
+         <Component name="Tutorial..." command="Tutorial" mnemonic="T"/>
+         <Component name="Release Notes..." command="ReleaseNotes" mnemonic="R"/>
+         <Component name="Search..." command="Search" mnemonic="S"/>
+         <Separator/>
+         <Menu name="Programming" mnemonic="P">
+            <Component name="hep packages..." command="heppackages" mnemonic="H"/>
+            <Component name="jas packages..." command="jaspackages" mnemonic="J"/>
+         </Menu>
+         <Separator/>
+         <Component name="Submit Bug Report..." command="SubmitBugReport" mnemonic="B"/>
+         <Component name="About..." command="About" mnemonic="A"/>
+      </Menu>
+   </MenuBar>
+
+   <ToolBar id="applicationToolBar" name="Application Toolbar">
+      <Component name="Open..." icon="images/Open.gif" command="Open" mnemonic="O"/>
+      <Component name="Save" icon="images/Save.gif" command="Save" mnemonic="S"/>
+      <Separator/>
+      <Component name="Cut" icon="images/Cut.gif" command="Cut" mnemonic="T"/>
+      <Component name="Copy" icon="images/Copy.gif" command="Copy" mnemonic="C"/>
+      <Component name="Paste" icon="images/Paste.gif" command="Paste" mnemonic="P"/>
+      <Separator/>
+      <Component name="Print..." icon="images/Print.gif" command="Print" mnemonic="P"/>
+   </ToolBar>
+
+   <ToolBar id="jobToolBar" name="Job Toolbar">
+      <Component name="New Job..." icon="images/New_Job.gif" command="NewJob" mnemonic="N"/>
+      <Component name="Program Using Wizard..." icon="images/New_Program_Wizard.gif" command="ProgramUsingWizard" mnemonic="P"/>
+      <Component name="Load Program..." icon="images/Load_Program.gif" command="LoadProgram" mnemonic="L"/>
+      <Separator/>
+      <Component name="Rewind" icon="images/Rewind.gif" command="Rewind" mnemonic="W"/>
+      <Component name="Go" icon="images/Go.gif" command="Go" mnemonic="G"/>
+      <Component name="Step" icon="images/Step.gif" command="Step" mnemonic="T"/>
+      <Component name="Stop" icon="images/Stop.gif" command="Stop" mnemonic="P"/>
+   </ToolBar>
+ 
+   <ToolBar id="codeToolBar" name="Code Toolbar">
+      <Component name="Compile" icon="images/Compile.gif" command="Compile" mnemonic="C"/>
+   </ToolBar>
+ 
+   <ToolBar id="webToolBar" name="Web Toolbar">
+      <Component name="Back" icon="images/Back.gif" command="Back" mnemonic="B"/>
+      <Component name="Forward" icon="images/Forward.gif" command="Forward" mnemonic="F"/>
+      <Component name="Refresh" icon="images/Refresh.gif" command="Refresh" mnemonic="R"/>
+      <Component name="Home" icon="images/Home.gif" command="Home" mnemonic="H"/>
+   </ToolBar>
+
+   <ToolBar id="rebinSlider" name="Rebin Slider"></ToolBar>
+
+   <PopupMenu id="consolePopupMenu" name="Console Popup Menu">
+      <Component name="Copy" command="CopyConsoleSelection" mnemonic="C"/>
+      <Component name="Clear" command="Clear" mnemonic="R"/>
+      <Component name="Select All" command="SelectAll" mnemonic="A"/>
+      <Component name="Set Buffer Size..." command="SetBufferSize" mnemonic="T"/>
+      <Menu name="Logging" mnemonic="L">
+         <Component name="Open Log File..." command="OpenLogFile" mnemonic="O"/>
+         <Component name="Enable Logging" command="EnableLogging" type="checkbox" mnemonic="E"/>
+         <Component name="Close Log File" command="CloseLogFile" mnemonic="C"/>
+      </Menu>
+      <Component name="Close Tab" command="CloseTab" mnemonic="B"/>
+   </PopupMenu>
+
+   <PopupMenu id="toolbarPopupMenu" name="Toolbar Popup Menu">
+      <Component name="Application Toolbar" command="ApplicationToolbar" type="checkbox" mnemonic="A"/>
+      <Component name="Job Toolbar" command="JobToolbar" type="checkbox" mnemonic="T"/>
+      <Component name="Code Toolbar" command="CodeToolbar" type="checkbox" mnemonic="C"/>
+      <Component name="Web Toolbar" command="WebToolbar" type="checkbox" mnemonic="W"/>
+      <Component name="Rebin Slider" command="RebinSlider" type="checkbox" mnemonic="R"/>
+   </PopupMenu>
+ 
+</MenuSystem>

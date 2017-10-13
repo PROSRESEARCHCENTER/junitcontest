@@ -1,0 +1,41 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * Constants for HepRep interfaces.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepConstants.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepConstants {
+
+    /**
+     * Defines constants for type
+     */
+    enum {
+        TYPE_UNKNOWN =   -1,
+        TYPE_STRING =     1,
+        TYPE_COLOR =      2,
+    // Integer types      1x
+        TYPE_LONG =       10,
+        TYPE_INT =        11,
+    // Real types         2x
+        TYPE_DOUBLE =     20,
+    // Other types        3x
+        TYPE_BOOLEAN =    30
+    };
+
+    /**
+     * Defines constants for showLabel
+     */
+    enum {
+        SHOW_NONE =   0x0000,
+        SHOW_NAME =   0x0001,
+        SHOW_DESC =   0x0002,
+        SHOW_VALUE =  0x0004,
+        SHOW_EXTRA =  0x0008
+    };
+}

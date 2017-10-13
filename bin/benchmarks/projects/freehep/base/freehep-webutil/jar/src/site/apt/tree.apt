@@ -1,0 +1,109 @@
+    ------
+    Tree Tag
+
+Tree Tag
+
+    With the Tree tag it is possible to generate a navigation tree starting from a model. 
+    
+* Set up
+
+    The following steps are required to setup the tags and get started witht he first example:
+
+** Import the utilities
+
+    Import the FreeHEP Web Utils as described {{{index.html}here}}.
+
+** Import the tags
+
+    Include the tags in any jsp page you want to use them by adding
+
++---------------------------+
+<%@taglib prefix="tree" uri="http://java.freehep.org/tree-taglib" %>
++---------------------------+
+
+** Icon Servlet
+
+    The tree icons are generated via a servlet to allow users to modify the look of the tree. If no icons are
+    provided by the user the default ones will be picked up.
+    To add the servlet add the following lines to your <WEB-INF/web.xml> file.
+
++---------------------------+
+    <servlet>
+       <servlet-name>fhicon</servlet-name>
+       <servlet-class>org.freehep.webutil.tree.IconServlet</servlet-class>
+       <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>fhicon</servlet-name>
+        <url-pattern>/icon.jsp</url-pattern>
+    </servlet-mapping>
++---------------------------+
+
+
+* Creating a model
+
+    The model used to create the tree is the root node containing  the tree structure. The nodes in the tree
+    must implement the org.freehep.webutil.tree.TreeNode interface for which we provide a default implementation; please
+    refer to the {{{apidocs/overview-summary.html} api documentation}}.
+
+    The following example shows how to create a simple model in a JSP environment:
+
++-----------------------------+
+    <%
+    org.freehep.webutil.tree.DefaultTreeNode root = new org.freehep.webutil.tree.DefaultTreeNode("root");
+    root.createNodeAtPath("A");
+    root.createNodeAtPath("A/a");
+    root.createNodeAtPath("/A/B");
+    root.createNodeAtPath("/A/B/b/");
+    root.createNodeAtPath("/A/B/c");
+    session.setAttribute("root", root);
+    %>
++-----------------------------+
+
+* Creating the tree
+
+    Once the model has been created the navigation tree is generated with the following:
+
++-----------------------------+
+    <tree:tree model="${root}"/>
++-----------------------------+
+
+** Tree Attributes
+
+    The following is a list of attributes that can be passed to the tree tag:
+
+*------------------------------------------+
+| <<Name>>      |  <<Description>>         |
+*------------------------------------------+
+| model         | The only required attribute. It's the tree model. |
+*------------------------------------------+
+| rootVisible   | true if the root node is to be displayed in the tree. Default is true. |
+*------------------------------------------+
+| showItemCount | If set to true, next to each folder there will be the number on items contained in it.  False by default. |
+*------------------------------------------+
+| leafHref      | Href for leaves. See below for more info. |
+*------------------------------------------+
+| folderHref    | Href for folders. See below for more info. |
+*------------------------------------------+
+| folderHrefLimit | Limit of leaves over which the folder's link is not created. |
+*------------------------------------------+
+| rootNodeName   | The name of the root node. |
+*------------------------------------------+
+
+
+* Customizing the tree
+
+    By default the tree is using icons distributed by default with the code. It is possible to customizing the look of the tree by
+    providing your own icons. Do do so you can specify the location of your icons in the <WEB-INF/classes/freehepWebapp.properties>
+    file. The properties related to the icons are:
+
+*------------------------------------------+
+| <<Name>>    | <<Description>>        |
+*------------------------------------------+
+| freehep.tree.images.doc    | leaf image |
+*------------------------------------------+
+| freehep.tree.images.folderclosed | closed folder |
+*------------------------------------------+
+| freehep.tree.images.folderopen | open folder |
+*------------------------------------------+

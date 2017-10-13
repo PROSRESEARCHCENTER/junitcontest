@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<heprep xmlns="http://java.freehep.org/schemas/heprep/2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.freehep.org/schemas/heprep/2.0 http://java.freehep.org/schemas/heprep/2.0/HepRep.xsd">
+
+    <layer order="Geometry"/>
+        
+    <typetree name="Types">
+        <type name="TextType">
+            <attvalue name="layer" value="Geometry" />
+            <attvalue name="drawAs" value="Text" />
+            <attvalue name="HPos" value="0.9" />
+            <attvalue name="VPos" value="0.1" />
+        </type>
+        <type name="PointType">
+            <attvalue name="layer" value="Geometry" />
+            <attvalue name="drawAs" value="Point" />
+            <attvalue name="HasFrame" value="True" />
+            <attvalue name="MarkName" value="Square" />
+        </type>
+    </typetree>
+
+    <instancetree name="TestPoint" typetreename="Types">
+        <instance type="TextType">
+            <attvalue name="Text" value="Point" />
+        </instance>
+        <instance type="PointType">
+            <point x="0.0" y="0.0" z="0.0" />
+        </instance>
+        <instance type="PointType">
+            <attvalue name="Color" value="blue"/>
+            <attvalue name="FrameColor" value="white"/>
+            <point x="10.0" y="10.0" z="10.0" />
+        </instance>
+        <instance type="PointType">
+            <attvalue name="MarkSize" value="10"/>
+            <point x="-10.0" y="10.0" z="10.0" />
+        </instance>
+    </instancetree>
+
+</heprep>

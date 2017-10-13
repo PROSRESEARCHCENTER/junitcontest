@@ -1,0 +1,12 @@
+Building
+--------
+
+mvn package
+
+output:  target/runtool-1.0.0-SNAPSHOT.jar
+copy-to: ../lib/runtool-1.0.0-SNAPSHOT.jar
+
+Cleaning
+--------
+
+mvn clean

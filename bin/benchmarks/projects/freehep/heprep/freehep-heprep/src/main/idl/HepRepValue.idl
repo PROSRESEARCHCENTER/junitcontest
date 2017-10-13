@@ -1,0 +1,153 @@
+#ifndef HEPREPVALUE_IDL
+#define HEPREPVALUE_IDL
+
+//
+// This IDL spec is a copy of HepRep.idl, except that:
+//      - all structs are replaced by valuetypes
+//      - all typedefs are replaced by valuetypes
+//      - all fields have been made public (default for structs)
+//      - all valuetypes and their lists are declared at the top, so that we could get rid of the Any's
+//      - we use inheritance to avoid redeclaring the AttDefList and the AttValueList
+//
+// ValueTypes are only supported in CORBA 2.3 and higher, which means you need ORBACUS 4.0.3 or later.
+//
+// To compile this IDL for java:
+//      jidl --package hep.graphics.heprep.corbavalue.idl hep/graphics/heprep/HepRepValue.idl
+//
+// To compile this IDL for C++:
+//      idl hep/graphics/heprep/HepRepValue.idl
+//
+// Author: J.Perl
+// Author: M.Donszelmann
+//
+// $Id: HepRepValue.idl 8617 2006-08-16 07:39:12Z duns $
+//
+
+    valuetype StringArray sequence<string>;
+
+    valuetype HepRepAttDef;
+    valuetype HepRepAttDefList sequence<HepRepAttDef>;
+
+    valuetype HepRepAttValue;
+    valuetype HepRepAttValueList sequence<HepRepAttValue>;
+
+    valuetype HepRepAttribute;
+    valuetype HepRepDefinition;
+
+    valuetype HepRepPoint;
+    valuetype HepRepPointList sequence<HepRepPoint>;
+
+    valuetype HepRepInstance;
+    valuetype HepRepInstanceList sequence<HepRepInstance>;
+
+    valuetype HepRepInstanceTree;
+
+    valuetype HepRepType;
+    valuetype HepRepTypeList sequence<HepRepType>;
+
+    valuetype HepRepTypeTree;
+
+    valuetype HepRepTreeID;
+    valuetype HepRepTreeIDList sequence<HepRepTreeID>;
+
+    valuetype HepRepAction;
+    valuetype HepRepActionList sequence<HepRepAction>;
+
+    // Attribute Definition
+    valuetype HepRepAttDef {
+        public string name;
+        public string desc;
+        public string category;
+        public string extra;
+    };
+
+    // Attribute Value
+    valuetype HepRepAttValue {
+        public string name;
+        public any value;
+        public long showLabel;
+    };
+
+    valuetype HepRepAttribute {
+        public HepRepAttValueList attValues;
+    };
+
+    valuetype HepRepDefinition : HepRepAttribute {
+        public HepRepAttDefList attDefs;
+    };
+
+    // Point
+    valuetype HepRepPoint : HepRepAttribute {
+        public HepRepInstance instance;
+        public double x;
+        public double y;
+        public double z;
+    };
+
+    // Instance
+    valuetype HepRepInstance : HepRepAttribute {
+        public HepRepInstanceList instances;
+        public HepRepType typeName;
+        public HepRepPointList points;
+    };
+
+    // TreeID
+    valuetype HepRepTreeID {
+        public string name;
+        public string version;
+    };
+
+    // InstanceTree
+    valuetype HepRepInstanceTree : HepRepTreeID {
+        public HepRepTreeID typeTreeID;
+        public HepRepTreeIDList instanceTreeIDs;
+        public HepRepInstanceList instances;
+    };
+
+    // Type
+    valuetype HepRepType : HepRepDefinition {
+        public HepRepType parent;
+        public string name;
+        public string desc;
+        public string infoURL;
+        public HepRepTypeList types;
+    };
+
+    // TypeTree
+    valuetype HepRepTypeTree : HepRepTreeID {
+        public HepRepTypeList types;
+    };
+
+    // Action
+    valuetype HepRepAction {
+        public string name;
+        public string expression;
+    };
+
+    // HepRep
+    interface HepRep {
+        HepRepInstanceTree getInstanceTreeTop(
+				in string instanceTreeName,
+				in string instanceTreeVersion);
+        HepRepTypeTree getTypeTree(
+				in string typeTreeName,
+				in string typeTreeVersion);
+        HepRepInstanceTree getInstances(
+				in string instanceTreeName,
+				in string instanceTreeVersion,
+				in StringArray typeNames);
+        HepRepInstanceTree getInstancesAfterAction(
+                                in string instanceTreeName,
+                                in string instanceTreeVersion,
+                                in StringArray typeNames,
+                                in HepRepActionList actions,
+                                in boolean getPoints,
+                                in boolean getDrawAtts,
+                                in boolean getNonDrawAtts,
+                                in StringArray invertAtts);
+        StringArray getLayerOrder();
+        string checkForException();
+    };
+
+
+#endif

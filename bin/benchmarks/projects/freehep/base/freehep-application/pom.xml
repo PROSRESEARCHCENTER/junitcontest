@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+        <groupId>org.freehep</groupId>
+        <artifactId>base</artifactId>
+        <version>14.0.9</version>
+    </parent>
+  
+    <artifactId>freehep-application</artifactId>
+    <version>2.2.7-SNAPSHOT</version>
+  
+    <name>FreeHEP Application Framework</name>
+    <description>FreeHEP Application Framework</description>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-application</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/base/freehep-application</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-application</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-application</developerConnection>
+    </scm>
+  
+
+    <dependencies>
+    
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-commandline</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-commanddispatcher</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-swing</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-xml</artifactId>
+        </dependency>
+    
+        <dependency>
+            <groupId>jdom</groupId>
+            <artifactId>jdom</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.jnlp</groupId>
+            <artifactId>jnlp</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.help</groupId>
+            <artifactId>javahelp</artifactId>
+            <version>2.0.02</version>
+        </dependency>
+    
+    </dependencies>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <version>2.14.1</version>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/MDITest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+</project>

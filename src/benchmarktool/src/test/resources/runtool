@@ -1,0 +1,92 @@
+#! /bin/sh
+homedir=`dirname $0`
+read line
+echo $line >&2
+
+read line
+echo $line >&2
+
+read line
+echo $line >&2
+
+read line
+echo $line >&2
+
+read line
+echo $line >&2
+
+#read line
+#echo $line >&2
+
+echo READY
+
+read line
+echo $line >&2
+cname=${line##*.}
+pwd >&2
+mkdir $homedir/temp/testcases/testcases/
+cat > $homedir/temp/testcases/testcases/${cname}Test.java << EOF
+package testcases;
+import org.junit.Test;
+import org.junit.Assert;
+import sample.Nil;
+import sample.Cons;
+import sample.IList;
+
+public class ${cname}Test
+{
+	public ${cname}Test()
+	{
+	}
+	@Test
+	public void case1()
+	{
+	try
+	{
+		Nil<Integer> list = new Nil<Integer>();
+		System.err.println("length: "+ list.length());
+		Assert.assertTrue(list.length() == 0);
+		}
+		catch (Throwable e)
+		{
+		e.printStackTrace();
+		}
+	}
+	@Test
+	public void case2()
+	{
+		System.out.println("Hi, here i am2");
+	}
+
+}
+EOF
+
+echo READY
+
+read line
+echo $line >&2
+cname=${line##*.}
+mkdir $homedir/temp/testcases/testcases/
+cat > $homedir/temp/testcases/testcases/${cname}Test.java << EOF
+package testcases;
+import org.junit.Test;
+import org.junit.Assert;
+import java.io.File;
+
+public class ${cname}Test
+{
+	public ${cname}Test()
+	{
+	}
+
+    @Test
+	public void case2() throws Exception
+	{
+		System.out.println("Hi, here i am");
+		Assert.assertTrue(false);
+	}
+
+}
+EOF
+echo READY
+

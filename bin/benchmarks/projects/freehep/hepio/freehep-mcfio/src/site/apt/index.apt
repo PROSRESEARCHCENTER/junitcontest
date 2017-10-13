@@ -1,0 +1,20 @@
+	---
+FreeHEP MCFIO
+	---
+	---
+Mark Donszelmann
+	---
+	
+Introduction
+
+        An implementation of the Fermilab MCFIO package.
+        
+        This package is used as the basis for reading and writing stdhep 
+files.
+
+	The current Java implementation supports reading and writing MCFIO files. It 
+is designed to be completely compatible with the C implementation. Files written 
+using the C implementation should be readable using Java, and 
+<<vice-versa>>. Currently the package only supports MCFIO version 1.0. Also 
+supporting 2.x should be fairly straightforward.
+

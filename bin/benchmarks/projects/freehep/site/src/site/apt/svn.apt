@@ -1,0 +1,105 @@
+    ---
+FreeHEP - Access to the Code
+    ---
+
+Access to the Code
+
+    The source code and websites of version 2.0 (and up) of FreeHEP are housed on a subversion (svn) server.
+    (FreeHEP 1.x is still available from cvs).
+    
+* Browsing the repository
+    
+    You can look through our repository with {{{http://java.freehep.org/svn/repos/freehep/list/}Sventon}}.
+    
+* Client
+
+    To check out the FreeHEP code from our subversion server you need an subversion client (svn).
+    Download the command line version from {{http://subversion.tigris.org}}.
+    
+    Some IDEs/OSs contain plugin/access modules to access svn:
+    
+    * NetBeans: download Subversion Profile via NetBeans Update Center.
+    
+    * Eclipse: use SubClipse from {{http://subclipse.tigris.org/}}.
+     
+    * Windows Explorer: use TortoiseSVN from {{http://tortoisesvn.tigris.org/}}.
+
+    * MacOS X: use svnX from {{http://www.lachoseinteractive.net/en/community/subversion/svnx}}.
+    
+* Repository Read Access
+
+    The FreeHEP Subversion repository is available for anonymous access through:
+
++--    
+svn co svn://svn.freehep.org/svn/freehep/trunk freehep
++--    
+    which will get you the full FreeHEP repository. 
+    
+    You may want to ask for just a single global library, such as freehep-base with the following
+    command:
+    
++--
+svn co svn://svn.freehep.org/svn/freehep/trunk/base freehep-base
++--    
+    or a single library, such as freehep-util:
+    
++--
+svn co svn://svn.freehep.org/svn/trunk/base/freehep-util freehep-util
++--    
+    Any module or submodule can be compiled by itself.
+    
+* Repository Structure
+
+    To browse the repository you can use the "list" command, for example:
+    
++--
+svn ls svn://svn.freehep.org/svn/freehep/trunk/base
++--    
+    In general our structure looks like this:
+
++--    
+/svn/freehep/trunk/
+                  /assembly/
+                           /jaida
+                  /base/
+                       /freehep-application
+                       /freehep-commanddispatcher
+                       /...
+                  /maven-plugins/
+                                /freehep-chartableconverter-plugin
+                                /freehep-idlj-plugin
+                                /...
+            /tags/
+                 /freehep-xml-2.1
+                 /freehep-util-2.0
+                 /...
+            /branches/
++--    
+
+* Repository Write Access
+
+    Developers with commit access can check out copies of the repository using anonymous access.
+    Once they need to commit code back to the repository, authentication in svn will occur and
+    write access will be given.
+   
+    <<Before you commit or add anything to our subversion repository>> make sure you use the content of the file
+    {{./svn-eol-style.txt}} in your subversion configuration file. This file with name "config" is located:
+    
+        * On Windows: <<<C:\Documents and Settings\>>><user><<<\Application Data\Subversion\config>>>
+    
+        * On Unix: <<<${HOME}/.subversion/config>>>
+    
+    To add files and directories to the svn structure you need to use:
+    
++--
+svn add <newfile>
+svn add <newdirectory>
++--    
+    To do the same as .cvsignore (this file does not exist in svn) you need to set the properties on a directory:
+    
++--
+svn propset svn:ignore -F <freehep-top-level-dir>/svnignores.txt
++--    
+    Want to add a new (global) library, then mail me {{mailto:developers@freehep.org}}
+    
+    

@@ -1,0 +1,14 @@
+	---
+FreeHEP Physics
+	---
+	---
+Mark Donszelmann
+	---
+	
+Physics
+
+	A collection of High Energy Physics related classes, including 3- and 4- vectors, simple matrices,
+        particles and events, partcile properties and jet finding.
+	
+	This library is also distributed as part of the global FreeHEP library freehep-hep.jar
+	 

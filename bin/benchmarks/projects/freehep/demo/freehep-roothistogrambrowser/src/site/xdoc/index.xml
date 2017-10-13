@@ -1,0 +1,21 @@
+<document>
+  <properties>
+    <title>FreeHEP Java Library - Root Histogram Browser</title>
+  </properties>
+  <body>
+    <section name="FreeHEP Root Histogram Browser">
+
+<p>The following demo requires that your have <a href="http://java.sun.com/products/javawebstart">JavaWebStart
+1.0</a> (or later) installed.</p>
+
+<p>The root histogram browser allows you to view histograms stored inside a Root
+file. It uses the <a href="http://jas.freehep.org/">JAS
+Plot widget</a> to display the histograms.</p>
+<form method="GET" action="RootHistogramBrowser.jnlp">
+  <p><input type="submit" value="Launch Root Histogram Browser" name="go"/></p>
+</form>
+
+</section>
+</body>
+</document>
+

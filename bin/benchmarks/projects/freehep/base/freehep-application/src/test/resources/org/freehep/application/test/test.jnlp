@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for FreeHEP Test Application --> 
+<jnlp 
+  spec="1.0" 
+  codebase="http://jas.freehep.org/test" 
+  href="test.jnlp"> 
+  <information> 
+    <title>FreeHEP Test Application</title> 
+    <vendor>FreeHEP</vendor> 
+    <homepage href="default.htm"/> 
+    <description>FreeHEP Test Application</description> 
+    <description kind="short">A program for experimenting with Java Web Start.</description> 
+    <icon href="freehep.gif"/> 
+    <offline-allowed/> 
+  </information> 
+  <resources> 
+    <j2se version="1.3"/> 
+    <jar href="freehep.jar"/> 
+  </resources> 
+  <application-desc main-class="org.freehep.studio.test.PrintTest"/> 
+</jnlp> 

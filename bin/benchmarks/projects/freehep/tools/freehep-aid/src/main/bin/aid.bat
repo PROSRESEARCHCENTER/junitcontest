@@ -1,0 +1,1 @@
+java %AID_FLAGS% -classpath %AID_HOME%\lib\freehep-base.jar;%AID_HOME%\lib\freehep-aid.jar;%AID_HOME%\lib\bcel.jar org.freehep.aid.Aid %*

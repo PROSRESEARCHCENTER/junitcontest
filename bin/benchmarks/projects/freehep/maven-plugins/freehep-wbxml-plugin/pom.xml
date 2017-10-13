@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>maven-plugins</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>6.3</version>
+        <relativePath />
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-wbxml-plugin</artifactId>
+    <version>2.2-SNAPSHOT</version>
+    <packaging>maven-plugin</packaging>
+    <name>FreeHEP WBXML Plugin</name>
+    <description>Maven plugin to generate constant files and documentation from a wbxml definition file
+    </description>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-wbxml-plugin</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/maven-plugins/freehep-wbxml-plugin</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/maven-plugins/freehep-wbxml-plugin</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/maven-plugins/freehep-wbxml-plugin</developerConnection>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-compiler-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>

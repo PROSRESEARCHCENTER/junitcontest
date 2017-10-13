@@ -1,0 +1,19 @@
+    ---
+FreeHEP Maven Repository
+    ---
+
+FreeHEP Maven Repository
+
+    The FreeHEP maven repository is where we publish artifacts, source code and javadoc. 
+    The url of the repository is: {{http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/}}
+    
++--
+<repositories>
+  <repository>
+    <id>freehep-maven</id>
+    <name>Maven FreeHEP</name>
+    <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+  </repository>
+</repositories>
+
+    

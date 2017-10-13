@@ -1,0 +1,119 @@
+    ---
+    Binary Distribution
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Binary Distribution
+
+* Download
+
+    The most recent jaida version can be downloaded from the following {{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/}ftp site}}.
+    For each platform there are three files that can be downloaded:
+
+    * jaida-<version>-bin containing the jar files for the distribution
+    
+    * jaida-<version>-doc containing the documentation (this site)
+
+    * jaida-<version>-<platform> containing the native code for <Minuit> and <HBook>.
+
+* Maven 2
+
+    To embed JAIDA in a maven 2 project, add the following dependencies to your pom file:
+
++--------------+
+
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>jas-plotter</artifactId>
+      <version>2.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-xml</artifactId>
+      <version>2.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida</artifactId>
+      <version>3.3.0-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida-root</artifactId>
+      <version>3.3.0-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida-jminuit</artifactId>
+      <version>3.3.0-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida-fminuit</artifactId>
+      <version>3.3.0-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida-hbook</artifactId>
+      <version>3.3.0-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida-remote</artifactId>
+      <version>3.3.0-7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphics2d</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-cgm</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-emf</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-gif</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-pdf</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-ps</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-svg</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-graphicsio-swf</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
++--------------+
+
+* Maven 1
+    
+    The list of dependencies to embed in a maven 1 <project.xml> file can be found {{{project.xml}here}}.
+
+

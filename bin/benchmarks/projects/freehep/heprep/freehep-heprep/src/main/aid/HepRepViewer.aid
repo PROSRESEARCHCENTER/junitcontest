@@ -1,0 +1,20 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * The HepRepViewer interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepViewer.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepViewer {
+
+    /**
+     * Display a heprep
+     * @param heprep HepRep to be displayed
+     */
+    void display(HepRep heprep);
+}

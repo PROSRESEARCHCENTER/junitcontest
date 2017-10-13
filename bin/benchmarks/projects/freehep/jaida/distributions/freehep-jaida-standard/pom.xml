@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>FreeHEP JAIDA Standard Distribution POM</name>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-jaida-standard-distribution</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <artifactId>jaida-pom</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>3.4.14-SNAPSHOT</version>
+        <relativePath>../../</relativePath>
+    </parent>
+
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jaida-standard-distribution</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/jaida/distributions/freehep-jaida-standard</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/distributions/freehep-jaida-standard</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/distributions/freehep-jaida-standard</developerConnection>
+    </scm>
+    <properties>
+        <graphics.version>2.3</graphics.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jaida</artifactId>
+            <version>3.4.14-SNAPSHOT</version>
+            <exclusions>
+                <!-- Temporary. A permanent fix should be added to freehep-application -->
+                <exclusion>
+                    <groupId>javax.help</groupId>
+                    <artifactId>javahelp</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jaida-root</artifactId>
+            <version>3.4.14-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jaida-jminuit</artifactId>
+            <version>3.4.14-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio</artifactId>
+            <version>${graphics.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-pdf</artifactId>
+            <version>${graphics.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-ps</artifactId>
+            <version>${graphics.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-svg</artifactId>
+            <version>${graphics.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-swf</artifactId>
+            <version>${graphics.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>

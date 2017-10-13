@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--This is the document type defintion file for hep.aida IPlotterStyle xml files-->
+
+<!ELEMENT aidaPlotterStyle (  ( aidaStyle | aidaStyleAttribute)+ ) > 
+ 
+<!ELEMENT aidaStyle (  ( aidaStyle | aidaStyleAttribute)+ ) > 
+<!ATTLIST aidaStyle
+    type CDATA #REQUIRED
+>
+ 
+<!ELEMENT aidaStyleAttribute EMPTY >
+<!ATTLIST aidaStyleAttribute 
+    attributeName     CDATA #REQUIRED 
+    attributeValue    CDATA #REQUIRED 
+>
+ 
+ 

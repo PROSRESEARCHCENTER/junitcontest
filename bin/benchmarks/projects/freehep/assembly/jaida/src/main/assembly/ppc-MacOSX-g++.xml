@@ -1,0 +1,15 @@
+<assembly>
+  <id>ppc-MacOSX-g++</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>target/nar/lib/ppc-MacOSX-g++/jni</directory>
+      <outputDirectory>lib/ppc-MacOSX-g++</outputDirectory>      
+      <includes>
+        <include>*</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

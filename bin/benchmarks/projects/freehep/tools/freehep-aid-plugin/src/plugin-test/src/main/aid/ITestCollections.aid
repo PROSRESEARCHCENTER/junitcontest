@@ -1,0 +1,61 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestInterface to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestCollections.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestCollections extends AIDRef {
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir(Collection<String> dummy) throws IllegalArgumentException;
+
+@ifdef jni
+    /**
+     * Method with auto ptrs
+     *
+     * @param name
+     * @return result
+     */
+    auto_ptr<String[]> convert(auto_ptr<String> name);
+@endif
+
+    /**
+     * Method with parameterized types
+     *
+     * @param map of key value pairs
+     * @return collection of strings
+     */
+    Collection<ITestEmpty> parameterizedMethod(Map<String, String> map);
+
+@ifdef cpp
+    /**
+     * Handle command line arguments
+     *
+     * @param argc number of arguments
+     * @param arg array of arguments
+     */
+    Collection<String> convertFromMain(int argc, char ** arg);
+@endif
+
+@ifdef java
+    /**
+     * Handle command line arguments
+     *
+     * @param args array of arguments
+     */
+    Collection<String> convertFromMain(String[] args);
+@endif
+
+}
+    

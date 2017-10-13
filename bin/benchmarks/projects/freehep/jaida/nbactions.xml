@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Build skipTests</actionName>
+            <displayName>Build skipTests</displayName>
+            <goals>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-update-child-modules</actionName>
+            <displayName>update-child-modules</displayName>
+            <goals>
+                <goal>versions:update-child-modules</goal>
+                <goal>-DgenerateBackupPoms=false</goal>
+            </goals>
+        </action>
+    </actions>

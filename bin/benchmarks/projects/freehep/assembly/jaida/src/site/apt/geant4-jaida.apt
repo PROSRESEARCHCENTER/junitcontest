@@ -1,0 +1,13 @@
+    ---
+    Geant4 and JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Geant4 and JAIDA
+    
+    It is currently possible to use Geant4 with JAIDA <<3.2.x>>. The documentation on how to use the two
+softwares together can be found on the {{{http://geant4.slac.stanford.edu/g4cd/Welcome.html}SLAC Geant4 Tutorial CD}}.
+
+    Also refer to the documentation on how to use {{{cpp-jaida.html} JAIDA from C++}}.

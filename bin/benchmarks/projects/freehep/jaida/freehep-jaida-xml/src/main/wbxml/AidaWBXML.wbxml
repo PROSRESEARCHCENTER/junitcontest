@@ -1,0 +1,155 @@
+#
+# Binary XML Definition for AIDA
+#
+# Author: Mark Donszelmann
+# Version: 1.0
+#
+
+# Format: seqNo constantName realName isEmpty [doc]
+[tags]
+ 0	AIDA			aida			false
+ 1	IMPLEMENTATION	implementation	true
+ 2 	HISTOGRAM_1D	histogram1d		false
+ 3	HISTOGRAM_2D	histogram2d		false
+ 4	HISTOGRAM_3D	histogram3d		false
+ 5	AXIS			axis			false
+ 6	BIN_BORDER		binBorder		true
+ 7 	STATISTICS		statistics		false
+ 8	STATISTIC		statistic		true
+ 9	DATA_1D			data1d			false
+10	BIN_1D			bin1d			true
+11	DATA_2D			data2d			false
+12	BIN_2D			bin2d			true
+13	DATA_3D			data3d			false
+14	BIN_3D			bin3d			true
+15	TUPLE			tuple			false
+16	COLUMNS			columns			false
+17	COLUMN			column			false
+18	ROWS			rows			false
+19	ROW				row				false
+20	ENTRY			entry			true
+21	ENTRY_ITUPLE	entryITuple		false
+22	CLOUD_1D		cloud1d			false
+23	CLOUD_2D		cloud2d			false
+24	CLOUD_3D		cloud3d			false
+25	ENTRIES_1D		entries1d		false
+26	ENTRIES_2D		entries2d		false
+27	ENTRIES_3D		entries3d		false
+28	ENTRY_1D		entry1d			true
+29	ENTRY_2D		entry2d			true
+30	ENTRY_3D		entry3d			true
+31	PROFILE_1D		profile1d		false
+32	PROFILE_2D		profile2d		false
+33	DATA_POINT_SET	dataPointSet	false
+34	DATA_POINT		dataPoint		false
+35	MEASUREMENT		measurement		true
+36	ANNOTATION		annotation		false
+37	ITEM			item			true
+38	FUNCTION		function		false
+39	CODELET			codelet			false
+40	ARGUMENTS		arguments		false
+41	ARGUMENT		argument		false
+42	RANGE			range			true
+43	PARAMETERS		parameters		false
+44	PARAMETER		parameter		true
+45      FIT_RESULT              fitResult               false
+46      FITTED_PARAMETER        fittedParameter         true
+47      COVARIANCE_MATRIX       covarianceMatrix        false
+48      MATRIX_ELEMENT          matrixElement           true
+49      FIT_CONSTRAINT          fitConstraint           true
+
+#Format: seqNo constantName realName type [doc]
+[attributes]
+ 0	VERSION					version					String		
+ 1	XMLNS					xmlns					String
+ 2	XMLNS_XSI				xmlns:xsi				String
+ 3	XSI_SCHEMALOCATION		xmlns:schemaLocation	String
+ 4	VALUE_BOOLEAN			valueBoolean			boolean
+ 5	VALUE_BYTE				valueByte				byte
+ 6	VALUE_CHAR				valueChar				char
+ 7	VALUE_DOUBLE			valueDouble				double
+ 8	VALUE_FLOAT				valueFloat				float
+ 9	VALUE_INT				valueInt				int
+10	VALUE_LONG				valueLong				long
+11	VALUE_SHORT				valueShort				short
+12	VALUE_STRING			valueString				String
+13	PACKAGE					package					String
+14	NAME					name					String
+15	TITLE					title					String
+16	PATH					path					String
+17	OPTIONS					options					String
+18	DIRECTION				direction				String
+19	MIN						min						double
+20	MAX						max						double
+21	NUMBER_OF_BINS			numberOfBins			int
+22	ENTRIES					entries					int
+23	EQUIVALENT_BIN_ENTRIES	equivalentBinEntries	int
+24	MEAN					mean					double
+25	RMS						rms						double
+26	SKEWNESS				skewness				double
+27	BIN_NUM					binNum					int
+28	WEIGHTED_MEAN			weightedMean			double
+29	WEIGHTED_RMS			weightedRms				double
+30	HEIGHT					height					double
+31	ERROR					error					double
+32	ERROR_2					error2					double
+33	BIN_NUM_X				binNumX					int
+34	BIN_NUM_Y				binNumY					int
+35	BIN_NUM_Z				binNumZ					int
+36	WEIGHTED_MEAN_X			weightedMeanX			double
+37	WEIGHTED_MEAN_Y			weightedMeanY			double
+38	WEIGHTED_MEAN_Z			weightedMeanZ			double
+39	WEIGHTED_RMS_X			weightedRmsX			double
+40	WEIGHTED_RMS_Y			weightedRmsY			double
+41	WEIGHTED_RMS_Z			weightedRmsZ			double
+42	TYPE					type					String
+43	MAX_ENTRIES				maxEntries				int
+44	LOWER_EDGE_X			lowerEdgeX				double
+45	LOWER_EDGE_Y			lowerEdgeY				double
+46	LOWER_EDGE_Z			lowerEdgeZ				double
+47	UPPER_EDGE_X			upperEdgeX				double
+48	UPPER_EDGE_Y			upperEdgeY				double
+49	UPPER_EDGE_Z			upperEdgeZ				double
+50	CONVERSION_BINS			conversionBins			int
+51	CONVERSION_BINS_X		conversionBinsX			int
+52	CONVERSION_BINS_Y		conversionBinsY			int
+53	CONVERSION_BINS_Z		conversionBinsZ			int
+54	CONVERSION_LOWER_EDGE	conversionLowerEdge		double
+55	CONVERSION_LOWER_EDGE_X	conversionLowerEdgeX	double
+56	CONVERSION_LOWER_EDGE_Y	conversionLowerEdgeY	double
+57	CONVERSION_LOWER_EDGE_Z	conversionLowerEdgeZ	double
+58	CONVERSION_UPPER_EDGE	conversionUpperEdge		double
+59	CONVERSION_UPPER_EDGE_X	conversionUpperEdgeX	double
+60	CONVERSION_UPPER_EDGE_Y	conversionUpperEdgeY	double
+61	CONVERSION_UPPER_EDGE_Z	conversionUpperEdgeZ	double
+62	VALUE_X					valueX					double
+63	VALUE_Y					valueY					double
+64	VALUE_Z					valueZ					double
+65	WEIGHT					weight					double
+66	DIMENSION				dimension				int
+67	ERROR_PLUS				errorPlus				double
+68	ERROR_MINUS				errorMinus				double
+69	KEY						key						String
+70	STICKY					sticky					boolean
+71	IS_NORMALIZED			isNormalized			boolean
+72	LABEL					label					String
+73	FIT_DIMENSION                       fitDimension           int
+74      FIT_ENGINE_NAME                     fitEngineName          String
+75      FIT_METHOD_NAME                     fitMethodName          String
+76      FIT_IS_VALID                        fitIsValid             boolean
+77      FIT_QUALITY                         fitQuality             double
+78      FIT_STATUS                          fitStatus              int
+79      FIT_DEGREES_OF_FREEDOM              fitDegreesOfFreedom    int
+80      FIT_DATA_DESCRIPTION                fitDataDescription     String
+81      FITTED_PARAMETER_NAME               fittedParameterName        String
+82      FITTED_PARAMETER_VALUE              fittedParameterValue       double
+83      FITTED_PARAMETER_ERROR_PLUS         fittedParameterErrorPlus   double
+84      FITTED_PARAMETER_ERROR_MINUS        fittedParameterErrorMinus  double
+85      FITTED_PARAMETER_IS_FIXED           fittedParameterIsFixed     boolean
+86      FITTED_PARAMETER_STEP_SIZE          fittedParameterStepSize    double
+87      FITTED_PARAMETER_LOWER_BOUND        fittedParameterLowerBound  double
+88      FITTED_PARAMETER_UPPER_BOUND        fittedParameterUpperBound  double
+89      MATRIX_ELEMENT_ROW                  matrixElementRow           int
+90      MATRIX_ELEMENT_COLUMN               matrixElementColumn        int
+91      MATRIX_ELEMENT_VALUE                matrixElementValue         double
+92      FIT_CONSTRAINT_VALUE                fitConstraintValue         String

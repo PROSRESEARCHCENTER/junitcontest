@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://java.freehep.org/schemas/jaida/1.0"
+    xmlns="http://java.freehep.org/schemas/jaida/1.0"
+    elementFormDefault="qualified">
+
+    <include schemaLocation="http://java.freehep.org/schemas/jaida/1.0/aidaPlotterStyle.xsd" />
+
+    <xs:element name="aidaStyleRule" type="aidaStyleRuleType"/>
+
+    <xs:complexType name="aidaStyleRuleType">
+        <xs:attribute name="ruleType"  type="xs:string" use="optional"/>
+        <xs:attribute name="ruleName"  type="xs:string" use="optional"/>
+        <xs:attribute name="ruleValue" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <xs:element name="aidaStyleStoreEntry" type="aidaStyleStoreEntryType"/>
+
+    <xs:complexType name="aidaStyleStoreEntryType">
+        <xs:attribute name="entryName" type="xs:string" use="required"/>
+        <xs:attribute name="entryType" type="xs:string" use="optional"/>
+        <xs:sequence>
+            <xs:element ref="aidaStyleRule" use="required"/>
+            <xs:element ref="aidaPlotterStyle" use="required"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="aidaStyleStore" type="aidaStyleStoreType"/>
+
+    <xs:complexType name="aidaStyleStoreType">
+        <xs:attribute name="storeName" type="xs:string" use="required"/>
+        <xs:attribute name="storeType" type="xs:string" use="required"/>
+        <xs:attribute name="isReadOnly" type="xs:boolean" use="required"/>
+        <xs:sequence>
+            <xs:element ref="aidaStyleStoreEntry"  minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>   
+
+</xs:schema>

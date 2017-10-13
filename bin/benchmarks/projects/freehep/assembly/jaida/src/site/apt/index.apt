@@ -1,0 +1,31 @@
+    ---
+    JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Overview
+
+	JAIDA is a Java implementation of the Abstract Interfaces for Data Analysis ({{{http://aida.freehep.org/}AIDA}});
+it is part of the {{{http://java.freehep.org/}FreeHEP}} library. 
+JAIDA allows Java programmers to quickly and easily create histograms, 
+scatter plots and tuples, perform fits, view plots and store and retrieve 
+analysis objects from files. JAIDA can be used either in a non-graphical environment 
+(for batch processing) or with a GUI to be used just to
+display plots. In addition files written 
+with JAIDA adhere to the AIDA IO standards and can be read by any AIDA compliant 
+analysis system.
+
+	JAIDA is used internally by 
+{{{http://jas.freehep.org/jas3}JAS3}} which provides a full featured 
+GUI in addition to the above functionality.
+
+	By using the AIDA C++-->Java adapter ({{{http://java.freehep.org/aidajni/index.html}AIDAJNI}}), JAIDA can also be used 
+from any C++ program.
+
+	The current release of JAIDA is 3.3.0, and is based on AIDA 3.3.0. We are still
+providing support for JAIDA 3.0.x.
+
+	For details on how to use JAIDA give a look at the
+{{{release-notes.html}release notes}}.

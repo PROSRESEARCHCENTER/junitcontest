@@ -1,0 +1,122 @@
+#ifndef HEPREP_IDL
+#define HEPREP_IDL
+
+//
+// To compile this IDL for java:
+//      jidl --package hep.heprep.corba.idl hep/heprep/HepRep.idl
+//
+// To compile this IDL for C++:
+//      idl hep/heprep/HepRep.idl
+//
+// Author: J.Perl
+// Author: M.Donszelmann
+//
+// $Id: HepRep.idl 8617 2006-08-16 07:39:12Z duns $
+//
+
+    // Attribute Definition
+    struct HepRepAttDef {
+        string name;
+        string desc;
+        string type;
+        string extra;
+    };
+    typedef sequence<HepRepAttDef>HepRepAttDefList;
+
+    // Attribute Value
+    struct HepRepAttValue {
+        string name;
+        any value;
+        long label;
+    };
+    typedef sequence<HepRepAttValue>HepRepAttValueList;
+
+    // Point
+    struct HepRepPoint {
+        double x;
+        double y;
+        double z;
+        HepRepAttDefList attDefs;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepPoint>HepRepPointList;
+
+    // Primitive
+    struct HepRepPrimitive {
+        HepRepPointList points;
+        HepRepAttDefList attDefs;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepPrimitive>HepRepPrimitiveList; 
+
+    // Instance
+    struct HepRepInstance {
+          // The following would ideally be "HepRepTypeList types",
+          // but that sort of recursion doesn't work.
+          // Instead use a sequence of "any" here and later fill the
+          //"any" with "HepRepType".
+        sequence<any> types;
+        HepRepPrimitiveList primitives;
+        HepRepPointList points;
+        HepRepAttDefList attDefs;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepInstance>HepRepInstanceList;
+
+    // Type
+    struct HepRepType {
+        string name;
+        string version;
+          // The following would ideally be "HepRepTypeList types",
+          // but that sort of recursion doesn't work.
+        sequence<HepRepType> types;
+        HepRepInstanceList instances;
+        HepRepPrimitiveList primitives;
+        HepRepPointList points;
+        HepRepAttDefList attDefs;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepType>HepRepTypeList;
+    
+    // TypeInfo
+    struct HepRepTypeInfo {
+        string name;
+        string version;
+        sequence<HepRepTypeInfo> subTypes;
+        HepRepAttDefList attDefs;
+        HepRepAttValueList attValues;
+    };
+    typedef sequence<HepRepTypeInfo>HepRepTypeInfoList;
+    
+    // Attribute Names
+    struct HepRepAttName {
+        string name;
+    };
+    typedef sequence<HepRepAttName>HepRepAttNameList;
+    
+    // Cuts on attributes
+    struct HepRepCut {
+        string name;
+        string comparison;
+        any value;
+    };
+    typedef sequence<HepRepCut>HepRepCutList;
+    
+    // HepRep
+    interface HepRep {
+        HepRepAttDefList getAttDefs();
+        HepRepAttValueList getAttValues();
+        HepRepTypeInfoList getTypeInfo();
+        HepRepType getRepresentablesUncut(in string name,
+					  in string version);
+        HepRepType getRepresentables(in string name,
+				     in string version,
+                                     in HepRepCutList cutList,
+                                     in boolean getPoints,
+                                     in boolean getDrawAtts,
+                                     in boolean getNonDrawAtts,
+                                     in HepRepAttNameList invertAtts);
+    };
+
+
+#endif

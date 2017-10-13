@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for Export Demo--> 
+<jnlp 
+  spec="1.0" 
+  codebase="http://java.freehep.org/freehep-exportdemo" 
+  href="ExportDemo.jnlp"
+  version ="2.0-SNAPSHOT">
+<!-- look into https://svn.codehaus.org/mojo/trunk/mojo/webstart-maven-plugin/plugin/src/test/projects/project2/src/main/jnlp/template.vm for examples --> 
+  <information> 
+    <title>Export Demo</title> 
+    <vendor>FreeHEP</vendor> 
+    <homepage href="freehep-exportdemo/index.html"/> 
+    <description>FreeHEP Export Demo</description> 
+    <description kind="short">A demonstration of the FreeHEP Export (Save As).</description>
+    <offline-allowed/> 
+  </information> 
+  <resources> 
+    <j2se version="1.4+"/>
+    
+<jar href="freehep-exportdemo-2.0-SNAPSHOT.jar" main="true"/>
+<jar href="jlfgr-1.0.jar"/>
+<jar href="jas-plotter-2.0.jar"/>
+<jar href="freehep-application-2.0.jar"/>
+<jar href="freehep-commandline-2.0.jar"/>
+<jar href="freehep-xml-2.0.jar"/>
+<jar href="freehep-swing-2.0.jar"/>
+<jar href="openide-lookup-1.9-patched-1.0.jar"/>
+<jar href="freehep-commanddispatcher-2.0.jar"/>
+<jar href="freehep-export-2.0.3.jar"/>
+<jar href="freehep-graphicsio-swf-2.0.jar"/>
+<jar href="freehep-graphicsio-ps-2.0.jar"/>
+<jar href="freehep-graphicsio-pdf-2.0.jar"/>
+<jar href="freehep-graphics2d-2.0.jar"/>
+<jar href="freehep-graphicsio-emf-2.0.jar"/>
+<jar href="junit-3.8.2.jar"/>
+<jar href="jdom-1.0.jar"/>
+<jar href="freehep-util-2.0.jar"/>
+<jar href="freehep-graphicsio-2.0.jar"/>
+<jar href="freehep-graphicsio-svg-2.0.jar"/>
+<jar href="freehep-graphicsio-tests-2.0.jar"/>
+<jar href="freehep-io-2.0.1.jar"/>
+
+    <property name="jnlp.org.freehep.application.ServiceManager" value="org.freehep.application.services.jnlp.JNLPServiceManager"/>
+  </resources> 
+  <application-desc main-class="org.freehep.demo.graphics.ExportDemo"/> 
+</jnlp> 

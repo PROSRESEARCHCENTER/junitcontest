@@ -1,0 +1,31 @@
+<project>
+  <parent>
+    <artifactId>global</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>5</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.freehep</groupId>
+  <artifactId>math</artifactId>
+  <packaging>pom</packaging>
+  <name>FreeHEP MATH</name>
+  <version>4-SNAPSHOT</version>
+  <description>FreeHEP MATH Libraries</description>
+  <repositories>
+    <repository>
+      <id>freehep-maven</id>
+      <name>Maven FreeHEP</name>
+      <url>http://java.freehep.org/maven2</url>
+    </repository>
+  </repositories>
+  <modules>
+    <module>freehep-fminuit</module>
+    <module>freehep-jminuit</module>
+  </modules>
+  <distributionManagement>
+    <site>
+      <id>freehep-web-deploy</id>
+      <url>scpexe://svn.freehep.org/nfs/slac/g/jas/workspace/freehep/__star__/web/freehep</url>
+    </site>
+  </distributionManagement>
+</project>

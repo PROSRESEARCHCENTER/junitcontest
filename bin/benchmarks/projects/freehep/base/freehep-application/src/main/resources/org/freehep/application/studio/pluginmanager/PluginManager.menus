@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE MenuSystem SYSTEM "http://java.freehep.org/schemas/menus/1.0/menus.dtd">
+
+<MenuSystem>
+<MenuBar id="mainMenu">
+
+<Menu name="Plugins" mnemonic="P" location="700">
+<Component type="default" name="Plugin Manager..." mnemonic="M" command="pluginManager" location="100"/>
+</Menu>
+
+</MenuBar>
+</MenuSystem>

@@ -1,0 +1,8 @@
+	---
+FreeHEP Command Dispatcher
+	---
+	
+Introduction
+
+        Package to register, enable and disable commands and route/dispatch them to subscribers.
+This can be used with menus and pop-up menus where certain commands need enabling and disabling.

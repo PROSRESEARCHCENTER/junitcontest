@@ -1,0 +1,10 @@
+bin
+target
+release.properties
+nbproject
+velocity.log
+.classpath
+.deployables
+.project
+.settings
+.wtpmodules

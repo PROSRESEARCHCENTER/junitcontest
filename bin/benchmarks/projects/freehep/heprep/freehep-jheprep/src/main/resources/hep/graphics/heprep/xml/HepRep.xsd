@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- $Id: HepRep.xsd 8617 2006-08-16 07:39:12Z duns $ -->
+<!-- Document Type Definition for the HEPREP Descriptions -->
+
+<xs:schema version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://java.freehep.org/schemas/heprep/2.0"
+  targetNamespace="http://java.freehep.org/schemas/heprep/2.0">
+
+  <xs:annotation>
+    <xs:documentation source="http://heprep.freehep.org/">
+      HepRep Version 2 XML Format
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:complexType name="attvalue">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="value" type="xs:string" />
+    <xs:attribute name="type" type="xs:string" />
+    <xs:attribute name="showlabel" type="xs:string" default="NAME" />
+  </xs:complexType>
+  <xs:element name="attvalue" type="attvalue"/>
+
+  <xs:complexType name="attdef">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="desc" type="xs:string" />
+    <xs:attribute name="category" type="xs:string" />
+    <xs:attribute name="extra" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="attdef" type="attdef"/>
+
+  <xs:complexType name="point">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attvalue"/>
+    </xs:choice>
+    <xs:attribute name="x" type="xs:double" />
+    <xs:attribute name="y" type="xs:double" />
+    <xs:attribute name="z" type="xs:double" />
+  </xs:complexType>
+  <xs:element name="point" type="point"/>
+
+  <xs:complexType name="action">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="expression" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="action" type="action"/>
+
+  <xs:complexType name="type">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attvalue" />
+      <xs:element ref="attdef" />
+      <xs:element ref="type" />
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="type" type="type"/>
+
+  <xs:complexType name="instance">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attvalue" />
+      <xs:element ref="point" />
+      <xs:element ref="instance" />
+    </xs:choice>
+    <xs:attribute name="type" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="instance" type="instance"/>
+
+  <xs:complexType name="treeid">
+    <xs:attribute name="qualifier" type="xs:string" />
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="version" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="treeid" type="treeid"/>
+
+  <xs:complexType name="instancetree">
+    <xs:complexContent>
+      <xs:extension base="treeid">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="treeid" />
+          <xs:element ref="instance" />
+        </xs:choice>
+        <xs:attribute name="typetreename" type="xs:string" />
+        <xs:attribute name="typetreeversion" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="instancetree" type="instancetree"/>
+
+  <xs:complexType name="typetree">
+    <xs:complexContent>
+      <xs:extension base="treeid">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="type" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="typetree" type="typetree"/>
+
+  <xs:complexType name="layer">
+    <xs:attribute name="order" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="layer" type="layer"/>
+
+  <xs:element name="heprep">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="layer" />
+        <xs:element ref="typetree" />
+        <xs:element ref="instancetree" />
+      </xs:choice>
+      <xs:attribute name="version" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+

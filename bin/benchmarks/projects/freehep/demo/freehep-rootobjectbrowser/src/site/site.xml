@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep-rootobjectbrowser">
+    
+    <bannerLeft>
+        <name>${project.name}</name>
+        <href>./</href>
+    </bannerLeft>
+    <body>
+     </body>
+</project>

@@ -1,0 +1,145 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <artifactId>freehep-jaidatld-pom</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>1.4.4-SNAPSHOT</version>
+    </parent>
+    
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-aidatld-web</artifactId>
+    <packaging>war</packaging>
+    
+    <name>AIDA Tag Library</name> 
+    <description>AIDA Tag Library WAR</description>    
+    
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-aidatld</url>
+        </site>
+    </distributionManagement>
+    
+    <reporting>     
+        <plugins>
+            <plugin>
+                <groupId>net.sourceforge.maven-taglib</groupId>
+                <artifactId>maven-taglib-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <srcDir>../jar/src/main/resources/META-INF/</srcDir>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+    
+    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!--  Library to display HTML Tables  -->
+        <dependency>
+            <groupId>displaytag</groupId>
+            <artifactId>displaytag</artifactId>
+            <version>1.1</version>
+        </dependency>
+        
+        <!-- AIDA TLD and JAIDA tags here  -->
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-aidatld</artifactId>
+            <version>${project.version}</version>
+        </dependency>        
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jaida-xml</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>jas-plotter</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jaida-root</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        
+        <!-- FreeHEP Graphics and export libs here  -->
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphics2d</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-pdf</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-ps</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-svg</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-graphicsio-swf</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        
+        
+        <!-- Force the latest version of commons-collections -->
+        <dependency>
+            <groupId>commons-collections</groupId> 
+            <artifactId>commons-collections</artifactId> 
+            <version>3.1</version> 
+        </dependency>
+        
+        <!-- need this file to use standard JSTL tag libraries -->
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        
+        <!-- do not copy those filese into the WAR -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+    </dependencies>
+</project>

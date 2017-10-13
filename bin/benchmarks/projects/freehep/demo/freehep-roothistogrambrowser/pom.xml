@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-roothistogrambrowser</artifactId>
+    <name>FreeHEP Root Histogram Browser</name>
+    <version>2.0.2-SNAPSHOT</version>
+    <description>FreeHEP Root Histogram Browser</description>
+    <packaging>pom</packaging>
+
+
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-roothistogrambrowser</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/demo/freehep-roothistogrambrowser</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/demo/freehep-roothistogrambrowser</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/demo/freehep-roothistogrambrowser</developerConnection>
+    </scm>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.4.1</version>
+                    <configuration>
+                        <goals>install site-deploy deploy</goals>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <defaultGoal>install webstart:jnlp-inline</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>webstart-maven-plugin</artifactId>
+                <version>1.0-beta-3</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jnlp-inline</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jnlp>
+                        <outputFile>RootHistogramBrowser.jnlp</outputFile>
+                        <mainClass>hep.io.root.util.RootHistogramBrowser</mainClass>
+                    </jnlp>
+                    <verbose>true</verbose>
+                    <workDirectory>${project.reporting.outputDirectory}/${project.version}</workDirectory>
+                    <sign>
+                        <keystore>${jar.signing.keystore.location}</keystore>
+                        <alias>${jar.signing.alias}</alias>
+                        <storepass>${jar.signing.storepass}</storepass>
+                        <keypass>${jar.signing.keypass}</keypass>
+                    </sign>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-rootio</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>jas-plotter</artifactId>
+            <version>2.2.9</version>
+        </dependency>
+    </dependencies>
+</project>
+

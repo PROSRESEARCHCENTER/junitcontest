@@ -1,0 +1,52 @@
+<math>
+<mstyle fontsize="25">
+<mrow>
+  <msup>
+    <mi>&chi;</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>=</mo>
+  <munder>
+    <mi>&sum;</mi>
+    <mi>i</mi>
+  </munder>
+  <mfrac>
+    <mrow>
+       <msup>
+          <mrow>
+            <mfenced>
+                  <mrow>
+                    <mi>f</mi>
+                    <mfenced>
+                      <msub>
+                         <mi>x</mi>
+                         <mi>i</mi>
+                      </msub>
+                    </mfenced>
+                    <mi>-</mi>
+                    <msub>
+                      <mi>h</mi>
+                      <mi>i</mi>
+                    </msub>
+                  </mrow>
+            </mfenced>
+          </mrow>
+          <mn>2</mn>
+       </msup>
+    </mrow>
+    <mrow>
+      <msup>
+         <mrow>
+           <msub>
+              <mi>&sigma;</mi>
+              <mi>i</mi>
+           </msub>
+         </mrow>
+         <mn>2</mn>
+      </msup>
+    </mrow>
+  </mfrac>
+</mrow>
+</mstyle>
+</math>
+

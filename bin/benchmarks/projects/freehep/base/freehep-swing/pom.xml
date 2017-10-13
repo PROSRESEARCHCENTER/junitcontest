@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.freehep</groupId>
+        <artifactId>base</artifactId>
+        <version>14.0.3</version>
+    </parent>
+  
+    <artifactId>freehep-swing</artifactId>  
+    <name>FreeHEP Swing</name>
+    <description>FreeHEP Swing Extensions</description>
+    <version>2.0.12-SNAPSHOT</version>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-swing</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/base/freehep-swing</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-swing</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base/freehep-swing</developerConnection>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-util</artifactId>
+        </dependency>
+    </dependencies>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.13</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/JDirectoryChooserTest.java</exclude>
+                        <exclude>**/JSpinBoxTest.java</exclude>
+                        <exclude>**/JTriStateTest.java</exclude>
+                        <exclude>**/TestGraphicalSelections.java</exclude>
+                        <exclude>**/ImageTest.java</exclude>
+                        <exclude>**/*$*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+</project>

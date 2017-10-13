@@ -1,0 +1,31 @@
+    ---
+FreeHEP
+    ---
+
+Users
+
+	Current users of the FreeHEP Java Library include the following individuals and
+projects:
+
+	* {{{http://jas.freehep.org/}JAS - Java
+          Analysis Studio}}, SLAC, Stanford, California, U.S.A.
+    
+    * {{{http://wired.freehep.org}WIRED - WWW Interactive Remote Event
+          Display}}, SLAC, Stanford, California, U.S.A.
+    
+    * {{{http://hrivnac.home.cern.ch/hrivnac/Activities/Packages/GraXML/}GraXML - Java3D graphics display tool using
+          XML}}, Julius Hrivnac, LAL, Orsay, France.
+    
+    * {{{http://geant4.web.cern.ch/geant4/}Geant4 - Simulation Toolkit}}.
+    
+    * Magnetic Field project for the ATLAS Detector at CERN, {{{mailto:formica@hep.saclay.cea.fr}Andrea Formica}}.
+    
+    * {{{http://matrex.sourceforge.net/}Matrex, A graphical tool to show, organize and calculate big amounts of data}}, Andrea Ferrandi.
+    
+    []
+    
+	If you are a user of the FreeHEP library and wish to make add a
+reference to this list, send an e-mail to {{{mailto:developers@freehep.org}developers@freehep.org}}
+including the name, author, a one line description and a URL to the
+projects web site.
+    

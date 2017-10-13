@@ -1,0 +1,21 @@
+	---
+FreeHEP AID Compiler
+	---
+	---
+Mark Donszelmann
+	---
+	
+Introduction
+        
+        AID is a tool to generate language specific interfaces and classes (Java,
+        C++, ...) from abstract interface definition source files (.aid).
+        
+        The tools reads in one or more .aid files, parses them for correctness and keeps
+        all information in a runtime-type-identification (RTTI) tree in memory. It then
+        uses several generators to generate the language specific interfaces and/or
+        classes. It also uses a simple pre-processor to handle cases where the method
+        definitions differ between different languages.
+        
+        The system is depicted below:
+        
+[images/AidSystem.png] AID System

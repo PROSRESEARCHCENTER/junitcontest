@@ -1,0 +1,33 @@
+<document>
+  <properties>
+    <title>FreeHEP Java Library - Java 3D Lego Plot Demo</title>
+  </properties>
+  <body>
+    <section name="FreeHEP Java 3D Lego Plot Demo">
+
+    <p>The <a href="http://java.freehep.org">FreeHEP</a> Java3D Lego Plot Demo 
+was written as a test application for the 
+<a href="http://java.freehep.org/lib/freehep/api/org/freehep/j3d/plot/package-summary.html">Java3D
+Plotting Package</a>. This package includes three plotting classes: a 2D Lego
+Plot, a Surface Plot, and a 3D Scatter Plot. The 3D Lego plotting class also
+generates a wire plot in which each box is replaced by a vertical line for
+animation of the plot on slower systems.</p>
+<p>The 3D Lego Demo is available for download using Java Web Start. <b>You must
+have</b> <a href="http://java.sun.com/products/javawebstart/">Java Web Start 1.0</a>
+<b>AND</b> the <a href="http://java.sun.com/products/java-media/3D/index.html">Java
+3D extensions</a> <b>already installed</b> on your machine for the download to
+work.</p>
+<p>Feel free to send comments/suggestions/bug reports to the author, <a href="mailto:joyk@fnal.gov">Joy
+Kyriakopulos</a>.</p>
+
+<form method="GET" action="LegoPlot.jnlp">
+  <p><input type="submit" value="Launch using Java Web Start" name="go"/></p>
+</form>
+
+<p><img border="0" src="Lego3DDemo.gif"/></p>
+
+    </section>
+  </body>
+</document>
+
+

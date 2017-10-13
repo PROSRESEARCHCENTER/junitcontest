@@ -1,0 +1,888 @@
+// Copyright 2000-2005, FreeHEP.
+/**
+ * This grammar file is for AID, Abstract Interface Definition
+ *
+ * It defines a java-like syntax with some C++ extensions (*, &, etc).
+ * It allows language specific sections using @java, @cpp or @<IDENTIFIER> for instance.
+ * It is closest to the java 5 (jdk 1.5) syntax.
+ *
+ * Compatible with JavaCC 2.1 and 3.0
+ *
+ * @author Mark Donszelmann (Mark.Donszelmann@slac.stanford.edu) 03/2000
+ * @version $Id: AidParser.jj 8614 2006-08-16 07:14:47Z duns $
+ */
+
+options {
+  JAVA_UNICODE_ESCAPE = true;
+  STATIC = false;
+}
+
+PARSER_BEGIN(AidParser)
+
+package org.freehep.aid.parser;
+
+import java.io.*;
+import java.util.*;
+
+import org.freehep.rtti.*;
+import org.freehep.aid.*;
+import org.freehep.aid.cli.*;
+
+public class AidParser {
+
+    private String chomp(String str) {
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+
+        if (str.length() == 1) {
+            char ch = str.charAt(0);
+            if (ch == '\r' || ch == '\n') {
+                return "";
+            } else {
+                return str;
+            }
+        }
+
+        int lastIdx = str.length() - 1;
+        char last = str.charAt(lastIdx);
+
+        if (last == '\n') {
+            if (str.charAt(lastIdx - 1) == '\r') {
+                lastIdx--;
+            }
+        } else if (last == '\r') {
+            // why is this block empty?
+
+            // just to skip incrementing the index?
+
+        } else {
+            lastIdx++;
+        }
+        return str.substring(0, lastIdx);
+    }
+
+    /**
+     * Adds all special (chained) tokens to the vector which is input and returns that vector.
+     * If null is input, a new vector is returned. The special tokens are relative to getToken(0).
+     */
+    public Vector getSpecialTokens(Vector specialTokens) {
+        if (specialTokens == null) specialTokens = new Vector();
+
+        Token token = getToken(0);
+
+        // if no special tokens
+        if (token.specialToken == null) {
+            return specialTokens;
+        }
+
+        // walk back to the start, just after the last regular token
+        Token t = token.specialToken;
+        while (t.specialToken != null) {
+            t = t.specialToken;
+        }
+
+        // walk forwards and fill vector of specialtokens
+        while (t != null) {
+            specialTokens.add(chomp(t.image));
+            t = t.next;
+        }
+        return specialTokens;
+    }
+
+    public void parse() throws ParseException, FileNotFoundException {
+        CompilationUnit();
+    }
+
+    public void addGlobalClasses() {
+    }
+
+    public static void main (String [] args) {
+        String name = "Aid Parser Version 1.0: ";
+        AidParser parser;
+        String filename = null;
+        long parseTime = 0;
+        long startTime = 0;
+        long stopTime = 0;
+        if (args.length < 1) {
+            System.out.println(name+"Missing Input File");
+            System.exit(0);
+        } else {
+            startTime = System.currentTimeMillis();
+            filename = args[0];
+            for (int i=0; i<args.length; i++) {
+                filename = args[i];
+                System.out.println(name+"Reading from file " + filename + " . . .");
+                try {
+                    parser = new AidParser(new FileInputStream(filename));
+                    parser.parse();
+                } catch (FileNotFoundException e) {
+                    System.out.println(name+"File " + filename + " not found.");
+                } catch (ParseException pe) {
+                    System.out.println(pe.getMessage());
+                    System.out.println(name+"Encountered errors during parse.");
+                }
+            }
+            stopTime = System.currentTimeMillis();
+            parseTime = stopTime - startTime;
+            System.out.println(name);
+            System.out.println("    parser parse time was " + parseTime + " ms.");
+
+            System.out.println("\n\n"+Aid.getRTTI());
+        }
+    }
+
+}
+
+PARSER_END(AidParser)
+
+TOKEN_MGR_DECLS :
+{
+    int nesting = 0;
+}
+
+/* WHITE SPACE */
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| "\f"
+}
+
+/* COMMENTS */
+MORE :
+{
+  <(" "|"\t")* "//"> : IN_SINGLE_LINE_COMMENT
+|
+  <(" "|"\t")* "/**" ~["/"]> { input_stream.backup(1); } : IN_FORMAL_COMMENT
+|
+  <(" "|"\t")* "/*"> : IN_MULTI_LINE_COMMENT
+}
+
+<IN_SINGLE_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <SINGLE_LINE_COMMENT: "\r" | "\n" | "\r\n" > : DEFAULT
+}
+
+<IN_FORMAL_COMMENT>
+SPECIAL_TOKEN :
+{
+  <FORMAL_COMMENT: "\r" | "\n" | "\r\n" > : IN_FORMAL_COMMENT
+}
+
+<IN_FORMAL_COMMENT>
+SPECIAL_TOKEN :
+{
+  <FORMAL_COMMENT_END: "*/" ((" "|"\t")* ("\r" | "\n" | "\r\n"))* > : DEFAULT
+}
+
+<IN_MULTI_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <MULTI_LINE_COMMENT: "*/" ((" "|"\t")* ("\r" | "\n" | "\r\n"))* > : DEFAULT
+}
+
+/* Language specific sections: @language: */
+MORE :
+{
+  < "@" (" "|"\t"|"\f"|"\n"|"\r")*  <IDENTIFIER> (" "|"\t"|"\f"|"\n"|"\r")* "{" >
+                {
+                    nesting = 1;
+                    int idStart=1;
+                    while (Character.isWhitespace(image.charAt(idStart))) {
+                        idStart++;
+                    }
+                    int idEnd = idStart+1;
+                    while (!Character.isWhitespace(image.charAt(idEnd)) && (image.charAt(idEnd) != '{')) {
+                        idEnd++;
+                    }
+                    String language = image.substring(idStart, idEnd);
+                    image = new StringBuffer("@");
+                    image.append(language);
+                    image.append(":");
+                } : IN_LANGUAGE_BLOCK
+}
+
+<IN_LANGUAGE_BLOCK>
+MORE :
+{
+  <LANGUAGE_SECTION: "}" > {
+                nesting--;
+                if (nesting == 0) {
+                    // the ending } will be matched again in END_LANGUAGE_BLOCK
+                    input_stream.backup(1);
+                    image.deleteCharAt(image.length()-1);
+                    SwitchTo(END_LANGUAGE_BLOCK);
+                }
+            }
+}
+
+<END_LANGUAGE_BLOCK>
+SPECIAL_TOKEN :
+{
+  < "}" > {
+            matchedToken.image = image.substring(0, image.length()-1);
+          } : DEFAULT
+}
+
+<IN_SINGLE_LINE_COMMENT,IN_FORMAL_COMMENT,IN_MULTI_LINE_COMMENT,IN_LANGUAGE_BLOCK>
+MORE :
+{
+  < ~[] > { if (image.charAt(image.length()-1) == '{') nesting++; }
+}
+
+/* RESERVED WORDS AND LITERALS */
+
+TOKEN :
+{
+  < ABSTRACT: "abstract" >
+| < ASSERT: "assert" >
+| < BOOLEAN: "boolean" >
+| < BREAK: "break" >
+| < BYTE: "byte" >
+| < CASE: "case" >
+| < CATCH: "catch" >
+| < CHAR: "char" >
+| < CLASS: "class" >
+| < CONST: "const" >
+| < CONTINUE: "continue" >
+| < _DEFAULT: "default" >
+| < DO: "do" >
+| < DOUBLE: "double" >
+| < ELSE: "else" >
+| < ENUM: "enum" >
+| < EXTENDS: "extends" >
+| < FALSE: "false" >
+| < FINAL: "final" >
+| < FINALLY: "finally" >
+| < FLOAT: "float" >
+| < FOR: "for" >
+| < GOTO: "goto" >
+| < IF: "if" >
+| < IMPLEMENTS: "implements" >
+| < IMPORT: "import" >
+| < INSTANCEOF: "instanceof" >
+| < INT: "int" >
+| < INTERFACE: "interface" >
+| < LONG: "long" >
+| < NATIVE: "native" >
+| < NEW: "new" >
+| < NULL: "null" >
+| < PACKAGE: "package">
+| < PRIVATE: "private" >
+| < PROTECTED: "protected" >
+| < PUBLIC: "public" >
+| < RETURN: "return" >
+| < SHORT: "short" >
+| < STATIC: "static" >
+| < STRICTFP: "strictfp" >
+| < SUPER: "super" >
+| < SWITCH: "switch" >
+| < SYNCHRONIZED: "synchronized" >
+| < THIS: "this" >
+| < THROW: "throw" >
+| < THROWS: "throws" >
+| < TRANSIENT: "transient" >
+| < TRUE: "true" >
+| < TRY: "try" >
+| < VOID: "void" >
+| < VOLATILE: "volatile" >
+| < WHILE: "while" >
+}
+
+/* LITERALS */
+
+TOKEN :
+{
+  < INTEGER_LITERAL:
+        <DECIMAL_LITERAL> (["l","L"])?
+      | <HEX_LITERAL> (["l","L"])?
+      | <OCTAL_LITERAL> (["l","L"])?
+  >
+|
+  < #DECIMAL_LITERAL: (["+","-"])?["1"-"9"] (["0"-"9"])* >
+|
+  < #HEX_LITERAL: "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])+ >
+|
+  < #OCTAL_LITERAL: "0" (["0"-"7"])* >
+|
+  < FLOATING_POINT_LITERAL:
+        (["+","-"])?(["0"-"9"])+ "." (["0"-"9"])* (<EXPONENT>)? (["f","F","d","D"])?
+      | (["+","-"])?"." (["0"-"9"])+ (<EXPONENT>)? (["f","F","d","D"])?
+      | (["+","-"])?(["0"-"9"])+ <EXPONENT> (["f","F","d","D"])?
+      | (["+","-"])?(["0"-"9"])+ (<EXPONENT>)? ["f","F","d","D"]
+  >
+|
+  < #EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+|
+  < CHARACTER_LITERAL:
+      "'"
+      (   (~["'","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )
+      "'"
+  >
+|
+  < STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+      "\""
+  >
+}
+
+/* IDENTIFIERS */
+
+TOKEN :
+{
+  < IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+|
+  < #LETTER:
+      [
+       "\u0024",
+       "\u0041"-"\u005a",
+       "\u005f",
+       "\u0061"-"\u007a",
+       "\u00c0"-"\u00d6",
+       "\u00d8"-"\u00f6",
+       "\u00f8"-"\u00ff",
+       "\u0100"-"\u1fff",
+       "\u3040"-"\u318f",
+       "\u3300"-"\u337f",
+       "\u3400"-"\u3d2d",
+       "\u4e00"-"\u9fff",
+       "\uf900"-"\ufaff"
+      ]
+  >
+|
+  < #DIGIT:
+      [
+       "\u0030"-"\u0039",
+       "\u0660"-"\u0669",
+       "\u06f0"-"\u06f9",
+       "\u0966"-"\u096f",
+       "\u09e6"-"\u09ef",
+       "\u0a66"-"\u0a6f",
+       "\u0ae6"-"\u0aef",
+       "\u0b66"-"\u0b6f",
+       "\u0be7"-"\u0bef",
+       "\u0c66"-"\u0c6f",
+       "\u0ce6"-"\u0cef",
+       "\u0d66"-"\u0d6f",
+       "\u0e50"-"\u0e59",
+       "\u0ed0"-"\u0ed9",
+       "\u1040"-"\u1049"
+      ]
+  >
+}
+
+/* SEPARATORS */
+
+TOKEN :
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < DOT: "." >
+}
+
+/* OPERATORS */
+
+TOKEN :
+{
+  < ASSIGN: "=" >
+| < AT: "@" >
+| < GT: ">" >
+| < LT: "<" >
+}
+
+
+/*****************************************
+ * THE AID LANGUAGE GRAMMAR STARTS HERE *
+ *****************************************/
+
+/*
+ * Program structuring syntax follows.
+ */
+
+void CompilationUnit() :
+{ Vector packageComments = new Vector();
+  String packageName = "";
+  String name = null;
+  Vector eopComments = new Vector();
+  Vector eofComments = new Vector();
+  Vector enumComments = new Vector();
+  Vector enumFields = new Vector();
+  IClass clazz;
+  
+  IField field; 
+  IType type;
+}
+{
+    (
+        packageName = PackageDeclaration(packageComments)
+        (
+            ";"      
+            ( name = InterfaceDeclaration(packageName, packageComments) )*
+        |
+            "{"
+            ( 
+                name = InterfaceDeclaration(packageName, packageComments) 
+               |
+                (
+                "enum"
+                        {
+                            getSpecialTokens(enumComments);
+                        }
+                name = Name()
+                        {
+                            type = Aid.getRTTI().createType(name, true, true, true, false, 0, 0, null);
+                        }
+                "{" field = FieldList(type, enumComments) "}" ";"
+                        {
+                            enumFields.add(field);
+                        }
+                )
+            )*
+            "}" 
+                        { getSpecialTokens(eopComments); }
+        |
+            ( name = InterfaceDeclaration(packageName, packageComments) )*
+        )
+    )
+    <EOF>
+                        {
+                            // attach EOF comments to last class
+                            getSpecialTokens(eofComments);
+                            IPackage p = Aid.getRTTI().getPackage(packageName);
+                            clazz = p.getClass(name);
+                            if (clazz != null) {
+                                clazz.setEOPComments(eopComments);
+                                clazz.setEOFComments(eofComments);
+                                clazz.setEnumFields(enumFields);
+                            }
+                        }
+}
+
+String PackageDeclaration(Vector comments) :
+{ String name; }
+{
+  "package"
+                { getSpecialTokens(comments); }
+  name = Name()
+                { return name; }
+}
+
+/*
+ * Declaration syntax follows.
+ */
+String InterfaceDeclaration(String packageName, Vector packageComments) :
+{ Vector classComments = new Vector();
+  boolean isClass;
+  String name;
+  Vector templateParameters = new Vector();
+  Vector interfaces = new Vector();
+  Vector constructors = new Vector();
+  Vector methods = new Vector();
+Vector fields = new Vector(); }
+{
+  [ "public" ]
+                { getSpecialTokens(classComments); }
+  (
+    "interface"
+                { isClass = false; }
+  |
+    "class"
+                { isClass = true; }
+  )
+                { getSpecialTokens(classComments); }
+  <IDENTIFIER>
+                { name = getToken(0).image; }
+  [ TypeParameters(templateParameters) ]
+  [ "extends" NameList(interfaces) ]
+  "{" ( InterfaceMemberDeclaration(constructors, methods, fields) )* "}"
+                { Aid.getRTTI().createClass(name, isClass, packageName, packageComments,
+                                            classComments, getSpecialTokens(null),
+                                            templateParameters, interfaces, 
+                                            constructors, null, 
+                                            methods, fields);
+                  return name;
+                }
+}
+
+void TypeParameters(Vector parameters):
+{String parameter;}
+{
+    "<" parameter = TypeParameter()
+                { parameters.add(parameter); }
+    ("," parameter = TypeParameter() 
+                { parameters.add(parameter); }
+    )* ">"
+}
+
+String TypeParameter():
+{}
+{
+    <IDENTIFIER>
+                { return getToken(0).image; }
+}
+
+void InterfaceMemberDeclaration(Vector constructors, Vector methods, Vector fields) :
+{ IConstructor constructor; IMethod method; Object field; }
+{
+  LOOKAHEAD(ConstructorDeclarationLookahead())
+  constructor = ConstructorDeclaration()
+                { constructors.addElement(constructor); }
+|
+  LOOKAHEAD(MethodDeclarationLookahead())
+  method = MethodDeclaration()
+                { methods.add(method); }
+|
+  field = FieldDeclaration()
+                { fields.add(field); }
+}
+
+IField FieldDeclaration() :
+{ Vector comments = new Vector();
+  IField field;
+  IType type;
+  boolean isConst = false;
+  String name = null;
+  Vector fieldList; }
+{
+  ( "public"
+                { getSpecialTokens(comments); }
+  | "static"
+                { getSpecialTokens(comments); }
+  )*
+  (
+    type = Type(comments)
+    field = FieldList(type, comments) ";"
+   |
+    "enum"
+                {
+                    getSpecialTokens(comments);
+                }
+   [ name = Name() ]
+                {
+                    type = Aid.getRTTI().createType(name == null ? "" : name, true, true, true, false, 0, 0, null);
+                }
+    "{" field = FieldList(type, comments) "}" ";"
+  )
+                { return field; }
+}
+
+IField FieldList(IType type, Vector comments) :
+{ IField fieldList; IField last; INamedType namedType; }
+{
+    namedType = VariableDeclarator(type)
+                { fieldList = Aid.getRTTI().createField(namedType, comments);
+                  last = fieldList;
+                }
+    ( "," namedType = VariableDeclarator(type)
+                { IField field = Aid.getRTTI().createField(namedType, comments);
+                  last.setNext(field);
+                  last = field; }
+    )*
+                { return fieldList; }
+}
+
+INamedType VariableDeclarator(IType type) :
+{ String name; String init = null; }
+{
+  name = VariableDeclaratorId() [ "=" init = VariableInitializer() ]
+                { return Aid.getRTTI().createNamedType(name, type, init); }
+}
+
+String VariableDeclaratorId() :
+{ String name; }
+{
+  <IDENTIFIER>
+                { name = getToken(0).image; }
+//  ( "[" "]"
+//                { throw new ParseException("Please put [] at the type specification rather than the variable"); }
+//  )*
+                { return name; }
+}
+
+String VariableInitializer() :
+{String name;}
+{
+  (
+    LOOKAHEAD(2)
+    name = Name()
+  |
+    name = Literal()
+  )
+                { return name; }
+}
+
+// This production is to determine lookahead only.
+void MethodDeclarationLookahead() :
+{ Vector dummy = null; 
+  Vector dummy2 = new Vector(); }
+{
+  ( "public" | "static" )*
+  [ TypeParameters(dummy2) ]
+  Type(dummy) <IDENTIFIER> "("
+}
+
+IMethod MethodDeclaration() :
+{ String name;
+  boolean isStatic = false;
+  boolean isConst = false;
+  Vector templateParameters = new Vector();
+  IType returnType;
+  Vector namedTypes = new Vector();
+  Vector exceptions = new Vector();
+  IMethod method;
+  Vector comments = new Vector(); }
+{
+  ( "public"
+                { getSpecialTokens(comments); }
+  | "static"
+                { getSpecialTokens(comments); }
+  ) *
+  [ TypeParameters(templateParameters) ]
+  returnType = Type(comments)
+  name = MethodDeclarator(namedTypes)
+  [ "const" { isConst = true; } ]
+  [ "throws" NameList(exceptions) ] ";"
+                { method = Aid.getRTTI().createMethod(name, comments, isStatic,
+                                                      templateParameters, returnType, isConst,
+                                                      namedTypes, exceptions);
+                  return method; }
+}
+
+String MethodDeclarator(Vector namedTypes) :
+{ String name; }
+{
+  <IDENTIFIER>
+                { name = getToken(0).image; }
+  FormalParameters(namedTypes) ( "[" "]" )*
+                {
+                    // FIXME Array info ignored
+                    return name;
+                }
+}
+
+void FormalParameters(Vector namedTypes) :
+{ INamedType namedType;}
+{
+  "(" [ namedType = FormalParameter()
+                { namedTypes.add(namedType); }
+  ( "," namedType = FormalParameter()
+                { namedTypes.add(namedType); }
+  )* ] ")"
+}
+
+INamedType FormalParameter() :
+{ IType type; INamedType namedType; Vector comments = null; }
+{
+  type = Type(comments) namedType = VariableDeclarator(type)
+                { return namedType; }
+}
+
+void ConstructorDeclarationLookahead() :
+{}
+{
+  [ "public" ] Name() "("
+}
+
+IConstructor ConstructorDeclaration() :
+{ String name;
+  Vector namedTypes = new Vector();
+  Vector exceptions = new Vector();
+  Vector comments = new Vector(); }
+{
+  [ "public"
+                { getSpecialTokens(comments); }
+  ]
+  <IDENTIFIER>
+                { name = getToken(0).image; }
+  FormalParameters(namedTypes) [ "throws" NameList(exceptions) ] ";"
+                { return Aid.getRTTI().createConstructor(name, comments, namedTypes, exceptions);
+                }
+}
+
+/*
+ * Type, name and expression syntax follows.
+ */
+IType Type(Vector comments) :
+{
+    IType type;
+    String name;
+    boolean primitive = false;
+    boolean konst = false;
+    int dimension = 0;
+    boolean tref = false;
+    int tptr = 0;
+    boolean ref = false;
+    int ptr = 0;
+    Vector types = new Vector();
+    Vector dummy = new Vector();
+}
+{
+  [ "const"
+                {
+                    konst = true;
+                    getSpecialTokens(comments);
+                }
+  ]
+  ( name = PrimitiveType()
+                {
+                    primitive = true;
+                    getSpecialTokens(comments);
+                }
+  |
+    name = Name()
+                {   getSpecialTokens(comments); }
+  )
+  [ "<"
+    type = Type(dummy)
+                {   types.add(type); }
+    ( "," type = Type(dummy)
+                {   types.add(type); }
+    )*
+    ">" ]
+  [ LOOKAHEAD(("*"|"&")*("[" "]")+)
+    ( "*"
+                {   tptr++; }
+     | "&"
+                {   tref = true; }
+     )*
+     ( "[" "]"
+                {   dimension++; }
+     )+
+   ] ( "*"
+                {   ptr++; }
+     | "&"
+                {   ref = true; }
+     )*
+                {
+                    // Arrays of Objects are created with an intermediate type named "[]".
+                    // The "[]" stores the dimension, konst, and refers to the real type
+                    // of the array. Both "[]" and type object can thus store * and &.
+                    // ex: IType * [] & is stored as "[]"& with subtype "IType" *.
+                    if ((dimension > 0) && !primitive) {
+                        types = new Vector();
+                        type = Aid.getRTTI().createType(name, false, false, false, tref, tptr, 0, types);
+                        types.add(type);
+                        name = "[]";
+                    }
+                    type = Aid.getRTTI().createType(name, konst, primitive, false, ref, ptr, dimension, types);
+                    return type;
+                }
+}
+    
+String PrimitiveType() :
+{}
+{
+  "boolean"
+                { return "boolean"; }
+|
+  "char"
+                { return "char"; }
+|
+  "byte"
+                { return "byte"; }
+|
+  "short"
+                { return "short"; }
+|
+  "int"
+                { return "int"; }
+|
+  "long"
+                { return "long"; }
+|
+  "float"
+                { return "float"; }
+|
+  "double"
+                { return "double"; }
+|
+  "void"
+                { return "void"; }
+}
+
+
+String Name() :
+/*
+ * A lookahead of 2 is required below since "Name" can be followed
+ * by a ".*" when used in the context of an "ImportDeclaration".
+ */
+{ StringBuffer name; }
+{
+  <IDENTIFIER>
+                { name = new StringBuffer(getToken(0).image); }
+  ( LOOKAHEAD(2) "." <IDENTIFIER>
+                { name.append("."); name.append(getToken(0).image); }
+  )*
+                { return name.toString(); }
+}
+
+void NameList(Vector names) :
+{ String name; }
+{
+  name = Name()
+                { names.add(name); }
+  ( "," name = Name()
+                { names.add(name); }
+  )*
+}
+
+String Literal() :
+{}
+{
+(
+  <INTEGER_LITERAL>
+|
+  <FLOATING_POINT_LITERAL>
+|
+  <CHARACTER_LITERAL>
+|
+  <STRING_LITERAL>
+|
+  BooleanLiteral()
+|
+  NullLiteral()
+|
+  <IDENTIFIER>
+)
+                { return getToken(0).image; }
+}
+
+void BooleanLiteral() :
+{}
+{
+  "true"
+|
+  "false"
+}
+
+void NullLiteral() :
+{}
+{
+  "null"
+}

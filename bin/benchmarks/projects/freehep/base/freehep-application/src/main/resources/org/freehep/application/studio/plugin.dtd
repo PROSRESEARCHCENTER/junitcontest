@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    Typical usage:
+
+    <?xml version="1.0"?>
+    <!DOCTYPE plugins SYSTEM "Plugin.dtd">
+
+    <plugins>
+    ...
+    </plugins>
+-->
+
+<!ELEMENT author (#PCDATA)>
+
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST description
+    kind CDATA #IMPLIED
+  >
+
+<!ELEMENT information (description|author|name|category|version|load-at-start)*>
+
+<!ELEMENT j2se EMPTY>
+<!ATTLIST j2se
+    minVersion CDATA #IMPLIED
+    maxVersion CDATA #IMPLIED
+>
+
+<!ELEMENT application EMPTY>
+<!ATTLIST application
+    minVersion CDATA #IMPLIED
+    maxVersion CDATA #IMPLIED
+>
+
+<!ELEMENT depends EMPTY>
+<!ATTLIST depends
+    plugin     CDATA #REQUIRED
+    minVersion CDATA #IMPLIED
+    maxVersion CDATA #IMPLIED
+>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT category (#PCDATA)>
+
+<!ELEMENT plugin (information|plugin-desc|resources|provides)*>
+
+<!ELEMENT plugin-desc EMPTY>
+<!ATTLIST plugin-desc
+    class CDATA #IMPLIED
+  >
+
+  
+<!ELEMENT file EMPTY>
+<!ATTLIST file
+    href CDATA #IMPLIED
+    location CDATA #IMPLIED
+  >
+
+<!ELEMENT property EMPTY>
+<!ATTLIST property
+    name CDATA #REQUIRED
+    value CDATA #REQUIRED
+  >
+<!ELEMENT plugins (plugin)*>
+
+<!ELEMENT provides EMPTY>
+<!ATTLIST provides
+    class CDATA #IMPLIED
+  >
+
+<!ELEMENT resources (j2se|application|depends|file|property)*>
+
+<!ELEMENT version (#PCDATA)>
+
+<!ELEMENT load-at-start EMPTY>

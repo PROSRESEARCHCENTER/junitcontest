@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep">
+
+    <bannerLeft>
+        <name>FreeHEP Jas Maven Plugin</name>
+        <href>./</href>
+    </bannerLeft>
+
+    <body>
+    
+        <menu name="Overview">
+            <item name="Introduction" href="index.html"/>
+            <item name="Goals" href="plugin-info.html"/>
+        </menu>
+
+    </body>
+</project>

@@ -1,0 +1,258 @@
+    ---
+    Changes
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Changes
+
+    For a full list of changes in JAIDA see the 
+{{{http://bugs.freehep.org/browse/JAIDA?report=com.atlassian.jira.plugin.system.project:changelog-panel}JAIDA change log}}.
+
+    For a full list of changes in AIDA see the {{{http://aida.freehep.org/releaseNotes.thtml}AIDA change log}}.
+
+
+*Changes in JAIDA 3.3.0.7
+
+	* Fixed bugs
+
+		* Fix adding of two Root 1D histograms through AIDA "IHistogram1D.add" method.
+
+		* Add ability to put vertical label on the axis: add "labelVertical" parameter to the IAxisStyle
+
+
+*Changes in JAIDA 3.3.0.6
+
+	* New Features
+
+		* Add "lowerLimit" and "upperLimit" parameters to the IAxisStyle in order to control axis limits through AIDA Styles
+
+		* Now can format second Y Axis. If parameter "yAxis" is set to "Y1" in the yAxisStyle (default is "Y0"), all settings in this style will be applied to the second Y Axis.
+
+		* Add "normalization" parameter to IDataStyle to normalize all overlaid plots with respect to the very first plot in the region (parameterName="normalization", default="none", possibleValues="none, Area, Entries, MaxBin")
+
+		* Use proxy mode with AIDA XML ZIP format by default (useProxies=true). SoftReference is used in proxies, so that JAIDA does not run out of memory when many objects are read from the file.
+
+	* Fixed bugs
+
+		* Fix problem with filtering chained tuples (JAIDA IFilter and IEvaluator still do not work for sub-tuples)
+
+		* Fix IHistogram1D cloning problem
+
+		* Improve speed for plotting multiple overlays
+
+		* Improve speed for getting ITree structure with AIDA XML ZIP format 
+
+		* Fix Remote AIDA tests and enable them by default
+
+
+*Changes in JAIDA 3.3.0.5
+
+	* Fixed bugs
+
+		* Fix bug for plotting 2D histograms in colorMap mode
+
+
+*Changes in JAIDA 3.3.0.4
+
+	* New Features
+
+		* Add utility class to fill IHistogram, ICloud, or ITuple with data distributed according to a given IFunction. {{{utility.html}See Details}}.
+
+            * Add support for native i386-MacOSX (hbook and fminuit) 
+
+	* Fixed bugs
+
+		* Plotter.writeToFile now works for scatterplot in JAIDA and in JAS3
+
+		* Put back ability to create Moyal and Lorentzian functions by name: "moyal" and "lorentzian"
+
+		* Fix the bug with bin height calculation for histogram 2D with fixed size bins 
+
+		* Can not control Legend visibility through AIDA Styles
+
+		* createFunctionFromScript has problems with "gradexpr" and "description" arguments 
+
+
+*Changes in JAIDA 3.3.0.3
+
+	* Improvements
+
+		* Add JAIDA-specific "errorBarDecoration" parameter to the errorBarStyle. Meaning:
+
+   			* errorBarDecoration less than 0,  automatic (default)
+
+   			* errorBarDecoration equals 0, no decoration
+
+   			* errorBarDecoration greater than 0,  fraction of the bin width
+
+			* Usage: style.dataStyle().errorBarStyle().setParameter("errorBarDecoration", "0.5")
+
+		* Add (Experimental) Binary XML writer and Reader, use option "binary=true".
+		  This option can also be used in ZIP format.
+
+		* Add ability to write AIDA XML in ZIP format, use option "compress=zip"
+
+		* Provide utility to convert IManagedObject and IFitResult to XML String and back
+
+			* Utility class added to JAIDA: hep.aida.util.XMLUtils, static methods:
+
+				* String createXMLString(IManagedObject mo) throws IOException
+
+				* String createXMLString(IManagedObject mo, ITree tree) throws IOException 
+
+				* String createXMLString(IManagedObject mo, String path) throws IOException
+
+				* String createXMLString(IFitResult fitResult) throws IOException 
+
+				* String createXMLString(IFitResult fitResult, String path) throws IOException
+
+				* IManagedObject createManagedObject(String xmlString) throws IOException
+
+				* IFitResult createFitResult(String xmlString) throws IOException
+
+				* void addToTree(String xmlString, ITree tree) throws IOException
+
+	* Fixed bugs
+
+		* fix problem with relatively rare case of X-axis tick labels formatting, e.g.: log, x_min=0.0005, x_max=0.05
+
+		* Plotting of IHistogram1D, IHistogram2D, IProfile1D, IProfile2D with non-equidistant bins
+
+		* Profiles returning NaN for the sum of weights
+
+
+*Changes in JAIDA 3.3.0.2
+
+	* Improvements
+
+		* Add catalog for default plotter styles.
+
+		* Fix dependency versions in assembly.
+
+		* Move FMinuit adapter to math module freehep-fminuit and make freehep-jaida-fminuit dependent on it.
+
+		* Upgrade graphics libraries to 2.0
+
+		* Add jdom to distribution.
+
+	      * Improved creation of user functions.
+
+	      * Function Codelet String defined as: codelet:TYPE:LOCATION 
+
+		* LOCATION = Catalog: Create function from Function Catalog 
+
+			* Usage: codelet:model_name:catalog 
+
+			* Example: codelet:p2:catalog 
+
+			* Status: Works 
+
+		* LOCATION = classPath: Create function, given its full class name
+
+			* Usage: codelet:my.functions.MyFunction:classPath[:x0, x1: a, b, c]
+
+			* Example: codelet:fitProject.functions.MyFunction:classPath
+
+			* Status: Works
+
+			* Explanation:
+
+				* If optional list of variable names and parameter names is provided:
+
+					* MyFunction(String[] varNames, String[] parNames) constructor is used
+
+				* No-argument constructor is used in other case: new MyFunction()
+
+		* LOCATION = Verbatim: Create function from script
+
+			* Usage: codelet:Function_Title:verbatim:jel : dimensions : expression : parameters [: gradient]
+
+			* Example: codelet:Script_Function:verbatim:jel :1 : a*(1+c*sin(x[0]-d)) : a,c,d
+
+			* Status: works
+
+	* Fixed bugs
+
+		* AIDA xml writer out of synch with parser.
+
+		* Fix setup scripts for macOSX.
+
+		* Assembly and parent POM of jaida have the same artifact name.
+
+		* Testdata for hbook missing in freehep-jaida-hbook
+            
+
+
+*Changes in JAIDA 3.2.5
+
+	* New Features
+
+		* Add a way to change the statistics box from styles. 
+
+		* Get axis labels information out of root files. 
+
+	* Improvements
+
+		* Move main() methods from function package into tests of fitter package. 
+
+	* Fixed bugs
+
+		* DataPointSets not added to tree 
+
+		* "convert" method in Clouds should call fireStateChanged() 
+
+		* Problem with gradient in scripted functions 
+
+
+*Changes in JAIDA 3.2.4
+
+    * Added new <JMinuit> optimizer. This is the Java version of the Minuit package.
+
+    * Implemented line styles: width and thickness.
+
+    * Functions can now be plotted over a range using the <range> option.
+
+    * Functions are now added to the legend box.
+
+    * Better control over the visibility of the statistics box. It can now be turned on/off globally or for each individual data set.
+
+    * Support for color transparency specified via the styles.
+
+    * Added {{{./statistical-comparison.html}statistical testing package}} (outside the AIDA standards).
+
+*Changes in JAIDA 3.2.3
+
+    *Better implementation of writeToFile method.
+
+    *We have changed the way the statistics is evaluated for IHistograms and IProfiles.
+
+*Changes in JAIDA 3.2.2
+
+    *Addition among functions is now supported. You can now fit for example <"g + p0"> to any AIDA data source.
+
+    *Improved styles support.
+
+    *Fixed problems with logarithmic axis.
+
+*Changes in JAIDA 3.2.1.1
+
+    *Scripts updated to set and convert classpath correctly when used in cygwin on Windows.
+
+*Changes in JAIDA 3.2.1
+
+    *Improved support for plot styles, including the ability to modify styles after a plot is displayed.
+
+    *Support for reading root files from a remote root daemon using the root: protocol.
+
+    *.win32 setup file merged with .csh and .sh setup files.
+
+*Changes in JAIDA 3.2.0
+
+    *JAIDA 3.2 implements the AIDA 3.2 interfaces.
+
+    *The default analysis factory has been changed from <hep.aida.ref.BatchAnalysisFactory> to <hep.aida.ref.AnalysisFactory>.
+
+    *An initial implementation of the AIDA IStyle interfaces is now available.
+

@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-webutil-base</artifactId>
+        <version>1.11.6-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>freehep-webutil-web</artifactId>
+    <packaging>war</packaging>
+    <name>FreeHEP Web Util Library Web Application</name>    
+
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
+    
+
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-webutil</artifactId>
+            <version>1.11.6-SNAPSHOT</version>
+        </dependency>        
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+    </dependencies>
+    
+</project>

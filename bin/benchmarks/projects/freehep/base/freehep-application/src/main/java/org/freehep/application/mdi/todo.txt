@@ -1,0 +1,11 @@
+When one split pane is closed the other should maintain its position
+Should have a popup menu on the desktop
+Need to carefully check event delivery
+Toolbar: No externally accessible toolbar menu
+Toolbar: Docking/Undocking toobars doesnt work properly
+
+Component too closely identified with currentTab, 
+   it is difficult to find current Page
+   it is difficult for page to close itself
+
+No way to get the initial open and select events from PageContext.

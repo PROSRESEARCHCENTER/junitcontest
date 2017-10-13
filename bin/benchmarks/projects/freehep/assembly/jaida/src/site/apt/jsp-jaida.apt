@@ -1,0 +1,10 @@
+    ---
+    JSP and JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+JSP and JAIDA
+    
+    {{{http://aidatld.freehep.org}AIDATLD}} provides a set of AIDA-like JSP tags to embed plots in Web applications. It uses internally JAIDA.

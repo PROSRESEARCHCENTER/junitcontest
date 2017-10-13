@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.6</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-site</artifactId>
+    <name>FreeHEP Web Site</name>
+    <version>2.3-SNAPSHOT</version>
+    <description>FreeHEP Top-Level Web Site</description>
+    <packaging>pom</packaging>
+
+
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/${project.artifactId}</url>
+        </site>
+    </distributionManagement>
+
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/site</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/site</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/site</developerConnection>
+    </scm>
+</project>

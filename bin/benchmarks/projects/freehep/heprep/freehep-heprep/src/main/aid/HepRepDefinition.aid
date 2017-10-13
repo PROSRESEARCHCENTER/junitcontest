@@ -1,0 +1,64 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepDefinition interface.
+ *
+ * @author Mark Donszelmann
+ *
+ */
+@cvs {
+ * @version $Id: HepRepDefinition.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepDefinition extends HepRepAttribute {
+
+    /**
+     * Constructor for the JHepRepDefinition interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepDefinition(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Adds an attdef.
+     *
+     * @param name name of the definition.
+     * @param desc description of the definition.
+     * @param category category of the definition.
+     * @param extra extra info of the definition.
+     */
+    void addAttDef(String name, String desc, String category, String extra);
+
+    /**
+     * Adds an attdef.
+     *
+     * @param attDef to be added.
+     */
+    void addAttDef(HepRepAttDef* attDef);
+
+    /**
+     * Return a named attribute definition searched on this node and any parent nodes.
+     *
+     * @param name of attribute definition.
+     * @return attribute definition.
+     */
+    HepRepAttDef* getAttDef(String name);
+
+    /**
+     * Returns a collection of all attribute definitions defined on this node.
+     *
+     * @return collection of attributes definitions.
+     */
+    Set<HepRepAttDef*> getAttDefsFromNode();
+
+    /**
+     * Returns a named attribute definition defined on this node.
+     *
+     * @param lowerCaseName name of the attribute in lower case.
+     * @return attribute definition.
+     */
+    HepRepAttDef* getAttDefFromNode(String lowerCaseName);
+
+}

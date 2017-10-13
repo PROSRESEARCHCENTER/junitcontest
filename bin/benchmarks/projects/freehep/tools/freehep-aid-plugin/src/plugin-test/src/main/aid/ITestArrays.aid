@@ -1,0 +1,79 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestInterface to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestArrays.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestArrays extends AIDRef {
+
+    /**
+     * primitive array method
+     *
+     * @return double array
+     */
+    double[] returnDoubleArray();
+
+    /**
+     * primitive multi-array method
+     *
+     * @return multi double array
+     */
+    double[][] returnMultiDoubleArray();
+
+    /**
+     * Method with array/vector return
+     *
+     * @param path path to objects
+     * @param recursive list objects recursively
+     * @return list of object names
+     */
+    String[] listObjectNames(const String & path = ".", boolean recursive = false) const;
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir(int[] dummy) throws IllegalArgumentException;
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir(int[][] dummy) throws IllegalArgumentException;
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir(String[][] dummy) throws IllegalArgumentException;
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir(String*[] dummy) throws IllegalArgumentException;
+
+    /**
+     * Method throwing exception
+     *
+     * @param path path to create
+     * @throws IllegalArgumentException in case of argument error
+     */
+    void mkdir2(String[]& dummy) throws IllegalArgumentException;
+
+}
+    

@@ -1,0 +1,17 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.freehep</groupId>
+    <artifactId>maven-plugins</artifactId>
+    <version>4</version>
+  </parent>
+  
+  <artifactId>freehep-project-archetype</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>maven-plugin</packaging>
+  
+  <name>FreeHEP Project Archetype</name>
+  <description>Standard archetype to create a FreeHEP Project.</description>
+  
+</project>

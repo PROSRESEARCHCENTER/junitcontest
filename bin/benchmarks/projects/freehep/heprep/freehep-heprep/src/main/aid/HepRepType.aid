@@ -1,0 +1,115 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+@java {
+import java.util.Set;
+}
+
+/**
+ * HepRepType interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepType.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepType extends HepRepDefinition {
+
+    /**
+     * Constructor for the JHepRepTreeID interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepType(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Adds a sub-type to this type.
+     *
+     * @param type sub-type to be added.
+     */
+    void addType(HepRepType* type);
+
+    /**
+     * Returns the name of this type.
+     * This is the full name if one uses flat-types, and the node name if one
+     * uses hierarchical typenames. It is the name supplied at construction of the type.
+     *
+     * @return name of type.
+     * @see #getFullName()
+     */
+    String getName();
+
+    /**
+     * Returns the full name of this type.
+     * The full name is constructed from the root of the typeTree (without the typeTreeName)
+     * by concatenating all the node names separated by slashes "/". For example:
+     * Geometry/InnerDetector/Sector24/Wire20
+     *
+     * @return full name of type.
+     * @see #getName()
+     */
+    String getFullName();
+
+    /**
+     * Returns the description of this type.
+     *
+     * @return description of type.
+     */
+    String getDescription();
+
+    /**
+     * Sets the description of this type.
+     *
+     * @param description
+     */
+    void setDescription(String description);
+
+    /**
+     * Returns the information URL of this type.
+     *
+     * @return info URL of type.
+     */
+    String getInfoURL();
+
+    /**
+     * Sets the information URL of this type.
+     *
+     * @param infoURL
+     */
+    void setInfoURL(String infoURL);
+
+    /**
+     * Returns the parent of this type.
+     *
+     * @return parent of type, or null if top-level.
+     */
+    HepRepType* getSuperType();
+
+@java {
+    /**
+     * Returns a collection of all the sub-types of this type.
+     *
+     * @deprecated use getTypeList()
+     * @return collection of HepRepTypes.
+     */
+    Set/*<HepRepType>*/ getTypes();
+}
+
+    /**
+     * Returns a collection of all the sub-types of this type.
+     *
+     * @return collection of HepRepTypes.
+     */
+    List<HepRepType*> getTypeList();
+
+    /**
+     * Returns a deep copy of this type.
+     *
+     * @param parent to which this copy is added.
+     * @return copy of this type.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepType* copy(HepRepType* parent) throws CloneNotSupportedException;
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<heprep xmlns="http://java.freehep.org/schemas/heprep/2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.freehep.org/schemas/heprep/2.0 http://java.freehep.org/schemas/heprep/2.0/HepRep.xsd">
+
+    <layer order="Geometry"/>
+        
+    <typetree name="Types">
+        <type name="TextType">
+            <attvalue name="layer" value="Geometry" />
+            <attvalue name="drawAs" value="Text" />
+            <attvalue name="HPos" value="0.9" />
+            <attvalue name="VPos" value="0.1" />
+        </type>
+        <type name="PolyEllipseType">
+            <attvalue name="layer" value="Geometry" />
+            <attvalue name="drawAs" value="Ellipse" />
+        </type>
+    </typetree>
+
+    <instancetree name="TestPolyEllipse" typetreename="Types">
+        <instance type="TextType">
+            <attvalue name="Text" value="(Poly) Ellipse" />
+        </instance>
+        <instance type="PolyEllipseType">
+            <point x="0.0" y="0.0" z="0.0" />
+            <point x="2.0" y="2.0" z="2.0" />
+        </instance>
+        <instance type="PolyEllipseType">
+            <attvalue name="Radius2" value="7"/>
+            <point x="10.0" y="10.0" z="10.0" />
+            <point x="14.0" y="12.0" z="11.0" />
+            <point x="20.0" y="20.0" z="20.0" />
+            <point x="24.0" y="22.0" z="21.0" />
+        </instance>
+        <instance type="PolyEllipseType">
+            <attvalue name="Radius2" value="10"/>
+            <attvalue name="Phi" value="2.3"/>
+            <point x="-10.0" y="10.0" z="10.0" />
+            <point x="-12.0" y="9.0"  z="11.0" />
+            <point x="-20.0" y="10.0" z="20.0" />
+            <point x="-22.0" y="19.0" z="21.0" />
+            <point x="-30.0" y="30.0" z="30.0" />
+            <point x="-32.0" y="39.0" z="31.0" />
+        </instance>
+    </instancetree>
+
+</heprep>

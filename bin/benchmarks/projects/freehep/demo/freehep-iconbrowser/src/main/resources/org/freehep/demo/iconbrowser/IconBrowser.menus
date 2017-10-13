@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE MenuSystem SYSTEM "http://java.freehep.org/schemas/menus/1.0/menus.dtd">
+<MenuSystem>
+   <MenuBar id="mainMenu">
+      <Menu name="File" mnemonic="F">
+         <Component type="default" name="Open Archive File..." mnemonic="F" icon="/org/javalobby/icons/20x20/Open.gif" description="Open an icon collection file" command="open">
+            <Accelerator shift="false" meta="false" key="VK_O" ctrl="true" alt="false"/>
+         </Component>
+         <Component type="default" name="Open Built-in Archive..." mnemonic="B" description="Open a built-in icon collection" command="openFromClassPath"/>
+         <Component type="default" name="Close Archive" mnemonic="C" icon="/org/javalobby/icons/20x20/Hide.gif" description="Close an icon collection" command="close">
+            <Accelerator shift="false" meta="false" key="VK_DELETE" ctrl="false" alt="false"/>
+         </Component>
+         <Separator/>
+         <Component type="default" name="Save Icon As..." mnemonic="S" icon="/org/javalobby/icons/20x20/Save.gif" description="Save the selected icon" command="saveIcon"/>
+         <Separator/>
+         <Component type="default" name="Print..." mnemonic="P" icon="/org/javalobby/icons/20x20/Print.gif" description="Print current page" command="print">
+            <Accelerator shift="false" meta="false" key="VK_P" ctrl="true" alt="false"/>
+         </Component>
+         <Component type="default" name="Print Preview..." mnemonic="R" icon="/org/javalobby/icons/20x20/Preview.gif" description="Print Preview" command="printPreview">
+            <Accelerator shift="true" meta="false" key="VK_P" ctrl="true" alt="false"/>
+         </Component>
+         <Separator/>
+         <Component type="default" name="Exit" mnemonic="E" icon="/org/javalobby/icons/20x20/Exit.gif" command="exit"/>
+      </Menu>
+      <Menu name="Edit" mnemonic="E">
+         <Component type="default" name="Copy" mnemonic="C" icon="/org/javalobby/icons/20x20/Copy.gif" command="copyIcon">
+            <Accelerator shift="false" meta="false" key="VK_C" ctrl="true" alt="false"/>
+         </Component>
+         <Separator/>
+         <Component type="default" name="Search..." mnemonic="S" icon="/org/javalobby/icons/20x20/Binocular.gif" description="Seach for icons" command="search">
+            <Accelerator shift="false" meta="false" key="VK_S" ctrl="true" alt="false"/>
+         </Component>
+      </Menu>
+      <Menu name="View" mnemonic="V">
+         <Component type="checkbox" name="Tool Bar" mnemonic="T" description="Show the application tool bar" command="showToolBar"/>
+         <Component type="checkbox" name="Status Bar" mnemonic="S" description="Show the application status bar" command="showStatusBar"/>
+         <Component type="checkbox" name="Show Icon Names" mnemonic="N" icon="/org/javalobby/icons/20x20/List.gif" description="Show Icon Names" command="showNames">
+            <Accelerator shift="false" meta="false" key="VK_T" ctrl="true" alt="false"/>
+         </Component>
+         <Menu name="Icon Magnifier" mnemonic="M">
+            <Menu name="Magnification" mnemonic="M">
+               <Component type="radio" name="2x" mnemonic="2" command="2x"/>
+               <Component type="radio" name="3x" mnemonic="3" command="3x"/>
+               <Component type="radio" name="5x" mnemonic="5" command="5x"/>
+               <Component type="radio" name="10x" mnemonic="10" command="10x"/>
+            </Menu>
+            <Component type="checkbox" name="Show Grid" mnemonic="G" command="showGrid"/>
+            <Component type="checkbox" name="Show Checks" mnemonic="C" command="showChecks"/>
+         </Menu>
+         <Menu name="Look and Feel" mnemonic="L" class="org.freehep.application.LookAndFeelMenu"/>
+      </Menu>
+      <Menu name="Help" mnemonic="H">
+         <Component type="default" name="Help Contents..." mnemonic="H" icon="/org/javalobby/icons/20x20/Help.gif" description="Show Help Contents" command="helpContents">
+            <Accelerator shift="false" meta="false" key="VK_F1" ctrl="false" alt="false"/>
+         </Component>
+         <Component type="default" name="Help Index..." mnemonic="I" icon="/org/javalobby/icons/20x20/HelpIndex.gif" description="Display help index" command="helpIndex"/>
+         <Component type="default" name="Help Search..." mnemonic="S" description="Search the help system" command="helpSearch"/>
+         <Component type="default" name="License..." mnemonic="L" description="Display program license" command="license"/>
+         <Component type="default" name="About" mnemonic="A" icon="/org/javalobby/icons/20x20/About.gif" command="about"/>
+      </Menu>
+   </MenuBar>
+   <ToolBar name="mainToolBar" id="mainToolBar">
+      <Component type="default" name="Open..." mnemonic="O" icon="/org/javalobby/icons/20x20/Open.gif" description="Open an icon collection" command="open"/>
+      <Component type="default" name="Close" mnemonic="C" icon="/org/javalobby/icons/20x20/Hide.gif" description="Close an icon collection" command="close"/>
+      <Separator/>
+      <Component type="default" name="Search..." mnemonic="S" icon="/org/javalobby/icons/20x20/Binocular.gif" description="Seach for icons" command="search"/>
+      <Component type="checkbox" name="Show Icon Names" mnemonic="N" icon="/org/javalobby/icons/20x20/List.gif" description="Show Icon Names" command="showNames"/>
+      <Separator/>
+      <Component type="default" name="Print..." mnemonic="P" icon="/org/javalobby/icons/20x20/Print.gif" description="Print current page" command="print"/>
+      <Component type="default" name="Print Preview..." mnemonic="R" icon="/org/javalobby/icons/20x20/Preview.gif" description="Print Preview" command="printPreview"/>
+      <Separator/>
+      <Component type="default" name="About" mnemonic="A" icon="/org/javalobby/icons/20x20/About.gif" command="about"/>
+      <Component type="default" name="Help Contents..." mnemonic="H" icon="/org/javalobby/icons/20x20/Help.gif" description="Show Help Contents" command="helpContents"/>
+   </ToolBar>
+   <PopupMenu name="panelMenu" id="panelMenu">
+      <Component type="default" name="Search..." mnemonic="S" icon="/org/javalobby/icons/20x20/Binocular.gif" description="Seach for icons" command="search"/>
+      <Component type="checkbox" name="Show Icon Names" mnemonic="N" icon="/org/javalobby/icons/20x20/List.gif" description="Show Icon Names" command="showNames"/>
+      <Separator/>
+      <Component type="default" name="Print..." mnemonic="P" icon="/org/javalobby/icons/20x20/Print.gif" description="Print current page" command="print"/>
+      <Component type="default" name="Print Preview..." mnemonic="R" icon="/org/javalobby/icons/20x20/Preview.gif" description="Print Preview" command="printPreview"/>
+   </PopupMenu>
+   <PopupMenu name="labelMenu" id="labelMenu">
+      <Component type="default" name="Save Icon As..." mnemonic="A" icon="/org/javalobby/icons/20x20/Save.gif" description="Save the selected icon" command="saveIcon"/>
+      <Component type="default" name="Copy" mnemonic="C" icon="/org/javalobby/icons/20x20/Copy.gif" command="copyIcon"/>
+      <Separator/>
+      <Component type="default" name="Search..." mnemonic="S" icon="/org/javalobby/icons/20x20/Binocular.gif" description="Seach for icons" command="search"/>
+      <Component type="checkbox" name="Show Icon Names" mnemonic="N" icon="/org/javalobby/icons/20x20/List.gif" description="Show Icon Names" command="showNames"/>
+      <Separator/>
+      <Component type="default" name="Print..." mnemonic="P" icon="/org/javalobby/icons/20x20/Print.gif" description="Print current page" command="print"/>
+      <Component type="default" name="Print Preview..." mnemonic="R" icon="/org/javalobby/icons/20x20/Preview.gif" description="Print Preview" command="printPreview"/>
+   </PopupMenu>
+   <PopupMenu name="magnifierMenu" id="magnifierMenu">
+      <Component type="default" name="Save Icon As..." mnemonic="S" icon="/org/javalobby/icons/20x20/Save.gif" description="Save the selected icon" command="saveIcon"/>
+      <Component name="Copy" mnemonic="C" command="copyIcon" icon="/org/javalobby/icons/20x20/Copy.gif"/>
+      <Separator/>
+      <Menu name="Magnification" mnemonic="M">
+         <Component type="radio" name="2x" mnemonic="2" command="2x"/>
+         <Component type="radio" name="3x" mnemonic="3" command="3x"/>
+         <Component type="radio" name="5x" mnemonic="5" command="5x"/>
+         <Component type="radio" name="10x" mnemonic="10" command="10x"/>
+      </Menu>
+      <Component type="checkbox" name="Show Grid" mnemonic="G" command="showGrid"/>
+      <Component type="checkbox" name="Show Checks" mnemonic="C" command="showChecks"/>
+   </PopupMenu>
+</MenuSystem>

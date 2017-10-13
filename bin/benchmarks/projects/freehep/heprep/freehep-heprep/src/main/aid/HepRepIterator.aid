@@ -1,0 +1,82 @@
+// Copyright 2000-2006, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepIterator interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepIterator.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepIterator extends Iterator {
+
+    /**
+     * Constructor for the JHepRepIterator interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepIterator(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Signals if there is a next instance to iterate to.
+     *
+     * @return true if next() can be called.
+     */
+    boolean hasNext();
+
+    /**
+     * Returns next instance.
+     *
+     * @return next HepRepInstance.
+     */
+    public HepRepInstance* nextInstance();
+
+    /**
+     * Adds a listener to be informed about attribute changes while iterating.
+     *
+     * @param name attribute name to register a listener for; use null to listen to all attributes
+     * @param listener to be added.
+     */
+    void addHepRepAttributeListener(String name, HepRepAttributeListener* listener);
+
+    /**
+     * Removes a listener.
+     *
+     * @param name attribute name to unregister for, use null for the "all attribute" listener
+     * @param listener to be removed.
+     */
+    void removeHepRepAttributeListener(String name, HepRepAttributeListener* listener);
+
+    /**
+     * Adds a listener to be informed about attribute changes while iterating.
+     *
+     * @param listener to be added.
+     */
+    void addHepRepFrameListener(HepRepFrameListener* listener);
+
+    /**
+     * Removes a listener.
+     *
+     * @param listener to be removed.
+     */
+    void removeHepRepFrameListener(HepRepFrameListener* listener);
+
+    /**
+     * Returns true if the current instance, just delivered by nextInstance(), is to be drawn as a frame.
+     * @return draw current instance as a frame
+     */
+    boolean drawAsFrame();
+
+@commented {
+    /**
+     * Returns the attValue for key at the current point of iteration.
+     *
+     * @param key name of the attribute to be looked up.
+     * @return value associated to name at this point in the iteration.
+     */
+    HepRepAttValue* getAttValue(String key);
+}
+}

@@ -1,0 +1,16 @@
+// Copyright 2005, FreeHEP.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestGenericsDefine to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+interface ITestGenericsDefine<T> {
+    
+    boolean fill(T* value);
+    T& get();
+    boolean bind(T variable);
+    void unbind(const T& variable);
+}

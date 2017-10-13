@@ -1,0 +1,74 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+@java {
+import java.util.Set;
+}
+
+/**
+ * HepRepTypeTree interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepTypeTree.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepTypeTree extends HepRepTreeID {
+
+    /**
+     * Constructor for the JHepRepTypeTree interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepTypeTree(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Adds a type to this typetree.
+     *
+     * @param type to be added.
+     */
+    void addType(HepRepType* type);
+
+@java {
+    /**
+     * Returns a collection of all types in this tree.
+     *
+     * @deprecated use getTypeList()
+     * @return collection of HepRepTypes.
+     */
+    Set/*<HepRepType>*/ getTypes();
+}
+
+    /**
+     * Returns a collection of all types in this tree.
+     *
+     * @return collection of HepRepTypes.
+     */
+    List<HepRepType*> getTypeList();
+
+    /**
+     * Returns type for full type name
+     * @param fullName full type name
+     * @return type
+     */
+    HepRepType* getType(String fullName);
+     
+
+    /**
+     * Returns a deep copy of this typetree.
+     *
+     * @return copy of this typetree.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepTypeTree* copy() throws CloneNotSupportedException;
+
+//@ifdef cpp
+// To be enable in g++ 3.0
+//    using HepRep::HepRepTreeID::copy;
+// To be disabled in g++ 3.0
+//    HepRepTreeID * copy();
+//@endif
+
+}

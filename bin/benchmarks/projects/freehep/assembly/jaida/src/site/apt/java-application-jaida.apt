@@ -1,0 +1,77 @@
+    ---
+    Java Application and JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Java Application and JAIDA
+    
+    The following example illustrates how to embed one (or more) JAIDA plotters into your own Java application. The example makes use of the hep.aida.ref.plotter.PlotterUtilities class which contains several methods for assisting in interfacing JAIDA to other Java applications.
+
+*Code
+
++-------+
+import hep.aida.*;
+import hep.aida.ref.plotter.PlotterUtilities;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.util.Random;
+
+import javax.swing.*;
+
+/**
+ * An example of how to embed a JAIDA IPlotter into your own application.
+ */
+public class AIDAEmbed extends JPanel
+{
+   /** Creates a new instance of AIDAEmbed */
+   public AIDAEmbed()
+   {
+      super(new BorderLayout());
+
+      IAnalysisFactory af = IAnalysisFactory.create();
+      ITree tree = af.createTreeFactory().create();
+      IHistogramFactory hf = af.createHistogramFactory(tree);
+      IHistogram1D h1d = hf.createHistogram1D("Test", 50, -3, 3);
+
+      // Fill with junk
+      Random rand = new Random();
+      for (int i = 0; i < 10000; i++)
+         h1d.fill(rand.nextGaussian());
+
+      // Create an IPlotter 
+      IPlotter plotter = af.createPlotterFactory().create();
+      plotter.currentRegion().plot(h1d);
+
+      // Now embed the plotter
+      add(PlotterUtilities.componentForPlotter(plotter), BorderLayout.CENTER);
+   }
+
+   /**
+    * @param args the command line arguments
+    */
+   public static void main(String[] args)
+   {
+      JFrame frame = new JFrame("Embedded AIDA");
+
+      JMenuBar bar = new JMenuBar();
+      JMenu menu = new JMenu("File");
+      JMenuItem item = new JMenuItem(new ExitAction());
+      menu.add(item);
+      bar.add(menu);
+      frame.setJMenuBar(bar);
+
+      frame.setContentPane(new AIDAEmbed());
+      frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+      frame.pack();
+      frame.show();
+   }
+   
+   private static class ExitAction extends AbstractAction
+   {
+      ExitAction() { super("Exit"); }
+      public void actionPerformed(ActionEvent e) { System.exit(0); }
+   }
+}
++-------+

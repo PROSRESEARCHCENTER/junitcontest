@@ -1,0 +1,15 @@
+<assembly>
+  <id>i386-MacOSX-g++</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>target/nar/lib/i386-MacOSX-g++/jni</directory>
+      <outputDirectory>lib/i386-MacOSX-g++</outputDirectory>      
+      <includes>
+        <include>*</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

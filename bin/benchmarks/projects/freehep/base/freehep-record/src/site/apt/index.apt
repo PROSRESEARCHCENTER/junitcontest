@@ -1,0 +1,14 @@
+	---
+FreeHEP Record
+	---
+	---
+Mark Donszelmann
+	---
+	
+Introduction
+
+        FreeHEP Record Manipulation Library.
+
+        The library provides a framework for use by applications that need to fetch records from
+        data sources and supply them to clients for processing.
+        

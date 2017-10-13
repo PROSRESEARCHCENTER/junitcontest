@@ -1,0 +1,44 @@
+<project>
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.freehep</groupId>
+    <artifactId>native</artifactId>
+    <packaging>pom</packaging>
+    <name>FreeHEP Native (C, C++)</name>
+    <version>1</version>
+    <description>FreeHEP Native Library</description>
+    <url>http://java.freehep.org/</url>
+
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/native-pom</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/native</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/native</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/native</developerConnection>
+    </scm>
+
+    <modules>
+        <module>freehep-wbxml</module>
+        <module>freehep-jni</module>
+        <module>freehep-zlib</module>
+    </modules>
+</project>

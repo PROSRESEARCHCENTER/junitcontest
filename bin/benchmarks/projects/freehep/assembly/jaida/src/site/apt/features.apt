@@ -1,0 +1,362 @@
+    ---
+    Features
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Features
+
+    All the AIDA interfaces are fully implemented.
+
+
+*Utilities
+
+    JAIDA distribution comes with several utility classes in hep.aida.util package. While those classes are not described by the AIDA standard, they can be useful to the user. 
+For detailed description of utility classes {{{utility.html}click here}}.
+
+** HistUtils
+
+    Compares two IHistogram1D objects using Kolmogorov algorithm. The result is between 0 and 1; 1 is for identical histograms
+
+** MCUtils
+
+    This class generates distribution based on a given IFunction and fills user-provided object – IHistogram or ICloud. Can also create and fill ITuple. IFunction is assumed to be non negative. 
+
+** XMLUtils
+
+    Converts AIDA IManagedObject or IFitResult to XML string and back. Can also write AIDA ITree to file.
+
+*Histograms and Profiles
+
+**Statistics Evaluation
+
+    For AIDA Histograms and Profiles the statistics (mean and rms) is calculated using ONLY <in-range> data, i.e. data whose bins don't have any components that 
+is either in the <UNDERFLOW> or in the <OVERFLOW> bin. It is possible to choose to used all the data for the statistics evaluation by adding <useOutflowsInStatistics=true>
+to the options string when creating Histograms and Profiles. 
+
+**NaN
+
+    If an AIDA object is filled with a NaN, such value will be ignored in the evaluation of the 
+statistics but it will be considered in the count of the overall number of entries. The number of NaN entries can be obtained by subtracting the number of 
+<in-range> entries and the number of <out-of-range entries> from the number of <total entries>. The number of NaN entries will be displayed in the statistics box when 
+plotting the AIDA object if such number is non zero.
+
+*Clouds
+
+**Conversion
+
+    By default clouds will <auto-convert> to histograms when they reach 100,000 entries. You can turn off auto-conversion by passing the option <autoConvert=no>
+when creating the Cloud. 
+
+**Margins
+
+    When a Cloud converts to an Histogram, the Cloud's upper and lower values are used as the Histogram's edges. Due to binning effects the upper edge of the histogram
+falls in the <OVERFLOW> bin, causing apparent loss of data. Such loss can be substantial when the Cloud is filled with discrete values.
+
+    To overcome this problem the implementation adds a margin (buffer) on either side of the distribution, so that the Histogram's range is bigger than the Cloud's one.
+By default this margin is <5%> of Cloud's upper and lower edge. Users can change this margin by providing the <margin> options when creating the Cloud:
+
+    *<margin=0.1> will add a 10% margin when determining the histogram range. 
+
+    *<margin=0> will force the use of the Cloud's upper and lower values.
+
+
+*Trees and IO
+
+    JAIDA supports reading and writing XML (.aida) files. ROOT and PAW files can be also read (no writing is supported). 
+
+**XML Compression
+
+    The current implementation of ITree supports reading and writing AIDA standard XML files (.aida files) in either gzip 
+compressed format, or uncompressed format. 
+This behavior can be controlled using the <compress> option when creating the ITree.
+By default the compression factor is turned on (<compress=true>). Compression can be turned off by setting 
+(<compress=false>).
+
+    In the current version of JAIDA it is also possible to read and write AIDA XML files in zip format (<compress=zip>). In this format each AIDA object is represented by a single file. ITree folders are mapped to subdirectories.
+
+
+**(Experimental) Binary XML Format
+
+    Files can be written and read in Binary XML rather than ASCII (default) XML. 
+Writing of Binary XML is 1.3 times faster than ASCII XML, but reading and parsing 
+Binary XML is up to 3 times faster. 
+This behavior can be controlled using the <binary> option when creating the ITree.
+By default binary is turned off (<binary=false>).
+This opion may be combined with compression and zip.
+
+    More information about the Binary XML Format is available on a 
+{{{http://http://java.freehep.org/sandbox/aida-binary-xml/}temporary website}},
+which will move once the standard has been adopted.
+
+    This option is experimental. A future version of JAIDA (AIDA) will 
+properly standardize the binary format and add a set of conversion tools
+to convert ASCII XML to Binary XML and back.
+
+**ROOT Daemon
+
+    Root files can be opened either directely or via a {{{http://root.cern.ch/root/NetFile.html}root daemon}}. When using the ROOT daemon
+
++-------+
+ITree tree = tf.create("root://sldrh2.slac.stanford.edu","root",true,false,"scheme=anonymous");
++-------+
+
+    the following options are supported:
+
+
+*-----+-----+
+ Option | Values
+*-----+-----+
+ showAllCycles | By default only the highest numbered cycle is read. If this option is specified then all cylces are shown
+*-----+-----+
+ scheme | <*rood only> The authorization scheme to use. Supported values, Anonymous, UsrPwd
+*-----+-----+
+ user | <*rood only> The user name to use (for UsrPwd scheme)
+*-----+-----+
+ password | <*rood only> The password to use (for UsrPwd scheme)
+*-----+-----+
+
+
+*Tuples
+
+    The whole functionality of AIDA ITuple interface is supported, including support for evaluators, filters and nested ITuples. Full 
+interactive analysis of ITuples is provided by the TupleExplorer plugin in {{{http://jas.freehep.org/jas3}JAS3}}.
+
+
+*Plotting
+ 
+    The JAIDA implementation of IPlotter observes all displayed Histograms and Clouds, and will automatically update the display 
+as necessary. Therefore the <IPlotter.refresh()> method is currently ignored in the Java implementation. Not all AIDA implementations will do this, so for 
+portability you should still periodically call the refresh() method. Similarly the Java implementation is multi-threaded, so plots will be refreshed while the 
+main program continues to run, and hence the <IPlotter.interact()> method is also ignored. 
+
+**3D Plotting
+
+    Currently it is not possible to plot 3D (or higher dimensionality) data objects. 
+
+**Variable Binning
+
+    Histograms with variable bin-widths are not yet displayed correctly. 
+
+**Region's limits
+
+    The following parameters have been added in JAIDA to the plotter region to access the limits of the plot area: <xAxisLowerLimit>, <xAxisUpperLimit>, <yAxisLowerLimit>, <yAxisUpperLimit>. 
+
+    To access the region's limits just type:
+
++-------+
+double xLowerLimit = Double.parseDouble( plotterRegion.parameterValue("xAxisLowerLimit") );
++-------+
+
+**Plots Overlay
+
+    Two overlay modes are supported when multiple plots are added to the same PlotRegion:
+
+    *<<overlay>> to overlay a plot to an exisint one
+
+    *<<replace>> to replace the exising plot with the new one. This is equivalent to first clearing the region and then plotting the object. 
+
+    []
+
+    The default value is <overlay>. This can be changed by passing the <mode> option when plotting an object:
+
++------+
+plotterRegion.plot(hist, "mode=overlay");
+ or
+plotterRegion.plot(hist, "mode=replace");
++------+
+
+**Plot Window's Size
+
+    The default size of the Plotter's window is 600x600 pixels. These values can be controlled via the Plotter's parameters <plotterWidth> and <plotterHeight>.
+
++--------+
+plotter.setParameter("plotterWidth","400");
+plotter.setParameter("plotterHeight","600");
++--------+
+
+    After changing the window size it will be necessary to <show()> the plotter for the changes to take effect.
+
+**Ranges
+
+    AIDA ranges for plotting can be specified via the options as:
+
+	*for more dimensions: <range = "x:(-1.,0.),(2.,3.) y:(-5,5)">
+
+	*in one dimension: <range = "(-1,0),(2,3)">
+
+	*open ranges: <range = "(,1)" or range = "(-1.,)">
+
+        []
+
+    As options are passed as a string remember to escape the quotes: <"range = \"(-1,2)\"">.
+
+
+**Writing to File
+
+    There might be some problems when invoking the <writeToFile> method due to the way the Plotter is currently implemented. In 
+particular the following applies to the situation in which the plotter is showing in the GUI (show() has been invoked) and the data is changed (for 
+example an histogram is filled); this results in a plot updating on the screen to reflect the changes in the data. To do this the data source fires events to 
+the plot to notify that it changed, and, as a result of this the plot updates. To prevent too many events being fired and scripts being slow waiting for the 
+GUI to update we have a 1 second delay after such an event is received before we perform the update (in this time window no more events are fired). Due to this 
+delay it is necessary to synchronize the process of writing the plot to file with the plot updates. To do so, when the writeToFile method is invoked, we 
+submit a process to the Swing thread that will write the plot to file with a delay of a second. One extra complication is that, due to the fact that update 
+events generate other update events on the Swing thread, we cannot guarantee the relative order of such processes with the writeToFile one. In other words there 
+might be cases in which the plot written to file is different to the one represented in the GUI WHEN writeToFile is invoked and the plot is showing.
+
+    For this reason we suggest NOT to show the plot to screen when writeToFile is to be invoked.
+
+    This problem will be fixed in a future version of the plotter.
+
+
+*Styles 
+
+    To understand the way styles work it is important to understand the hierarchical structure of the AIDA styles. For each plot a cascade of styles is taken into 
+account: the style associated to the IPlotter, the one associated to the IPlotterRegion, the default one for a given type of data, and the user provided 
+ones when the actual plotting is done (passed via the plot(..) method on the IPlotterRegion). When retrieving the value of a give style parameter we first 
+start from the user provided styles (if any) and navigate down through all the above styles until we find a style for which the given style parameter has been 
+set. This means that the style parameters set in a user provided style will always overwrite the corresponding style parameter set on the IPlotterRegion. 
+Alternatively changing a style parameter on the IPlotterRegion will not affect a plot if a user provided style has been used to render the plot and the given 
+style parameter has been set by the user.
+
+    In the Java implementation all the plots listen for changes to all the styles, except for the user provided ones, i.e. the ones that are passed to the IPlotterRegion via its 
+plot(...) method. The plots will update automatically to display any style changes. There is a small caveat here due to a limitation in the 
+AIDA interfaces. In order to modify the plot style of a given object that has been rendered with a user defined style after it has been plotted, it is 
+necessary to first remove the object from the plot (remove(..) method on IPlotterRegion), adding it back again providing the modified style object. We 
+plan to fix this problem for the next release of AIDA: 4.0.
+
+    JAIDA supports the following additional parameters to allow a finer control over the objects that appear on a given plot. In the table below we list both the standard AIDA 
+parameters the additional parameter names added in our implementation. For each parameter we provide the name, the AIDA object on which they should be set, a description of what they 
+control and the allowed values; for the standard AIDA parameters we also provide the method name that corresponds to such parameters. Please note that all the parameter names and 
+their values are case sensitive. For more information on the AIDA styles please refer to the {{{http://java.freehep.org/redirect?project=AIDA&area=api}AIDA API}}.
+
+
+*-----+------+-----+------+-----+
+ AIDA Interface | Parameter name| Method| Description| Allowed values
+*-----+------+-----+------+-----+
+IPlotterStyle |hist2DStyle| |The way a histogram2D is represented |box or 0, ellipse or 1, colorMap or 2
+*-----+------+-----+------+-----+ 
+ |showAsScatterPlot | |For scatter plots only to switch between binned and unbinned representation |true, false. The default is true.
+*-----+------+-----+------+-----+ 
+IDataStyle|profileErrors| |The type of error bars for profile plots |spread or 0, errorOnMean or 1. The default is spread.
+*-----+------+-----+------+-----+ 
+IAxisStyle |type| |The axis type|double, int, string, date
+*-----+------+-----+------+-----+ 
+  |allowZeroSuppression| |To allow zero suppression|true, false. The default is false.
+*-----+------+-----+------+-----+ 
+IFillStyle |pattern|setPattern, pattern|Set the pattern of the filling|Not supported
+*-----+------+-----+------+-----+ 
+   |colorMapScheme| |The type of color map for 2D histograms|warm or 0, cool or 1, thermal or 2, rainbow or 3, grayscale or 4
+*-----+------+-----+------+-----+
+
+
+
+**Colors
+
+    The colors can be passed to the styles in the following formats:
+
+	*by name: "yellow" , where alpha is always 1.0 
+
+	*by int r,g,b,a: "128, 255, 64, 255" , where alpha (a) is optional 
+
+	*by float r,g,b,a: "0.5, 1.0, 0.25, 1.0" , where alpha (a) is optional 
+	
+	*by single number: "64637|0x0FFF08" , where alpha is always 1.0 
+
+
+** Shape
+
+    The marker's shape can be either a string or a number (a String number); the available shapes are: 
+
+*----+-----+
+Shape | Int Value
+*----+-----+
+dot|0
+*----+-----+
+box|1
+*----+-----+
+triangle|2
+*----+-----+
+diamond|3
+*----+-----+
+star|4
+*----+-----+
+verticalLine|5
+*----+-----+
+horizontalLine|6
+*----+-----+
+cross|7
+*----+-----+
+circle|8
+*----+-----+
+square|9
+*----+-----+
+
+
+*Fitting 
+
+    The flexible design of the IFitter interface allows the user to switch very easily the optimizer engine used in the minimization process and 
+the type of fit method used. We currently support two optimizers: <Minuit> and <JMinuit> (Java version of Minuit). They can be accessed by specifying <fminuit> or 
+<jminuit> for the engine when creating the fitter. 
+
+    The available {{{./fit-methods.html}fit methods}} are: 
+
+	*<LeastSquares>
+
+	*<Chi2>
+
+	*<CleverChi2>
+
+	*<BinnedMaximumLikelihood>
+
+	*<UnbinnedMaximumLikelihood>
+
+
+*Functions
+
+    Two types of functions can be created with the IFunctionFactory: built-in functions and scripted functions. Currently the only 
+built-in functions we provide are the <Polynomial>, the <Exponential>, the <Moyal>, the <Lorentzian>, 
+the one and two dimensional <Gaussian> that can be created through the <createFunctionByName> method of the <IFunctionFactory> using 
+for the functions model <p0, p1, ... >, <e>, <moyal>, <lorentzian>, <g> and <g2> respectively.
+
+    The following table shows the name and the list of parameters for each of the built-in functions:
+
+
+*-----+------+----+
+Polynomial of order n|<pn>|<p0, p1,....,p(n-1)>
+*-----+------+----+
+Exponential|<e>|<amplitude, exponent>
+*-----+------+----+
+Moyal 1-dimensional|<moyal>|<amplitude, mean, sigma>
+*-----+------+----+
+Lorentzian 1-dimensional|<lorentzian>|<amplitude, mu, gamma>
+*-----+------+----+
+Gaussian 1-dimensional|<g>|<amplitude, mean, sigma>
+*-----+------+----+
+Gaussian 2-dimensional|<g2>|<amplitude, meanX, sigmaX, meanY, sigmaY>
+*-----+------+----+
+
+
+    It is possible to create functions by name by adding any of the built in functions, e.g. "g0 + p1". For more complicated functions the user should create scripted functions 
+though the <createFunctionFromScript> method. 
+
+
+*To Implement
+
+    The following list details which parts of the AIDA standard are not fully implemented:
+
+	*Class IInfo is not implemented
+
+	*IFitter supports only constraints of the type "a = b"
+
+	*IFunctions: no operations among built in functions, beside addition, are supported.
+
+	*IPlotterLayout is not implemented
+
+	*IEvaluator and IFilter can only be applied to ITuple's columns at the root level (not to columns inside folders)
+
+	*ITuple: for the reason above the project methods on ITuple apply only to root level columns
+
+
+

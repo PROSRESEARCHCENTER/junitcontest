@@ -1,0 +1,30 @@
+<document>
+  <properties>
+    <title>FreeHEP Java Library - Icon Browser</title>
+  </properties>
+  <body>
+    <section name="FreeHEP Icon Browser">
+
+    <p><img border="0" src="IconBrowser.gif"/>The <a href="http://java.freehep.org">FreeHEP</a> Icon
+Browser
+was written as a test application for the <a href="http://java.freehep.org/lib/freehep/doc/application/">FreeHEP
+application framework</a>, but is hopefully also a useful tool for developers
+using the <a href="http://developer.java.sun.com/developer/techDocs/hi/repository/">Java
+Look and Feel Graphics</a>, or any other icon collection stored in zip or jar
+files. </p>
+
+<p>Currently the IconBrowser is available for download using Java Web Start. You
+must have <a href="http://java.sun.com/products/javawebstart/">Java Web Start
+1.0</a> already installed on your machine for the download to work.</p>
+
+<p>Feel free to send comments/suggestions/bug reports to the author, <a href="mailto:tonyj@slac.stanford.edu">Tony
+Johnson</a>.</p>
+<form method="GET" action="IconBrowser.jnlp">
+  <p><input type="submit" value="Download using Java Web Start" name="go"/><br/>
+  <a href="IconBrowser.jnlp"><img border="0" src="ScreenShot.gif"/></a></p>
+</form>
+</section>
+</body>
+</document>
+
+

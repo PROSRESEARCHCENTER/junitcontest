@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+
+<!--
+The plotML element contains plots and plotPages.  It serves the same purpose
+as, for example, the opening and closing HTML elements do in HTML:
+to identify a file as conforming to the appropriate DTD.
+
+XML forces us to have exactly one top-level element, so we cannot simply have
+plots or plot pages as the top-level element.  We could make plotPage
+the sole top-level element and assume that a one-element plotPage is just a
+standalone plot, but we might want to be able to create both standalone plots
+and one-element plotPages.
+-->
+<!ELEMENT plotML (plot | plotPage)>
+
+<!--
+A plotPage contains 0 or more plots.  The plots are ordered in left to right,
+top to bottom order.  So a plotPage of width 2 and height 4 could look like
+this: (The titles state the plot position for explanatory purposes ONLY!
+The word "foo" is just as valid a title as "row 1, column 1".)
+
+<plotPage width="2" height="4">
+	<plot title="row 1, column 1"/>
+	<plot title="row 1, column 2"/>
+	<plot title="row 2, column 1"/>
+	<plot title="row 2, column 2"/>
+	<plot title="row 3, column 1"/>
+	<plot title="row 3, column 2"/>
+	<plot title="row 4, column 1"/>
+	<plot title="row 4, column 2"/>
+</plotPage>
+
+This way, no plotPage position information is contained in the plot element,
+which should not have to know anything about what a plotPage is.
+
+Note: width and height are measured in # of plots (positive integer).
+-->
+<!ELEMENT plotPage (colorScheme?, plot*)>
+<!ATTLIST plotPage
+	width				CDATA		#REQUIRED
+	height				CDATA		#REQUIRED
+>
+
+<!--
+A plot contains (in this order):
+	title (optional)
+	legend (optional)
+	stats (optional)
+	dataArea (optional)
+	bounds (optional)
+	border (optional)
+	colorScheme (optional)
+
+The bounds of the plot element specifies its position on a plotPage
+(if not specified, of course, the plot is in the default position determined
+by its order in the list of plots and the dimensions of the plotPage).
+-->
+<!ELEMENT plot ( title?, legend?, stats?, dataArea?, bounds?, border?, colorScheme? )>
+<!ATTLIST plot
+    allowUserInteraction CDATA    "true"
+>
+<!--
+allowUserInteraction = one of (true, false)
+-->
+<!--
+A title contains (in this order):
+	border (optional)
+	bounds (optional)
+	label (required)
+	colorScheme (optional)
+
+The bounds specifies the position of the title within the plot.  If the bounds
+is not specified, the title is assumed to have its size and position managed
+by the plot itself (so there is no way to specify a bounds and have the same
+effect as not specifying a bounds).
+-->
+<!ELEMENT title (border?, bounds?, label, colorScheme? )>
+
+<!--
+A legend contains (in this order):
+	border (optional)
+	bounds (optional)
+	colorScheme (optional)
+	font (optional)
+	0 or more legendItems
+	
+The bounds specifies the position of the legend within the plot.  If the bounds
+is not specified, the legend is assumed to have its size and position managed
+by the plot itself (so there is no way to specify a bounds and have the same
+effect as not specifying a bounds).
+
+All entries in the legend should share the same font style.  If an
+implementation does not enforce this requirement, it must use the font of the
+topmost element as the font of the legend.
+
+The visible attribute can have 1 of 3 values: "true", "false" and the default
+value of "automatic".  If it is "true" then the legend is always shown; if it
+is "false" the legend is never shown; it it is "automatic" then the legend is
+only shown if the number of data sources is > 1.  (This is sensible since if
+there is only one thing on a plot you don't need a legend.)
+-->
+<!ELEMENT legend (border?, bounds?, colorScheme?, font?, legendEntry*)>
+<!ATTLIST legend
+	visible				CDATA		"automatic"
+>
+<!ELEMENT stats (border?, bounds?, colorScheme?, font?, format?, statsEntry*)>
+<!ATTLIST stats
+    showTitles          CDATA       "automatic"
+    alignment           CDATA       #IMPLIED
+>
+<!ELEMENT statsEntry EMPTY>
+<!ATTLIST statsEntry
+    name                CDATA       #REQUIRED
+>
+<!ELEMENT format EMPTY>
+<!ATTLIST format
+    significantDigits   CDATA       #IMPLIED
+    maximumWidth        CDATA       #IMPLIED
+    style               CDATA       #IMPLIED
+>
+<!--
+A dataArea contains (in this order):
+	border (optional)
+	bounds (optional)
+	colorScheme (optional)
+	1 or more data1d's followed by 0 or more function1d's OR 1 or more data2d's (optional)
+	0 or more x and y axes (if none are specified then defaults are created)
+
+Note: The axis element contains an attribute which specifies its type.
+So there is no potential ambiguity in determining which axis is being
+specified if only one of them is.
+-->
+<!ELEMENT dataArea ( border?, bounds?, colorScheme?, ((data1d+, function1d*) | data2d+)?, axis* ) >
+
+<!ELEMENT border EMPTY>
+<!ATTLIST border
+	type		CDATA		"None"			
+	color		CDATA		#IMPLIED
+>
+<!--
+type	= one of {"None", "Bevel In", "Bevel Out", "Etched", "Line"}
+color	= a named color or "#RRGGBB" (hex digits)
+-->
+
+<!ELEMENT bounds EMPTY>
+<!ATTLIST bounds
+	x			CDATA		#IMPLIED
+	y			CDATA		#IMPLIED
+	width		CDATA		#REQUIRED
+	height		CDATA		#REQUIRED
+>
+<!--
+x		= the x coordinate of the top left corner
+y		= the y coordinate of the top left corner
+width	= the width of the component
+height	= the height of the component
+-->
+
+<!-- A legendEntry overrides the title attribute of data1d and data2d elements. -->
+<!ELEMENT legendEntry EMPTY>
+<!ATTLIST legendEntry
+	index		CDATA		#REQUIRED
+	title		CDATA		#REQUIRED
+>
+<!--
+number	= the position of item in legend (0 based, count from top)
+title	= the title displayed in the legend
+-->
+
+<!ELEMENT label (font?)>
+<!ATTLIST label
+	text		CDATA		#IMPLIED
+>
+
+<!ELEMENT font EMPTY>
+<!ATTLIST font
+	face		NMTOKEN		"Dialog"
+	points		CDATA		"12"
+	style		CDATA		"PLAIN"
+>
+<!--
+face	= one of {"Dialog", "SansSerif", "Serif", "Monospaced", "DialogInput"}
+points	= font size in points
+style	= one of {"PLAIN", "BOLD", "ITALIC", "BOLD+ITALIC"}
+-->
+
+<!ELEMENT axis (label?, font)>
+<!ATTLIST axis
+	location			NMTOKEN		#REQUIRED
+	min					CDATA		#IMPLIED
+	max					CDATA		#IMPLIED
+	logarithmic			NMTOKEN		"false"
+	allowSuppressedZero NMTOKEN     "true"
+	numberOfBins		CDATA		#IMPLIED
+	type				CDATA		"double"
+	showOverflows   	NMTOKEN		"false"
+>
+<!--
+location			= "x0", "x1", ..., "xn", "y0", "y1", ..., "yn" (x0, y0 = normal pair)
+min					= the smallest value on the axis
+max					= the largest value on the axis
+logarithmic			= true if the axis is logarithmic, false if it is linear
+numberOfBins		= number of bins to divide the axis into (integer)
+type				= "date", "string", "time", "double"
+showOverflowBars	= true if overflow bars should be shown, false otherwise
+-->
+
+<!--
+NOTE:
+Color naming conventions and conversions are currently done as implemented by
+the jas.util.ColorConverter.stringToHTMLColor method, which tries to handle
+both HTML 3.2 and Java colors, and does a mediocre job in doing it.  This area
+needs work to be standardized.
+
+The only other thing to note is that the string comparison as implemented in
+the stringToHTMLColor method is case-insensitive, which is a good thing.
+-->
+<!ELEMENT data1d
+	(	(	((class|datasource), (binnedDataAxisAttributes | pointDataAxisAttributes)?)
+			|
+			(points, pointDataAxisAttributes)
+			|
+			(bins1d, binnedDataAxisAttributes)
+		),
+		axisLabels?,
+		statistics?,
+		style1d?,
+                normalization?
+	)
+>
+<!ATTLIST data1d
+    axis					CDATA       "y0"
+    name                                        NMTOKEN     #IMPLIED
+>
+<!ELEMENT function1d (functionParam*, fit?, functionStyle1d?)>
+<!ATTLIST function1d
+    name                                        NMTOKEN     #IMPLIED
+    type                                        CDATA       #REQUIRED
+    axis					CDATA       "y0"
+    isVisible                                   NMTOKEN     "true"
+>
+<!ELEMENT functionParam EMPTY>
+<!ATTLIST functionParam
+        name    CDATA   #REQUIRED
+        value   CDATA   #REQUIRED
+>
+<!ELEMENT style1d EMPTY>
+<!ATTLIST style1d	
+	histogramBarsFilled		NMTOKEN		"true"	
+	histogramBarColor		CDATA		#IMPLIED
+	errorBarColor			CDATA		#IMPLIED
+	dataPointColor			CDATA		#IMPLIED
+	dataPointStyle			CDATA		#IMPLIED	
+	dataPointSize			CDATA		"6"
+	lineColor                       CDATA		#IMPLIED
+	showHistogramBars		NMTOKEN		"true"
+	showErrorBars			NMTOKEN		"true"
+	showDataPoints			NMTOKEN		"true"
+	showLinesBetweenPoints	NMTOKEN		"false"
+>
+<!--
+histogramBarsFilled	= true if the histogram bars should be filled, false otherwise
+histogramBarColor	= a string like "Red" or "red" or "RED"
+dataPointStyle      = one of "dot","box","triangle","diamond","star","vert line","horiz line","cross","circle","square"
+-->
+<!ELEMENT functionStyle1d EMPTY>
+<!ATTLIST functionStyle1d
+        lineColor   CDATA   #IMPLIED
+>
+<!ELEMENT fit EMPTY>
+<!ATTLIST fit
+        ref NMTOKEN #REQUIRED
+>
+
+<!ELEMENT binnedDataAxisAttributes EMPTY>
+<!ATTLIST binnedDataAxisAttributes
+	axis                                            CDATA		#REQUIRED
+	min						CDATA		#REQUIRED
+	max						CDATA		#REQUIRED
+	numberOfBins                                    CDATA		#REQUIRED
+	type                                            CDATA		#REQUIRED
+>
+<!--
+axis			= which axis does this apply to? (currently x or y)
+min				= the smallest value on the axis
+max				= the largest value on the axis
+numberOfBins	= number of bins to divide the axis into (integer)
+type			= one of "date", "string", "time", "double"
+-->
+
+
+<!ELEMENT pointDataAxisAttributes EMPTY>
+<!ATTLIST pointDataAxisAttributes
+	axis					CDATA		#REQUIRED
+	type					CDATA		#REQUIRED
+>
+<!--
+axis			= which axis does this apply to? (currently x or y)
+type			= one of "date", "string", "time", "double"
+-->
+
+
+<!--
+The bins2d subelement only makes sense if type is "histogram2d".  Rather than try to enforce this at
+the DTD level (as we did before), we will just leave it up to the good sense of the user to only
+choose legal combinations.  If "bins" is specified with a "scatter2d" type, implementations can
+(at their discretion) either complain bitterly or silently ignore all the data.
+
+Note: The following expression is fairly convoluted since I am trying to enforce the constraint
+that one cannot combine binsAxisAttributes and pointsAxisAttributes in the same data2d element,
+as well as the constraint that the binsAxisAttributes or pointsAxisAttributes are optional with
+class data sources but are required with points and bins2d data sources.  Trying to say
+"exactly 2 of" in a DTD is really ugly (this will be fixed when XML schemas come out...)
+-->
+<!ELEMENT data2d
+	(	(	((class|datasource), (	(binnedDataAxisAttributes, binnedDataAxisAttributes) |
+						(pointDataAxisAttributes, pointDataAxisAttributes)
+					)?
+			)
+			|
+			(points, (pointDataAxisAttributes, pointDataAxisAttributes))
+			|
+			(bins2d, (binnedDataAxisAttributes, binnedDataAxisAttributes))
+		),
+		axisLabels?,
+		axisLabels?,
+		statistics?,
+		style2d?,
+                normalization?
+	)
+>
+<!ATTLIST data2d
+	type					NMTOKEN		#REQUIRED
+        name                                    NMTOKEN         #IMPLIED
+>
+<!ELEMENT style2d EMPTY>
+<!ATTLIST style2d	
+	histStyle				NMTOKEN		#IMPLIED
+	colorMapScheme			NMTOKEN		#IMPLIED
+	shapeColor				CDATA		#IMPLIED
+	overflowBinColor		CDATA		#IMPLIED
+	startDataColor			CDATA		"#FFFFFF"
+	endDataColor			CDATA		"#000000"
+	showOverflow			NMTOKEN		"false"
+	showPlot				NMTOKEN		"true"
+	displayAsScatterPlot	NMTOKEN		#IMPLIED
+	dataPointSize			CDATA		#IMPLIED
+	dataPointStyle			NMTOKEN		#IMPLIED
+	dataPointColor			CDATA		#IMPLIED
+        logZ                            NMTOKEN         "false"
+>
+<!--
+type			= currently one of "histogram2d", "scatter2d"
+title			= what is put into the legend by default
+dataHistStyles	= currently one of "STYLE_BOX", "STYLE_ELLIPSE", "STYLE_COLORMAP"
+
+The attributes {displayAsScatterPlot, dataPointSize, dataPointStyle, dataPointColor} only
+make sense if type is "scatter2d".   If these attributes are specified with a "histogram2d" type,
+implementations can (at their discretion) either complain bitterly or silently ignore these attributes.
+-->
+
+<!ELEMENT axisLabels (axisLabel*)>
+<!ATTLIST axisLabels
+	type				NMTOKEN		"x0"
+>
+<!--
+type	= one of "x0", "x1", ..., "xn", "y0", "y1", ..., "yn" (x0, y0 = normal pair)
+-->
+
+<!ELEMENT axisLabel EMPTY>
+<!ATTLIST axisLabel
+	value				CDATA		#REQUIRED
+>
+
+<!ELEMENT statistics (statistic*)>
+<!ATTLIST statistics>
+
+<!ELEMENT statistic EMPTY>
+<!ATTLIST statistic
+	name				CDATA		#REQUIRED
+	value				CDATA		#REQUIRED
+>
+
+
+<!ELEMENT class (param*)>
+<!ATTLIST class
+	name					CDATA		#REQUIRED
+	param					CDATA		#IMPLIED
+>
+<!ELEMENT datasource (param*)>
+<!ATTLIST datasource
+	name					CDATA		#REQUIRED
+>
+<!ELEMENT param EMPTY>
+<!ATTLIST param
+	value					CDATA		#REQUIRED
+	type					CDATA		#REQUIRED
+>
+<!--
+type - one of int, double, Color, String
+-->
+<!ELEMENT colorScheme EMPTY>
+<!ATTLIST colorScheme
+	foregroundColor			CDATA		#IMPLIED
+	backgroundColor			CDATA		#IMPLIED
+>
+<!-- The colors are a named color or "#RRGGBB" (hex digits). -->
+
+
+<!--
+The next three elements, bins1d, bins2d and points all have no children but
+instead contain #PCDATA (which basically is unstructured character data).
+This data is the bin and point data... and there is a LOT of it.  A typical
+2D histogram has around 2000 bins, and a typical 2D scatterplot has around
+20,000 points.  In theory we could make each bin or point an XML element, but
+this would be a Very Bad Idea for these reasons:
+	1.	It would waste a ton of space.  Although XML is not terse, this would
+		be excessive even by XML standards.  Visualize this repeated 2000 or
+		20,000 times:
+				<bin contents="0.0"/>
+		That's a lot of characters when we only need three ("0.0").
+
+	2.	Many implementations (such as the one in JAS) will parse plotML files
+		using the DOM.  Having a tree with 2000 or 20,000 nodes (one for each
+		bin or point) is absurd.
+				
+So we will define our own format of this data rather than use XML to do the job
+for us.  Yes, this means that plotML parsers have to do the extremely trivial
+job of parsing this data themselves.
+
+Here are the formats:
+
+(Each bin or point is ALWAYS on its own line.)
+
+A bin, whether it is part of a bins1d or a bins2d, is one comma-delimited
+row of numbers.  The form is: amount_in_bin, positive_error, negative_error
+If positive_error = negative_error then the form is: amount_in_bin, error
+If error is not specified (in which case it is assumed to be the square root),
+the form is: amount_in_bin
+
+For example:
+5,2.234,1.432		the case where both error bars are specified separately
+5,2.234				the case where positive_error = negative_error
+5					the case where no error bars are specified
+
+A point is always composed of comma-separated numbers.  The number of these
+numbers is specified by the dimensions attribute of the points element.
+So points in a 2D histogram obviously have 2 dimensions.
+
+For example:
+-0.7319118445148435,-0.45307473022773015
+
+The bin and point data SHALL NOT be tabbed in to make it look nicely formatted.
+This, although easy to do, would be a very inefficient use of storage.  So it
+is NOT the responsibility of implementations to strip leading whitespace,
+although this is trivial to do.  Anyone reading a plotML file is smart enough
+to understand it without the needless tabbing.
+-->
+
+<!ELEMENT bins1d (#PCDATA)*>
+<!ATTLIST bins1d
+    title                   CDATA       #REQUIRED
+>
+
+<!ELEMENT bins2d (#PCDATA)*>
+<!ATTLIST bins2d
+	xSize					CDATA		#REQUIRED
+	ySize					CDATA		#REQUIRED
+	title					CDATA		#REQUIRED
+>
+
+<!ELEMENT points (#PCDATA)*>
+<!ATTLIST points
+	dimensions				CDATA		"2"
+	title					CDATA	    #REQUIRED
+>
+<!--
+Normalization specifies the normalization applied to a DATA1D or DATA2D or
+Function1D. 
+
+    method      Must be one of "CONSTANT" "MAXBIN" "BIN" "AREA" "ENTRIES" "STATISTIC"
+    multiplier  A fixed multiplier applied to the normalization
+    param       Meaning depends on method.
+                      for "BIN" it is the bin number
+                      for "STATISTIC" it is the statistic name
+    relativeTo  A reference to the name specified for another data element
+-->
+<!ELEMENT normalization EMPTY>
+<!ATTLIST normalization
+        method        NMTOKEN  #REQUIRED
+        multiplier    NMTOKEN  "1"
+        param         CDATA    #IMPLIED
+        relativeTo    NMTOKEN  #IMPLIED
+>

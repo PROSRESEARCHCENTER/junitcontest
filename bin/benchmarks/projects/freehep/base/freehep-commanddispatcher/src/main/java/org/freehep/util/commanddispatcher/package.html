@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft FrontPage 4.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+
+<P>Dispatcher of commands in a complex application.</P>
+<P>The javax.swing package contains the concept of an Action, which can be
+attached to menu items and toolbar buttons as an easy way to fire commands when
+the correponding menu/toolbar button is selected. Unfortunately this mechanism
+does not scale well to complex applications, where the target of a particular
+command may vary depending on the state of the GUI. For example in an MDI
+application the target of the Open, Save etc commands will be the currently
+active window, which will change with time.</P>
+<P>The command dispatch mechanism defined in this package is designed to be deal
+with the following:</P>
+<UL>
+  <LI>Groups of commands targets which can be dynamically
+  enabled/disabled during a program's lifetime
+  <LI>Checkboxes and RadioButtons, in addition to simple menu items</LI></UL>
+<P>To simplify coding the package uses reflection by default (although this can
+be overriden for applications where reflection is undesirable). To define a new
+command XXX typically all that is needed is to define a method onXXX() and
+optionally enableXXX(CommandState state).</P>
+<P>This package is particularly powerful when used in combination with the XML
+menu scheme defined in package org.freehep.xml.menus. For an example of usage
+see the test case in org.freehep.util.commanddispatcher.test.</P>
+<P>See org.freehep.xml.menus</P>
+<p>@status Stable.</p>
+
+</BODY>
+</HTML>

@@ -1,0 +1,2 @@
+- rotated rectangle and move cursor jumps, when mouseDown, relative values should be used.
+- rotated rectangle: when corner point is moved in non-direction, point is not fixed.

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep-aidatld">
+    <bannerLeft>
+        <name>AIDA Tag Library</name>
+        <href>http://java.freehep.org/freehep-aidatld</href>
+    </bannerLeft>
+    
+    <bannerRight>
+        <name>FreeHEP</name>
+        <src>http://java.freehep.org/images/sm-freehep.gif</src>
+        <href>http://java.freehep.org/</href>
+    </bannerRight>
+    
+    <body>
+        <links>
+            <item name="AIDA" href="http://aida.freehep.org/" />
+            <item name="FreeHEP" href="http://java.freehep.org/"/>
+            <item name="JAS" href="http://jas.freehep.org/"/>
+        </links>
+    
+        <menu name="AIDA TLD">
+            <item name="Overview"       href="index.html"/>
+            <item name="Examples"       href="index.jsp" target="newFrame"/>
+        </menu>   
+        <menu name="Documentation">
+            <item name="Tld Doc"        href="tlddoc/index.html" target="tldDoc"/>
+            <item name="API Doc"        href="apidocs/index.html" target="apiDoc"/>
+        </menu>           
+        <menu name="Project Info">
+            <item name="Project Team"   href="team-list.html"/>
+            <item name="License"        href="license.html"/>
+            <item name="AIDA Forum"     href="http://forum.freehep.org/index.php?t=thread&amp;frm_id=9&amp;rid=6"/>
+            <item name="Bug Database"   href="http://bugs.freehep.org/secure/BrowseProject.jspa?id=10090"/>
+        </menu>           
+        <menu name="Distribution">
+            <item name = "Binary"       href = "binary-distribution.html"/>
+            <item name = "Repository"   href = "source-repository.html"/>
+        </menu>           
+        <menu name="Related">
+            <item name="AIDA"           href="http://aida.freehep.org/" target="AIDA"/>
+            <item name="FreeHEP"        href="http://java.freehep.org/" target="FreeHEP"/>
+        </menu>           
+    </body>
+</project>

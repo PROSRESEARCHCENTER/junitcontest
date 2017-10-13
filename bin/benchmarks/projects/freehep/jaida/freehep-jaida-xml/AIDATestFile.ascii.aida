@@ -1,0 +1,5287 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
+<aida version="3.3">
+  <implementation version="1.1" package="FreeHEP"/>
+  <cloud1d conversionUpperEdge="2.436536396566409"
+    name="Cloud 1D" conversionBins="50"
+    conversionLowerEdge="-3.905580112506794" maxEntries="-1" path="/Clouds/"
+    title="Cloud1D - not converted">
+    <annotation>
+      <item key="Title" value="Cloud1D - not converted"
+        sticky="true"/>
+      <item key="AidaPath" value="/Clouds/Cloud 1D"
+        sticky="true"/>
+      <item key="FullPath"
+        value="/testAIDAFile.aida/Clouds/Cloud 1D" sticky="true"/>
+    </annotation>
+    <entries1d>
+      <entry1d weight="0.7460575963091141"
+        valueX="0.8042871030827958"/>
+      <entry1d weight="0.7571146371683384"
+        valueX="-0.735299208093784"/>
+      <entry1d weight="0.0417918938205919"
+        valueX="2.1482583734267178"/>
+      <entry1d weight="0.9440434451379264"
+        valueX="-0.27134284733374014"/>
+      <entry1d weight="0.8178907291852116"
+        valueX="-0.5721003993522631"/>
+      <entry1d weight="0.8814435883313745"
+        valueX="-0.6304016453407987"/>
+      <entry1d weight="0.2727863910750946"
+        valueX="-0.7366245104364495"/>
+      <entry1d weight="0.8353239476879715"
+        valueX="0.17809650544861738"/>
+      <entry1d weight="0.9840799325639229"
+        valueX="0.3334918157887116"/>
+      <entry1d weight="0.5808305346777257"
+        valueX="0.3819924950477702"/>
+      <entry1d weight="0.32311803028081054"
+        valueX="-1.5207645760753614"/>
+      <entry1d weight="0.02966912676674971"
+        valueX="0.9153407278874031"/>
+      <entry1d weight="0.15125355996312673"
+        valueX="-3.617302089367103"/>
+      <entry1d weight="0.11169818891659744"
+        valueX="0.7403392554189089"/>
+      <entry1d weight="0.21051111499999886"
+        valueX="0.5593356216894048"/>
+    </entries1d>
+  </cloud1d>
+  <cloud1d name="Cloud 1D conv"
+    lowerEdgeX="-3.617302089367103" maxEntries="10" upperEdgeX="2.1482583734267178"
+    conversionUpperEdge="2.436536396566409" title="Cloud1D - converted"
+    conversionLowerEdge="-3.905580112506794" path="/Clouds/" conversionBins="50">
+    <annotation>
+      <item sticky="true" value="Cloud1D - converted"
+        key="Title"/>
+      <item sticky="true" value="/Clouds/Cloud 1D conv"
+        key="AidaPath"/>
+      <item sticky="true"
+        value="/testAIDAFile.aida/Clouds/Cloud 1D conv" key="FullPath"/>
+    </annotation>
+    <histogram1d name="Cloud 1D conv"
+      title="Cloud1D - converted" path="/Clouds/">
+      <annotation>
+        <item sticky="true" value="Cloud1D - converted"
+          key="Title"/>
+      </annotation>
+      <axis numberOfBins="50" min="-1.7042157235504654"
+        max="2.3317095209018213" direction="x"/>
+      <statistics entries="14">
+        <statistic direction="x" rms="0.6234983912249098"
+          mean="-0.12108307936241114"/>
+      </statistics>
+      <data1d>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="-3.617302089367103" error="0.15125355996312673" binNum="UNDERFLOW"
+          height="0.15125355996312673"/>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="-1.5207645760753614" error="0.32311803028081054" binNum="2"
+          height="0.32311803028081054"/>
+        <bin1d weightedRms="6.304400379245627E-10" entries="1"
+          weightedMean="-0.7366245104364495" error="0.2727863910750946" binNum="11"
+          height="0.2727863910750946"/>
+        <bin1d weightedRms="5.351669846290445E-10" entries="1"
+          weightedMean="-0.735299208093784" error="0.7571146371683384" binNum="12"
+          height="0.7571146371683384"/>
+        <bin1d weightedRms="2.4799497283910606E-10"
+          entries="1" weightedMean="-0.6304016453407987"
+          error="0.8814435883313745" binNum="13" height="0.8814435883313745"/>
+        <bin1d weightedRms="5.148995255821305E-10" entries="1"
+          weightedMean="-0.5721003993522631" error="0.8178907291852116" binNum="14"
+          height="0.8178907291852116"/>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="-0.27134284733374014" error="0.9440434451379264" binNum="17"
+          height="0.9440434451379264"/>
+        <bin1d weightedRms="1.8013482202355447E-10"
+          entries="1" weightedMean="0.17809650544861738"
+          error="0.8353239476879715" binNum="23" height="0.8353239476879715"/>
+        <bin1d weightedRms="0.023431399740195626" entries="2"
+          weightedMean="0.3514932772499071" error="1.1427061843225614" binNum="25"
+          height="1.5649104672416487"/>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="0.5593356216894048" error="0.21051111499999886" binNum="28"
+          height="0.21051111499999886"/>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="0.7403392554189089" error="0.11169818891659744" binNum="30"
+          height="0.11169818891659744"/>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="0.8042871030827958" error="0.7460575963091141" binNum="31"
+          height="0.7460575963091141"/>
+        <bin1d weightedRms="0.0" entries="1"
+          weightedMean="0.9153407278874031" error="0.02966912676674971" binNum="32"
+          height="0.02966912676674971"/>
+        <bin1d weightedRms="2.0133492796833694E-10"
+          entries="1" weightedMean="2.1482583734267178"
+          error="0.0417918938205919" binNum="47" height="0.0417918938205919"/>
+      </data1d>
+    </histogram1d>
+  </cloud1d>
+  <cloud2d name="Cloud 2D"
+    conversionUpperEdgeY="0.9241336502711662" conversionUpperEdgeX="2.436536396566409" maxEntries="-1"
+    conversionLowerEdgeY="-1.8103126492616621" conversionLowerEdgeX="-3.905580112506794"
+    conversionBinsY="50" title="Cloud2D - not converted" conversionBinsX="50"
+    path="/Clouds/">
+    <annotation>
+      <item sticky="true" value="Cloud2D - not converted"
+        key="Title"/>
+      <item sticky="true" value="/Clouds/Cloud 2D"
+        key="AidaPath"/>
+      <item sticky="true"
+        value="/testAIDAFile.aida/Clouds/Cloud 2D" key="FullPath"/>
+    </annotation>
+    <entries2d>
+      <entry2d valueX="0.8042871030827958"
+        weight="0.7460575963091141" valueY="0.20009603486372946"/>
+      <entry2d valueX="-0.735299208093784"
+        weight="0.7571146371683384" valueY="-0.6623620585182702"/>
+      <entry2d valueX="2.1482583734267178"
+        weight="0.0417918938205919" valueY="0.15056889858202832"/>
+      <entry2d valueX="-0.27134284733374014"
+        weight="0.9440434451379264" valueY="-0.9656885026323231"/>
+      <entry2d valueX="-0.5721003993522631"
+        weight="0.8178907291852116" valueY="0.10038173380482916"/>
+      <entry2d valueX="-0.6304016453407987"
+        weight="0.8814435883313745" valueY="0.07407536751819602"/>
+      <entry2d valueX="-0.7366245104364495"
+        weight="0.2727863910750946" valueY="-1.507102328582791"/>
+      <entry2d valueX="0.17809650544861738"
+        weight="0.8353239476879715" valueY="-0.19963326253728386"/>
+      <entry2d valueX="0.3334918157887116"
+        weight="0.9840799325639229" valueY="-1.6860196356465336"/>
+      <entry2d valueX="0.3819924950477702"
+        weight="0.5808305346777257" valueY="0.14339375340451055"/>
+      <entry2d valueX="-1.5207645760753614"
+        weight="0.32311803028081054" valueY="-0.46797984578049623"/>
+      <entry2d valueX="0.9153407278874031"
+        weight="0.02966912676674971" valueY="-0.37593379045080794"/>
+      <entry2d valueX="-3.617302089367103"
+        weight="0.15125355996312673" valueY="-0.41254413746395924"/>
+      <entry2d valueX="0.7403392554189089"
+        weight="0.11169818891659744" valueY="0.7998406366560377"/>
+      <entry2d valueX="0.5593356216894048"
+        weight="0.21051111499999886" valueY="-0.37386980611056403"/>
+    </entries2d>
+  </cloud2d>
+  <cloud2d lowerEdgeY="-1.6860196356465336"
+    name="Cloud 2D conv" lowerEdgeX="-3.617302089367103"
+    conversionUpperEdgeY="0.9241336502711662" conversionUpperEdgeX="2.436536396566409" maxEntries="10"
+    upperEdgeY="0.7998406366560377" upperEdgeX="2.1482583734267178"
+    conversionLowerEdgeY="-1.8103126492616621" conversionLowerEdgeX="-3.905580112506794"
+    conversionBinsY="50" title="Cloud2D - converted" conversionBinsX="50"
+    path="/Clouds/">
+    <annotation>
+      <item sticky="true" value="Cloud2D - converted"
+        key="Title"/>
+      <item sticky="true" value="/Clouds/Cloud 2D conv"
+        key="AidaPath"/>
+      <item sticky="true"
+        value="/testAIDAFile.aida/Clouds/Cloud 2D conv" key="FullPath"/>
+    </annotation>
+    <histogram2d name="Cloud 2D conv"
+      title="Cloud2D - converted" path="/Clouds/">
+      <annotation>
+        <item sticky="true" value="Cloud2D - converted"
+          key="Title"/>
+      </annotation>
+      <axis numberOfBins="50" min="-1.7042157235504654"
+        max="2.3317095209018213" direction="x"/>
+      <axis numberOfBins="50" min="-1.7803254191720468"
+        max="0.29440181838924273" direction="y"/>
+      <statistics entries="13">
+        <statistic direction="x" rms="0.6190857804612587"
+          mean="-0.13404250136188275"/>
+        <statistic direction="y" rms="0.653255924288004"
+          mean="-0.47207567110259185"/>
+      </statistics>
+      <data2d>
+        <bin2d binNumX="UNDERFLOW" entries="1"
+          weightedMeanY="-0.41254413746395924" weightedMeanX="-3.617302089367103"
+          error="0.15125355996312673" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.15125355996312673" binNumY="32"/>
+        <bin2d binNumX="2" entries="1"
+          weightedMeanY="-0.4679798457804962" weightedMeanX="-1.5207645760753614"
+          error="0.32311803028081054" weightedRmsY="7.450580596923828E-9"
+          weightedRmsX="0.0" height="0.32311803028081054" binNumY="31"/>
+        <bin2d binNumX="11" entries="1"
+          weightedMeanY="-1.507102328582791" weightedMeanX="-0.7366245104364495"
+          error="0.2727863910750946" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.2727863910750946" binNumY="6"/>
+        <bin2d binNumX="12" entries="1"
+          weightedMeanY="-0.6623620585182702" weightedMeanX="-0.735299208093784"
+          error="0.7571146371683384" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.7571146371683384" binNumY="26"/>
+        <bin2d binNumX="13" entries="1"
+          weightedMeanY="0.07407536751819602" weightedMeanX="-0.6304016453407987"
+          error="0.8814435883313745" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.8814435883313745" binNumY="44"/>
+        <bin2d binNumX="14" entries="1"
+          weightedMeanY="0.10038173380482915" weightedMeanX="-0.5721003993522631"
+          error="0.8178907291852116" weightedRmsY="1.862645149230957E-9"
+          weightedRmsX="0.0" height="0.8178907291852116" binNumY="45"/>
+        <bin2d binNumX="17" entries="1"
+          weightedMeanY="-0.9656885026323231" weightedMeanX="-0.27134284733374014"
+          error="0.9440434451379264" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.9440434451379264" binNumY="19"/>
+        <bin2d binNumX="23" entries="1"
+          weightedMeanY="-0.19963326253728386" weightedMeanX="0.17809650544861738"
+          error="0.8353239476879715" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.8353239476879715" binNumY="38"/>
+        <bin2d binNumX="25" entries="1"
+          weightedMeanY="-1.6860196356465336" weightedMeanX="0.3334918157887116"
+          error="0.9840799325639229" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.9840799325639229" binNumY="2"/>
+        <bin2d binNumX="25" entries="1"
+          weightedMeanY="0.14339375340451055" weightedMeanX="0.3819924950477702"
+          error="0.5808305346777257" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.5808305346777257" binNumY="46"/>
+        <bin2d binNumX="28" entries="1"
+          weightedMeanY="-0.37386980611056403" weightedMeanX="0.5593356216894048"
+          error="0.21051111499999886" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.21051111499999886" binNumY="33"/>
+        <bin2d binNumX="30" entries="1"
+          weightedMeanY="0.7998406366560377" weightedMeanX="0.7403392554189089"
+          error="0.11169818891659744" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.11169818891659744" binNumY="OVERFLOW"/>
+        <bin2d binNumX="31" entries="1"
+          weightedMeanY="0.20009603486372946" weightedMeanX="0.8042871030827958"
+          error="0.7460575963091141" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.7460575963091141" binNumY="47"/>
+        <bin2d binNumX="32" entries="1"
+          weightedMeanY="-0.37593379045080794" weightedMeanX="0.9153407278874031"
+          error="0.02966912676674971" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.02966912676674971" binNumY="33"/>
+        <bin2d binNumX="47" entries="1"
+          weightedMeanY="0.15056889858202832" weightedMeanX="2.1482583734267178"
+          error="0.0417918938205919" weightedRmsY="0.0" weightedRmsX="0.0"
+          height="0.0417918938205919" binNumY="46"/>
+      </data2d>
+    </histogram2d>
+  </cloud2d>
+  <cloud3d conversionUpperEdgeZ="2.3794098568964817"
+    name="Cloud 3D" conversionUpperEdgeY="0.9241336502711662"
+    conversionUpperEdgeX="2.436536396566409" maxEntries="-1"
+    conversionLowerEdgeZ="-1.8805194522072541" conversionLowerEdgeY="-1.8103126492616621"
+    conversionLowerEdgeX="-3.905580112506794" conversionBinsZ="50" conversionBinsY="50"
+    title="Cloud3D - not converted" conversionBinsX="50" path="/Clouds/">
+    <annotation>
+      <item sticky="true" value="Cloud3D - not converted"
+        key="Title"/>
+      <item sticky="true" value="/Clouds/Cloud 3D"
+        key="AidaPath"/>
+      <item sticky="true"
+        value="/testAIDAFile.aida/Clouds/Cloud 3D" key="FullPath"/>
+    </annotation>
+    <entries3d>
+      <entry3d valueX="0.8042871030827958"
+        weight="0.7460575963091141" valueZ="1.1192290148110755"
+        valueY="0.20009603486372946"/>
+      <entry3d valueX="-0.735299208093784"
+        weight="0.7571146371683384" valueZ="0.6962415873982163"
+        valueY="-0.6623620585182702"/>
+      <entry3d valueX="2.1482583734267178"
+        weight="0.0417918938205919" valueZ="-1.6409414479860436"
+        valueY="0.15056889858202832"/>
+      <entry3d valueX="-0.27134284733374014"
+        weight="0.9440434451379264" valueZ="-1.686886301793448"
+        valueY="-0.9656885026323231"/>
+      <entry3d valueX="-0.5721003993522631"
+        weight="0.8178907291852116" valueZ="2.1857767064826756"
+        valueY="0.10038173380482916"/>
+      <entry3d valueX="-0.6304016453407987"
+        weight="0.8814435883313745" valueZ="-0.4900381728551188"
+        valueY="0.07407536751819602"/>
+      <entry3d valueX="-0.7366245104364495"
+        weight="0.2727863910750946" valueZ="0.7598651515043738"
+        valueY="-1.507102328582791"/>
+      <entry3d valueX="0.17809650544861738"
+        weight="0.8353239476879715" valueZ="0.8884548751954945"
+        valueY="-0.19963326253728386"/>
+      <entry3d valueX="0.3334918157887116"
+        weight="0.9840799325639229" valueZ="1.682079530841779"
+        valueY="-1.6860196356465336"/>
+      <entry3d valueX="0.3819924950477702"
+        weight="0.5808305346777257" valueZ="-0.029933292696295816"
+        valueY="0.14339375340451055"/>
+      <entry3d valueX="-1.5207645760753614"
+        weight="0.32311803028081054" valueZ="0.5856524563848681"
+        valueY="-0.46797984578049623"/>
+      <entry3d valueX="0.9153407278874031"
+        weight="0.02966912676674971" valueZ="0.932545846330191"
+        valueY="-0.37593379045080794"/>
+      <entry3d valueX="-3.617302089367103"
+        weight="0.15125355996312673" valueZ="-0.3459418498938724"
+        valueY="-0.41254413746395924"/>
+      <entry3d valueX="0.7403392554189089"
+        weight="0.11169818891659744" valueZ="0.1860894588027059"
+        valueY="0.7998406366560377"/>
+      <entry3d valueX="0.5593356216894048"
+        weight="0.21051111499999886" valueZ="-0.8383736152209851"
+        valueY="-0.37386980611056403"/>
+    </entries3d>
+  </cloud3d>
+  <cloud3d upperEdgeZ="2.1857767064826756"
+    upperEdgeY="0.7998406366560377" upperEdgeX="2.1482583734267178" maxEntries="10"
+    path="/Clouds/" conversionLowerEdgeZ="-1.8805194522072541"
+    conversionLowerEdgeY="-1.8103126492616621" conversionLowerEdgeX="-3.905580112506794"
+    conversionBinsZ="50" conversionUpperEdgeZ="2.3794098568964817"
+    conversionBinsY="50" conversionUpperEdgeY="0.9241336502711662"
+    conversionBinsX="50" conversionUpperEdgeX="2.436536396566409"
+    lowerEdgeZ="-1.686886301793448" lowerEdgeY="-1.6860196356465336"
+    lowerEdgeX="-3.617302089367103" title="Cloud3D - converted" name="Cloud 3D conv">
+    <annotation>
+      <item value="Cloud3D - converted" sticky="true"
+        key="Title"/>
+      <item value="/Clouds/Cloud 3D conv" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Clouds/Cloud 3D conv"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <histogram3d path="/Clouds/" title="Cloud3D - converted"
+      name="Cloud 3D conv">
+      <annotation>
+        <item value="Cloud3D - converted" sticky="true"
+          key="Title"/>
+      </annotation>
+      <axis numberOfBins="50" min="-1.7042157235504654"
+        max="2.3317095209018213" direction="x"/>
+      <axis numberOfBins="50" min="-1.7803254191720468"
+        max="0.29440181838924273" direction="y"/>
+      <axis numberOfBins="50" min="-1.8805194522072541"
+        max="2.3794098568964817" direction="z"/>
+      <statistics entries="13">
+        <statistic rms="0.6190857804612587"
+          mean="-0.13404250136188275" direction="x"/>
+        <statistic rms="0.653255924288004"
+          mean="-0.47207567110259185" direction="y"/>
+        <statistic rms="1.1765354240665589"
+          mean="0.4962672753464924" direction="z"/>
+      </statistics>
+      <data3d>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.15125355996312673" weightedRmsX="0.0"
+          weightedMeanZ="-0.3459418498938724" error="0.15125355996312673"
+          weightedMeanY="-0.41254413746395924" weightedMeanX="-3.617302089367103" binNumZ="18"
+          binNumY="32" binNumX="UNDERFLOW"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="7.450580596923828E-9" height="0.32311803028081054" weightedRmsX="0.0"
+          weightedMeanZ="0.5856524563848681" error="0.32311803028081054"
+          weightedMeanY="-0.4679798457804962" weightedMeanX="-1.5207645760753614" binNumZ="28"
+          binNumY="31" binNumX="2"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.2727863910750946" weightedRmsX="0.0"
+          weightedMeanZ="0.7598651515043738" error="0.2727863910750946"
+          weightedMeanY="-1.507102328582791" weightedMeanX="-0.7366245104364495" binNumZ="30"
+          binNumY="6" binNumX="11"/>
+        <bin3d entries="1"
+          weightedRmsZ="1.2904784139758924E-8" weightedRmsY="0.0" height="0.7571146371683384"
+          weightedRmsX="0.0" weightedMeanZ="0.6962415873982164"
+          error="0.7571146371683384" weightedMeanY="-0.6623620585182702"
+          weightedMeanX="-0.735299208093784" binNumZ="30" binNumY="26" binNumX="12"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.8814435883313745" weightedRmsX="0.0"
+          weightedMeanZ="-0.4900381728551188" error="0.8814435883313745"
+          weightedMeanY="0.07407536751819602" weightedMeanX="-0.6304016453407987" binNumZ="16"
+          binNumY="44" binNumX="13"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="1.862645149230957E-9" height="0.8178907291852116" weightedRmsX="0.0"
+          weightedMeanZ="2.1857767064826756" error="0.8178907291852116"
+          weightedMeanY="0.10038173380482915" weightedMeanX="-0.5721003993522631" binNumZ="47"
+          binNumY="45" binNumX="14"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.9440434451379264" weightedRmsX="0.0"
+          weightedMeanZ="-1.686886301793448" error="0.9440434451379264"
+          weightedMeanY="-0.9656885026323231" weightedMeanX="-0.27134284733374014" binNumZ="2"
+          binNumY="19" binNumX="17"/>
+        <bin3d entries="1"
+          weightedRmsZ="1.4901161193847656E-8" weightedRmsY="0.0" height="0.8353239476879715"
+          weightedRmsX="0.0" weightedMeanZ="0.8884548751954944"
+          error="0.8353239476879715" weightedMeanY="-0.19963326253728386"
+          weightedMeanX="0.17809650544861738" binNumZ="32" binNumY="38" binNumX="23"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.9840799325639229" weightedRmsX="0.0"
+          weightedMeanZ="1.682079530841779" error="0.9840799325639229"
+          weightedMeanY="-1.6860196356465336" weightedMeanX="0.3334918157887116" binNumZ="41"
+          binNumY="2" binNumX="25"/>
+        <bin3d entries="1"
+          weightedRmsZ="3.2927225399135965E-10" weightedRmsY="0.0" height="0.5808305346777257"
+          weightedRmsX="0.0" weightedMeanZ="-0.02993329269629582"
+          error="0.5808305346777257" weightedMeanY="0.14339375340451055"
+          weightedMeanX="0.3819924950477702" binNumZ="21" binNumY="46" binNumX="25"/>
+        <bin3d entries="1"
+          weightedRmsZ="1.0536712127723509E-8" weightedRmsY="0.0" height="0.21051111499999886"
+          weightedRmsX="0.0" weightedMeanZ="-0.8383736152209851"
+          error="0.21051111499999886" weightedMeanY="-0.37386980611056403"
+          weightedMeanX="0.5593356216894048" binNumZ="12" binNumY="33" binNumX="28"/>
+        <bin3d entries="1" weightedRmsZ="3.725290298461914E-9"
+          weightedRmsY="0.0" height="0.11169818891659744" weightedRmsX="0.0"
+          weightedMeanZ="0.18608945880270586" error="0.11169818891659744"
+          weightedMeanY="0.7998406366560377" weightedMeanX="0.7403392554189089" binNumZ="24"
+          binNumY="OVERFLOW" binNumX="30"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.7460575963091141" weightedRmsX="0.0"
+          weightedMeanZ="1.1192290148110755" error="0.7460575963091141"
+          weightedMeanY="0.20009603486372946" weightedMeanX="0.8042871030827958" binNumZ="35"
+          binNumY="47" binNumX="31"/>
+        <bin3d entries="1" weightedRmsZ="0.0"
+          weightedRmsY="0.0" height="0.02966912676674971" weightedRmsX="0.0"
+          weightedMeanZ="0.932545846330191" error="0.02966912676674971"
+          weightedMeanY="-0.37593379045080794" weightedMeanX="0.9153407278874031" binNumZ="33"
+          binNumY="33" binNumX="32"/>
+        <bin3d entries="1"
+          weightedRmsZ="2.1073424255447017E-8" weightedRmsY="0.0" height="0.0417918938205919"
+          weightedRmsX="0.0" weightedMeanZ="-1.6409414479860438"
+          error="0.0417918938205919" weightedMeanY="0.15056889858202832"
+          weightedMeanX="2.1482583734267178" binNumZ="2" binNumY="46" binNumX="47"/>
+      </data3d>
+    </histogram3d>
+  </cloud3d>
+  <dataPointSet path="/DataPointSets/" dimension="1"
+    title="DataPointSet 1D Title" name="DataPointSet 1D">
+    <annotation>
+      <item value="DataPointSet 1D Title" sticky="true"
+        key="Title"/>
+      <item value="/DataPointSets/DataPointSet 1D"
+        sticky="true" key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/DataPointSets/DataPointSet 1D" sticky="true" key="FullPath"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.8042871030827958"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.735299208093784"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="2.1482583734267178"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0"
+        value="-0.27134284733374014" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.5721003993522631"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.6304016453407987"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.7366245104364495"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.17809650544861738"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3334918157887116"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3819924950477702"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-1.5207645760753614"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.9153407278874031"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-3.617302089367103"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.7403392554189089"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.5593356216894048"
+        errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet path="/DataPointSets/" dimension="2"
+    title="DataPointSet 2D Title" name="DataPointSet 2D">
+    <annotation>
+      <item value="DataPointSet 2D Title" sticky="true"
+        key="Title"/>
+      <item value="/DataPointSets/DataPointSet 2D"
+        sticky="true" key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/DataPointSets/DataPointSet 2D" sticky="true" key="FullPath"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.8042871030827958"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="0.20009603486372946"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.735299208093784"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="-0.6623620585182702"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="2.1482583734267178"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="0.15056889858202832"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0"
+        value="-0.27134284733374014" errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="-0.9656885026323231"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.5721003993522631"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="0.10038173380482916"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.6304016453407987"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="0.07407536751819602"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.7366245104364495"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="-1.507102328582791"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.17809650544861738"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6"
+        value="-0.19963326253728386" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3334918157887116"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="-1.6860196356465336"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3819924950477702"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="0.14339375340451055"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-1.5207645760753614"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6"
+        value="-0.46797984578049623" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.9153407278874031"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6"
+        value="-0.37593379045080794" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-3.617302089367103"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6"
+        value="-0.41254413746395924" errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.7403392554189089"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6" value="0.7998406366560377"
+        errorMinus="0.4"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.5593356216894048"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.6"
+        value="-0.37386980611056403" errorMinus="0.4"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet path="/DataPointSets/" dimension="3"
+    title="DataPointSet 3D Title" name="DataPointSet 3D">
+    <annotation>
+      <item value="DataPointSet 3D Title" sticky="true"
+        key="Title"/>
+      <item value="/DataPointSets/DataPointSet 3D"
+        sticky="true" key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/DataPointSets/DataPointSet 3D" sticky="true" key="FullPath"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.8042871030827958"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.20009603486372946"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="1.1192290148110755"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.735299208093784"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.6623620585182702"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.6962415873982163"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="2.1482583734267178"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.15056889858202832"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.6409414479860436"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0"
+        value="-0.27134284733374014" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.9656885026323231"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.686886301793448"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.5721003993522631"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.10038173380482916"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="2.1857767064826756"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.6304016453407987"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.07407536751819602"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.4900381728551188"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.7366245104364495"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.507102328582791"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.7598651515043738"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.17809650544861738"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.19963326253728386" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.8884548751954945"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3334918157887116"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.6860196356465336"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="1.682079530841779"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3819924950477702"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.14339375340451055"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.029933292696295816" errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-1.5207645760753614"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.46797984578049623" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.5856524563848681"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.9153407278874031"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.37593379045080794" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.932545846330191"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-3.617302089367103"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.41254413746395924" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.3459418498938724"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.7403392554189089"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.7998406366560377"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.1860894588027059"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.5593356216894048"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.37386980611056403" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.8383736152209851"
+        errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <dataPointSet path="/DataPointSets/" dimension="4"
+    title="DataPointSet 4D Title" name="DataPointSet 4D">
+    <annotation>
+      <item value="DataPointSet 4D Title" sticky="true"
+        key="Title"/>
+      <item value="/DataPointSets/DataPointSet 4D"
+        sticky="true" key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/DataPointSets/DataPointSet 4D" sticky="true" key="FullPath"/>
+    </annotation>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.8042871030827958"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.20009603486372946"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="1.1192290148110755"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.7460575963091141"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.735299208093784"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.6623620585182702"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.6962415873982163"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.7571146371683384"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="2.1482583734267178"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.15056889858202832"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.6409414479860436"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.0417918938205919"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0"
+        value="-0.27134284733374014" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.9656885026323231"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.686886301793448"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.9440434451379264"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.5721003993522631"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.10038173380482916"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="2.1857767064826756"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.8178907291852116"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.6304016453407987"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.07407536751819602"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.4900381728551188"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.8814435883313745"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-0.7366245104364495"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.507102328582791"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.7598651515043738"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.2727863910750946"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.17809650544861738"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.19963326253728386" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.8884548751954945"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.8353239476879715"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3334918157887116"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-1.6860196356465336"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="1.682079530841779"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.9840799325639229"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.3819924950477702"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.14339375340451055"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.029933292696295816" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.5808305346777257"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-1.5207645760753614"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.46797984578049623" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.5856524563848681"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.32311803028081054"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.9153407278874031"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.37593379045080794" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.932545846330191"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.02966912676674971"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="-3.617302089367103"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.41254413746395924" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.3459418498938724"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.15125355996312673"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.7403392554189089"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.7998406366560377"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.1860894588027059"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.11169818891659744"
+        errorMinus="0.0"/>
+    </dataPoint>
+    <dataPoint>
+      <measurement errorPlus="0.0" value="0.5593356216894048"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0"
+        value="-0.37386980611056403" errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="-0.8383736152209851"
+        errorMinus="0.0"/>
+      <measurement errorPlus="0.0" value="0.21051111499999886"
+        errorMinus="0.0"/>
+    </dataPoint>
+  </dataPointSet>
+  <function isNormalized="false" path="/Functions/" title="p1"
+    name="P1 Function">
+    <codelet>
+      codelet:p1:catalog</codelet>
+    <arguments>
+      <argument name="x0">
+        <range min="-Infinity" max="Infinity"/>
+      </argument>
+    </arguments>
+    <parameters>
+      <parameter value="-2.0" name="p0"/>
+      <parameter value="1.0" name="p1"/>
+    </parameters>
+  </function>
+  <function isNormalized="false" path="/Functions/"
+    title="simple a*(x[0] - b) function" name="Script Function">
+    <codelet>
+      codelet:simple a*(x[0] - b) function:verbatim:jel : 1 : a*(x[0] - b) : a,b : null</codelet>
+    <arguments>
+      <argument name="x0">
+        <range min="-Infinity" max="Infinity"/>
+      </argument>
+    </arguments>
+    <parameters>
+      <parameter value="1.0" name="a"/>
+      <parameter value="2.0" name="b"/>
+    </parameters>
+  </function>
+  <histogram1d path="/Funny_Names/"
+    title="&lt;HTML&gt;TITLE&lt;sub&gt;subscripted&lt;/sub&gt; &lt;i&gt;can also&lt;/i&gt; &lt;b&gt;do&lt;/b&gt; text&lt;sup&gt;superscripted&lt;/sup&gt; and &amp;Psi;, &amp;lambda;, &amp;pi;" name="FH 1">
+    <annotation>
+      <item
+        value="&lt;HTML&gt;TITLE&lt;sub&gt;subscripted&lt;/sub&gt; &lt;i&gt;can also&lt;/i&gt; &lt;b&gt;do&lt;/b&gt; text&lt;sup&gt;superscripted&lt;/sup&gt; and &amp;Psi;, &amp;lambda;, &amp;pi;" sticky="true" key="Title"/>
+      <item value="/Funny_Names/FH 1" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Funny_Names/FH 1"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <statistics entries="13">
+      <statistic rms="0.6016980037491549"
+        mean="-0.13373758945061484" direction="x"/>
+    </statistics>
+    <data1d>
+      <bin1d entries="1" height="0.15125355996312673"
+        error="0.15125355996312673" binNum="UNDERFLOW" weightedRms="0.0"
+        weightedMean="-3.617302089367103"/>
+      <bin1d entries="1" height="0.0417918938205919"
+        error="0.0417918938205919" binNum="OVERFLOW" weightedRms="0.0"
+        weightedMean="2.1482583734267178"/>
+      <bin1d entries="1" height="0.32311803028081054"
+        error="0.32311803028081054" binNum="1" weightedRms="0.0"
+        weightedMean="-1.5207645760753614"/>
+      <bin1d entries="4" height="2.729235345760019"
+        error="1.4469011829658325" binNum="3" weightedRms="0.06858580015558062"
+        weightedMean="-0.6526465512933092"/>
+      <bin1d entries="1" height="0.9440434451379264"
+        error="0.9440434451379264" binNum="4" weightedRms="9.585265339441817E-10"
+        weightedMean="-0.27134284733374014"/>
+      <bin1d entries="3" height="2.40023441492962"
+        error="1.4154658318977695" binNum="5" weightedRms="0.08473532090825911"
+        weightedMean="0.29114813969314446"/>
+      <bin1d entries="2" height="0.3222093039165963"
+        error="0.23830949403200585" binNum="6" weightedRms="0.08614097804799804"
+        weightedMean="0.622082965819921"/>
+      <bin1d entries="2" height="0.7757267230758638"
+        error="0.7466473023413628" binNum="7" weightedRms="0.02129916344446997"
+        weightedMean="0.8085345577265786"/>
+    </data1d>
+  </histogram1d>
+  <histogram1d path="/Funny_Names/" title="Ratio of part/All"
+    name="FH 2 part/All">
+    <annotation>
+      <item value="Ratio of part/All" sticky="true" key="Title"/>
+      <item value="/Funny_Names/FH 2 part\/All" sticky="true"
+        key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/Funny_Names/FH 2 part\/All" sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <statistics entries="15">
+      <statistic rms="0.3456036619708368"
+        mean="0.5125075144589704" direction="x"/>
+    </statistics>
+    <data1d>
+      <bin1d entries="7" binNum="5"
+        weightedRms="0.10363846401125815" weightedMean="0.16297547226042425"/>
+      <bin1d entries="3" binNum="6"
+        weightedRms="0.08062142315154618" weightedMean="0.6946675893850593"/>
+      <bin1d entries="5" binNum="7"
+        weightedRms="0.06324789863551536" weightedMean="0.8925563285812813"/>
+    </data1d>
+  </histogram1d>
+  <tuple path="/Funny_Names/" title="Tuple with Funny Strings"
+    name="Funny String Tuple">
+    <annotation>
+      <item value="" sticky="true" key="Title"/>
+      <item value="/Funny_Names/Funny String Tuple"
+        sticky="true" key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/Funny_Names/Funny String Tuple" sticky="true" key="FullPath"/>
+    </annotation>
+    <columns>
+      <column type="string" name="funny_string"/>
+    </columns>
+    <rows>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#913;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#914;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#915;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#916;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#917;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#918;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#919;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#920;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#921;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#922;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#923;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#924;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#925;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#926;"/>
+      </row>
+      <row>
+        <entry value="&lt;HTML&gt;&amp;#927;"/>
+      </row>
+    </rows>
+  </tuple>
+  <histogram1d path="/Histograms/"
+    title="Histogram 1D - normal" name="Histogram 1D">
+    <annotation>
+      <item value="Histogram 1D - normal" sticky="true"
+        key="Title"/>
+      <item value="/Histograms/Histogram 1D" sticky="true"
+        key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/Histograms/Histogram 1D" sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <statistics entries="13">
+      <statistic rms="0.6016980037491549"
+        mean="-0.13373758945061484" direction="x"/>
+    </statistics>
+    <data1d>
+      <bin1d entries="1" height="0.15125355996312673"
+        error="0.15125355996312673" binNum="UNDERFLOW" weightedRms="0.0"
+        weightedMean="-3.617302089367103"/>
+      <bin1d entries="1" height="0.0417918938205919"
+        error="0.0417918938205919" binNum="OVERFLOW" weightedRms="0.0"
+        weightedMean="2.1482583734267178"/>
+      <bin1d entries="1" height="0.32311803028081054"
+        error="0.32311803028081054" binNum="1" weightedRms="0.0"
+        weightedMean="-1.5207645760753614"/>
+      <bin1d entries="4" height="2.729235345760019"
+        error="1.4469011829658325" binNum="3" weightedRms="0.06858580015558062"
+        weightedMean="-0.6526465512933092"/>
+      <bin1d entries="1" height="0.9440434451379264"
+        error="0.9440434451379264" binNum="4" weightedRms="9.585265339441817E-10"
+        weightedMean="-0.27134284733374014"/>
+      <bin1d entries="3" height="2.40023441492962"
+        error="1.4154658318977695" binNum="5" weightedRms="0.08473532090825911"
+        weightedMean="0.29114813969314446"/>
+      <bin1d entries="2" height="0.3222093039165963"
+        error="0.23830949403200585" binNum="6" weightedRms="0.08614097804799804"
+        weightedMean="0.622082965819921"/>
+      <bin1d entries="2" height="0.7757267230758638"
+        error="0.7466473023413628" binNum="7" weightedRms="0.02129916344446997"
+        weightedMean="0.8085345577265786"/>
+    </data1d>
+  </histogram1d>
+  <histogram2d path="/Histograms/"
+    title="Histogram 2D - normal" name="Histogram 2D">
+    <annotation>
+      <item value="Histogram 2D - normal" sticky="true"
+        key="Title"/>
+      <item value="/Histograms/Histogram 2D" sticky="true"
+        key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/Histograms/Histogram 2D" sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <axis numberOfBins="10" min="-2.5" max="2.5" direction="y"/>
+    <statistics entries="13">
+      <statistic rms="0.6016980037491549"
+        mean="-0.13373758945061484" direction="x"/>
+      <statistic rms="0.6666875372688478"
+        mean="-0.4565912210720664" direction="y"/>
+    </statistics>
+    <data2d>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.15125355996312673" weightedRmsX="0.0" error="0.15125355996312673"
+        weightedMeanY="-0.41254413746395924" weightedMeanX="-3.617302089367103" binNumY="4"
+        binNumX="UNDERFLOW"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.0417918938205919" weightedRmsX="0.0" error="0.0417918938205919"
+        weightedMeanY="0.15056889858202832" weightedMeanX="2.1482583734267178" binNumY="5"
+        binNumX="OVERFLOW"/>
+      <bin2d entries="1" weightedRmsY="7.450580596923828E-9"
+        height="0.32311803028081054" weightedRmsX="0.0" error="0.32311803028081054"
+        weightedMeanY="-0.4679798457804962" weightedMeanX="-1.5207645760753614" binNumY="4"
+        binNumX="1"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.2727863910750946" weightedRmsX="0.0" error="0.2727863910750946"
+        weightedMeanY="-1.507102328582791" weightedMeanX="-0.7366245104364495" binNumY="1"
+        binNumX="3"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.7571146371683384" weightedRmsX="0.0" error="0.7571146371683384"
+        weightedMeanY="-0.6623620585182702" weightedMeanX="-0.735299208093784" binNumY="3"
+        binNumX="3"/>
+      <bin2d entries="2" weightedRmsY="0.0131439815011535"
+        height="1.699334317516586" weightedRmsX="0.029130229938177148"
+        error="1.202450849015296" weightedMeanY="0.0867366389835018"
+        weightedMeanX="-0.6023412171469777" binNumY="5" binNumX="3"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.9440434451379264" weightedRmsX="0.0" error="0.9440434451379264"
+        weightedMeanY="-0.9656885026323231" weightedMeanX="-0.27134284733374014" binNumY="3"
+        binNumX="4"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.9840799325639229" weightedRmsX="0.0" error="0.9840799325639229"
+        weightedMeanY="-1.6860196356465336" weightedMeanX="0.3334918157887116" binNumY="1"
+        binNumX="5"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.8353239476879715" weightedRmsX="0.0" error="0.8353239476879715"
+        weightedMeanY="-0.19963326253728386" weightedMeanX="0.17809650544861738" binNumY="4"
+        binNumX="5"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.5808305346777257" weightedRmsX="0.0" error="0.5808305346777257"
+        weightedMeanY="0.14339375340451055" weightedMeanX="0.3819924950477702" binNumY="5"
+        binNumX="5"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.21051111499999886" weightedRmsX="0.0" error="0.21051111499999886"
+        weightedMeanY="-0.37386980611056403" weightedMeanX="0.5593356216894048" binNumY="4"
+        binNumX="6"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.11169818891659744" weightedRmsX="0.0" error="0.11169818891659744"
+        weightedMeanY="0.7998406366560377" weightedMeanX="0.7403392554189089" binNumY="6"
+        binNumX="6"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.02966912676674971" weightedRmsX="0.0" error="0.02966912676674971"
+        weightedMeanY="-0.37593379045080794" weightedMeanX="0.9153407278874031" binNumY="4"
+        binNumX="7"/>
+      <bin2d entries="1" weightedRmsY="0.0"
+        height="0.7460575963091141" weightedRmsX="0.0" error="0.7460575963091141"
+        weightedMeanY="0.20009603486372946" weightedMeanX="0.8042871030827958" binNumY="5"
+        binNumX="7"/>
+    </data2d>
+  </histogram2d>
+  <histogram3d path="/Histograms/"
+    title="Histogram 3D - normal" name="Histogram 3D">
+    <annotation>
+      <item value="Histogram 3D - normal" sticky="true"
+        key="Title"/>
+      <item value="/Histograms/Histogram 3D" sticky="true"
+        key="AidaPath"/>
+      <item
+        value="/testAIDAFile.aida/Histograms/Histogram 3D" sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <axis numberOfBins="10" min="-2.5" max="2.5" direction="y"/>
+    <axis numberOfBins="10" min="-3.0" max="3.0" direction="z"/>
+    <statistics entries="13">
+      <statistic rms="0.6016980037491549"
+        mean="-0.13373758945061484" direction="x"/>
+      <statistic rms="0.6666875372688478"
+        mean="-0.4565912210720664" direction="y"/>
+      <statistic rms="1.160704137551998"
+        mean="0.5035621194340334" direction="z"/>
+    </statistics>
+    <data3d>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.15125355996312673" weightedRmsX="0.0"
+        weightedMeanZ="-0.3459418498938724" error="0.15125355996312673"
+        weightedMeanY="-0.41254413746395924" weightedMeanX="-3.617302089367103" binNumZ="4"
+        binNumY="4" binNumX="UNDERFLOW"/>
+      <bin3d entries="1" weightedRmsZ="2.1073424255447017E-8"
+        weightedRmsY="0.0" height="0.0417918938205919" weightedRmsX="0.0"
+        weightedMeanZ="-1.6409414479860438" error="0.0417918938205919"
+        weightedMeanY="0.15056889858202832" weightedMeanX="2.1482583734267178" binNumZ="2"
+        binNumY="5" binNumX="OVERFLOW"/>
+      <bin3d entries="1" weightedRmsZ="0.0"
+        weightedRmsY="7.450580596923828E-9" height="0.32311803028081054" weightedRmsX="0.0"
+        weightedMeanZ="0.5856524563848681" error="0.32311803028081054"
+        weightedMeanY="-0.4679798457804962" weightedMeanX="-1.5207645760753614" binNumZ="5"
+        binNumY="4" binNumX="1"/>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.2727863910750946" weightedRmsX="0.0" weightedMeanZ="0.7598651515043738"
+        error="0.2727863910750946" weightedMeanY="-1.507102328582791"
+        weightedMeanX="-0.7366245104364495" binNumZ="6" binNumY="1" binNumX="3"/>
+      <bin3d entries="1" weightedRmsZ="1.2904784139758924E-8"
+        weightedRmsY="0.0" height="0.7571146371683384" weightedRmsX="0.0"
+        weightedMeanZ="0.6962415873982164" error="0.7571146371683384"
+        weightedMeanY="-0.6623620585182702" weightedMeanX="-0.735299208093784" binNumZ="6"
+        binNumY="3" binNumX="3"/>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.8814435883313745" weightedRmsX="0.0"
+        weightedMeanZ="-0.4900381728551188" error="0.8814435883313745"
+        weightedMeanY="0.07407536751819602" weightedMeanX="-0.6304016453407987" binNumZ="4"
+        binNumY="5" binNumX="3"/>
+      <bin3d entries="1" weightedRmsZ="0.0"
+        weightedRmsY="1.862645149230957E-9" height="0.8178907291852116" weightedRmsX="0.0"
+        weightedMeanZ="2.1857767064826756" error="0.8178907291852116"
+        weightedMeanY="0.10038173380482915" weightedMeanX="-0.5721003993522631" binNumZ="8"
+        binNumY="5" binNumX="3"/>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.9440434451379264" weightedRmsX="0.0" weightedMeanZ="-1.686886301793448"
+        error="0.9440434451379264" weightedMeanY="-0.9656885026323231"
+        weightedMeanX="-0.27134284733374014" binNumZ="2" binNumY="3" binNumX="4"/>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.9840799325639229" weightedRmsX="0.0" weightedMeanZ="1.682079530841779"
+        error="0.9840799325639229" weightedMeanY="-1.6860196356465336"
+        weightedMeanX="0.3334918157887116" binNumZ="7" binNumY="1" binNumX="5"/>
+      <bin3d entries="1" weightedRmsZ="1.4901161193847656E-8"
+        weightedRmsY="0.0" height="0.8353239476879715" weightedRmsX="0.0"
+        weightedMeanZ="0.8884548751954944" error="0.8353239476879715"
+        weightedMeanY="-0.19963326253728386" weightedMeanX="0.17809650544861738" binNumZ="6"
+        binNumY="4" binNumX="5"/>
+      <bin3d entries="1" weightedRmsZ="3.2927225399135965E-10"
+        weightedRmsY="0.0" height="0.5808305346777257" weightedRmsX="0.0"
+        weightedMeanZ="-0.02993329269629582" error="0.5808305346777257"
+        weightedMeanY="0.14339375340451055" weightedMeanX="0.3819924950477702" binNumZ="4"
+        binNumY="5" binNumX="5"/>
+      <bin3d entries="1" weightedRmsZ="1.0536712127723509E-8"
+        weightedRmsY="0.0" height="0.21051111499999886" weightedRmsX="0.0"
+        weightedMeanZ="-0.8383736152209851" error="0.21051111499999886"
+        weightedMeanY="-0.37386980611056403" weightedMeanX="0.5593356216894048" binNumZ="3"
+        binNumY="4" binNumX="6"/>
+      <bin3d entries="1" weightedRmsZ="3.725290298461914E-9"
+        weightedRmsY="0.0" height="0.11169818891659744" weightedRmsX="0.0"
+        weightedMeanZ="0.18608945880270586" error="0.11169818891659744"
+        weightedMeanY="0.7998406366560377" weightedMeanX="0.7403392554189089" binNumZ="5"
+        binNumY="6" binNumX="6"/>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.02966912676674971" weightedRmsX="0.0" weightedMeanZ="0.932545846330191"
+        error="0.02966912676674971" weightedMeanY="-0.37593379045080794"
+        weightedMeanX="0.9153407278874031" binNumZ="6" binNumY="4" binNumX="7"/>
+      <bin3d entries="1" weightedRmsZ="0.0" weightedRmsY="0.0"
+        height="0.7460575963091141" weightedRmsX="0.0" weightedMeanZ="1.1192290148110755"
+        error="0.7460575963091141" weightedMeanY="0.20009603486372946"
+        weightedMeanX="0.8042871030827958" binNumZ="6" binNumY="5" binNumX="7"/>
+    </data3d>
+  </histogram3d>
+  <profile1d path="/Profiles/" title="Profile 1D - normal"
+    name="Profile 1D">
+    <annotation>
+      <item value="Profile 1D - normal" sticky="true"
+        key="Title"/>
+      <item value="/Profiles/Profile 1D" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Profiles/Profile 1D"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <statistics entries="13">
+      <statistic rms="0.6016980037491549"
+        mean="-0.13373758945061484" direction="x"/>
+    </statistics>
+    <data1d>
+      <bin1d entries="1" height="-0.41254413746395924"
+        error="2.7275003481870517" rms="0.0" binNum="UNDERFLOW"
+        weightedMean="-3.617302089367103"/>
+      <bin1d entries="1" height="0.15056889858202832"
+        error="3.6028254481216955" rms="0.0" binNum="OVERFLOW"
+        weightedMean="2.1482583734267178"/>
+      <bin1d entries="1" height="-0.4679798457804962"
+        error="1.4483247665684" rms="7.450580596923828E-9" binNum="1"
+        weightedMean="-1.5207645760753614"/>
+      <bin1d entries="4" height="-0.2803739401888421"
+        error="0.10272985091755268" rms="0.5243184053360723" binNum="3"
+        weightedMean="-0.6526465512933092"/>
+      <bin1d entries="1" height="-0.9656885026323231"
+        error="1.0229280311259767" rms="0.0" binNum="4"
+        weightedMean="-0.27134284733374014"/>
+      <bin1d entries="3" height="-0.7260328628746348"
+        error="0.3024841483642853" rms="0.8106750603133733" binNum="5"
+        weightedMean="0.2911481396931444"/>
+      <bin1d entries="2" height="0.033012705275459166"
+        error="0.10245733091557309" rms="0.5585775456649497" binNum="6"
+        weightedMean="0.6220829658199211"/>
+      <bin1d entries="2" height="0.17806469135022987"
+        error="0.2295456454615599" rms="0.11047773919897126" binNum="7"
+        weightedMean="0.8085345577265786"/>
+    </data1d>
+  </profile1d>
+  <profile2d path="/Profiles/" title="Profile 2D - normal"
+    name="Profile 2D">
+    <annotation>
+      <item value="Profile 2D - normal" sticky="true"
+        key="Title"/>
+      <item value="/Profiles/Profile 2D" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Profiles/Profile 2D"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <axis numberOfBins="10" min="-2.0" max="2.0" direction="x"/>
+    <axis numberOfBins="10" min="-2.5" max="2.5" direction="y"/>
+    <statistics entries="13">
+      <statistic rms="0.6016980037491549"
+        mean="-0.13373758945061484" direction="x"/>
+      <statistic rms="0.6666875372688478"
+        mean="-0.4565912210720664" direction="y"/>
+    </statistics>
+    <data2d>
+      <bin2d entries="1" height="-0.3459418498938724"
+        error="2.2871650093935485" rms="0.0" weightedMeanY="-0.41254413746395924"
+        weightedMeanX="-3.617302089367103" binNumY="4" binNumX="UNDERFLOW"/>
+      <bin2d entries="1" height="-1.6409414479860438"
+        error="39.26458693234695" rms="2.1073424255447017E-8"
+        weightedMeanY="0.15056889858202832" weightedMeanX="2.1482583734267178" binNumY="5"
+        binNumX="OVERFLOW"/>
+      <bin2d entries="1" height="0.5856524563848681"
+        error="1.8125031768604745" rms="0.0" weightedMeanY="-0.4679798457804962"
+        weightedMeanX="-1.5207645760753614" binNumY="4" binNumX="1"/>
+      <bin2d entries="1" height="0.7598651515043738"
+        error="2.7855684021098863" rms="0.0" weightedMeanY="-1.507102328582791"
+        weightedMeanX="-0.7366245104364495" binNumY="1" binNumX="3"/>
+      <bin2d entries="1" height="0.6962415873982164"
+        error="0.9195986356864114" rms="1.2904784139758924E-8"
+        weightedMeanY="-0.6623620585182702" weightedMeanX="-0.735299208093784" binNumY="3"
+        binNumX="3"/>
+      <bin2d entries="2" height="0.7978332955587867"
+        error="0.4694975481485853" rms="1.3369714726582438"
+        weightedMeanY="0.0867366389835018" weightedMeanX="-0.6023412171469777" binNumY="5"
+        binNumX="3"/>
+      <bin2d entries="1" height="-1.686886301793448"
+        error="1.7868735919743512" rms="0.0" weightedMeanY="-0.9656885026323231"
+        weightedMeanX="-0.27134284733374014" binNumY="3" binNumX="4"/>
+      <bin2d entries="1" height="1.682079530841779"
+        error="1.7092915678701905" rms="0.0" weightedMeanY="-1.6860196356465336"
+        weightedMeanX="0.3334918157887116" binNumY="1" binNumX="5"/>
+      <bin2d entries="1" height="0.8884548751954944"
+        error="1.063605176955096" rms="1.4901161193847656E-8"
+        weightedMeanY="-0.19963326253728386" weightedMeanX="0.17809650544861738" binNumY="4"
+        binNumX="5"/>
+      <bin2d entries="1" height="-0.02993329269629582"
+        error="0.05153532899730268" rms="3.2927225399135965E-10"
+        weightedMeanY="0.14339375340451055" weightedMeanX="0.3819924950477702" binNumY="5"
+        binNumX="5"/>
+      <bin2d entries="1" height="-0.8383736152209851"
+        error="3.982562228227187" rms="1.0536712127723509E-8"
+        weightedMeanY="-0.37386980611056403" weightedMeanX="0.5593356216894048" binNumY="4"
+        binNumX="6"/>
+      <bin2d entries="1" height="0.18608945880270586"
+        error="1.6660024715499615" rms="3.725290298461914E-9"
+        weightedMeanY="0.7998406366560377" weightedMeanX="0.7403392554189089" binNumY="6"
+        binNumX="6"/>
+      <bin2d entries="1" height="0.932545846330191"
+        error="31.431523201259104" rms="0.0" weightedMeanY="-0.37593379045080794"
+        weightedMeanX="0.9153407278874031" binNumY="4" binNumX="7"/>
+      <bin2d entries="1" height="1.1192290148110755"
+        error="1.5001911653310818" rms="0.0" weightedMeanY="0.20009603486372946"
+        weightedMeanX="0.8042871030827958" binNumY="5" binNumX="7"/>
+    </data2d>
+  </profile2d>
+  <tuple path="/Tuples/" title="Tuple with Numbers Only"
+    name="Number Tuple">
+    <annotation>
+      <item value="" sticky="true" key="Title"/>
+      <item value="/Tuples/Number Tuple" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Tuples/Number Tuple"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <columns>
+      <column type="boolean" name="bool_col=false"/>
+      <column type="byte" name="byte_col=0"/>
+      <column type="short" name="short_col=0"/>
+      <column type="int" name="int_col=0"/>
+      <column type="long" name="long_col=0"/>
+      <column type="float" name="float_col=0"/>
+      <column type="double" name="double_col=0"/>
+    </columns>
+    <rows>
+      <row>
+        <entry value="true"/>
+        <entry value="7"/>
+        <entry value="15"/>
+        <entry value="-615123879"/>
+        <entry value="-724880339314262493"/>
+        <entry value="0.8076252"/>
+        <entry value="0.4221828867557883"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="3"/>
+        <entry value="0"/>
+        <entry value="118338023"/>
+        <entry value="301458253785982555"/>
+        <entry value="0.30431837"/>
+        <entry value="0.5785033793248286"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="6"/>
+        <entry value="15"/>
+        <entry value="35246327"/>
+        <entry value="7948094913570957210"/>
+        <entry value="0.18443406"/>
+        <entry value="0.5547892466816366"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="0"/>
+        <entry value="5"/>
+        <entry value="861131297"/>
+        <entry value="3069754955780852358"/>
+        <entry value="0.11915183"/>
+        <entry value="0.008888740356045699"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="1"/>
+        <entry value="5"/>
+        <entry value="316029829"/>
+        <entry value="5842150136380421278"/>
+        <entry value="0.18437618"/>
+        <entry value="0.21366516105637456"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="1"/>
+        <entry value="11"/>
+        <entry value="-900854383"/>
+        <entry value="5205908788331054026"/>
+        <entry value="0.22028536"/>
+        <entry value="0.6810738140730129"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="4"/>
+        <entry value="12"/>
+        <entry value="1967390355"/>
+        <entry value="-6147465525764010725"/>
+        <entry value="0.40133905"/>
+        <entry value="0.5218022055049604"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="0"/>
+        <entry value="5"/>
+        <entry value="-1545287566"/>
+        <entry value="-1089957324067555362"/>
+        <entry value="0.38191313"/>
+        <entry value="0.7257570438118638"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="2"/>
+        <entry value="15"/>
+        <entry value="810040108"/>
+        <entry value="-2194416544686017368"/>
+        <entry value="0.42899132"/>
+        <entry value="0.3586131539758416"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="2"/>
+        <entry value="10"/>
+        <entry value="344595951"/>
+        <entry value="-550570068541409163"/>
+        <entry value="0.18495989"/>
+        <entry value="0.385107182102432"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="4"/>
+        <entry value="2"/>
+        <entry value="-636766504"/>
+        <entry value="6393701774992292446"/>
+        <entry value="0.6056208"/>
+        <entry value="0.06412876334608375"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="7"/>
+        <entry value="4"/>
+        <entry value="-903788862"/>
+        <entry value="2441875861506929523"/>
+        <entry value="0.13134521"/>
+        <entry value="0.9789943965629136"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="2"/>
+        <entry value="9"/>
+        <entry value="-851780061"/>
+        <entry value="1652255347906477503"/>
+        <entry value="0.7704468"/>
+        <entry value="0.1460730943637346"/>
+      </row>
+      <row>
+        <entry value="false"/>
+        <entry value="2"/>
+        <entry value="15"/>
+        <entry value="199255707"/>
+        <entry value="-4788177194440911688"/>
+        <entry value="0.60711795"/>
+        <entry value="0.9939461943521359"/>
+      </row>
+      <row>
+        <entry value="true"/>
+        <entry value="5"/>
+        <entry value="11"/>
+        <entry value="2018981311"/>
+        <entry value="-3367855586776325665"/>
+        <entry value="0.40716022"/>
+        <entry value="0.9735156438706981"/>
+      </row>
+    </rows>
+  </tuple>
+  <tuple path="/Tuples/"
+    title="Tuple with Strings and Characters" name="String Tuple">
+    <annotation>
+      <item value="" sticky="true" key="Title"/>
+      <item value="/Tuples/String Tuple" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Tuples/String Tuple"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <columns>
+      <column type="char" name="char_col"/>
+      <column type="string" name="string_col"/>
+    </columns>
+    <rows>
+      <row>
+        <entry value="a"/>
+        <entry value="String_Entry_0"/>
+      </row>
+      <row>
+        <entry value="b"/>
+        <entry value="String_Entry_1"/>
+      </row>
+      <row>
+        <entry value="c"/>
+        <entry value="String_Entry_2"/>
+      </row>
+      <row>
+        <entry value="d"/>
+        <entry value="String_Entry_3"/>
+      </row>
+      <row>
+        <entry value="e"/>
+        <entry value="String_Entry_4"/>
+      </row>
+      <row>
+        <entry value="f"/>
+        <entry value="String_Entry_5"/>
+      </row>
+      <row>
+        <entry value="g"/>
+        <entry value="String_Entry_6"/>
+      </row>
+      <row>
+        <entry value="h"/>
+        <entry value="String_Entry_7"/>
+      </row>
+      <row>
+        <entry value="i"/>
+        <entry value="String_Entry_8"/>
+      </row>
+      <row>
+        <entry value="j"/>
+        <entry value="String_Entry_9"/>
+      </row>
+      <row>
+        <entry value="k"/>
+        <entry value="String_Entry_10"/>
+      </row>
+      <row>
+        <entry value="l"/>
+        <entry value="String_Entry_11"/>
+      </row>
+      <row>
+        <entry value="m"/>
+        <entry value="String_Entry_12"/>
+      </row>
+      <row>
+        <entry value="n"/>
+        <entry value="String_Entry_13"/>
+      </row>
+      <row>
+        <entry value="o"/>
+        <entry value="String_Entry_14"/>
+      </row>
+    </rows>
+  </tuple>
+  <tuple path="/Tuples/" title="Tuple with Internal Structure"
+    name="Structure Tuple">
+    <annotation>
+      <item value="" sticky="true" key="Title"/>
+      <item value="/Tuples/Structure Tuple" sticky="true"
+        key="AidaPath"/>
+      <item value="/testAIDAFile.aida/Tuples/Structure Tuple"
+        sticky="true" key="FullPath"/>
+    </annotation>
+    <columns>
+      <column type="int" name="event_number=0"/>
+      <column type="int" name="nTracks=0"/>
+      <column type="ITuple" name="tracks ">
+        <columns>
+          <column type="double" name="px=0."/>
+          <column type="double" name="py=0."/>
+          <column type="double" name="pz=0."/>
+          <column type="int" name="nHits=0"/>
+          <column type="ITuple" name="hits ">
+            <columns>
+              <column type="int" name="x"/>
+              <column type="int" name="y"/>
+              <column type="int" name="z"/>
+            </columns>
+          </column>
+        </columns>
+      </column>
+    </columns>
+    <rows>
+      <row>
+        <entry value="0"/>
+        <entry value="1"/>
+        <entryITuple>
+          <row>
+            <entry value="-0.42542099476455847"/>
+            <entry value="-0.9427519667235146"/>
+            <entry value="-0.946421018081429"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="1"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="4"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="1"/>
+        <entry value="6"/>
+        <entryITuple>
+          <row>
+            <entry value="-0.04397191505683902"/>
+            <entry value="1.2756879179243108"/>
+            <entry value="0.5863856784032705"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="3"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="1"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="8"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="2"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="0"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.7150272538089768"/>
+            <entry value="0.6507462235061624"/>
+            <entry value="-1.3170679821595916"/>
+            <entry value="0"/>
+            <entryITuple>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.3500242450672126"/>
+            <entry value="-0.9834158402822711"/>
+            <entry value="-0.3894022678163048"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="6"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="9"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.6095977949239083"/>
+            <entry value="-1.0966652330840196"/>
+            <entry value="0.20971483714726144"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.5934936387463838"/>
+            <entry value="0.16758125539654473"/>
+            <entry value="-0.3539834707658598"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.48536949659226475"/>
+            <entry value="-1.4361690276816232"/>
+            <entry value="-1.5931583931548736"/>
+            <entry value="0"/>
+            <entryITuple>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="2"/>
+        <entry value="7"/>
+        <entryITuple>
+          <row>
+            <entry value="0.3042200301118856"/>
+            <entry value="0.7917282085666874"/>
+            <entry value="0.8981320876296253"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="4"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="6"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.5173915472385451"/>
+            <entry value="0.2612191328420563"/>
+            <entry value="-0.6560952183123621"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="7"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="6"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.18793430209202835"/>
+            <entry value="2.094394191160743"/>
+            <entry value="1.0533579453224702"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="3"/>
+                <entry value="9"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="0"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="9"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="5"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="1"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.010454665661480051"/>
+            <entry value="0.4042820397153966"/>
+            <entry value="0.3601740998615719"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="4"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.6215899689884887"/>
+            <entry value="0.43076084120064634"/>
+            <entry value="1.2980640823348548"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="6"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="0"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="1"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="6"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="7"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.7417522329685766"/>
+            <entry value="0.46001290435883224"/>
+            <entry value="-1.6381629081962454"/>
+            <entry value="0"/>
+            <entryITuple>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.4047223098171282"/>
+            <entry value="-0.23353798294693753"/>
+            <entry value="0.23695848286864188"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="3"/>
+        <entry value="4"/>
+        <entryITuple>
+          <row>
+            <entry value="0.903371270985625"/>
+            <entry value="0.9900038076042768"/>
+            <entry value="-0.1957102040984841"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="0"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="4"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.5642127266117287"/>
+            <entry value="0.31588378119785565"/>
+            <entry value="0.6261767175217252"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="4"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.7111445935792737"/>
+            <entry value="0.7693984612246764"/>
+            <entry value="0.276102449992556"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="8"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.16269953506202614"/>
+            <entry value="-1.843789957871112"/>
+            <entry value="0.7482726387082314"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="4"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="9"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="1"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="2"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="4"/>
+        <entry value="10"/>
+        <entryITuple>
+          <row>
+            <entry value="0.04145028973835782"/>
+            <entry value="-1.8754454321386522"/>
+            <entry value="0.01504088619827219"/>
+            <entry value="0"/>
+            <entryITuple>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.3621533345307094"/>
+            <entry value="0.855663980753036"/>
+            <entry value="-1.1182381937825392"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="4"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="3"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="3"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.0285034479842037"/>
+            <entry value="0.4307537444193967"/>
+            <entry value="-1.1677856734564172"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="4"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.8102163187932911"/>
+            <entry value="-1.3936367789955724"/>
+            <entry value="2.098621600116321"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="2"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="2"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.4862417272676689"/>
+            <entry value="0.8351532946527631"/>
+            <entry value="0.6488591695766172"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="4"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.1373356789038103"/>
+            <entry value="2.486279219077905"/>
+            <entry value="-0.8741502352901207"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="9"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="6"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="5"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.6746443812218998"/>
+            <entry value="-0.6196411547876184"/>
+            <entry value="1.0208129416312752"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="1"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.1455658245044302"/>
+            <entry value="1.16423615118846"/>
+            <entry value="-1.4226617682088916"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.5418018863236972"/>
+            <entry value="-0.36696710856975395"/>
+            <entry value="0.7480963540296512"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="1"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="1"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="5"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="6"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="1"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="6"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.16798701907308"/>
+            <entry value="-0.4274752723260273"/>
+            <entry value="1.6561199855822646"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="3"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="9"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="5"/>
+        <entry value="6"/>
+        <entryITuple>
+          <row>
+            <entry value="0.7161698082257948"/>
+            <entry value="-1.1127716449852465"/>
+            <entry value="0.3892465908363718"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.27749537780958317"/>
+            <entry value="1.2934902393614867"/>
+            <entry value="-0.12221343748384045"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="9"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="6"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="9"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="6"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.2374882750170817"/>
+            <entry value="0.1911730554082051"/>
+            <entry value="-0.25684730373490067"/>
+            <entry value="3"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="7"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.2453529002776378"/>
+            <entry value="0.7144995283237817"/>
+            <entry value="-0.1546067005322528"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.9304610162719222"/>
+            <entry value="-1.2725497747658725"/>
+            <entry value="-1.4591321495096221"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="0"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="8"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.7407751204137146"/>
+            <entry value="1.2157677808019007"/>
+            <entry value="0.3127713417585196"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="6"/>
+        <entry value="13"/>
+        <entryITuple>
+          <row>
+            <entry value="0.9514795243787174"/>
+            <entry value="1.2984085719384748"/>
+            <entry value="-1.3458995506389313"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="2"/>
+                <entry value="9"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.4520896223188609"/>
+            <entry value="1.4733525928584699"/>
+            <entry value="0.07897963198624104"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="9"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="2"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="8"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.4165608433107055"/>
+            <entry value="0.204331778170686"/>
+            <entry value="-0.3728896029323703"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="3"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="1"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="7"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="9"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.4078736133590122"/>
+            <entry value="1.045550308737672"/>
+            <entry value="1.3338061123198208"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.2811906950780388"/>
+            <entry value="0.6180352231810359"/>
+            <entry value="0.5814541188189585"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.6964562814083416"/>
+            <entry value="-0.3221257322421017"/>
+            <entry value="1.855422090200662"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.1290111984661262"/>
+            <entry value="-1.2737292308590304"/>
+            <entry value="2.4766183522048473"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="7"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="0"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.8118940046043017"/>
+            <entry value="0.6429042579783125"/>
+            <entry value="1.0712460546560567"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="9"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.7559128675205867"/>
+            <entry value="-0.19677616578379623"/>
+            <entry value="0.09190960732176946"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="3"/>
+                <entry value="4"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-2.847099588435415"/>
+            <entry value="-0.22861207666185107"/>
+            <entry value="0.5478453291790417"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="6"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.929851627957619"/>
+            <entry value="-1.701999582562421"/>
+            <entry value="0.19483587624466153"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="5"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.14364483529663727"/>
+            <entry value="1.6951349697658227"/>
+            <entry value="1.1540573944640706"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="6"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="4"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.021797815494069242"/>
+            <entry value="0.26363827236645265"/>
+            <entry value="0.02429769534326392"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="8"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="9"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="8"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="0"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="7"/>
+        <entry value="9"/>
+        <entryITuple>
+          <row>
+            <entry value="0.8597417930372259"/>
+            <entry value="1.1042493121421615"/>
+            <entry value="-0.13991820499063481"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="3"/>
+                <entry value="0"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.7213212946928438"/>
+            <entry value="0.5323255379827643"/>
+            <entry value="1.3035188621588363"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="9"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.9537563604066872"/>
+            <entry value="-1.9437024703755668"/>
+            <entry value="-0.6690659911137966"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="2"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="5"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.49902568338232545"/>
+            <entry value="-0.4231545061122713"/>
+            <entry value="-1.0630426662568602"/>
+            <entry value="0"/>
+            <entryITuple>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.21879245289048163"/>
+            <entry value="0.5509995326449575"/>
+            <entry value="-0.25577304653321814"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="7"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="6"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.2744590049578595"/>
+            <entry value="1.6535008166782639"/>
+            <entry value="-0.31570181926858254"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="5"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="9"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="2"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="8"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="2"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.3015373725714267"/>
+            <entry value="0.44713789214272204"/>
+            <entry value="1.4040689077964192"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="9"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.7571182188755504"/>
+            <entry value="-0.8929700403979506"/>
+            <entry value="-1.261464209329325"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="9"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="8"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="0"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="7"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.1366961014799786"/>
+            <entry value="1.3361230481126543"/>
+            <entry value="1.383853928411673"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="8"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="8"/>
+        <entry value="8"/>
+        <entryITuple>
+          <row>
+            <entry value="-0.3438956301033813"/>
+            <entry value="-1.1567178161581044"/>
+            <entry value="-0.9839663727877292"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="2"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="9"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="9"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.13632657755695832"/>
+            <entry value="-1.051783069181177"/>
+            <entry value="-1.0164210016142583"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="3"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.6016315868324537"/>
+            <entry value="-0.3098674900476739"/>
+            <entry value="-0.46655573171768994"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="3"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.22518426884386064"/>
+            <entry value="0.8733071014653713"/>
+            <entry value="-0.36868640061750546"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="9"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.009947742765635184"/>
+            <entry value="0.10657762155696243"/>
+            <entry value="0.019877645910314212"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="8"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="1"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.6646667250534708"/>
+            <entry value="-2.6765866630619866"/>
+            <entry value="1.124298684022652"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="9"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="2"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="6"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.9797529497767486"/>
+            <entry value="1.5128778084131218"/>
+            <entry value="-1.1077616130726278"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="2"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="5"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="8"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.6566190072904564"/>
+            <entry value="0.9830078874679119"/>
+            <entry value="-0.49734230264486035"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="7"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="9"/>
+        <entry value="7"/>
+        <entryITuple>
+          <row>
+            <entry value="-0.6472348722801875"/>
+            <entry value="0.6104527373369293"/>
+            <entry value="0.392596730061532"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="9"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="4"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="2"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.6314944866466286"/>
+            <entry value="0.9132911971126195"/>
+            <entry value="0.30484671123284623"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="8"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.2973244183734334"/>
+            <entry value="-0.08355345054744805"/>
+            <entry value="-0.029856547504068725"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="9"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="2"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="0"/>
+                <entry value="9"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="2.1387174427555005"/>
+            <entry value="-0.7821119861979531"/>
+            <entry value="-2.4669186119615834"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="8"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="1"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="2"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.026420408015297863"/>
+            <entry value="-0.08799883298319779"/>
+            <entry value="0.5129761469773162"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="1"/>
+                <entry value="2"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="9"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="4"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.0042391307745204"/>
+            <entry value="0.7980514699440757"/>
+            <entry value="1.6387746104196639"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="6"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="6"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="3"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="2"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.4811731850506276"/>
+            <entry value="-0.27247994367794803"/>
+            <entry value="0.2476344908553153"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="3"/>
+                <entry value="0"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="10"/>
+        <entry value="0"/>
+        <entryITuple>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="11"/>
+        <entry value="11"/>
+        <entryITuple>
+          <row>
+            <entry value="-0.8653001030757419"/>
+            <entry value="0.6092523158396287"/>
+            <entry value="0.7318304390914246"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="5"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="9"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="1"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.7909105831324466"/>
+            <entry value="-0.26283782305736686"/>
+            <entry value="0.30056748257059823"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="7"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="3"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="6"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.8505640892263576"/>
+            <entry value="-1.5578146262276755"/>
+            <entry value="-0.9021991697316277"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="1"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="8"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="7"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.37761951107570135"/>
+            <entry value="2.612218063220287"/>
+            <entry value="-1.7763258627582539"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="1"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="7"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="6"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="4"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.08903471632938546"/>
+            <entry value="-0.29485764913553875"/>
+            <entry value="-0.5716933842652134"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.6327786049889683"/>
+            <entry value="-1.2140438256939854"/>
+            <entry value="0.066311758774083"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="8"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.3244433850393424"/>
+            <entry value="-1.5148684249142266"/>
+            <entry value="-0.5230699487728097"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="1"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.05225096328204776"/>
+            <entry value="0.10289346557573349"/>
+            <entry value="-0.018290369408487807"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="3"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="8"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="9"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="7"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.07163831304336149"/>
+            <entry value="1.470125687237779"/>
+            <entry value="1.1819011683006788"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="8"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.9589519107078324"/>
+            <entry value="-0.795598742010166"/>
+            <entry value="0.24394251755261867"/>
+            <entry value="3"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="6"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.1616438952356598"/>
+            <entry value="-0.11150377927896732"/>
+            <entry value="-0.7448709588259045"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="12"/>
+        <entry value="4"/>
+        <entryITuple>
+          <row>
+            <entry value="-1.3177178334580004"/>
+            <entry value="0.27569833678783473"/>
+            <entry value="-1.1199498062133977"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="0"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="3"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="0"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="6"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.3365756762965138"/>
+            <entry value="-1.716947688263602"/>
+            <entry value="-0.06299925620686656"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="9"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="9"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="0"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.856194121213779"/>
+            <entry value="-0.47106549090936634"/>
+            <entry value="0.3460325514107606"/>
+            <entry value="6"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="0"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="8"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="4"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.4688796212054014"/>
+            <entry value="0.5618589394436854"/>
+            <entry value="-0.3748973057195868"/>
+            <entry value="3"/>
+            <entryITuple>
+              <row>
+                <entry value="9"/>
+                <entry value="1"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="13"/>
+        <entry value="6"/>
+        <entryITuple>
+          <row>
+            <entry value="-1.9012610859643306"/>
+            <entry value="1.275112689786973"/>
+            <entry value="0.9380913606927597"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="8"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.35271200127126606"/>
+            <entry value="0.8479264364972047"/>
+            <entry value="1.206455964094348"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="5"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="8"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.2518577667859083"/>
+            <entry value="-2.3230380771094046"/>
+            <entry value="-1.0323700590620197"/>
+            <entry value="2"/>
+            <entryITuple>
+              <row>
+                <entry value="7"/>
+                <entry value="6"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="8"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.3476495629929994"/>
+            <entry value="-0.5069744387763491"/>
+            <entry value="0.63634024259876"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.26163995671551094"/>
+            <entry value="-1.0748346366628199"/>
+            <entry value="-1.3367490358775616"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="2"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="9"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="5"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.5418717285787475"/>
+            <entry value="1.644317628766792"/>
+            <entry value="1.2904456167825773"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="4"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="9"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="3"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="7"/>
+                <entry value="8"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+      <row>
+        <entry value="14"/>
+        <entry value="14"/>
+        <entryITuple>
+          <row>
+            <entry value="1.5349255591283002"/>
+            <entry value="0.30010886699392625"/>
+            <entry value="-0.49951048632779205"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="3"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="3"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.1730507792561354"/>
+            <entry value="-0.41219284801525347"/>
+            <entry value="-0.11953723071667796"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="5"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="1"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="5"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="2"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.8573408909450879"/>
+            <entry value="1.3127443980568008"/>
+            <entry value="-1.6501940873841145"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="0"/>
+                <entry value="7"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="2"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="6"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="4"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-0.4594607206238261"/>
+            <entry value="0.16743861257020118"/>
+            <entry value="-0.8450864626253596"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="3"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="8"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="2"/>
+                <entry value="3"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.2568481346601756"/>
+            <entry value="-0.4855511495413533"/>
+            <entry value="-0.2872987657437153"/>
+            <entry value="3"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="0"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.30672066785892343"/>
+            <entry value="0.7810853080540351"/>
+            <entry value="0.6707763769882876"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="3"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="2"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="5"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="3"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="0"/>
+                <entry value="0"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.0354203219155051"/>
+            <entry value="0.581106209262356"/>
+            <entry value="-0.4602243922707458"/>
+            <entry value="1"/>
+            <entryITuple>
+              <row>
+                <entry value="8"/>
+                <entry value="3"/>
+                <entry value="2"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="1.0834756781175128"/>
+            <entry value="-1.1704196190924439"/>
+            <entry value="0.09264120931192762"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="9"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="8"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="3"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="6"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.7178905011394507"/>
+            <entry value="0.9044893151561796"/>
+            <entry value="0.4355486606253066"/>
+            <entry value="7"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="6"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="3"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="8"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="6"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.11923150764861029"/>
+            <entry value="-0.11215251442310757"/>
+            <entry value="-0.43787038799076294"/>
+            <entry value="5"/>
+            <entryITuple>
+              <row>
+                <entry value="5"/>
+                <entry value="9"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="4"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="7"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.009867896667182779"/>
+            <entry value="-0.49462093283546105"/>
+            <entry value="0.6902340641712899"/>
+            <entry value="8"/>
+            <entryITuple>
+              <row>
+                <entry value="2"/>
+                <entry value="9"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="0"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="2"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="0"/>
+                <entry value="6"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="8"/>
+                <entry value="9"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="9"/>
+                <entry value="5"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.8323720144433138"/>
+            <entry value="-1.5950141400538922"/>
+            <entry value="-0.4044315064321768"/>
+            <entry value="9"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="9"/>
+                <entry value="7"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="6"/>
+                <entry value="5"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="2"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="6"/>
+                <entry value="0"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="4"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="7"/>
+                <entry value="1"/>
+                <entry value="2"/>
+              </row>
+              <row>
+                <entry value="4"/>
+                <entry value="7"/>
+                <entry value="0"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="7"/>
+                <entry value="4"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="0.25495769005569086"/>
+            <entry value="1.0894263609948973"/>
+            <entry value="0.9382029596586556"/>
+            <entry value="4"/>
+            <entryITuple>
+              <row>
+                <entry value="9"/>
+                <entry value="0"/>
+                <entry value="4"/>
+              </row>
+              <row>
+                <entry value="5"/>
+                <entry value="6"/>
+                <entry value="1"/>
+              </row>
+              <row>
+                <entry value="3"/>
+                <entry value="9"/>
+                <entry value="8"/>
+              </row>
+              <row>
+                <entry value="9"/>
+                <entry value="2"/>
+                <entry value="6"/>
+              </row>
+            </entryITuple>
+          </row>
+          <row>
+            <entry value="-1.0237634174827845"/>
+            <entry value="0.06594884931921378"/>
+            <entry value="-1.8779347046210704"/>
+            <entry value="3"/>
+            <entryITuple>
+              <row>
+                <entry value="4"/>
+                <entry value="0"/>
+                <entry value="6"/>
+              </row>
+              <row>
+                <entry value="8"/>
+                <entry value="1"/>
+                <entry value="3"/>
+              </row>
+              <row>
+                <entry value="1"/>
+                <entry value="0"/>
+                <entry value="7"/>
+              </row>
+            </entryITuple>
+          </row>
+        </entryITuple>
+      </row>
+    </rows>
+  </tuple>
+</aida>

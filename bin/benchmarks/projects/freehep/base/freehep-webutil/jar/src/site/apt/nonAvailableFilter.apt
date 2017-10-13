@@ -1,0 +1,121 @@
+    ------
+    Non Available Filter
+
+Non Available Filter
+
+    This filter allows to disable a web application, for example when mainteinance is required, redirecting all incoming requests to a different location.
+    It is also possible to bypass this filter for a given session (or sessions) so that the developer can test changes to the application while outside 
+    users are being filtered out.
+
+* Adding the filter to your application
+    
+    Import the FreeHEP Web Utils as described {{{index.html}here}}.
+    To add the filter to your web application, add the following lines to <WEB-INF/web.xml> in your application: 
+
++------------------------------------------+
+  <filter>
+    <filter-name>NotAvailableFilter</filter-name>
+    <filter-class>org.freehep.webutil.filter.NotAvailableFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>NotAvailableFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
++------------------------------------------+
+
+* Enabling the filter
+    
+    When first installed the filter is disabled. It is possible to enable it throught a simple form that comes with the filter.
+    The default location of this form is at the relative path </admin/available> in your application's URL. The location of the
+    filter's form can be modified via the filter's properties.
+
+[images/form.gif]
+
+    The state of the filter is controlled via the <Disable Application> checkbox and clicking on the <Apply> button. 
+    The enabled/disabled state of the filter is stored in the system preferences so that it will be preserved when stopping/starting the application.
+
+* Bypassing the filter
+
+    By pressing the <Bypass> button on the above form the filter will be bypassed for the current session. Multiple sessions can bypass the filter simultaneously.
+    To stop bypassing the filter press the <Stop Bypass> button.
+
+[images/stopBypass.gif]
+
+* Filter redirection
+
+    When the filter is enabled, any requests from sessions that are not bypassed are redirected to a different page. The default redirection page displays the following message
+
+[images/redirect.gif]
+
+    where the second line is the <reason> for the unavailability of the application that can be entered in the filter's form above.
+
+    The redirection page can be changed via the filter's properties.
+
+* Reason
+
+    In the filter's form it is possible to specify the reason for the unavailability of the application. This reason can be set to have a default value in the filter's
+    properties. Once provided the reason is saved in the variable <nonAvailableReason> at the <session> scope. This way it can be used in a redirection JSP page. 
+
+* Password protection
+
+    By default the filter's form page is not password protected. There are two ways to protect the form:
+
+** Simple password
+
+    In the filter's properties it is possible to specify a password. Such password will be used to grant access to the filter's form (no username is required), the
+    authorization being performed by the filter itself.
+
+** Tomcat's security manager
+
+    In tomcat it is possible to grant access to the filter's form to a given tomcat's role by adding the following lines to <WEB-INF/web.xml> of your application:
+ 
++------------------------------------------+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name> 
+        Protected Site 
+      </web-resource-name>
+      <!-- This is the location of the filter's form -->
+      <url-pattern> /admin/available </url-pattern>
+      <!-- If you list http methods, 
+            only those methods are protected -->
+      <http-method> DELETE </http-method>
+      <http-method> GET </http-method>
+      <http-method> POST </http-method>
+      <http-method> PUT </http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <!-- Roles that have access -->
+      <role-name>manager</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method> BASIC </auth-method>
+    <realm-name>Please enter administrator password</realm-name>
+  </login-config>
+  <!-- Define security roles -->
+  <security-role>
+    <role-name>manager</role-name>
+  </security-role>
++------------------------------------------+
+
+    In this case the authorization is done by tomcat.
+
+* Properties
+
+    The following properties can be set in <WEB-INF/classes/freehepWebapp.properties> :
+
+*------------------------------------------+-------------------------------------------------------------------------------+
+| <<Name>>                                 | <<Description>>                                                               |
+*------------------------------------------+-------------------------------------------------------------------------------+
+| freehep.nonavailablefilter.path          | Location of the filter's form. If not set it defaults to </admin/available>   |
+*------------------------------------------+-------------------------------------------------------------------------------+
+| freehep.nonavailablefilter.redirectpage  | The page to redirect incoming requests to. If not set a default page is provide (see above)   |
+*------------------------------------------+-------------------------------------------------------------------------------+
+| freehep.nonavailablefilter.defaultreason | The default reason for the unavailability of the site. If not specified not reason will be provided  |
+*------------------------------------------+-------------------------------------------------------------------------------+
+| freehep.nonavailablefilter.password      | The password to be used to grant access to the filter's form. See password protection section above  |
+*------------------------------------------+-------------------------------------------------------------------------------+
+
+
+

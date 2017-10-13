@@ -1,0 +1,13 @@
+    ---
+    Examples
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Examples
+
+    JAIDA can be invoked directely from Java to embed plots in your {{{java-application-jaida.html}application}} or {{{servlet-jaida.html}servlet}} code, 
+it can be also used in {{{jas3-jaida.html}JAS3}} or in {{{jsp-jaida.html}JSP pages}}. 
+    JAIDA can be used from scripting languages like {{{pnuts-jaida.html}Pnuts}} and {{{jython-jaida.html}Jython}}.
+    It can be finally invoked from {{{cpp-jaida.html}C++}}, like it's done in {{{geant4-jaida.html}Geant4}}.

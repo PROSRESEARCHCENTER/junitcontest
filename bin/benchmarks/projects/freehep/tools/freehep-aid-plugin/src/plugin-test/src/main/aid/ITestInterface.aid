@@ -1,0 +1,35 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/** @interface
+ * TestInterface to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestInterface.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestInterface extends AIDRef {
+
+    /**
+     * noargs method
+     */
+    void noargs();
+
+    /**
+     * Method with different exception
+     *
+     * @throws IOException in case of error
+     */
+    void commit() throws IOException;
+
+    /**
+     * Final comment
+     */
+}
+
+/**
+ * Really Final comment
+ */
+    

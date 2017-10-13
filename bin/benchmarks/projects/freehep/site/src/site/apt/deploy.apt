@@ -1,0 +1,10 @@
+    ---
+FreeHEP - Deploy
+    ---
+
+Deploy
+
+* Deploying artifacts
+    
+    Deployment to our repositories is done via {{{./jenkins.html} Jenkins}}.
+    

@@ -1,0 +1,12 @@
+	---
+FreeHEP Upload
+	---
+
+Uploading external libraries
+
+	Example for uploading an external library:
+
++--
+mvn deploy:deploy-file -Durl=scpexe://svn.freehep.org/nfs/slac/g/jas/maven2 -DrepositoryId=freehep-maven-deploy -DgroupId=com.l2fprod -DartifactId=l2fprod-common-all -Dversion=6.9.1 -Dpackaging=jar -Dfile=l2fprod-common-all.jar
++--
+

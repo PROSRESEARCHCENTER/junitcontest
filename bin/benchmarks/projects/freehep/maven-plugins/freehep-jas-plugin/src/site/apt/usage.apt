@@ -1,0 +1,26 @@
+	---
+FreeHEP Jar Jar Plugin
+	---
+	---
+Mark Donszelmann
+	---
+	
+Usage
+
+	Add the following fragment to your pom file to execute the jarjar plugin as part of the
+"process-resources" phase.
+
++--
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-jarjar-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++--

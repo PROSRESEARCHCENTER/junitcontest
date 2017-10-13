@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- DOCTYPE heprep SYSTEM "HepRep.dtd" -->
+<!-- $Id: SampleEvent.xml 8617 2006-08-16 07:39:12Z duns $ -->
+
+<heprep:heprep xmlns:heprep='http://java.freehep.org/schemas/heprep/1.0'
+               xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+               xsi:schemaLocation='http://java.freehep.org/schemas/heprep/1.0 http://java.freehep.org/schemas/heprep/1.0/HepRep.xsd'>
+
+    <heprep:attdef name="drawAs" desc="representation" type="Draw"/>
+    
+    <heprep:type name="Track">
+        <heprep:instance>
+            <heprep:attvalue name="no" value="5"/>
+            <heprep:primitive>
+                <heprep:attvalue name="drawAs" value="HelixSegment"/>
+                <heprep:point x="0.0" y="0.0" z="0.0">
+                </heprep:point>
+            </heprep:primitive>
+        </heprep:instance>
+
+        <heprep:type name="HitOnTrack">
+            <heprep:instance>
+                <heprep:attvalue name="no" value="6"/>
+                <heprep:primitive>
+                    <heprep:attvalue name="drawAs" value="HyperCircle"/>
+                    <heprep:point x="0.0" y="0.0" z="0.0">
+                    </heprep:point>
+                </heprep:primitive>
+            </heprep:instance>
+        </heprep:type>
+
+        <heprep:type name="KalManPoint">
+            <heprep:instance>
+                <heprep:attvalue name="no" value="9"/>
+                <heprep:primitive>
+                    <heprep:attvalue name="drawAs" value="HelixSegment"/>
+                    <heprep:point x="0.0" y="0.0" z="0.0">
+                    </heprep:point>
+                </heprep:primitive> 
+            </heprep:instance>
+        </heprep:type>
+    </heprep:type>
+
+    <heprep:type name="Cluster">
+        <heprep:instance>
+            <heprep:attvalue name="no" value="12"/>
+            <heprep:primitive>
+                <heprep:attvalue name="drawAs" value="Box"/>
+                <heprep:point x="0.0" y="0.0" z="0.0">
+                </heprep:point>
+                <heprep:point x="0.0" y="0.0" z="0.0">
+                </heprep:point>            
+                <heprep:point x="0.0" y="0.0" z="0.0"> 
+                </heprep:point>            
+            </heprep:primitive>
+        </heprep:instance>
+    </heprep:type>
+    
+    <heprep:type name="HitStrip">
+        <heprep:instance>
+            <heprep:attvalue name="no" value="324"/>
+            <heprep:primitive>
+                <heprep:attvalue name="drawAs" value="PolyLine"/>
+                <heprep:point x="0.0" y="0.0" z="0.0"> 
+                </heprep:point>
+                <heprep:point x="0.0" y="0.0" z="0.0">
+                </heprep:point>                        
+            </heprep:primitive>
+        </heprep:instance>        
+    </heprep:type>
+    
+</heprep:heprep>

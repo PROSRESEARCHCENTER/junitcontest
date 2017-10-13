@@ -1,0 +1,22 @@
+<assembly>
+  <id>x86-Windows-msvc</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>target/nar/lib/x86-Windows-msvc/jni</directory>
+      <outputDirectory>lib/x86-Windows-msvc</outputDirectory>      
+      <includes>
+        <include>*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>target/nar/lib/x86-Windows-msvc/shared</directory>
+      <outputDirectory>lib/x86-Windows-msvc</outputDirectory>      
+      <includes>
+        <include>*</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

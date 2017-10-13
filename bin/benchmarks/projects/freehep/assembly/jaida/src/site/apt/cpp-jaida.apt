@@ -1,0 +1,107 @@
+    ---
+    C++ and JAIDA
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+C++ and JAIDA
+    
+    To access the Java implementation of the AIDA interfaces from C++ you need to download the {{{http://java.freehep.org/aidajni/}AIDAJNI}} glue code that will allow you to operate on the JAIDA objects from C++.
+
+    To change the type of analysis factory to be used (with/without GUI) as for the Java case by specifying it via the JVM_ARGS environment variable that is read when the Java Virtual Machine is started. So, for an analysis factory with the GUI
+
++-------+
+set JVM_ARGS=-Dhep.aida.IAnalysisFactory=hep.aida.ref.AnalysisFactory
++-------+
+
+* Code
+
+    The following code illustrates how to invoke the AIDA interfaces from C++.
+
+
++---------------+
+#include <iostream>
+#include <cstdlib>
+
+#include "AIDA/AIDA.h"
+#include "JIAnalysisFactory.h"
+
+using namespace AIDA;
+
+int main(int argc, char *argv[]) {
+
+        AIDA::IAnalysisFactory* factory = AIDA_createAnalysisFactory();
+        ITree*              tree    = factory->createTreeFactory()->create("UsingJAIDAFromCPP.aida","xml",false,true);
+        IHistogramFactory*  hf      = factory->createHistogramFactory(*tree);
+
+        tree->mkdir("/Histograms");
+        tree->cd("/Histograms");
+
+        IHistogram1D* h1 = hf->createHistogram1D("Histogram 1D",50,0,10);
+        IHistogram2D* h2 = hf->createHistogram2D("Histogram 2D",40,0,10,40,0,10);
+        
+        tree->mkdir("/Clouds");
+        tree->cd("/Clouds");
+        
+        ICloud1D* c1 = hf->createCloud1D("Cloud 1D");
+        ICloud2D* c2 = hf->createCloud2D("Cloud 2D");
+
+        IPlotter* page1 = factory->createPlotterFactory()->create("Page1");
+
+        page1->show();
+        page1->createRegions(2,2);
+
+        page1->region(0)->plot(*h1);
+        page1->region(1)->plot(*h2);
+        page1->region(2)->plot(*c1);
+        page1->region(3)->plot(*c2);
+
+        srand( 0 );
+        for ( int i = 0; i < 10000; i++ ) {
+            h1->fill( 10*rand()/(double)RAND_MAX );
+            h2->fill( 10*rand()/(double)RAND_MAX, 10*rand()/(double)RAND_MAX);
+            c1->fill( 10*rand()/(double)RAND_MAX );
+            c2->fill( 10*rand()/(double)RAND_MAX, 10*rand()/(double)RAND_MAX);
+        }
+        tree->commit();
+        delete factory;
+        return 1;
+}
++---------------+
+
+    Please notice that in the above code, before the return statement, the JIAnalysisFactory is deleted. This way the execution thread will wait on the GUI to stop running.
+
+*Execution
+
+    To run the above example tt is necessary to compile and link the code against the AIDAJNI libraries required for your platform. 
+
+    * set the environment variable AIDAJNI_HOME to point the directory where the AIDAJNI code has been put
+
+    * set the environment variable JDK_HOME to point the the head of the Java distribution (a least 1.4.0 is required)
+
+** Windows
+
+    * compile with:
+
++------+
+cl -c -TP -Og -W1 -nologo -MD -G5 -GX -GR -Zm200 -DWINVER=0x0400 -DWIN32 -D_WIN32 -I%AIDAJNI_HOME%\include 
+    -I%JDK_HOME%\include -I%JDK_HOME%\include\win32 UsingJAIDAFromCPP.cpp
++------+
+
+    * link with 
+
++------+
+link -nologo -LIBPATH:%AIDAJNI_HOME%\lib\WIN32-VC UsingJAIDAFromCPP.obj AIDAJNI.lib %JDK_HOME%/lib/jvm.lib FHJNI.lib
++------+
+
+
+    []
+
+    Before executing make sure that you add to your PATH the directory of the Java Virtual Machine sharable library
+
++------+
+set PATH=%PATH%;%JDK_HOME%\jre\bin\client
++------+
+
+

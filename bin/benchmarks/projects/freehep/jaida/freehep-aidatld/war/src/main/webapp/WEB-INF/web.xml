@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	 version="2.4">
+     
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>aida.root</param-value>
+    </context-param>
+
+
+   <servlet>
+    <servlet-name>aidaplot</servlet-name>
+    <servlet-class>hep.aida.web.servlet.PlotServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+    <servlet-mapping>
+        <servlet-name>aidaplot</servlet-name>
+        <url-pattern>/aida_plot.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Tabs -->
+  <servlet>
+    <servlet-name>tabCornerServlet</servlet-name>
+    <servlet-class>org.freehep.webutil.tabs.servlet.TabCornerServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>tabCornerServlet</servlet-name>
+    <url-pattern>/tabCornerServlet.jsp</url-pattern>
+  </servlet-mapping>    
+
+    <!-- Adding Servelet to make icons for the tree -->
+    <servlet>
+        <servlet-name>fhicon</servlet-name>
+        <servlet-class>org.freehep.webutil.tree.IconServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>fhicon</servlet-name>
+        <url-pattern>/icon.jsp</url-pattern>
+    </servlet-mapping>
+    <!-- Done adding Servelet to make icons for the tree -->
+</web-app>

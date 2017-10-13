@@ -1,0 +1,33 @@
+// Copyright 2002, SLAC, Stanford University, U.S.A.
+// AID - Compiler Test File
+package org.freehep.aid.test;
+
+/**
+ * TestConstants to test the aid compiler.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: ITestConstants.aid 8614 2006-08-16 07:14:47Z duns $
+}
+interface ITestConstants {
+
+    /**
+     * Sample const string
+     */
+    const String VERSION = "2.2";
+
+    /**
+     * Sample const int
+     */
+    const int VERSION_MAJOR = 2;
+
+    /**
+     * Final comment
+     */
+}
+
+/**
+ * Really Final comment
+ */
+    

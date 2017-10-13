@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for Icon Browser--> 
+<jnlp 
+    spec="1.0" 
+    codebase="http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-iconbrowser/$project.Version" 
+    href="$outputFile"
+    version ="$project.Version"> 
+    <information> 
+        <title>Icon Browser</title> 
+        <vendor>FreeHEP</vendor> 
+        <homepage href="http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-iconbrowser/$project.Version/index.html"/> 
+        <description>FreeHEP Icon Browser</description> 
+        <description kind="short">A program for browsing icons in jar or zip files.</description>
+        <icon href="IconBrowser.gif"/> 
+        <offline-allowed/> 
+    </information> 
+    <security> 
+        <all-permissions/> 
+    </security> 
+    <resources>
+        <j2se version="1.4+"/>
+        <jar href="ZipAnotate.jar"/>
+        <jar href="JFAIcons.jar"/>
+        <jar href="IconBrowserHelp.jar" download="lazy" part="help"/>
+        $dependencies
+        <property name="jnlp.org.freehep.application.ServiceManager" value="org.freehep.application.services.jnlp.JNLPServiceManager"/>
+    </resources> 
+    <application-desc main-class="$mainClass"/> 
+</jnlp> 

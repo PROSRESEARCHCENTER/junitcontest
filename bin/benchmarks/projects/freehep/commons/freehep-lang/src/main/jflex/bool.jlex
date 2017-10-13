@@ -1,0 +1,190 @@
+
+package org.freehep.commons.lang.bool;
+
+import java_cup.runtime.*; 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+
+%%
+
+%public
+%class Lexer
+%unicode
+%char
+%cup
+%line
+%column
+%ignorecase
+
+%{
+
+    int symLeft;
+    int symLen;
+    int offset;
+    int stringSym;
+
+    /**
+     * Create the lexer
+     */
+    public Lexer() {
+        super();
+    }
+
+    public Symbol newSymbol(int type, int left, int right, Object svalue){
+        return new Symbol(type,left,right,svalue){
+            @Override
+            public String toString(){
+                return "#" + sym + ":(" + value.toString() + ")";
+            }
+        };
+    }
+
+    public Symbol symbol(int type) {
+        int len = symLen != 0 ? symLen : yylength();
+        return newSymbol(type, yychar, yychar + len, type);
+    }
+    
+    public Symbol sSymbol(int type) {
+        int offset = type == sym.STRING || type == sym.SQSTRING ? 1 : 2;
+        // Content of string.
+        String c = new String(zzBuffer, symLeft + offset, symLen - offset);
+        return newSymbol(type, symLeft, symLeft + symLen + 1, c); // get trailing quote
+    }
+
+    public Symbol nSymbol(Number number) {
+        return new Symbol( sym.NUMBER, symLeft, symLeft + symLen, number);
+    }
+
+    /**
+     *  Not the best way to do this, but try to figure out any error text.
+     */ 
+    public String errorText(int l, int r){
+        int rr = r+8 > zzEndRead ? r : r+8;
+        String error = new String( zzBuffer, 0, rr);
+        int newLine = error.substring( 0,l ).lastIndexOf( "\n" );
+        error = error.substring( newLine + 1, rr );
+        error += rr != r ? "...\n" : "\n";
+        String extra;
+        String line = new String(yyline + 1 + ": ");
+        error = line + error;
+        for(extra = ""; extra.length() < l - newLine + line.length(); extra+=" ");
+        for(; extra.length() < r - newLine + line.length(); extra+="^");
+        error += extra;
+        return error;
+    }
+%}
+
+
+/* Some regexes taken from the python version of jSyntaxPane https://code.google.com/p/jsyntaxpane/ */
+/* main character classes */
+EndLine = \r|\n|\r\n
+
+WhiteSpace      = {EndLine} | [ \t\f]+
+
+/* identifiers */
+Identifier      = [a-zA-Z_][a-zA-Z0-9_\.\-\:]*
+
+/* number literals */
+IntLit          = 0 | [-]?[1-9][0-9]*
+LongLit         = {IntLit} [lL]
+FloatLit        = [-]? ({FLit1}|{FLit2}|{FLit3}) {Exponent}? [fF]
+DoubleLit       = [-]? ({FLit1}|{FLit2}|{FLit3}) {Exponent}?
+FLit1           = [0-9]+ \. [0-9]* 
+FLit2           = \. [0-9]+ 
+FLit3           = [0-9]+ 
+Exponent        = [eE] [+-]? [0-9]+
+
+/* string and character literals */
+DQStringChar    = [^\r\n\"\\]
+SQStringChar    = [^\r\n\'\\]
+
+%state DQ, SQ
+
+%%
+
+<YYINITIAL> {
+
+
+  /* words */
+  "not in"                              { return symbol( sym.NOT_IN ); }
+  not\ eq(uals?)? | \!eq(uals?)? | neq? |
+  "is not" | "!="                       { return symbol( sym.NOT_EQ ); }
+  "and" | "&&"                          { return symbol( sym.AND ); }
+  "or" | "||"                           { return symbol( sym.OR ); }
+  "is" | eq(uals?)? | "==" | "="        { return symbol( sym.EQ ); }
+  "lt" | "<"                            { return symbol( sym.LT ); }
+  "lteq" | "le" | "<="                  { return symbol( sym.LTEQ ); }
+  "gt" | ">"                            { return symbol( sym.GT ); }
+  "gteq" | "ge" | ">="                  { return symbol( sym.GTEQ ); }
+  "in"                                  { return symbol( sym.IN ); }
+  "!~" | "not matches"                  { return symbol( sym.NOT_MATCHES ); }
+  "=~" | "matches"                      { return symbol( sym.MATCHES ); }
+  
+  /* other */
+  ":" | "->" | "to"                     { return symbol( sym.RANGE ); }
+  "("                                   { return symbol( sym.LPAREN ); }
+  ")"                                   { return symbol( sym.RPAREN ); }
+  ","                                   { return symbol( sym.COMMA ); }
+  null | none                           { return symbol( sym.NULL ); }
+
+  /* String literals */
+  \"                             {
+                                    stringSym = sym.STRING;
+                                    yybegin(DQ);
+                                    symLeft = yychar;
+                                    symLen = 1;
+                                 }
+
+  \'                             {
+                                    stringSym = sym.SQSTRING;
+                                    yybegin(SQ);
+                                    symLeft = yychar;
+                                    symLen = 1;
+                                 }
+
+  /* Date String literals */
+  d\"                           {
+                                    stringSym = sym.DATESTRING;
+                                    yybegin(DQ);
+                                    symLeft = yychar;
+                                    symLen = 2;
+                                }
+
+  d\'                          {
+                                    stringSym = sym.SQDATESTRING;
+                                    yybegin(SQ);
+                                    symLeft = yychar;
+                                    symLen = 2;
+                                }
+
+  /* Boolean literal */
+  "true" | "false"              { return newSymbol( sym.BOOLEAN, yychar, yychar + yylength(), Boolean.valueOf(yytext()) ); }
+
+  /* Literals */
+  {IntLit}                      |
+  {LongLit}                     { return nSymbol(Long.valueOf(yytext())); }
+  {FloatLit}                    |
+  {DoubleLit}                   { return nSymbol(Double.valueOf(yytext())); }
+  {WhiteSpace}                  { }
+  {Identifier}                  { return newSymbol( sym.IDENTIFIER, yychar, yychar + yylength(), new String( zzBuffer, yychar + offset, yylength())); }
+  "$" | "?"                     { return symbol( sym.ERROR ); }
+}
+
+/* String handling */
+<DQ> {
+  \"                            { yybegin(YYINITIAL); return sSymbol( stringSym ); }
+  {DQStringChar}+               { symLen += yylength(); }
+  \\.                           { symLen += 2; }
+  {EndLine}                     { yybegin(YYINITIAL);  }
+}
+
+<SQ> {
+  "'"                           { yybegin(YYINITIAL); return sSymbol( stringSym ); }
+  {SQStringChar}+               { symLen += yylength(); }
+  \\.                           { symLen += 2; }
+  {EndLine}                     { yybegin(YYINITIAL);  }
+}
+
+/* Any other characters not defined are strictly errors */
+.                               { return symbol( sym.ERROR ); }
+<<EOF>>                         { return null; }

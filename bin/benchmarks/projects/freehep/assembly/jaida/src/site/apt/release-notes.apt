@@ -1,0 +1,96 @@
+    ---
+    Release Notes JAIDA 3.3.0
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Release Notes JAIDA 3.3.0
+
+    JAIDA 3.3.0 is based on AIDA 3.3.0.
+    
+* Changes
+
+    * Full implementation of the AIDA 3.3 interfaces
+
+    * Deprecated <uncmin> and <fmin> optimizer
+
+    * Deprecated some JAIDA specific style options
+
+    []
+
+    A list of changes for this and previous JAIDA releases can be found  {{{changes.html}here}}.
+
+
+
+* Backward Compatibility
+
+    The AIDA 3.3.0 interfaces are backward compatible with the 3.2.x version ones. The JAIDA 3.3.0 implementation is discontinuing some of features
+    in previous versions, so make sure to check the following list to ensure your code will work properly in this version:
+
+    * some of the JAIDA specific style options are no longer supported as they have been replaced by AIDA interfaces method
+ 
+    []
+
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+| <<Deprecated Style Option>>         |          <<AIDA Interface>>                                 |        <<AIDA Method>>                              |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showHistogramBars                    | ILineStyle from IDataStyle.lineStyle()                      |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|fillHistogramBars                    | IFillStyle from IDataStyle.fillStyle()                      |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showDataPoints                       | IMarkerStyle from IDataStyle.markerStyle()                  |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|connectDataPoints                    | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|lineBetweenPointsColor               | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setColor(String) / String color()          |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|lineBetweenPointsType                | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setLineType(String) / String lineType()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|lineBetweenPointsThickness           | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setThickness(int) / int thickness()        |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showErrorBars                        | ILineStyle from IDataStyle.errorBarStyle()                  |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|errorBarsColor                       | ILineStyle from IDataStyle.errorBarStyle()                  |  boolean setColor(String) / String color()          |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|errorBarsLineType                    | ILineStyle from IDataStyle.errorBarStyle()                  |  boolean setLineType(String) / String lineType()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|errorBarsLineThickness               | ILineStyle from IDataStyle.errorBarStyle()                  |  boolean setThickness(int) / int thickness()        |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|functionLineColor                    | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setColor(String) / String color()          |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|functionLineType                     | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setLineType(String) / String lineType()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|functionLineThickness                | ILineStyle from IDataStyle.outlineStyle()                   |  boolean setThickness(int) / int thickness()        |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showStatisticsBox (on IDataStyle)    | IDataStyle                                                  |  boolean showInStatisticsBox(boolean) /  boolean isShownInStatisticsBox() |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showStatisticsBox (on IPlotterStyle) | IStatisticsBoxStyle\ from\ IPlotterStyle.statisticsBoxStyle() |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|statisticsBoxFont                    | ITextStyle\ from\ IPlotterStyle.statisticsBoxStyle().textStyle()  |  boolean setFont(String) / String font()        |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|statisticsBoxFontSize                | ITextStyle\ from\ IPlotterStyle.statisticsBoxStyle().textStyle()  |  boolean setFontSize(double) / double fontSize()|
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|statisticsBoxFontStyle               | ITextStyle\ from\ IPlotterStyle.statisticsBoxStyle().textStyle()  |  boolean setBold() / boolean isBold()           |
+|                                     |                                                             |  boolean setItalic() / boolean isItalic()           |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showLegend                           | ILegendBoxStyle\ from\ IPlotterStyle.legendBoxStyle()         |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|legendFont                           | ITextStyle\ from\ IPlotterStyle.legendBoxStyle().textStyle()  |  boolean setFont(String) / String font()            |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|legendFontSize                       | ITextStyle\ from\ IPlotterStyle.legendBoxStyle().textStyle()  |  boolean setFontSize(double) / double fontSize()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|legendFontStyle                      | ITextStyle\ from\ IPlotterStyle.legendBoxStyle().textStyle()  |  boolean setBold() / boolean isBold()               |
+|                                     |                                                             |  boolean setItalic() / boolean isItalic()           |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|backgroundColor                      | IFillStyle\ from\ IPlotterStyle.regionBoxStyle().backgroundStyle()|    boolean setColor(String) / String color()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|foregroundColor                      | IFillStyle\ from\ IPlotterStyle.regionBoxStyle().foregroundStyle()|    boolean setColor(String) / String color()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|dataAreaColor                        | IFillStyle\ from\ IPlotterStyle.dataBoxStyle().backgroundStyle()|    boolean setColor(String) / String color()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|dataAreaBorderType                   | IBorderStyle\ from\ IPlotterStyle.dataBoxStyle().borderStyle()|    boolean setBorderType(String) / String borderType()    |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+|showTitle                            | ILegendBoxStyle\ from\ IPlotterStyle.titleStyle()             |  boolean setVisible(boolean) / boolean isVisible()  |
+*-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------+
+

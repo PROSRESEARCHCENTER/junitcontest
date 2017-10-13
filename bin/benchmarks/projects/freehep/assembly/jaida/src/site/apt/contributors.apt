@@ -1,0 +1,11 @@
+    ---
+    Contributors
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Contributors
+
+    The {{{team-list.html}developers}} of the {{{http://java.freehep.org}FreeHEP Java Library}} are responsible for the JAIDA 
+implementation; is also heavily relies on the work of the {{{http://aida.freehep.org/guilty_parties.thtml}AIDA developers}}.

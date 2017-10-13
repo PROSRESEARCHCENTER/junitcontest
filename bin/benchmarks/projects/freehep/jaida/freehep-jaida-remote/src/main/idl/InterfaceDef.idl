@@ -1,0 +1,103 @@
+#ifndef AIDA_INTERFACEDEF_IDL
+#define AIDA_INTERFACEDEF_IDL
+
+#include "StructDef.idl"
+
+module hep {
+  module aida {
+    module ref {
+      module remote {
+        module corba {
+          module generated {
+
+   // Conveys all communication between the ITree and the TreeClient.
+   // Also can notify TreeClient about changes in the ITree and Node updates
+   // by calling client's "stateChanged" method ("Duplex" Mode) and/or by returning
+   // list of updates when TreeClient calls "updates()" method.
+   // TreeClient should call "setValid" or "setValids" methods in order to tell
+   // TreeServant that it is ready to receive information about changes/updates in ITree.
+   interface TreeServant {
+
+      // Get the list of names of the IManagedObjects under a given path, including
+      // directories (but not "." and ".."). Directories end with "/".
+      // The returned names are appended to the given path unless the latter is "."
+      // The path is an absolute path from the ITree root.
+      StringList listObjectNames(in string path);
+
+      // Get the list of types of the IManagedObjects under a given path. The types
+      // are the leaf class of the Interface, e.g. "IHistogram1D", "ITuple", etc.
+      // Directories are marked with "dir". The order of the types is the same as the
+      // order for the listObjectNames() method to achieve a one-to-one correspondance
+      // between object names and types.
+      // The path is an absolute path from the ITree root.
+      StringList listObjectTypes(in string path);
+
+      // Get the IManagedObject, wrapped in "Any" CORBA object, at a given path in the ITree.
+      // The path is an absolute path from the ITree root.
+      //Hist1DData find(in string path);
+      any find(in string path);
+
+      // This method can be called by TreeClient to tell TreeServant that it is ready to
+      // receive information about changes/updates of IManagedObjects at "nodePaths".
+      void setValid(in StringList nodePaths);
+
+      // This method can be called by TreeClient to get list of current updates.
+      // This method also cleans-up/invalidetes all updates included in the EventList.
+      EventList updates();
+   };
+
+
+   interface TreeClient {
+
+    // This method can be called by the TreeServant to notify
+    // TreeClient about updates in the server-side ITree.
+    // If "Duplex Mode" is not used, TreeClient has to call
+    // updates() method of TreeServant to get a list of current 
+    // updates.
+    void stateChanged(in EventList events);
+    
+    // Return true if TreeClient is already connected to the AidaTreeServer
+    boolean isConnected();
+    
+    // Make initial connection to the TreeServer. 
+    boolean connect();
+    
+    // Disconnect from the TreeServer and free all resources associated with it.
+    boolean disconnect();
+    
+   };
+
+
+   // Main Tree Server - manages connect/disconnect of clients
+   // and life cycle of TreeServants. Each TreeServant is associated
+   // with only one TreeClient.
+   interface TreeServer {
+
+      // Return the name of the ITree it is connected to.
+      string treeName();
+
+      // Returns "true" if this TreeServer/TreeServant implementation
+      // support "Duplex Mode".
+      boolean supportDuplexMode();
+
+      // connect/disconnect methods for TreeClient that does not support "Duplex" Mode.
+      // TreeClient has to provide a unique "clientID" to TreeServer. If "clientID" is
+      // not unique, TreeServer changes it, so TreeClient must check "newClientID",
+      // returned by TreeServer.
+      TreeServant connectNonDuplex(in string clientID);
+      boolean disconnectNonDuplex(in string clientID);
+
+      // connect/disconnect methods for TreeClient that does support "Duplex" Mode.
+      // Here reference to instance of TreeClient serves as a unique client ID.
+      TreeServant connectDuplex(in TreeClient client);
+      boolean disconnectDuplex(in TreeClient client);
+   };
+
+          };
+        };
+      };
+    };
+  };
+};
+
+#endif

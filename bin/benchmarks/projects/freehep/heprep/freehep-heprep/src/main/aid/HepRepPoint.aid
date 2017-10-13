@@ -1,0 +1,184 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+
+/**
+ * HepRepPoint interface. The HepRepMath class can be used to deal with the conversions.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepPoint.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepPoint extends HepRepAttribute {
+
+    /**
+     * Constructor for the JHepRepPoint interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepPoint(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return dx-coordinate
+     */
+    double getX();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return dy-coordinate
+     */
+    double getY();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return dz-coordinate
+     */
+    double getZ();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return rho = sqrt(dx2+dy2);
+     */
+    double getRho();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return phi = atan2(dy, dx);
+     */
+    double getPhi();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return theta = atan2(rho, dx);
+     */
+    double getTheta();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return r = sqrt(dx2+dy2+dz2);
+     */
+    double getR();
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @return eta = -0.5*clog((1.-ct)/(1.+ct)), where ct = .cos(getTheta(dx, dy, dz));
+     */
+    double getEta();
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return dx-coordinate
+     */
+    double getX(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return dy-coordinate
+     */
+    double getY(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return dz-coordinate
+     */
+    double getZ(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return rho = sqrt(dx2+dy2);
+     */
+    double getRho(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return phi = atan2(dy, dx);
+     */
+    double getPhi(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return theta = atan2(rho, dx);
+     */
+    double getTheta(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return r = sqrt(dx2+dy2+dz2);
+     */
+    double getR(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (xVertex, yVertex, zVertex).
+     *
+     * @param xVertex x-coordinate of vertex
+     * @param yVertex y-coordinate of vertex
+     * @param zVertex z-coordinate of vertex
+     * @return eta = -0.5*clog((1.-ct)/(1.+ct)), where ct = .cos(getTheta(dx, dy, dz));
+     */
+    double getEta(double xVertex, double yVertex, double zVertex);
+
+    /**
+     * Returns coordinate with respect to vertex at (0, 0, 0).
+     *
+     * @param xyz list of three coordinates which are filled and returned.
+     *            If null, a new list of three coordinates is allocated.
+     * @return list of 3 coordinates.
+     */
+    double[]* getXYZ(double[]* xyz);
+
+    /**
+     * Returns associated instance (parent).
+     *
+     * @return HepRepInstance.
+     */
+    HepRepInstance* getInstance();
+
+    /**
+     * Returns a deep copy of this point.
+     *
+     * @param parent to add the copy to.
+     * @return copy of this point.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepPoint* copy(HepRepInstance* parent) throws CloneNotSupportedException;
+}

@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>21.1</version>
+        <relativePath />
+    </parent>
+  
+    <groupId>org.freehep</groupId>
+    <artifactId>base</artifactId>
+    <version>14.0.10-SNAPSHOT</version>
+    <packaging>pom</packaging>
+  
+    <name>FreeHEP Base</name>
+    <description>FreeHEP Base Library</description>
+    <url>http://java.freehep.org/</url>
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/base</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/base</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/base</developerConnection>
+    </scm>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-application</artifactId>
+                <version>2.2.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-argv</artifactId>
+                <version>2.0.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-commandline</artifactId>
+                <version>2.0.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-commanddispatcher</artifactId>
+                <version>2.0.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-parameterdatabase</artifactId>
+                <version>2.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-record</artifactId>
+                <version>3.0.9</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-swing</artifactId>
+                <version>2.0.11</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-util</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-xml</artifactId>
+                <version>2.1.10</version>
+            </dependency>      
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-io</artifactId>
+                <version>2.2.2</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>      
+        </dependencies>
+    </dependencyManagement>
+    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <build>
+      <pluginManagement>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.1</version>
+            <configuration>
+<!--              <additionalparam>-Xdoclint:none</additionalparam>-->
+              <failOnError>false</failOnError>
+            </configuration>
+          </plugin>
+        </plugins>
+      </pluginManagement>
+    </build>
+    
+    <modules>
+      <module>freehep-application</module>
+      <module>freehep-commandline</module>
+      <module>freehep-commanddispatcher</module>
+      <module>freehep-parameterdatabase</module>
+      <module>freehep-record</module>
+      <module>freehep-swing</module>
+      <module>freehep-util</module>
+      <module>freehep-xml</module>
+    </modules>
+    
+    <profiles>
+      
+      <profile>
+        <id>jdk8</id>
+        <activation>
+          <jdk>1.8</jdk>
+        </activation>
+        <build>
+          <pluginManagement>
+            <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.1</version>
+                <configuration>
+                  <additionalparam>-Xdoclint:none</additionalparam>
+                  <failOnError>false</failOnError>
+                </configuration>
+              </plugin>
+            </plugins>
+          </pluginManagement>
+        </build>
+      </profile>
+      
+    </profiles>
+  
+</project>

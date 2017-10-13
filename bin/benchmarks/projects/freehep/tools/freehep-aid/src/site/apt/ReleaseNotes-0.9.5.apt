@@ -1,0 +1,140 @@
+	---
+FreeHEP AID Compiler
+	---
+	---
+Mark Donszelmann
+	---
+
+AID 0.9.5 Release Notes
+
+	Release Notes Version: $Revision: 1.4 $.
+
+	The most recent version of this file is available
+{{{http://java.freehep.org/aid/ReleaseNotes-0.9.5.html}here}}.
+
+        AID is a tool to generate language specific interfaces and classes (Java,
+        C++, ...) from abstract interface definition source files (.aid). 
+
+        The tools reads in one or more .aid files, parses them for correctness and keeps
+        all information in a runtime-type-identification (RTTI) tree in memory. It then
+        uses several generators to generate the language specific interfaces and/or
+        classes. It also uses a simple pre-processor to handle cases where the method
+        definitions differ between different languages.
+
+* Contents
+
+  * {{{#Changes}Major changes in the AID 0.9.5}}
+  
+  * {{{#Documentation}Documentation}}
+  
+  * {{{#License}License}}
+  
+  * {{{#Installation}Installing AID}}
+  
+  * {{{#Compilation}Compiling AID}}
+  
+  * {{{#Running}Running AID}}
+  
+  * {{{#Features}Features/Limitations of the Current Release}}
+  
+  * {{{#BugReporting}Reporting Bugs}}
+  
+  * {{{#Examples}Examples}}
+
+<h2>{Changes}Major changes in AID 0.9.5}}
+
+  * FREEHEP-397: AID now separately packaged, for easier updates and distribution.
+  
+  * FREEHEP-27: Internal change in RTTI to keep track of packages using IPackage.
+  
+  * FREEHEP-439: added flag to switch off virtual inheritance.
+  
+  * FREEHEP-501: C++ generated code can have names of variables translated to avoid clashes with macros.
+  
+  * Added support for Python
+  
+  * Fixed command line parsing to handle -version.
+  
+  * aid type "byte" now maps to "unsigned char" in c++.	
+
+* {Documentation}Documentation
+
+	The following documentation is currently available:
+
+	* {{{Manual.html}Manual}}
+
+* {License}License
+
+	AID is part of the {{{http://java.freehep.org/}FreeHEP Java Library}}, 
+an "Open Source" library distributed under the terms of the
+{{{http://www.gnu.org/copyleft/lesser.html}LGPL}}. If you have 
+questions about the licensing please send a mail to:
+{{{mailto:developers@freehep.org}developers@freehep.org}}.
+
+* {Installation}Installing AID
+
+	Download AID and unpack.  The distribution 
+creates the following directory structure:
+
++--
+AID-version            containing license and release notes
+AID-version/bin        containing run scripts
+AID-version/lib        containing jar files
++--
+
+* {Compilation}Compiling AID
+
+	The current distribution does not contain source files.  
+
+	To (re-)build AID  you need to get AID-0.9.5-src.zip or .tar.gz file from 
+the {{{ftp://ftp.slac.stanford.edu/software/freehep/AID/v0.9.5}ftp://ftp.slac.stanford.edu/software/freehep/AID/v0.9.5/}} directory. 
+
+	To compile it, follow the general instructions for
+{{{http://java.freehep.org/Build.html}Building the Java FreeHEP Library}} 
+and compile only the freehep-aid.jar file using the command:
+
++--
+ant -Djar=aid
++--
+
+	To build the distribution kit:
+
++--
+cd org/freehep/aid
+gmake dist
++--
+
+* {Running}Running AID
+
+	Set the environment variable AID_HOME to your unpacked AID 
+distribution.  
+
+	Add $AID_HOME/bin to your PATH and run:
+
++--
+aid
++--
+
+* {Features}Features/Limitations of the Current Release
+
+	The following limitations exist:
+
+  * All outstanding issues in the
+  Bug Database.
+  
+  * The distribution kits contain some CVS directories and files, please 
+  ignore.
+  
+  * The freehep-base.jar file (and especially its sources) are dependent on 
+  some external jar files which are not strictly needed for the PS Viewer. 
+  Please ignore for now. In a later release we will shrink freehep-base.jar and 
+  get rid of these dependencies.
+
+* {BugReporting}Reporting Bugs
+
+	To report bugs or request enhancements you may use the
+FreeHEP bug database, component AID.
+
+* {Examples}Examples
+
+	The AID/examples directory does not contain any examples at this time.

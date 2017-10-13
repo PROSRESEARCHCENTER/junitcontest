@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep">
+    <bannerLeft>
+        <name>FreeHEP Global Settings</name>
+        <href>./</href>
+    </bannerLeft>
+    
+    <bannerRight>
+        <name>FreeHEP</name>
+        <src>../../freehep-site/latestRelease/images/sm-freehep.gif</src>
+        <href>../../</href>
+    </bannerRight>
+    
+    <poweredBy>
+        <logo
+            name="Build with Maven 2"
+            href="http://maven.apache.org"
+            img="../../freehep-site/latestRelease/images/logos/maven-feather.png"/>
+    </poweredBy>
+
+    <body>
+        <links>
+            <item name="JAS" href="http://jas.freehep.org/"/>
+            <item name="WIRED" href="http://wired.freehep.org/"/>
+            <item name="Latest Release" href="../latestRelease/"/>
+            <item name="Latest Snapshot" href="../latestSnapshot/"/>
+            <item name="All Versions" href=".."/>
+        </links>
+    
+        <menu name="FreeHep General" inherit="top" >
+            <item name="Introduction" href="../../freehep-site/latestRelease/index.html"/>
+            <item name="Team" href="../../freehep-site/latestRelease/team-list.html"/>
+            <item name="License" href="../../freehep-site/latestRelease/license.html"/>
+            <item name="Mailing Lists" href="../../freehep-site/latestRelease/mail-lists.html"/>
+            <item name="Publications &amp; Talks" href="../../freehep-site/latestRelease/Publications.html"/>
+            <item name="Users" href="../../freehep-site/latestRelease/Users.html"/>
+        </menu>
+        
+        
+        <menu ref="reports" inherit="bottom" />
+
+        
+    </body>
+</project>

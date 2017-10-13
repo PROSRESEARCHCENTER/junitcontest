@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for Root Object Browser--> 
+<jnlp 
+  spec="1.0" 
+  codebase="http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-rootobjectbrowser/$project.Version" 
+  href="$outputFile"
+  version ="$project.Version"> 
+  <information> 
+    <title>Root Object Browser</title> 
+    <vendor>FreeHEP</vendor> 
+    <homepage href="http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-rootobjectbrowser/$project.Version/index.html"/> 
+    <description>Root Object Browser</description> 
+    <description kind="short">A program for browsing objects and data in a Root file.</description>
+    <offline-allowed/> 
+  </information>
+  <security> 
+    <all-permissions/> 
+  </security> 
+  <resources> 
+    <j2se version="1.4+"/> 
+    $dependencies
+  </resources> 
+  <application-desc main-class="$mainClass"/> 
+</jnlp> 

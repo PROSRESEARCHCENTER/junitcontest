@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>jaida-pom</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>3.4.14-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>freehep-jaida-root</artifactId>
+  
+  <name>FreeHEP JAIDA ROOT</name>
+  <description>FreeHEP JAIDA ROOT Connector</description>
+  
+
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-jaida-root</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/jaida/freehep-jaida-root</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-jaida-root</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida/freehep-jaida-root</developerConnection>
+    </scm>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-rootio</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-rootio-output</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida</artifactId>
+      <version>3.4.14-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>hep.aida</groupId>
+      <artifactId>aida-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>hep.testdata.root</groupId>
+      <artifactId>pawdemo</artifactId>
+      <version>1.0</version>
+      <type>root</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.13</version>
+        <configuration>
+          <skip>true</skip>
+          <systemProperties>
+            <property>
+              <name>hep.aida.test.data.pawdemo.root</name>
+              <value>
+                ${localRepository}/hep/testdata/root/pawdemo/1.0/pawdemo-1.0.root
+              </value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

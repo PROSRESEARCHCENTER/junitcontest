@@ -1,0 +1,52 @@
+    ---
+    Binary HepRep
+    ---
+    Mark Donszelmann
+    ---
+    ---
+
+Binary HepRep
+
+	Uses WBxml, see {{http://www.w3.org/TR/wbxml/}}, which is
+	
+	* a wep standard to send XML to wireless devices
+	
+	* each tag/attribute has a binary code
+
+	* structure is the same as XML
+
+	* numbers can be written as doubles and integers
+
+
+* Advantages
+
+	* smaller than XML
+
+	* compact
+
+	* can be still compressed by zlib compression
+
+	* faster to parse
+
+	* easy lookup of tags and attributes
+
+	* no conversion of ASCII numbers to doubles and integers
+
+
+* Disadvantages
+
+	* not human readable/editable
+	
+	* HepRep interfaces need to be stable
+
+
+* Implementations
+
+	* freehep-jheprep contains both a Binary HepRep reader and writer
+	
+	* freehep-cheprep contains only a Binary HepRep writer
+	
+	* Added as supported format in Geant 4.7.1
+	
+	* Supported as reader in WIRED 4.0
+	

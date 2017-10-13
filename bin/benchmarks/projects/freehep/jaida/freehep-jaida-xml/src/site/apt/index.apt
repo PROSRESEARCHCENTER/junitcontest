@@ -1,0 +1,26 @@
+  ---
+  AIDA Binary XML
+  ---
+  Mark Donszelmann
+  ---
+  ---
+
+Introduction
+
+	To allow for faster parsing and reading of the AIDA ASCII XML file all tags were 
+	translated all tags to binary codes and doubles (and other primtives) were written
+	according to IEEE standards.
+
+	The translation from ASCII XML to Binary XML is ont-to-one, using 
+	{{{http://www.openmobilealliance.org/tech/affiliates/wap/wap-192-wbxml-20010725-a.pdf}WAP-192-WBXML-20010725-a}}, 
+	Version 1.3, 25 July 2001 binary XML format. 
+	This standard allows you to retrieve XML tags, XML attributes and OPAQUE data 
+	(primitives and arrays of primitives). The encoding also saves some space
+	compared to ASCII (and still can be compressed using zlib compression).
+
+	Reading (parsing including avoidance of double conversion) is about 3 times faster
+	than with ASCII XML. Writing is about 1.3 times faster (due to conversion and
+	data volume) than ASCII XML.
+
+	For JAIDA we wrote our own parser and writer in Java. For C++ (and Python) these could be easily
+	translated. 

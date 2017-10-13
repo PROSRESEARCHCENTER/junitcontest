@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="freehep-webutil">
+    <bannerLeft>
+        <name>FreeHEP Web Util</name>
+        <href>./</href>
+    </bannerLeft>
+    
+    
+    <body>
+    
+        <menu name="General">
+            <item name="Web Utilities" href="index.html" collapse="false">
+                <item name="Non Available Filter" href="nonAvailableFilter.html"/>
+                <item name="Tab Tags" href="tabTags.html"/>
+                <item name="Ttree Tags" href="tree.html"/>
+            </item>
+            <item name="Source Repository" href="source-repository.html"/>
+            <item name="Depencencies" href="dependencies.html"/>
+        </menu>   
+        <menu name="Documentation">
+            <item name="Tld Doc" href="tlddoc/index.html" />
+            <item name="API Doc" href="apidocs/overview-summary.html" />
+        </menu>           
+    </body>
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- JNLP File for Java 3D Lego Plot Demo --> 
+<jnlp 
+  spec="1.0" 
+  codebase="http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-legoplot/$project.Version" 
+  href="$outputFile"
+  version ="$project.Version"> 
+  <information> 
+    <title>Java 3D Lego Plot Demo</title> 
+    <vendor>FreeHEP</vendor> 
+    <homepage href="http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-legoplot/$project.Version/index.html"/> 
+    <description>FreeHEP Java 3D Lego Plot Demo</description> 
+    <description kind="short">A lego plot which uses Java 3D.</description> 
+    <offline-allowed/> 
+  </information> 
+   <security> 
+      <all-permissions/> 
+   </security> 
+  <resources>
+    <j2se version="1.4+"/>
+    $dependencies
+    <property name="jnlp.org.freehep.application.ServiceManager" value="org.freehep.application.services.jnlp.JNLPServiceManager"/>
+  </resources> 
+  <application-desc main-class="$mainClass"/> 
+</jnlp> 

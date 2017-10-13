@@ -1,0 +1,211 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+        <relativePath />
+    </parent>
+  
+    <groupId>org.freehep</groupId>
+    <artifactId>freehep-heprep</artifactId>
+    <version>2.0.7-SNAPSHOT</version>
+    <packaging>nar</packaging>
+  
+    <name>HepRep Interfaces</name>
+    <description>HepRep Interfaces.</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/freehep-heprep</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/heprep/freehep-heprep</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-heprep</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/heprep/freehep-heprep</developerConnection>
+    </scm>
+  
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>never-to-be-reached-phase</phase>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/idl/*Factory.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-aid-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <id>java</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <targetDirectory>${basedir}/src/main/java</targetDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cpp</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <generator>CPPHeaderGenerator</generator>
+                            <targetDirectory>${basedir}/src/main/include</targetDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <timestampDirectory>${project.build.directory}/generated-sources/aid</timestampDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-idlj-plugin</artifactId>
+                <version>2.0.2</version>
+                <executions>
+                    <execution>
+                        <id>HepRep-idl</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <oldImplBase>true</oldImplBase>
+                            <source>HepRep.idl</source>
+                            <pkgPrefixes>
+                                <pkgPrefix>HepRep hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRep hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAction hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepActionList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttDef hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttDefList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttValue hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttValueList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepInstance hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepInstanceList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepInstanceTree hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepPoint hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepPointList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTreeID hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTreeIDList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepType hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTypeList hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTypeTree hep.graphics.heprep.corba.idl</pkgPrefix>
+                                <pkgPrefix>StringArray hep.graphics.heprep.corba.idl</pkgPrefix>
+                            </pkgPrefixes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>HepRepValue-idl</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <source>HepRepValue.idl</source>
+                            <pkgPrefixes>
+                                <pkgPrefix>HepRep hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAction hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepActionList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttDef hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttDefList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttribute hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttValue hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepAttValueList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepDefinition hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepInstance hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepInstanceList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepInstanceTree hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepPoint hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepPointList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTreeID hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTreeIDList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepType hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTypeList hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>HepRepTypeTree hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                                <pkgPrefix>StringArray hep.graphics.heprep.corbavalue.idl</pkgPrefix>
+                            </pkgPrefixes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.freehep</groupId>
+                <artifactId>freehep-nar-plugin</artifactId>
+                <version>2.0-alpha-10</version>
+            </plugin>
+        </plugins>
+    </build>
+  
+    <dependencies>
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-util</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+    </dependencies>
+  
+    <profiles>
+        <profile>
+            <id>release-profile</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <inherited>true</inherited>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources-no-fork</id>
+                                <inherited>true</inherited>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

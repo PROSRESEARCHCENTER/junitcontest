@@ -1,0 +1,5 @@
+RmiTestServerImpl.class
+RmiTestClient.class
+RmiSerializableObject.class
+RmiTestServer.class
+.nbattrs

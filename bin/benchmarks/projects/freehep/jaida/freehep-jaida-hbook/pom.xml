@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>jaida-pom</artifactId>
+    <groupId>org.freehep</groupId>
+    <version>3.4.0</version>
+  </parent>
+  
+  <groupId>org.freehep</groupId>
+  <artifactId>freehep-jaida-hbook</artifactId>
+  <packaging>nar</packaging>
+  
+  <name>FreeHEP JAIDA HBOOK</name>
+  <description>FreeHEP JAIDA HBOOK Connector</description>
+  
+  <repositories>
+    <repository>
+      <id>freehep-maven</id>
+      <name>Maven FreeHEP</name>
+      <url>http://java.freehep.org/maven2</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-hbook</artifactId>
+      <version>2.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>fortran</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>hep.aida</groupId>
+      <artifactId>aida-test</artifactId>
+      <version>3.3.0-4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>hep.testdata.hbook</groupId>
+      <artifactId>pawdemo</artifactId>
+      <version>1.0</version>
+      <type>hbook</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.freehep</groupId>
+      <artifactId>freehep-jaida</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.freehep</groupId>
+        <artifactId>freehep-nar-plugin</artifactId>
+        <version>2.0-alpha-10</version>
+        <configuration>
+          <systemProperties>
+            <property>
+              <name>
+                hep.aida.test.data.pawdemo.hbook
+              </name>
+              <value>
+                ${localRepository}/hep/testdata/hbook/pawdemo/1.0/pawdemo-1.0.hbook
+              </value>
+            </property>
+          </systemProperties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

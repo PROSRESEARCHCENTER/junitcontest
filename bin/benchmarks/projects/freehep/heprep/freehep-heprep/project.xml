@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright 2005 FreeHEP.
+ * 
+ */
+ -->
+
+
+<project>
+  <extend>common/freehep-project.xml</extend>
+  <!-- a unique name for this project -->
+
+  <groupId>heprep</groupId>
+
+  <artifactId>freehep-heprep</artifactId>
+  <!-- a short but descriptive name for the project -->
+
+  <name>HepRep Interfaces</name>
+  <!-- The version of the project under development, e.g.
+       1.1, 1.2, 2.0-SNAPSHOT -->
+
+  <currentVersion>2.0.1</currentVersion>
+  <!-- details about the organization that 'owns' the project -->
+
+  <package>hep.graphics.heprep</package>
+  <description>HEP Representables for Event Display.</description>
+  <!-- a short description of what the project does -->
+
+  <shortDescription>HepRep 2</shortDescription>
+  <!-- the project home page -->
+
+  <build>
+    <sourceModifications>
+      <sourceModification>
+        <className>fakeClass</className>
+        <excludes>
+          <exclude>**/idl/*Factory.java</exclude>
+        </excludes>
+      </sourceModification>
+    </sourceModifications>
+  </build>    
+
+  <dependencies>
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-nar-plugin</artifactId>
+      <version>0.2.1-SNAPSHOT</version>
+      <url>http://java.freehep.org/maven</url>
+      <type>plugin</type>
+    </dependency>
+    
+        <dependency>
+          <groupId>freehep</groupId>
+          <artifactId>freehep-download-plugin</artifactId>
+          <version>1.0.3-SNAPSHOT</version>
+          <url>http://java.freehep.org/maven</url>
+          <type>plugin</type>
+        </dependency>
+
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-aid-plugin</artifactId>
+      <version>0.9.7.1</version>
+      <url>http://java.freehep.org/maven</url>
+      <type>plugin</type>
+    </dependency>
+    
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-idlj-plugin</artifactId>
+      <version>1.0</version>
+      <url>http://java.freehep.org/maven/freehep/plugins</url>
+      <type>plugin</type>
+    </dependency>
+    
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-aid</artifactId>
+      <version>1.7</version>
+      <url>http://java.freehep.org/aid/index.html</url>
+    </dependency>
+  
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-argv</artifactId>
+      <version>1.7</version>
+      <url>http://java.freehep.org/argv/index.html</url>
+    </dependency>
+
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-io</artifactId>
+      <version>1.7</version>
+      <url>http://java.freehep.org/io/index.html</url>
+    </dependency>
+
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-jaco</artifactId>
+      <version>1.7</version>
+      <url>http://java.freehep.org/jaco/index.html</url>
+    </dependency>
+
+    <dependency>
+      <groupId>freehep</groupId>
+      <artifactId>freehep-util</artifactId>
+      <version>1.7</version>
+      <url>http://java.freehep.org/util/index.html</url>
+    </dependency>
+
+    <dependency>
+      <groupId>bcel</groupId>
+      <artifactId>bcel</artifactId>
+      <version>5.1-patched-1.0</version>
+      <url>http://jakarta.apache.org/bcel/index.html</url>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <url>http://junit.org/index.htm</url>
+    </dependency>
+    
+    <dependency>
+      <groupId>netbeans</groupId>
+      <artifactId>openide-lookup</artifactId>
+      <version>1.9-patched-1.0</version>
+      <url>http://openide.netbeans.org/lookup/index.html</url>
+    </dependency>
+
+  </dependencies>
+      
+</project>

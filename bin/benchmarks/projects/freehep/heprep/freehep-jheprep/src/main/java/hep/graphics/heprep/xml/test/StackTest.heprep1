@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<heprep xmlns="http://java.freehep.org/schemas/heprep/2.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.freehep.org/schemas/heprep/2.0 http://java.freehep.org/schemas/heprep/2.0/HepRep.xsd">
+
+    <layer order="Geometry"/>
+        
+    <typetree name="Types">
+        <type name="default">
+            <attvalue showlabel="NONE" name="DrawAs" value="Point"/>
+            <attvalue showlabel="NONE" name="DrawAsOptions" value="Point"/>
+
+            <attvalue showlabel="NONE" name="MarkName" value="Square"/>
+            <attvalue showlabel="NONE" name="MarkSize" value="3"/>
+            <attvalue showlabel="NONE" name="MarkColor" value="White"/>
+            <attvalue showlabel="NONE" name="MarkHasFrame" value="True"/>
+            <attvalue showlabel="NONE" name="MarkFrameWidth" value="1"/>
+            <attvalue showlabel="NONE" name="FrameColor" value="Black"/>
+
+            <attvalue showlabel="NONE" name="LineStyle" value="Solid"/>
+            <attvalue showlabel="NONE" name="LineWidth" value="2"/>
+            <attvalue showlabel="NONE" name="Color" value="White"/>
+            <attvalue showlabel="NONE" name="LineHasFrame" value="True"/>
+            <attvalue showlabel="NONE" name="LineFrameWidth" value="1"/>
+            <attvalue showlabel="NONE" name="LineFrameColor" value="Black"/>
+
+            <attvalue showlabel="NONE" name="FontName" value="SansSerif"/>
+            <attvalue showlabel="NONE" name="FontSize" value="12"/>
+            <attvalue showlabel="NONE" name="FontStyle" value="Plain"/>
+            <attvalue showlabel="NONE" name="FontColor" value="White"/>
+            <attvalue showlabel="NONE" name="FontHasFrame" value="False"/>
+            <attvalue showlabel="NONE" name="FontFrameWidth" value="2"/>
+            <attvalue showlabel="NONE" name="FontFrameColor" value="Black"/>
+            <attvalue showlabel="NONE" name="FontHasBanner" value="False"/>
+            <attvalue showlabel="NONE" name="FontBannerColor" value="Black"/>
+
+            <attvalue showlabel="NONE" name="HAlign" value="Left"/>
+            <attvalue showlabel="NONE" name="VAlign" value="Baseline"/>
+            <attvalue showlabel="NONE" name="VPos" value="0.5"/>
+            <attvalue showlabel="NONE" name="HPos" value="0.5"/>
+
+            <attvalue showlabel="NONE" name="Fill" value="False"/>
+            <attvalue showlabel="NONE" name="FillColor" value="White"/>
+            <attvalue showlabel="NONE" name="FillType" value="NonZero"/>
+
+            <attvalue showlabel="NONE" name="Layer" value="1"/>
+
+            <attvalue showlabel="NONE" name="Theta" value="0"/>
+            <attvalue showlabel="NONE" name="Phi" value="0"/>
+
+            <attvalue showlabel="NONE" name="Omega" value="0"/>
+            <attvalue showlabel="NONE" name="Omega1" value="0"/>
+            <attvalue showlabel="NONE" name="Omega2" value="0"/>
+            <attvalue showlabel="NONE" name="Sum" value="5"/>
+            <attvalue showlabel="NONE" name="Sum1" value="5"/>
+            <attvalue showlabel="NONE" name="Sum2" value="5"/>
+
+            <attvalue showlabel="NONE" name="FlyLength" value="10"/>
+            <attvalue showlabel="NONE" name="Curvature" value="0.02"/>
+            <attvalue showlabel="NONE" name="Radius" value="5"/>
+            <attvalue showlabel="NONE" name="Radius2" value="5"/>
+            <attvalue showlabel="NONE" name="Radius3" value="5"/>
+            <attvalue showlabel="NONE" name="Label" value=""/>
+        </type>
+    </typetree>
+
+    <instancetree version="1.0" name="StackTest">
+        <instance type="default">
+            <attvalue showlabel="NONE" name="Color" value="Orange"/>
+
+            <instance type="default">
+                <attvalue showlabel="NONE" name="DrawAs" value="Point"/>
+                <attvalue showlabel="NONE" name="Color" value="Cyan"/>
+                <attvalue showlabel="NONE" name="Layer" value="3"/>
+                <point x="-10." y="-10." z="0." />
+            </instance>
+        </instance>
+    </instancetree>
+</heprep>

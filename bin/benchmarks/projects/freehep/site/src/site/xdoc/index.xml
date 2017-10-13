@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<document>  
+  <properties>  
+    <title>FreeHEP Java Libraries</title>  
+  </properties>  
+  <body>    
+    <section name="Introduction">
+      <p>
+	The goal of the FreeHEP library is to encourage the sharing and reuse of Java
+code in High Energy Physics. Although some of the code is fairly specific to HEP,
+other code is more generic and could be used by anyone. To maximize reuse we
+strive to keep the dependencies between various packages in the FreeHEP library
+to a minimum, so you can use which ever parts interest you without being forced
+to use the entire library.
+	  </p>
+
+      <p>
+	The FreeHEP Java library is an "Open Source" library distributed
+under the terms of the <a href="http://www.gnu.org/copyleft/lesser.html">LGPL</a>.
+      </p>
+      
+      <p>
+	The best way to get to know the library and its components is to have a look
+at the Demonstrations, see menu. Several
+components have their own descriptions, see below. For an overview you may want
+to check out the <a href="Publications.html">Publications and Talks</a> page.
+      </p>
+      
+      <subsection name="News">
+        <ul>
+          <li>June 2013 Updated web site.</li>
+          <li>June 2013 Moved <a href="maven-repositories.html">maven repositories</a> to Nexus.</li>
+        </ul>
+      </subsection>
+      
+      <subsection name="Components"> 
+      <table> 
+        <tr>  
+          <th>HEP</th> 
+          <th>HEP IO</th> 
+          <th>HepRep</th> 
+          <th><a href="../../jaida-assembly/latestRelease/">JAIDA</a></th> 
+          <th>Math</th> 
+          <th>Tools</th> 
+          <th><a href="https://github.com/freehep/freehep-vectorgraphics/">Vector Graphics</a></th>
+          <th>Maven Plugins</th> 
+        </tr>      
+        
+        <tr>
+          <td><!-- HEP -->
+	    <a href="../../freehep-java3d/latestRelease/">Java3D</a><br/>
+            <a href="../../freehep-physics/latestRelease/">Physics</a><br/>
+          </td>
+          <td>
+          	  <a href="../../freehep-mcfio/latestRelease/">MCFIO</a><br/>
+          	  <a href="../../freehep-sio/latestRelease/">SIO</a><br/>
+          	  <a href="../../freehep-rootio/latestRelease/">ROOT IO</a><br/>
+          	  <a href="../../freehep-stdhep/latestRelease/">StdHEP</a><br/>
+          	  <a href="../../freehep-xdr/latestRelease/">XDR</a><br/>
+
+          </td>
+          <td><!-- HepRep -->
+
+          	  HepRep<br/>
+          	  HepRep1<br/>
+          	  JHepRep<br/>
+          	  JHepRep1<br/>
+          	  HR1-Adapter<br/>
+
+          </td>
+          <td><!-- JAIDA -->
+
+          	  JAida<br/>
+          	  Remote<br/>
+          	  JMinuit<br/>
+          	  Root<br/>
+          	  <a href="http://aidatld.freehep.org/">AIDATLD</a><br/>
+          </td>
+          <td><!-- Math -->
+
+          	  <a href="../../freehep-jminuit/latestRelease/">JMinuit</a><br/>
+
+          </td>
+          <td><!-- Tools -->
+
+          	  <a href="../../freehep-aid/latestRelease/">AID</a><br/>
+          	  <a href="../../freehep-aid-plugin/latestRelease/">AID-Plugin</a><br/>
+          	  <a href="../../freehep-rtti/latestRelease/">RTTI</a><br/>
+          	  <a href=" http://freehep.github.io/freehep-psviewer/">PSViewer</a><br/>
+
+          </td>
+          <td><!-- Vector Graphics -->
+
+          	  Graphics2D<br/>
+          	  GraphicsIO<br/>
+			  GraphicsIO-Test<br/>
+			
+			<br/><b><i>Formats</i></b><br/>
+
+          	  EMF<br/>
+          	  Java<br/>
+          	  PDF<br/>
+          	  PostScript<br/>
+          	  SVG<br/>
+          	  SWF<br/>
+
+          </td>
+          <td><!-- Maven Plugins -->
+
+          	  <a href="http://freehep.github.io/freehep-chartable-converter-plugin/">CharTable</a><br/>
+          	  <a href="../../freehep-idlj-plugin/latestRelease/">IDLJ</a><br/>
+          	  <a href="../../freehep-jarjar-plugin/latestRelease/">JarJar</a><br/>
+          	  <a href="../../freehep-jas-plugin/latestRelease/">JAS</a><br/>
+          	  <a href="http://duns.github.io/maven-nar-plugin/">NAR</a><br/>
+          	  <a href="../../freehep-rmic-plugin/latestRelease/">RMIC</a><br/>
+          	  <a href="http://duns.github.io/maven-swig-plugin/">SWIG</a><br/>
+          	  <a href="../../freehep-wbxml-plugin/latestRelease/">WBXML</a><br/>
+
+          </td>          
+        </tr>
+      </table> 
+
+	  <table>        
+        <tr>
+          <th>Base</th>          
+        </tr>
+        
+        <table>
+           <tr>
+             <td>
+
+		         <a href="../../freehep-application/latestRelease/">Application Framework</a><br/>
+		         <a href="https://github.com/freehep/freehep-argv/">ArgV</a><br/>
+		         <a href="../../freehep-commanddispatcher/latestRelease/">Command Dispatcher</a><br/>
+
+		     </td>
+             <td>
+
+		         <a href="../../freehep-commandline/latestRelease/">Command Line</a><br/>
+		         <a href="http://freehep.github.io/freehep-io/">I/O</a><br/>
+
+		     </td>
+             <td>
+
+		         <a href="../../freehep-parameterdatabase/latestRelease/">Parameter Database</a><br/>
+		         <a href="../../freehep-record/latestRelease/">Record</a><br/>
+		         <a href="../../freehep-swing/latestRelease/">Swing</a><br/>
+
+		     </td>
+             <td>
+
+		         <a href="../../freehep-util/latestRelease/">Util</a><br/>
+		         <a href="../../freehep-webutil/latestRelease/">Web Util</a><br/>
+		         <a href="../../freehep-xml/latestRelease/">XML</a><br/>
+
+		     </td>
+		   </tr>
+        </table>
+        
+      </table>
+      </subsection>
+
+        <subsection name="General Purpose Components">
+<dl>
+  <dt><a href="../../freehep-application/latestRelease/">Application Framework</a></dt>
+  <dd>
+  A set of classes to build your own Java application with easy setup of
+  menus, plugin capabilities, etc... (see
+  <a href="../../freehep-iconbrowser/latestRelease/index.html">demo</a>)
+  </dd>
+
+  <dt><a href="../../freehep-aid/latestRelease/">AID</a></dt>
+  <dd>
+  A compiler to compile Abstract Interface Definitions into header files and
+  interfaces for different target languages (C++, Java).
+  </dd>
+  
+  <dt><a href="../../jaida-assembly/latestRelease/">JAIDA</a></dt>
+  <dd>
+  The Java reference implementation of AIDA.
+  </dd>
+  
+  <dt><a href="http://freehep.github.io/freehep-io/">I/O</a></dt>
+  <dd>
+  Extensions to Streams and Writers of the java.io package.
+  </dd>
+  
+  <dt><a href="http://freehep.github.io/freehep-psviewer/">PSViewer</a></dt>
+  <dd>
+  A PostScript viewer for separate use or embedding in an application.
+  </dd>
+  
+  <dt><a href="https://github.com/freehep/freehep-vectorgraphics/">Vector Graphics</a></dt>
+  <dd>
+  A Image and Vector Graphics package which enables Java programs to generate
+  image and vector
+  graphics in a variety of formats including PDF, Postscript, EMF, SVG, SWF, PNG,
+  JPEG, etc..., see <a href="../../freehep-exportdemo/latestRelease/index.html">demo</a>)
+  </dd>
+</dl>  
+      </subsection>
+      
+      <subsection name="High Energy Physics Specific Components">
+
+<dl>
+  <dt><a href="http://heprep.freehep.org">HepRep</a></dt>
+  <dd>
+  A Generic Interface
+  Definition for HEP Event Display Representables.
+  </dd>
+
+  <dt><a href="http://aida.freehep.org/">AIDA</a></dt>
+  <dd>
+  Abstract Interfaces for Data Analysis interfaces.
+  </dd>
+
+  <dt>HEPIO, <a href="../../freehep-rootio/latestRelease/">
+  ROOTIO</a></dt>
+  <dd>
+  Various HEP specific IO formats in Java including
+  <a href="http://root.cern.ch">Root</a> and <a href="../../freehep-stdhep/latestRelease/">StdHEP</a> (part of
+  <a href="http://proj-clhep.web.cern.ch/proj-clhep/">CLHEP</a>).
+  </dd>
+</dl>
+        </subsection>
+      
+      <subsection name="Feedback">
+	    <p>
+ 	If you have questions/comments/feedback please send them to: 
+<a href="mailto:developers@freehep.org">developers AT freehep DOT org</a>.
+        </p>
+      </subsection>
+      
+    </section>
+  </body>
+</document>

@@ -1,0 +1,65 @@
+// Copyright 2000-2005, FreeHEP.
+package hep.graphics.heprep;
+
+/**
+ * HepRepAttDef interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepAttDef.aid 8617 2006-08-16 07:39:12Z duns $
+}
+
+interface HepRepAttDef {
+
+    /**
+     * Constructor for the JHepRepAttDef interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepAttDef(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Returns the mixed case name of this attdef.
+     *
+     * @return name.
+     */
+    String getName();
+
+    /**
+     * Returns the lowercased name of this attdef.
+     *
+     * @return lowercased name.
+     */
+    String getLowerCaseName();
+
+    /**
+     * Returns a description of this attdef.
+     *
+     * @return description.
+     */
+    String getDescription();
+
+    /**
+     * Returns category of this attdef.
+     *
+     * @return category.
+     */
+    String getCategory();
+
+    /**
+     * Returns any extra information of this attdef.
+     *
+     * @return extra info.
+     */
+    String getExtra();
+
+    /**
+     * Returns a deep copy of this attdef.
+     *
+     * @return copy of this attdef.
+     * @throws CloneNotSupportedException if copying is not possible.
+     */
+    HepRepAttDef* copy() throws CloneNotSupportedException;
+}

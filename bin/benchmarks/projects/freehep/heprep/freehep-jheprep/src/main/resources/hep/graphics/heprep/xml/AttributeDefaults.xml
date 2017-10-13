@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<heprep version="2.0"
+        xmlns='http://java.freehep.org/schemas/heprep/2.0'
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:schemaLocation='http://java.freehep.org/schemas/heprep/2.0 http://java.freehep.org/schemas/heprep/2.0/HepRep.xsd'>
+
+    <typetree name="defaults" version="1.0">
+        <type name="default">
+
+            <attdef   name="DrawAs"              desc="" category="Draw" extra="" />
+            <attvalue name="DrawAs"              value="Point"           type="String" />
+            <attdef   name="DrawAsOptions"       desc="" category="Draw" extra="" />
+            <attvalue name="DrawAsOptions"       value="Point"           type="String" />
+            <attdef   name="Visibility"          desc="" category="Draw" extra="" />
+            <attvalue name="Visibility"          value="true"            type="boolean" />
+
+        <!-- to be placed correctly ... -->
+            <attdef   name="Label"               desc="" category="Draw" extra="" />
+            <attvalue name="Label"               value=""                type="String" />
+
+        <!-- TextAtts -->
+            <attdef   name="FontName"            desc="" category="Draw" extra="" />
+            <attvalue name="FontName"            value="SansSerif"       type="String" />
+            <attdef   name="FontStyle"           desc="" category="Draw" extra="" />
+            <attvalue name="FontStyle"           value="Plain"           type="String" />
+            <attdef   name="FontSize"            desc="" category="Draw" extra="" />
+            <attvalue name="FontSize"            value="12"              type="int"    />
+            <attdef   name="FontColor"           desc="" category="Draw" extra="" />
+            <attvalue name="FontColor"           value="White"           type="Color"  />
+            <attdef   name="FontHasFrame"        desc="" category="Draw" extra="" />
+            <attvalue name="FontHasFrame"        value="false"           type="boolean"/>
+            <attdef   name="FontFrameColor"      desc="" category="Draw" extra="" />
+            <attvalue name="FontFrameColor"      value="White"           type="Color"  />
+            <attdef   name="FontFrameWidth"      desc="" category="Draw" extra="" />
+            <attvalue name="FontFrameWidth"      value="1"               type="double" />
+            <attdef   name="FontHasBanner"       desc="" category="Draw" extra="" />
+            <attvalue name="FontHasBanner"       value="false"           type="boolean"/>
+            <attdef   name="FontBannerColor"     desc="" category="Draw" extra="" />
+            <attvalue name="FontBannerColor"     value="Black"           type="Color"  />
+
+        <!-- SinglePointAtts -->
+            <attdef   name="Color"               desc="" category="Draw" extra="" />
+            <attvalue name="Color"               value="White"           type="Color"  />
+            <attdef   name="Layer"               desc="" category="Draw" extra="" />
+            <attvalue name="Layer"               value="default"         type="String" />
+            <attdef   name="MarkName"            desc="" category="Draw" extra="" />
+            <attvalue name="MarkName"            value="Circle"          type="String" />
+            <attdef   name="MarkSize"            desc="" category="Draw" extra="" />
+            <attvalue name="MarkSize"            value="5"               type="double" />
+            <attdef   name="MarkSizeMultiplier"  desc="" category="Draw" extra="" />
+            <attvalue name="MarkSizeMultiplier"  value="1"               type="double" />
+            <attdef   name="MarkType"            desc="" category="Draw" extra="" />
+            <attvalue name="MarkType"            value="Symbol"          type="String" />
+<!-- other value for MarkType is "Real" -->
+            <attdef   name="HasFrame"            desc="" category="Draw" extra="" />
+            <attvalue name="HasFrame"            value="true"            type="boolean"/>
+            <attdef   name="FrameColor"          desc="" category="Draw" extra="" />
+            <attvalue name="FrameColor"          value="Black"           type="Color"  />
+            <attdef   name="FrameWidth"          desc="" category="Draw" extra="" />
+            <attvalue name="FrameWidth"          value="1"               type="double" />
+
+        <!-- MultiPointsAtts -->
+            <attdef   name="LineStyle"           desc="" category="Draw" extra="" />
+            <attvalue name="LineStyle"           value="Solid"           type="String" />
+            <attdef   name="LineWidth"           desc="" category="Draw" extra="" />
+            <attvalue name="LineWidth"           value="2"               type="double" />
+            <attdef   name="LineWidthMultiplier" desc="" category="Draw" extra="" />
+            <attvalue name="LineWidthMultiplier" value="1"               type="double" />
+            <attdef   name="LineHasArrow"        desc="" category="Draw" extra="" />
+            <attvalue name="LineHasArrow"        value="None"            type="String"/>
+
+        <!-- FillAtts -->
+            <attdef   name="FillColor"           desc="" category="Draw" extra="" />
+            <attvalue name="FillColor"           value="White"           type="Color"  />
+            <attdef   name="FillType"            desc="" category="Draw" extra="" />
+            <attvalue name="FillType"            value="EvenOdd"         type="String" />
+            <attdef   name="Fill"                desc="" category="Draw" extra="" />
+            <attvalue name="Fill"                value="false"           type="boolean"/>
+
+        <!-- SpecificAtts -->
+            <attdef   name="Radius"              desc="" category="Draw" extra="" />
+            <attvalue name="Radius"              value="5"               type="double" />
+            <attdef   name="Phi"                 desc="" category="Draw" extra="" />
+            <attvalue name="Phi"                 value="0"               type="double" />
+            <attdef   name="Theta"               desc="" category="Draw" extra="" />
+            <attvalue name="Theta"               value="0"               type="double" />
+            <attdef   name="Omega"               desc="" category="Draw" extra="" />
+            <attvalue name="Omega"               value="0"               type="double" />
+            <attdef   name="Radius1"             desc="" category="Draw" extra="" />
+            <attvalue name="Radius1"             value="5"               type="double" />
+            <attdef   name="Radius2"             desc="" category="Draw" extra="" />
+            <attvalue name="Radius2"             value="5"               type="double" />
+            <attdef   name="Radius3"             desc="" category="Draw" extra="" />
+            <attvalue name="Radius3"             value="5"               type="double" />
+            <attdef   name="Curvature"           desc="" category="Draw" extra="" />
+            <attvalue name="Curvature"           value="0.2"             type="double" />
+            <attdef   name="FlyLength"           desc="" category="Draw" extra="" />
+            <attvalue name="FlyLength"           value="10"              type="double" />
+            <attdef   name="Faces"               desc="" category="Draw" extra="" />
+            <attvalue name="Faces"               value="4"               type="int" />
+
+        <!-- 2D TextAtts -->
+            <attdef   name="Text"                desc="" category="Draw" extra="" />
+            <attvalue name="Text"                value=""                type="String" />
+            <attdef   name="HPos"                desc="" category="Draw" extra="" />
+            <attvalue name="HPos"                value="0.0"             type="double" />
+            <attdef   name="VPos"                desc="" category="Draw" extra="" />
+            <attvalue name="VPos"                value="0.5"             type="double" />
+            <attdef   name="HAlign"              desc="" category="Draw" extra="" />
+            <attvalue name="HAlign"              value="Left"            type="String" />
+            <attdef   name="VAlign"              desc="" category="Draw" extra="" />
+            <attvalue name="VAlign"              value="Baseline"        type="String" />
+
+        <!-- PickAtts -->
+            <attdef   name="IsPickable"             desc="" category="PickAction" extra="" />
+            <attvalue name="IsPickable"             value="true"                  type="boolean" />
+            <attdef   name="ShowParentAttributes"   desc="" category="PickAction" extra="" />
+            <attvalue name="ShowParentAttributes"   value="false"                 type="boolean" />
+            <attdef   name="PickParent"             desc="" category="PickAction" extra="" />
+            <attvalue name="PickParent"             value="false"                 type="boolean" />
+            
+        </type>
+    </typetree>
+</heprep>

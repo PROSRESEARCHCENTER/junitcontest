@@ -1,0 +1,55 @@
+    ---
+    Getting Started
+    ---
+    AIDA Team @ SLAC
+    ---
+    ---
+
+Getting Started
+
+    The following are the steps to follow to get you started using JAIDA.
+
+* Get JAIDA Binaries
+
+    In the {{{binary-distribution.html}distribution}} area it is possible to download binaries and docmentation for Windows or Unix 
+environments. Platform specific glue code is also available if you need to open PAW files or perform fits using Minuit. Compiled 
+Java classes are the same for all OS, but platform-specific libraries are installed in different subdirectories. So it is possible 
+to have one centrall installation that is used by multiple OS.
+
+		* Windows
+
+			* Download {{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/jaida-3.3.0-7-bin.zip}jaida-3.3.0-7-bin.zip}} 
+file - it contains compiled Java classes (lib) and setup scripts (bin). Unzip it to the place where you want JAIDA installation to reside.
+
+			* If you need to open PAW files or perform fits using Minuit, download 
+{{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/jaida-3.3.0-7-x86-Windows-msvc.zip}jaida-3.3.0-7-x86-Windows-msvc.zip}} 
+file and unzip it to the same directory - it adds Windows-specific subdirectory to the "lib"
+
+		* Linux
+
+			* Download {{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/jaida-3.3.0-7-bin.tar.gz}jaida-3.3.0-7-bin.tar.gz}} 
+file - it contains compiled Java classes (lib) and setup scripts (bin). Use "gunzip" and "tar -xf" commands to extract the distribution
+
+			* If you need to open PAW files or perform fits using Minuit, download 
+{{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/jaida-3.3.0-7-i386-Linux-g++.tar.gz}jaida-3.3.0-7-i386-Linux-g++.tar.gz}} 
+file and extract its content to the same directory - it adds Linux-specific subdirectory to the "lib"
+
+		* MacOSX
+
+			* Download {{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/jaida-3.3.0-7-bin.tar.gz}jaida-3.3.0-7-bin.tar.gz}} 
+file - it contains compiled Java classes (lib) and setup scripts (bin). Use "gunzip" and "tar -xf" commands to extract the distribution
+
+			* If you need to open PAW files or perform fits using Minuit, download 
+{{{ftp://ftp.slac.stanford.edu/software/freehep/JAIDA/v3.3.0-7/jaida-3.3.0-7-ppc-MacOSX-g++.tar.gz}jaida-3.3.0-7-ppc-MacOSX-g++.tar.gz}} 
+file and extract its content to the same directory - it adds MacOSX-specific subdirectory to the "lib"
+
+* Set the CLASSPATH
+
+    Each distribution has a <bin> directory containing and <aida-setup> script. Running the script will add all the jar files in the <lib>
+directory to your CLASSPATH.
+    
+		* Windows: run "aida-setup.bat" script.
+
+		* Linux and MacOSX: first define JAIDA_HOME environment variable to point to your JAIDA installation,
+then source "aida-setup.sh" or "aida-setup.csh" script, depending on the shell you are using.
+

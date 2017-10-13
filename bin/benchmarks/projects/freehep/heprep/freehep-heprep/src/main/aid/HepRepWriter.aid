@@ -1,0 +1,144 @@
+// Copyright 2002-2005, Freehep.
+
+package hep.graphics.heprep;
+
+/**
+ * HepRepWriter interface.
+ *
+ * @author Mark Donszelmann
+ */
+@cvs {
+ * @version $Id: HepRepWriter.aid 8617 2006-08-16 07:39:12Z duns $
+}
+interface HepRepWriter {
+
+    /**
+     * Constructor for the JHepRepWriter interface.
+     *
+     * @param factory HepRepFactory with which this object was created.
+     * @param obj related Java object.
+     */
+    HepRepWriter(HepRepFactory *factory, jobject obj);
+
+    /**
+     * Adds a property, to be written to the HepRep file when closed.
+     *
+     * @param key
+     * @param value
+     * @throws IOException in case of a stream problem.
+     */
+    void addProperty(String key, String value) throws IOException;
+
+    /**
+     * Closes the writer and its underlying stream.
+     *
+     * @throws IOException in case of a stream problem.
+     */
+    void close() throws IOException;
+
+    /**
+     * Writes a HepRep.
+     *
+     * @param heprep to be written.
+     * @param name for the heprep to be written (for tagged access), may be ommited.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRep* heprep, String name) throws IOException;
+
+    /**
+     * Writes the layerOrder.
+     *
+     * @param layerOrder to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(List<String> layerOrder) throws IOException;
+
+    /**
+     * Writes a HepRepTypeTree.
+     *
+     * @param typeTree to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepTypeTree* typeTree) throws IOException;
+
+    /**
+     * Writes a HepRepType.
+     *
+     * @param type to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepType* type) throws IOException;
+
+    /**
+     * Writes a HepRepTreeID.
+     *
+     * @param treeID to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepTreeID* treeID) throws IOException;
+
+    /**
+     * Writes a HepRepAction.
+     *
+     * @param action to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepAction* action) throws IOException;
+
+    /**
+     * Writes a HepRepInstanceTree.
+     *
+     * @param instanceTree to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepInstanceTree* instanceTree) throws IOException;
+
+    /**
+     * Writes a HepRepInstance.
+     *
+     * @param instance to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepInstance* instance) throws IOException;
+
+    /**
+     * Writes a HepRepPoint.
+     *
+     * @param point to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepPoint* point) throws IOException;
+
+    /**
+     * Writes a HepRepAttribute.
+     *
+     * @param attribute to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepAttribute* attribute) throws IOException;
+
+    /**
+     * Writes a HepRepDefinition.
+     *
+     * @param definition to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepDefinition* definition) throws IOException;
+
+    /**
+     * Writes a HepRepAttValue.
+     *
+     * @param attValue to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepAttValue* attValue) throws IOException;
+
+    /**
+     * Writes a HepRepAttDef.
+     *
+     * @param attDef to be written.
+     * @throws IOException in case of a stream problem.
+     */
+    void write(HepRepAttDef* attDef) throws IOException;
+}
+

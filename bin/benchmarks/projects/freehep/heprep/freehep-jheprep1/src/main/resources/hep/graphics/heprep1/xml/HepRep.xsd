@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- $Id: HepRep.xsd 8617 2006-08-16 07:39:12Z duns $ -->
+<!-- Document Type Definition for the HEPREP Descriptions -->
+
+<xs:schema targetNamespace="http://java.freehep.org/schemas/heprep/1.0" xmlns="http://java.freehep.org/schemas/heprep/1.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation source="http://heprep.freehep.org/">HepRep Version 1 XML Format</xs:documentation>
+  </xs:annotation>
+
+  <xs:complexType name="attdef">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="desc" type="xs:string" />
+    <xs:attribute name="type" type="xs:string" />
+    <xs:attribute name="extra" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="attdef" type="attdef" />
+
+  <xs:complexType name="attvalue">
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="value" type="xs:string" />
+    <xs:attribute name="showLabel" type="xs:int" default="0" />
+  </xs:complexType>
+  <xs:element name="attvalue" type="attvalue" />
+
+  <xs:complexType name="point">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attdef" />
+      <xs:element ref="attvalue" />
+    </xs:choice>
+    <xs:attribute name="x" type="xs:double" />
+    <xs:attribute name="y" type="xs:double" />
+    <xs:attribute name="z" type="xs:double" />
+  </xs:complexType>
+  <xs:element name="point" type="point" />
+
+  <xs:complexType name="primitive">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attdef" />
+      <xs:element ref="attvalue" />
+      <xs:element ref="point" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="primitive" type="primitive" />
+
+  <xs:complexType name="instance">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attdef" />
+      <xs:element ref="attvalue" />
+      <xs:element ref="type" />
+      <xs:element ref="primitive" />
+      <xs:element ref="point" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="instance" type="instance" />
+
+  <xs:complexType name="type">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="attdef" />
+      <xs:element ref="attvalue" />
+      <xs:element ref="instance" />
+      <xs:element ref="type" />
+      <xs:element ref="primitive" />
+      <xs:element ref="point" />
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attribute name="version" type="xs:string" />
+  </xs:complexType>
+  <xs:element name="type" type="type" />
+
+  <xs:element name="heprep">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="attdef" />
+        <xs:element ref="attvalue" />
+        <xs:element ref="type" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

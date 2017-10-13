@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+    <description>The tabs taglib allows to easily add tabs to your web application.</description>
+    <tlib-version>1.1</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>tabs</short-name>
+    <uri>http://java.freehep.org/tabs-taglib</uri>
+    <tag>
+        <name>tabs</name>
+        <tag-class>org.freehep.webutil.tabs.TabsTag</tag-class>
+        <body-content>scriptless</body-content>
+        <description>The container of tabs.</description>
+        <attribute>
+            <description>The name of the container. This name is used to identify the tabs container.
+            If more than one set of tabs are present in a page, the name helps to uniquely identify
+            the selected tab.</description>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>The selected tab by value when the tabs are first loaded. If not provided the selected tab
+            is by default the first one in the list.</description>
+            <name>selectedTabValue</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The href to which the tabs should point to. Each tab can overwrite this value via their
+            "href" attribute. If not provided the default href is the current page.</description>
+            <name>href</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The target for the href attribute.</description>
+            <name>target</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The color of the non-selected tabs. Allowed values are HTML colors.</description> 
+            <name>color</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The page's background color over which the tabs are. This is used by the corner servlet to assign the color to the area
+            passed the rounded corner. The default is white. Allowed values are HTML colors.</description> 
+            <name>bkgColor</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The color of the selected tab. Allowed values are HTML colors.</description> 
+            <name>selectedColor</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The position of the tabs. Allowed values are "top" and "bottom". The default is "top". "top" tabs have the rounded corners on top and are placed
+            on top of the selected text box (or line). "bottom" tabs are on the bottom.</description>
+            <name>position</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>Controls if the achor should be added to the links.</description>
+            <name>addanchor</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <!--
+	<attribute>
+            <description>The alignment of the tabs in the page. Allowd values are "left" and "right". By default it is "left".</description>
+            <name>align</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        -->
+	<attribute>
+            <description>The HTML style-like margin from the selected "alignment". The default is "10px".</description>
+            <name>margin</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The HTML style-like text style used to display the non-selected tab names. The default is "font-family: verdana, arial, sans-serif;color: black;".</description>
+            <name>textstyle</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The HTML style-like text style used to display the selected tab name. The default is "font-family: verdana, arial, sans-serif;color: black;font-weight: bold;".</description>
+            <name>selectedtextstyle</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The name of the JSP variable in which the name of the selected tab should be stored. By default this
+            variable has "page" scope unless otherwise specified via the "scope" attribute. The available scopes are: page, request, session, application.
+            </description>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The scope of the provided "var" attribute. By default it is "page".</description>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>The name of the parameter containing the name of the selected tab. This parameter is passed as part of the response when a tab is selected.</description>
+            <name>param</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+	<attribute>
+            <description>By default set to "false", this attribute should be set if a line should be drawn underneath the tabs with the color of the selected tab.
+            This attribute might be used by users that did not provide any body for the "tab" tags included in this tabs container.</description>
+            <name>showline</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <description>The class id for assigning a user provided style to a set of tabs. This attribute must be
+            used together with the "usestylesheet" attribute.</description>
+            <name>id</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>This attribute should be used only by users that want to provide a style sheet to change
+            the look and feel of the tabs. This attribute must be used together with the "id" attribute. By default
+            this parameter is set to false.</description>            
+            <name>usestylesheet</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>boolean</type>
+        </attribute>
+	<attribute>
+            <description>The url of the servlet.</description>
+            <name>servlet</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description>These tags must be included in a "tabs" tag; they represent the tabs. The body of the selected tab will be displayed with a box around it
+        with the same color of the selected tab. The placement of the box is either above or below the tabs depending on the value of the "position" attribute
+        of the "tabs" tag.</description>
+        <name>tab</name>
+        <tag-class>org.freehep.webutil.tabs.TabTag</tag-class>
+	<body-content>scriptless</body-content>
+	<attribute>
+            <description>The name of the tab. This will appear in the tab itself.</description>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+	<attribute>
+            <description>The value of the tab. If not provided it's the name.</description>
+            <name>value</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+	<attribute>
+            <description>The href this tab should point to. This value overwrites the "href" attribute of the "tabs" tag.</description>
+            <name>href</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+	<attribute>
+            <description>The target for the href attribute.</description>
+            <name>target</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <description>Conveninece tag to draw a box around a body of text. This tag is to be used outside the "tabs" tag. The placement of this box should be
+        assigned by the user, by appropriately placing this tag immediately before or after a "tabs" tag.</description>
+        <name>tabBody</name>
+        <tag-class>org.freehep.webutil.tabs.TabBodyTag</tag-class>
+	<body-content>scriptless</body-content>
+	<attribute>
+            <description>The color of the bounding box. If not specified the "tabs" tag selected tab color is used.</description>
+            <name>color</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

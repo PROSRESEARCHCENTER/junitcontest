@@ -1,0 +1,29 @@
+	---
+FreeHEP ROOTIO
+	---
+	---
+Mark Donszelmann
+	---
+	
+Release Notes
+
+* Known Bugs
+
+  * Root 3.01 introduces TLeafElement and TLeafBranch, but these are not yet
+    fixed.
+
+  * Some bugs have been discovered in the handling of TClonesArray, they are
+    partially but not completely fixed in CVS.
+    
+  []
+  
+* Release Notes
+
+** In SVN but not yet release:
+
+  * Support for cycles added to TDirectory/TFile/TKey</li>
+
+  []
+
+** V 0.2 - Released June 4 2001
+

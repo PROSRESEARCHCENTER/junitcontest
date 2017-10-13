@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright 2005 FreeHEP.
+ * 
+ */
+ -->
+
+<project default="all" xmlns:j="jelly:core">
+
+    <goal name="all" prereqs="jar, nar" />
+
+    <goal name="install"            prereqs="all, jar:install, nar:install" />
+    <goal name="deploy"             prereqs="all, jar:deploy, nar:deploy" />
+
+    <goal name="tog4"               prereqs="all" >
+        <j:if test="${g4install == null}">
+            <fail message="Error: 'g4install' property not set." />        
+        </j:if>
+        
+        <copy todir="${g4install}/source/visualization/HepRep/include/HEPREP" 
+              overwrite="true" 
+              preservelastmodified="true">
+            <fileset dir="src/main/include/HEPREP" >
+                <include name="*.h" />
+            </fileset>
+        </copy>
+        <j:file name="${g4install}/source/visualization/HepRep/include/HEPREP/${pom.artifactId}.version"
+                omitXmlDeclaration="true"
+                trim="false">source = ${pom.artifactId}-${pom.currentVersion}</j:file>
+    </goal>
+
+    <preGoal name="java:compile">
+        <attainGoal name="idlj" />
+        <attainGoal name="aid" />        
+    </preGoal>
+
+</project>

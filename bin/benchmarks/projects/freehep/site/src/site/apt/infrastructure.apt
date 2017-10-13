@@ -1,0 +1,43 @@
+    ---
+FreeHEP Infrastructure
+    ---
+
+FreeHEP Infrastructure
+    
+	Below a list of products in use by FreeHEP and its developers:
+
+* Source Code Management
+    
+        * {{{http://subversion.tigris.org/}Subversion}}
+    
+        * {{{http://sventon.berlios.de/}Sventon}} to browse our {{{http://java.freehep.org/svn/repos/freehep/list/}Subversion repository}}.
+    
+        * {{{http://tortoisesvn.tigris.org/}TortoiseSVN}} see also our {{{./svn.html}Subversion}} page.
+
+        * {{{http://www.lachoseinteractive.net/en/community/subversion/svnx}svnX}} see also our {{{./svn.html}Subversion}} page.
+
+        * {{{http://www.badgers-in-foil.co.uk/projects/cvsspam/}SvnSpam}}
+        
+* Build Tool
+
+		* {{{http://maven.apache.org/}Maven\ 2}} see also our {{{./mvn.html}Maven}} page.
+    
+* Continuous Integration 
+
+		* {{{http://jenkins-ci.org/}Jenkins}} see also our {{{./jenkins.html}Jenkins}} page.
+    
+* Editor 
+
+		* {{{http://www.ultraedit.com/}UltraEdit (Windows)}}
+    
+* Integrated Development Environment (IDE)
+    
+        * {{{http://www.netbeans.org/}NetBeans IDE}} see also our {{{./netbeans.html}NetBeans}} page.
+    
+        * {{{http://www.eclipse.org/}Eclipse}} see also our {{{./eclipse.html}Eclipse}} page.
+
+* Issue Tracking 
+
+		* {{{http://http://www.atlassian.com/software/jira//}JIRA}} see also our {{{https://jira.slac.stanford.edu/browse/FREEHEP}Bugs and Issues}} page.
+    
+    

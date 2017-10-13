@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>global</artifactId>
+        <groupId>org.freehep</groupId>
+        <version>20.7</version>
+        <relativePath />
+    </parent>
+  
+    <groupId>org.freehep</groupId>
+    <artifactId>jaida-pom</artifactId>
+    <version>3.4.14-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>FreeHEP JAIDA POM</name>
+    <description>FreeHEP JAIDA Libraries</description>
+  
+    <repositories>
+        <repository>
+            <id>freehep-maven2-public</id>
+            <name>Maven FreeHEP</name>
+            <url>http://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <site>
+            <id>freehep-site</id>
+            <name>FreeHep Maven2 centreal site repository</name>
+            <url>dav:http://srs.slac.stanford.edu/nexus/content/sites/freehep-site/jaida-pom</url>
+        </site>
+    </distributionManagement>
+
+    <scm>
+        <url>http://java.freehep.org/svn/repos/freehep/list/freehep/trunk/jaida</url>
+        <connection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida</connection>
+        <developerConnection>scm:svn:svn://svn.freehep.org/svn/freehep/trunk/jaida</developerConnection>
+    </scm>
+
+  
+  
+    <properties>
+        <graphics.version>2.3</graphics.version>
+    </properties>
+  
+    <mailingLists>
+        <mailingList>
+            <name>JAIDA/AIDAJNI/AIDA Forum</name>
+            <post>http://java.freehep.org/redirect?project=JAIDA&amp;area=forum</post>
+            <archive />
+        </mailingList>
+        <mailingList>
+            <name>AIDA Mailing List</name>
+            <post>http://aida.freehep.org/mailing_list.thtml</post>
+            <archive />
+        </mailingList>
+    </mailingLists>
+  
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.freehep</groupId>
+                <artifactId>base</artifactId>
+                <version>13.1.5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>hep.aida</groupId>
+                <artifactId>aida-test</artifactId>
+                <version>3.3.0-4</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+  
+    <modules>
+        <module>freehep-jaida</module>
+        <module>freehep-jaida-remote</module>
+        <module>freehep-jaida-root</module>
+        <module>freehep-jaida-jminuit</module>
+        <module>freehep-jaida-xml</module>
+        <module>distributions/freehep-jaida-standard</module>
+    </modules>
+  
+    <profiles>
+        <profile>
+            <id>distrib</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>distributions/freehep-jaida-standard</module>
+            </modules>
+        </profile>
+    </profiles>
+      
+  
+</project>

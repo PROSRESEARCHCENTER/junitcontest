@@ -1,0 +1,12 @@
+    ---
+FreeHEP Continuous Integration
+    ---
+
+FreeHEP Continuous Integration
+    
+	We run Jenkins on all our FreeHEP and WIRED projects. 
+	Jenkins checks every few minutes for changes in the main trunk 
+	revision of subversion. All projects should in principle compile and test.
+	
+	See {{{http://srs.slac.stanford.edu/hudson/view/FreeHEP}FreeHEP Jenkins}} 
+	    
