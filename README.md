@@ -18,7 +18,7 @@ The [FITTEST](http://crest.cs.ucl.ac.uk/fittest/) project, which developed an in
 
 The contest infrastructure has been used in testing contests during yearly events from 2013 till 2017.
 An upcoming event is expected for 2018.
-For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS).
+For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS.md).
 
 # Target
 
