@@ -20,7 +20,7 @@ The contest infrastructure has been used in testing contests during yearly event
 An upcoming event is expected for 2018: check information below
 For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS.md).
 
-# 6th junit contest - Call for pariticpation
+# 6th junit contest - Call for participation
 
 After 5 years of successful junit tools competitions we would like to make you aware of the 6th junit contest to be celebrated in the 11th International SBST workshop [1] to be held in conjunction with ICSE conference [2].
 
