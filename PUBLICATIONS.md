@@ -101,6 +101,7 @@ URL:     http://dl.acm.org/citation.cfm?id=2897021
 Title:   Java Unit Testing Tool Competition — Fifth Round  
 Authors: Annibale Panichella and Urko Rueda  
 URL:     http://ieeexplore.ieee.org/document/7967958/  
+appendix: [detailed results](https://github.com/PROSRESEARCHCENTER/junitcontest/blob/master/publications/SBSTcontest2017_detailed_results.pdf)
 
 Title:   EvoSuite at the SBST 2017 Tool Competition  
 Authors: Gordon Fraser, José Miguel Rojas, José Campos and Andrea Arcuri  
