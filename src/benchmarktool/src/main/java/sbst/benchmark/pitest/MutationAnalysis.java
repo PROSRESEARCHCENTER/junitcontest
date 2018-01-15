@@ -86,8 +86,10 @@ public class MutationAnalysis {
 	 * Add mutation as uncovered/non-killed
 	 * @param mutant mutation being covered
 	 */
-	public void addAliveMutant(MutationDetails mutant){
-		this.killData.put(mutant.getId(), false);
+	public void addAliveMutant(MutationDetails mutant){		
+                Boolean killed = this.killData.get(mutant.getId());
+                if (killed == null || !killed) // if it was killed => ignore
+                        this.killData.put(mutant.getId(), false);		
 	}
 
 	public int getNumberOfMutations(){
