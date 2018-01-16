@@ -162,8 +162,12 @@ public class MutationAnalysis {
 					killingTests.remove(flaky_test);
 			}
 
-			if (killingTests.size() == 0)
-				this.killData.put(id, false);
+                        if (killingTests.size() == 0){
+                                //this.killData.put(id, false);
+                                MutationDetails detail = this.generatedMutants.getMutantionDetails(id);
+                                this.addAliveMutant(detail);
+                        }
+			
 		}
 	}
 
