@@ -67,35 +67,40 @@ public class TestExec4MutationTask  implements Callable<MutationResults>{
 				if (test.startsWith("testcases."))
 					test = test.replaceFirst("testcases.", "");
 
-				// load the test case
-				final Class<?> testClass = cl.loadClass(test);
+				try {
+					// load the test case
+					final Class<?> testClass = cl.loadClass(test);
 
-				// Here we execute our test target class through its Runnable interface:
-				JUnitCore junit = new JUnitCore();
-				Result result = junit.run(testClass);
+					// Here we execute our test target class through its Runnable interface:
+					JUnitCore junit = new JUnitCore();
+					Result result = junit.run(testClass);
 
-				results.addJUnitResult(result);
+					results.addJUnitResult(result);
 
-				// a failure here means that the mutation in the CUT
-				// is covered. Then, we don't need to run the remaining tests
-				if (result.getFailures().size() > 0) {
-					for (Failure fail : result.getFailures()){
-						String header = fail.getTestHeader();
+					// a failure here means that the mutation in the CUT
+					// is covered. Then, we don't need to run the remaining tests
+					if (result.getFailures().size() > 0) {
+						for (Failure fail : result.getFailures()){
+							String header = fail.getTestHeader();
 
-						if (header.contains("(")){
-							String testMethod = header.substring(0, header.indexOf('('));
-							String tc = header.substring(header.indexOf('(')+1, header.length());
-							TestInfo info = new TestInfo(tc, testMethod);
-							if (!this.flakyTests.contains(info))
-								break;
+							if (header.contains("(")){
+								String testMethod = header.substring(0, header.indexOf('('));
+								String tc = header.substring(header.indexOf('(')+1, header.length());
+								TestInfo info = new TestInfo(tc, testMethod);
+								if (!this.flakyTests.contains(info))
+									break;
+							}
 						}
 					}
-				}
 
-				//Main.debug("Failure: "+result.getFailures());
-				//for (Failure fail : result.getFailures()){
-				//	Main.debug("Failing Tests: "+fail.getTestHeader()+"\n"+fail.getException()+"\n"+fail.getDescription()+"\n"+fail.getMessage());
-				//}
+					//Main.debug("Failure: "+result.getFailures());
+					//for (Failure fail : result.getFailures()){
+					//	Main.debug("Failing Tests: "+fail.getTestHeader()+"\n"+fail.getException()+"\n"+fail.getDescription()+"\n"+fail.getMessage());
+					//}
+				} catch (Exception e){
+					Main.debug("Exception running mutation task with test class: " + test);
+					e.printStackTrace(Main.debugStr);
+				}				
 			}
 			Main.debug("Executions terminated");
 			cl.close();
