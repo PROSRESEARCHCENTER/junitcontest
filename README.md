@@ -20,17 +20,16 @@ The contest infrastructure has been used in testing contests during yearly event
 An upcoming event is expected for 2018: check information below
 For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS.md).
 
-# 6th junit contest - Call for participation
+# 6th junit contest - in progress
 
-After 5 years of successful junit tools competitions we would like to make you aware of the 6th junit contest to be celebrated in the 11th International SBST workshop [1] to be held in conjunction with ICSE conference [2].
+After 5 years of successful junit tools competitions its time for the 6th round to be celebrated in the 11th International SBST workshop [1] to be held in conjunction with ICSE conference [2].
 
-We kindly invite you to participate in the contest with a tool that automatically generates test cases (JUnit4 format) for Java programs at the class level. You can find details about the contest benchmark infrastructure, and also about the tool requirements, in this public repository.
+The call for participation is now closed, but do not hesitate making contact if you would like to contribute with a junit tool. We are happy to assist you preparing your tool for the contest. Any tool that automatically generates test cases (JUnit4 format) for Java programs at the class level. You can find details about the contest benchmark infrastructure, and also about the tool requirements, in this public repository.
 
-We are happy to assist you preparing your tool for the contest.
-Do not hesitate contacting us for further clarifications: urueda @ pros.upv.es
-
-Best regards,
-	The SBST2018 6th junit Tool Competition Committee
+Important dates:
+* Tool set up (runtool script and libs): ready due **26th January**
+* Competition: contest finished and data available due **9th February**
+* Contest reports: submissions due **16th February**
 	
 [1] SBST2018 - 11th International Workshop on Search-Based Software Testing, May 28-29 2018
 http://software.imdea.org/sbst18/
