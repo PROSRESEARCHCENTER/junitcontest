@@ -33,6 +33,12 @@ for f in `find $RESULTS_DIR -name '*-*_*'`; do
 	echo "Folder $f was found"
 	FOLDER_NAME=`basename $f`
 	echo "FolderName=$FOLDER_NAME"
+	
+	if [ -d $RESULTS_DIR/$FOLDER_NAME/metrics ]; then
+		echo "metrics folder for $FOLDER_NAME already exists. Skipping"
+		continue
+	fi	
+	
 	oldIFS="$IFS"
 	set -- "$FOLDER_NAME"
 	IFS="_"; declare -a Array=($*)
