@@ -45,7 +45,15 @@ for f in `find $RESULTS_DIR -name '*-*_*'`; do
 	echo "RUN_ID=$RUN_ID"
 	IFS=$oldIFS
 
-	mv $RESULTS_DIR/$SUT_ID\_$RUN_FROM $RESULTS_DIR/$SUT_ID\_$RUN_TO
+	if [[ $RUN_ID == $RUN_FROM && $RUN_TO != $RUN_FROM ]]
+	then
+		mv $RESULTS_DIR/$SUT_ID\_$RUN_FROM $RESULTS_DIR/$SUT_ID\_$RUN_TO
+		RUN_ID=$RUN_TO
+        fi
+
+	# verify that the transcript files got the correct run number
+	sed -i -E "s/^($TOOLNAME,$SUT_ID,[^,]*),[^,]*,(.*)$/\1,$RUN_ID,\2/" $RESULTS_DIR/$SUT_ID\_$RUN_ID/transcript.csv
+	sed -i -E "s/^($TOOLNAME,$SUT_ID,[^,]*),[^,]*,(.*)$/\1,$RUN_ID,\2/" $RESULTS_DIR/$SUT_ID\_$RUN_ID/metrics/transcript.csv
 
 	echo "Processing of folder $f has finished"
 done
