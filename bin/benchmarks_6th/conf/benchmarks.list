@@ -1,0 +1,710 @@
+{
+FASTJSON-1=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.JSONLexerBase
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-2=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.util.TypeUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-3=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.DefaultJSONParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-4=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.JSONArray
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-5=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.util.JavaBeanInfo
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-6=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.DateCodec
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-7=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.util.IOUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-8=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.JSONReaderScanner
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-9=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.util.ASMUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+FASTJSON-10=
+{
+  src=/var/benchmarks/projects/fastjson/src/main/java
+  bin=/var/benchmarks/projects/fastjson/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.StringCodec
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/classes
+  )
+}
+ZXING-1=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.qrcode.detector.FinderPatternFinder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-2=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.pdf417.decoder.PDF417ScanningDecoder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-3=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.common.StringUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-4=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.client.result.ResultParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-5=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.qrcode.encoder.MatrixUtil
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-6=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.datamatrix.decoder.BitMatrixParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-7=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.pdf417.decoder.ec.ModulusPoly
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-8=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.maxicode.decoder.DecodedBitStreamParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-9=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.oned.CodaBarWriter
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+ZXING-10=
+{
+  src=/var/benchmarks/projects/zxing/core/src/main/java
+  bin=/var/benchmarks/projects/zxing/core/target/classes
+  classes=(
+    com.google.zxing.qrcode.encoder.Encoder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/zxing/core/target/classes
+  )
+}
+DUBBO-2=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.utils.ReflectUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-3=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.utils.StringUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-4=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.utils.ClassHelper
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-5=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.io.UnsafeByteArrayOutputStream
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-6=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.utils.CompatibleTypeUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-7=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.beanutil.JavaBeanDescriptor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-8=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.Parameters
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-9=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.io.Bytes
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+DUBBO-10=
+{
+  src=/var/benchmarks/projects/dubbo/dubbo-common/src/main/java
+  bin=/var/benchmarks/projects/dubbo/dubbo-common/target/classes
+  classes=(
+    com.alibaba.dubbo.common.bytecode.Wrapper
+  )
+
+  classpath=(
+    /var/benchmarks/projects/dubbo/dubbo-common/target/classes,/var/benchmarks/projects/dubbo/dubbo-cluster/target/dubbo-cluster-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-log4j/target/dubbo-container-log4j-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-logback/target/dubbo-container-logback-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-container/dubbo-container-spring/target/dubbo-container-spring-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-api/target/dubbo-demo-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-consumer/target/dubbo-demo-consumer-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-demo/dubbo-demo-provider/target/dubbo-demo-provider-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-cache/target/dubbo-filter-cache-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-filter/dubbo-filter-validation/target/dubbo-filter-validation-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-api/target/dubbo-monitor-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-monitor/dubbo-monitor-default/target/dubbo-monitor-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-plugin/dubbo-qos/target/dubbo-qos-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-api/target/dubbo-registry-api-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-default/target/dubbo-registry-default-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-multicast/target/dubbo-registry-multicast-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-redis/target/dubbo-registry-redis-2.6.1.jar,/var/benchmarks/projects/dubbo/dubbo-registry/dubbo-registry-zookeeper/target/dubbo-registry-zookeeper-2.6.1.jar,/var/benchmarks/projects/dubbo/hessian-lite/target/hessian-lite-3.2.1-fixed-2.jar
+  )
+}
+JSOUP-1=
+{
+  src=/var/benchmarks/projects/jsoup/src/main/java
+  bin=/var/benchmarks/projects/jsoup/target/classes
+  classes=(
+    org.jsoup.parser.TokenQueue
+  )
+
+  classpath=(
+    /var/benchmarks/projects/jsoup/target/classes
+  )
+}
+JSOUP-2=
+{
+  src=/var/benchmarks/projects/jsoup/src/main/java
+  bin=/var/benchmarks/projects/jsoup/target/classes
+  classes=(
+    org.jsoup.select.QueryParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/jsoup/target/classes
+  )
+}
+JSOUP-3=
+{
+  src=/var/benchmarks/projects/jsoup/src/main/java
+  bin=/var/benchmarks/projects/jsoup/target/classes
+  classes=(
+    org.jsoup.helper.DataUtil
+  )
+
+  classpath=(
+    /var/benchmarks/projects/jsoup/target/classes
+  )
+}
+JSOUP-4=
+{
+  src=/var/benchmarks/projects/jsoup/src/main/java
+  bin=/var/benchmarks/projects/jsoup/target/classes
+  classes=(
+    org.jsoup.parser.Parser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/jsoup/target/classes
+  )
+}
+JSOUP-5=
+{
+  src=/var/benchmarks/projects/jsoup/src/main/java
+  bin=/var/benchmarks/projects/jsoup/target/classes
+  classes=(
+    org.jsoup.parser.Tokeniser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/jsoup/target/classes
+  )
+}
+WEBMAGIC-1=
+{
+  src=/var/benchmarks/projects/webmagic/webmagic-extension/src/main/java
+  bin=/var/benchmarks/projects/webmagic/webmagic-extension/target/classes
+  classes=(
+    us.codecraft.webmagic.model.PageModelExtractor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/webmagic/webmagic-extension/target/classes,/var/benchmarks/projects/webmagic/webmagic-core/target/webmagic-core-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-samples/target/webmagic-samples-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-saxon/target/webmagic-saxon-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-scripts/target/webmagic-scripts-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-selenium/target/webmagic-selenium-0.7.3.jar
+  )
+}
+WEBMAGIC-2=
+{
+  src=/var/benchmarks/projects/webmagic/webmagic-core/src/main/java
+  bin=/var/benchmarks/projects/webmagic/webmagic-core/target/classes
+  classes=(
+    us.codecraft.webmagic.Spider
+  )
+
+  classpath=(
+    /var/benchmarks/projects/webmagic/webmagic-core/target/classes,/var/benchmarks/projects/webmagic/webmagic-extension/target/webmagic-extension-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-samples/target/webmagic-samples-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-saxon/target/webmagic-saxon-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-scripts/target/webmagic-scripts-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-selenium/target/webmagic-selenium-0.7.3.jar
+  )
+}
+WEBMAGIC-3=
+{
+  src=/var/benchmarks/projects/webmagic/webmagic-core/src/main/java
+  bin=/var/benchmarks/projects/webmagic/webmagic-core/target/classes
+  classes=(
+    us.codecraft.webmagic.Site
+  )
+
+  classpath=(
+    /var/benchmarks/projects/webmagic/webmagic-core/target/classes,/var/benchmarks/projects/webmagic/webmagic-extension/target/webmagic-extension-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-samples/target/webmagic-samples-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-saxon/target/webmagic-saxon-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-scripts/target/webmagic-scripts-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-selenium/target/webmagic-selenium-0.7.3.jar
+  )
+}
+WEBMAGIC-4=
+{
+  src=/var/benchmarks/projects/webmagic/webmagic-core/src/main/java
+  bin=/var/benchmarks/projects/webmagic/webmagic-core/target/classes
+  classes=(
+    us.codecraft.webmagic.Page
+  )
+
+  classpath=(
+    /var/benchmarks/projects/webmagic/webmagic-core/target/classes,/var/benchmarks/projects/webmagic/webmagic-extension/target/webmagic-extension-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-samples/target/webmagic-samples-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-saxon/target/webmagic-saxon-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-scripts/target/webmagic-scripts-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-selenium/target/webmagic-selenium-0.7.3.jar
+  )
+}
+WEBMAGIC-5=
+{
+  src=/var/benchmarks/projects/webmagic/webmagic-extension/src/main/java
+  bin=/var/benchmarks/projects/webmagic/webmagic-extension/target/classes
+  classes=(
+    us.codecraft.webmagic.utils.DoubleKeyMap
+  )
+
+  classpath=(
+    /var/benchmarks/projects/webmagic/webmagic-extension/target/classes,/var/benchmarks/projects/webmagic/webmagic-core/target/webmagic-core-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-samples/target/webmagic-samples-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-saxon/target/webmagic-saxon-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-scripts/target/webmagic-scripts-0.7.3.jar,/var/benchmarks/projects/webmagic/webmagic-selenium/target/webmagic-selenium-0.7.3.jar
+  )
+}
+OKIO-1=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.Buffer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-2=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+   okio.ByteString
+  )
+
+  classpath=(
+  /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-3=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.SegmentedByteString
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-4=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.RealBufferedSource
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-5=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.RealBufferedSink
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-6=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.Okio
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-7=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.Segment
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-8=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.AsyncTimeout
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-9=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.Utf8
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+OKIO-10=
+{
+  src=/var/benchmarks/projects/okio/okio/src/main/java
+  bin=/var/benchmarks/projects/okio/okio/target/classes
+  classes=(
+    okio.Timeout
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/okio/target/classes,/var/benchmarks/projects/okio/samples/target/samples-1.14.0-SNAPSHOT.jar
+  )
+}
+REDISSON-1=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.RedissonSetMultimapValues
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-2=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.RedissonQueue
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-3=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.jcache.JCacheManager
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-4=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.RedissonSetMultimap
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-5=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.RedissonBloomFilter
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-6=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.reactive.RedissonMapReactive
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-7=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.RedissonBaseMapIterator
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-8=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+    org.redisson.jcache.JCachingProvider
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-9=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+   org.redisson.cluster.ClusterPartition
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+REDISSON-10=
+{
+  src=/var/benchmarks/projects/redisson/redisson/src/main/java
+  bin=/var/benchmarks/projects/redisson/redisson/target/classes
+  classes=(
+   org.redisson.config.Config
+  )
+
+  classpath=(
+   /var/benchmarks/projects/redisson/redisson/target/classes,/var/benchmarks/projects/redisson/redisson-all/target/redisson-all-2.11.1-SNAPSHOT.jar
+  )
+}
+}
