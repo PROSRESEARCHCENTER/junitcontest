@@ -20,11 +20,12 @@ The contest infrastructure has been used in testing contests during yearly event
 An upcoming event is expected for 2018: check information below
 For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS.md).
 
-# 6th junit contest - in progress
+# 6th junit contest - finished
 
 After 5 years of successful junit tools competitions its time for the 6th round to be celebrated in the 11th International SBST workshop [1] to be held in conjunction with ICSE conference [2].
 
-The call for participation is now closed, but do not hesitate making contact if you would like to contribute with a junit tool. We are happy to assist you preparing your tool for the contest. Any tool that automatically generates test cases (JUnit4 format) for Java programs at the class level. You can find details about the contest benchmark infrastructure, and also about the tool requirements, in this public repository.
+The competition is now closed, but do not hesitate making contact if you would like to contribute with a junit tool.
+We are happy to assist you preparing your tool for the future contests. Any tool that automatically generates test cases (JUnit4 format) for Java programs at the class level. You can find details about the contest benchmark infrastructure, and also about the tool requirements, in this public repository.
 
 Important dates:
 * Tool set up (runtool script and libs): ready due **26th January**
