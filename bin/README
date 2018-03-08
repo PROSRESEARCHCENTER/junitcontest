@@ -1,8 +1,8 @@
 Contest infrastructure
 ----------------------
-- scripts:    copy contents to /usr/local/bin
-- lib:        copy contents to /usr/local/bin/lib
-- benchmarks: copy contents to /var/benchmarks
+- scripts:            copy contents to /usr/local/bin
+- lib:                copy contents to /usr/local/bin/lib
+- benchmarks_edition: copy contents of a particular edition (e.g. 6th) to /var/benchmarks
 
 Contest runtime requirements
 ----------------------------
