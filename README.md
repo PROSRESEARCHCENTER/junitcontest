@@ -16,28 +16,27 @@ The [FITTEST](http://crest.cs.ucl.ac.uk/fittest/) project, which developed an in
   Universitat Politècnica de València ([UPV](http://www.upv.es/))<br />
   Camino de Vera s/n, 46022 Valencia (Spain)<br />
 
-The contest infrastructure has been used in testing contests during yearly events from 2013 till 2017.
-An upcoming event is expected for 2018: check information below
-For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS.md).
+# Status
 
-# 6th junit contest - finished
+The contest infrastructure has been used in testing contests during yearly events from 2013 till 2017 (check the [Acknowledgements](ACKNOWLEDGEMENTS) and [Publications](PUBLICATIONS.md)).
 
-After 5 years of successful junit tools competitions its time for the 6th round to be celebrated in the 11th International SBST workshop [1] to be held in conjunction with ICSE conference [2].
+The latest event happened in February 2018: the 6th round of the junit contest series, which will be celebrated in the 11th International SBST workshop [1] held in conjunction with ICSE conference [2]:
+* [1] SBST2018 - 11th International Workshop on Search-Based Software Testing, May 28-29 2018
+    * URL: http://software.imdea.org/sbst18/
+    * Contest Committee
+        * Urko Rueda Molina (Chair), Universitat Politècnica de València
+        * Fitsum Kifetew (co-Chair), Fondazione Bruno Kessler
+        * Annibale Panichella, University of Luxembourg and Delft University of Technology
+    * Important dates:
+        * Tool set up (runtool script and libs): ready due **26th January**
+        * Competition: contest finished and data available due **9th February**
+        * Contest reports: submissions due **16th February**
+* [2] ICSE2018 - 40th International Conference on Software Engineering, May 27 - 3 June 2018, Gothenburg, Sweden https://www.icse2018.org/
 
-The competition is now closed, but do not hesitate making contact if you would like to contribute with a junit tool.
-We are happy to assist you preparing your tool for the future contests. Any tool that automatically generates test cases (JUnit4 format) for Java programs at the class level. You can find details about the contest benchmark infrastructure, and also about the tool requirements, in this public repository.
+The next contest event is scheduled to be organised for 2019, which will be chaired by Fitsum Kifetew from [Fondazione Bruno Kessler](https://www.fbk.eu/en/).
 
-Important dates:
-* Tool set up (runtool script and libs): ready due **26th January**
-* Competition: contest finished and data available due **9th February**
-* Contest reports: submissions due **16th February**
+The junit tools competition is now **closed**, but do not hesitate making contact if you would like to contribute with a junit tool at any time. We are happy to assist you preparing your tool for the future contests. Any tool that automatically generates test cases (JUnit4 format) for Java programs at the class level. You can find details about the contest benchmark infrastructure, and also about the tool requirements, in this public repository.
 	
-[1] SBST2018 - 11th International Workshop on Search-Based Software Testing, May 28-29 2018
-http://software.imdea.org/sbst18/
-
-[2] ICSE2018 - 40th International Conference on Software Engineering, May 27 - 3 June 2018, Gothenburg, Sweden
-https://www.icse2018.org/
-
 # Target
 
 Linux (Ubuntu x64)
@@ -54,3 +53,6 @@ Java8 (JDK):
 ```shell-script
 apt-get install default-jdk
 ```
+# Further information
+
+For more information see [DETAILS](/DETAILS) and [PUBLICATIONS](/PUBLICATIONS.md).
