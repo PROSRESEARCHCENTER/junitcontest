@@ -1,3 +1,0 @@
-AID
-- include HEPREP/HepRepConstants missing in HepRepAttribute.h
-- add const and use references in HepRep like in AIDA

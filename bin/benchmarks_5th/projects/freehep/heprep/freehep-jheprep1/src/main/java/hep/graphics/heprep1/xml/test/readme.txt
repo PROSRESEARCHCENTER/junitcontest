@@ -1,2 +1,0 @@
-- There seems to be no way to locate the Schema file, therefore validation is turned off.
-- No internal schema is generated for the files!
