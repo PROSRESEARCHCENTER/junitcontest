@@ -1,0 +1,5 @@
+How-to uncompress:
+	unzip *.zip
+exception:
+	cat zxing.z01 zxing.z02 zxing.zip > zxing_joined.zip
+        unzip zxing_joined.zip
