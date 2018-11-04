@@ -1,6 +1,8 @@
 # junitcontest
 junit tools contest infrastructure
 
+Details about the 2019 edition coming soon ... <br /><br />
+
 # About
 
 This is the source code for the contest infrastructure for junit testing tools.
