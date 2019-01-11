@@ -3,6 +3,11 @@
 The seventh edition of the tool contest, held at the SBST workshop co-located with ICSE'19, May 26-27 2019, Montreal, Canada.
 Here you will find the source code to the contest infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition.
 
+# Important dates
+- The tool submission: February 15
+- Benchmark results communicated to authors: February 28
+- Authors submit camera ready paper: March 15
+
 # Try it via Docker
 For easier access and use, this year we have dockerized the contest infrastructure. Here are the instructions for testing your tool via docker:
 ## Prerequisites:
@@ -107,7 +112,7 @@ The [FITTEST](http://crest.cs.ucl.ac.uk/fittest/) project, which developed an in
   Universitat Politècnica de València ([UPV](http://www.upv.es/))
   Camino de Vera s/n, 46022 Valencia (Spain)
 
-The contest infrastructure has been used in testing contests during yearly events from 2013 till 2017 (check the [Acknowledgements](ACKNOWLEDGEMENTS) and [Publications](PUBLICATIONS.md)).
+The contest infrastructure has been used in testing contests during yearly events from 2013 till 2017 (check the [Acknowledgements](ACKNOWLEDGEMENTS.md) and [Publications](PUBLICATIONS.md)).
 
 The latest edition was in February 2018: the 6th round of the junit contest series, which was celebrated at the 11th International SBST workshop [1] held in conjunction with the ICSE conference [2]:
 * [1] SBST2018 - 11th International Workshop on Search-Based Software Testing, May 28-29 2018
