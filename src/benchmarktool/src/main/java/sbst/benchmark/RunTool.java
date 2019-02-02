@@ -134,8 +134,9 @@ public class RunTool {
 				channel.emit(timeBudget);
 
 			if (generateTests) {
+				Util.cleanDirectory(testcases);
 				for (String cname : task.getClassNames()) {
-					Util.cleanDirectory(testcases);
+				
 					Main.info("\n\n### CLASS UNDER TEST ###: " + cname);
 					channel.emit(cname);
 					listener.startClass(cname);
