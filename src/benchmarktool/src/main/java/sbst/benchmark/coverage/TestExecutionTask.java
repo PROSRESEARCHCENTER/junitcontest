@@ -31,7 +31,7 @@ public class TestExecutionTask  implements Callable<List<Result>>{
 
 	private URL[] urls;
 	private List<String> testClasses;
-	private List<Result> results = new ArrayList<Result>();
+	private List<Result> results = new ArrayList<>();
 
 	public TestExecutionTask(String cp, List<String> pTestClasses){
 		try {
@@ -75,8 +75,20 @@ public class TestExecutionTask  implements Callable<List<Result>>{
 				//}
 			}
 			Main.debug("Executions terminated");
-			cl.close();
-			return results;
+			try {
+                cl.close();
+            } catch(SecurityException ex) {
+			    // Print an error message and continue. Exception occurred due to wrong configuration of the JVM security policy.
+                Main.info("Was unable to close the URLClassLoader after execution of the tests due to security policy!");
+                ex.printStackTrace();
+                Main.info("Will continue execution");
+            } catch(IOException ex){
+			    // Print an error message and continue. Remaining opened files will be closed at the exit of the application.
+                Main.info("An exception occurred during closing of the URLClassLoader!");
+                ex.printStackTrace();
+                Main.info("Will continue execution");
+            }
+            return results;
 	}
 
 	/**
