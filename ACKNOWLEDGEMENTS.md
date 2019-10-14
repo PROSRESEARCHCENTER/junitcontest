@@ -1,4 +1,9 @@
-### junit contests organisation:
+### Organization
+
+* 2019 7th contest: [Contest Committee](https://sbst19.github.io/tools/)
+    * Fitsum Kifetew (Chair), Fondazione Bruno Kessler
+    * Xavier Devroey (co-Chair), Delft University of Technology, Netherlands
+    * Urko Rueda Molina, Universitat Politècnica de València, Spain
 * 2018 6th contest: [Contest Committee](http://software.imdea.org/sbst18/committees.html)
     * Urko Rueda Molina (Chair), Universitat Politècnica de València
     * Fitsum Kifetew (co-Chair), Fondazione Bruno Kessler
@@ -9,15 +14,20 @@
 * 2014 2nd contest: Tanja E. J. Vos and Sebastian Bauersfeld
 * 2013 1st contest: Tanja E. J. Vos, Arthur Baars, Sebastian Bauersfeld and Nelly Condori
 
-### junit contest infrastructure contributors:
-* 2018 6th contest: Urko Rueda Molina, Fitsum Kifetew and Annibale Panichella
-* 2017 5th contest: Annibale Panichella and Urko Rueda (statistical analyses, no Defects4J)
-* 2016 4th contest: Juan Galeotti, Urko Rueda and Rene Just (time budgets and Defects4J integration)
-* 2015 3rd contest: Urko Rueda (contest automation)
-* 2014 2nd contest: Sebastian Bauersfeld (Sebastian Bauersfeld, Peter Kruse and Kiran Lakhotia: handmade tests development for contest benchmarks)
-* 2013 1st contest: Arthur Baars and Urko Rueda (first version)
+### Contributors
 
-### junit tools participants and contest infrastructure feedback providers:
+* Arthur Baars
+* Sebastian Bauersfeld
+* Matteo Biagiola
+* Xavier Devroey
+* Juan Galeotti
+* Rene Just
+* Fitsum Kifetew
+* Annibale Panichella
+* Urko Rueda Molina
+
+### Support and feedback
+
 * Gordon Fraser and Andrea Arcuri: EvoSuite tool
 * Wishnu Prasetya: T2 and T3 tools
 * Mainul Islam and Christoph Csallner: Dsc tool

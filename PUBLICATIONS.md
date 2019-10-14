@@ -1,4 +1,26 @@
-The junit contest infrastructure has resulted in the following papers:
+
+# 7th contest 2019
+* https://sbst19.github.io/tools/
+* 12th International Workshop on Search-Based Software Testing (SBST)
+* 28th May 2018, Montreal (Canada)
+* Held in conjunction with [ICSE 2019](https://conf.researchr.org/home/icse-2019) - 41th International Conference on Software Engineering, 25th-31th May 2019, Montreal (Canada)
+
+Title:    Java Unit Testing Tool Competition - Seventh Round  
+Authors:  Fitsum Kifetew, Xavier Devroey and Urko Rueda Molina
+URL:      https://dl.acm.org/citation.cfm?id=3340884
+appendix: [detailed results](https://github.com/PROSRESEARCHCENTER/junitcontest/blob/master/publications/SBSTcontest2019_detailed_results.pdf)  
+
+Title:    Random testing with austere budgeting in T3: benchmarking at SBST2019 testing tool contest
+Authors:  I. S. W. B. Prasetya  
+URL:      https://dl.acm.org/citation.cfm?id=3340885
+
+Title:    SUSHI and TARDIS at the SBST2019 tool competition
+Authors:  Pietro Braione and Giovanni Denaro
+URL:      https://dl.acm.org/citation.cfm?id=3340887
+
+Title:    EvoSuite at the SBST 2019 tool competition
+Authors:  José Campos, Annibale Panichella and Gordon Fraser
+URL:      https://dl.acm.org/citation.cfm?id=3340888
 
 # 6th contest 2018
 * http://software.imdea.org/sbst18/
@@ -23,7 +45,7 @@ URL:      https://dl.acm.org/citation.cfm?id=3194729
 * http://sbst2017.lafhis.dc.uba.ar/
 * 10th International Workshop on Search-Based Software Testing (SBST)
 * 22th May 2017, Buenos Aires (Argentina)
-* Held in conjunction with ICSE 2017 - ACM/IEEE International Conference on Software Engineering	
+* Held in conjunction with ICSE 2017 - ACM/IEEE International Conference on Software Engineering
 
 Title:    Java Unit Testing Tool Competition — Fifth Round  
 Authors:  Annibale Panichella and Urko Rueda  
