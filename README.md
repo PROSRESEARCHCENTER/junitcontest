@@ -1,16 +1,22 @@
 # JUnit Tool Contest Infrastructure
 
-The seventh edition of the tool contest, held at the SBST workshop co-located with ICSE'19, May 26-27 2019, Montreal, Canada.
+The JUnit tool contest is held at the SBST workshop co-located with ICSE.
 Here you will find the source code to the contest infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition.
 
 # Important dates
-- The tool submission: February 15
-- Benchmark results communicated to authors: February 28
-- Authors submit camera ready paper: March 15
+
+Definitive dates will be announce upon acceptance of the workshop at ICSE'20. Here are the planned periods:
+
+- Tool submission: early February
+- Benchmark results communicated to authors: mid February
+- Authors submit camera ready paper: mid March
 
 # Try it via Docker
+
 For easier access and use, this year we have dockerized the contest infrastructure. Here are the instructions for testing your tool via docker:
+
 ## Prerequisites:
+
 Install the docker software on your machine. Docker is available for Linux, Mac and Windows. For installation please follow the instructions for your operating system:
 - Windows: https://docs.docker.com/docker-for-windows/install/
 - Mac: https://docs.docker.com/docker-for-mac/install/
