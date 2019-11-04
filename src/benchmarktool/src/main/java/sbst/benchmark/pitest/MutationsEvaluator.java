@@ -18,10 +18,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -41,7 +39,16 @@ import sbst.benchmark.coverage.JacocoResult;
 
 public class MutationsEvaluator {
 
-	private static final int MAX_THREAD = 1;
+	public static final int MAX_THREAD;
+    static {
+        int parallelism = 1;
+        try{
+            parallelism = Integer.parseInt(System.getProperty("sbst.benchmark.parallelism", "1"));
+        } catch( NumberFormatException nfe ){
+            // Ignore this
+        }
+        MAX_THREAD = parallelism;
+    }
 
 	private static final long GLOBAL_TIMEOUT = 300000; // global timeout for mutation analysis
 
