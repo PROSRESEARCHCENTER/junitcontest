@@ -29,8 +29,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import javax.management.RuntimeErrorException;
-
 import org.apache.commons.io.FileUtils;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -42,8 +40,17 @@ import sbst.benchmark.coverage.JacocoResult;
 
 public class MutationsEvaluator {
 
-    private static final int MAX_THREAD = 1;
-
+    public static final int MAX_THREAD;
+    static {
+        int parallelism = 1;
+        try{
+            parallelism = Integer.parseInt(System.getProperty("sbst.benchmark.parallelism", "1"));
+        } catch( NumberFormatException nfe ){
+            // Ignore this
+        }
+        MAX_THREAD = parallelism;
+    }
+    
     private static final long GLOBAL_TIMEOUT = 300000; // global timeout for
                                                        // mutation analysis
 
