@@ -77,6 +77,7 @@ public class MutationAnalysis {
 	 * @param mutant mutation being covered
 	 */
 	public void addKilledMutant(MutationDetails mutant, TestInfo info){
+	    Main.info("* Killed mutant " + mutant );
 		this.killData.put(mutant.getId(), true);
 		if (this.coveringTests.containsKey(mutant.getId())){
 			// if the list already exists
@@ -90,6 +91,7 @@ public class MutationAnalysis {
 	}
 	
     public void addIgnoreMutant(MutationDetails mutant) {
+        Main.info("* Ignored mutant " + mutant );
         this.ignoredMutants.add(mutant.getId());
     }
 
@@ -97,7 +99,8 @@ public class MutationAnalysis {
 	 * Add mutation as uncovered/non-killed
 	 * @param mutant mutation being covered
 	 */
-	public void addAliveMutant(MutationDetails mutant){		
+	public void addAliveMutant(MutationDetails mutant){
+	    Main.info("* Alived mutant " + mutant );
 	    Boolean killed = this.killData.get(mutant.getId());
             if (killed == null || !killed) // if it was killed => ignore
                 this.killData.put(mutant.getId(), false);		
