@@ -26,7 +26,7 @@ public class TestMain {
     @Test(timeout=1000)
     public void test2() throws InterruptedException{
         System.out.println("TestMain.test2()");
-        Thread.currentThread().sleep( 5000 );
+        //Thread.currentThread().sleep( 5000 );
         System.out.println("TestMain.test2()");
     }
 }
