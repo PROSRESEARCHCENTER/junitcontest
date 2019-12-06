@@ -29,8 +29,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import javax.management.RuntimeErrorException;
-
 import org.apache.commons.io.FileUtils;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -42,10 +40,25 @@ import sbst.benchmark.coverage.JacocoResult;
 
 public class MutationsEvaluator {
 
-    private static final int MAX_THREAD = 1;
+    public static final int MAX_THREAD;
+    static {
+        int parallelism = 1;
+        try {
+            parallelism = Integer.parseInt(System.getProperty("sbst.benchmark.parallelism", "1"));
+        } catch (NumberFormatException nfe) {
+            // Ignore this
+        }
+        MAX_THREAD = parallelism;
+    }
 
     private static final long GLOBAL_TIMEOUT = 300000; // global timeout for
                                                        // mutation analysis
+
+    public static final boolean ENABLE_REMOTE_EXECUTION;
+    static {
+        // TODO Will this throw an exception?
+        ENABLE_REMOTE_EXECUTION = Boolean.parseBoolean(System.getProperty("sbst.benchmark.remoting", "false"));
+    }
 
     /** Folder where to save the mutated SUT **/
     private String tempFolder;
@@ -154,7 +167,13 @@ public class MutationsEvaluator {
             testClasses.addAll(this.targetTest);
 
             // This will run each test class against the mutant !
-            TestExec4MutationTask executor = new TestExec4MutationTask(newCP, testClasses, this.flakyTests, id);
+            // TODO Enable this using a switch !
+            // Those seems to produce different results ?!
+
+            TestExec4MutationTask executor = (ENABLE_REMOTE_EXECUTION)
+                    ? new RemoteTestExec4MutationTask(newCP, testClasses, this.flakyTests, id)
+                    : new TestExec4MutationTask(newCP, testClasses, this.flakyTests, id);
+            // Schedule the execution
             task_list.addLast(executor);
         }
 
@@ -163,21 +182,26 @@ public class MutationsEvaluator {
         service.shutdown();
 
         for (Future<MutationResults> future : all) {
+            // if canceled let's notify printing a file in the result
+            // directory
+            if (future.isCancelled()) {
+                Main.debug("\n Ignoring mutant for timeout : " + future.get());
+                this.timeoutReached = true;
+                continue;
+            }
+            
             try {
-                // if canceled let's notify printing a file in the result
-                // directory
-                if (future.isCancelled()) {
-                    Main.debug("\n Ignoring mutant for timeout : " + future.get());
-                    this.timeoutReached = true;
-                    continue;
-                }
-
                 MutationResults mutationResult = future.get(TestSuite.TEST_TIMEOUT, TimeUnit.MILLISECONDS);
                 MutationIdentifier id = mutationResult.getMutation_id();
+                
 
+                
+                Main.info("mutationResult.getState() " + mutationResult.getState());
+                
                 switch (mutationResult.getState()) {
                 case KILLED:
                     TestInfo info = null;
+                    boolean killed = false;
 
                     // Lookup the killing test information
                     List<Result> executionResults = mutationResult.getJUnitResults();
@@ -198,25 +222,24 @@ public class MutationsEvaluator {
                                 info = new TestInfo(testClass, testMethod);
 
                                 if (!this.flakyTests.contains(info)) {
-                                    Main.debug("Mutant " + coveredMutants.getMutantionDetails(id) + " killed by " + info
-                                            + "with " + fail.getTrace());
+                                    mutationResults.addKilledMutant(coveredMutants.getMutantionDetails(id), info);
+                                    killed = true;
                                     break;
-                                } else {
-                                    Main.debug("Mutant " + coveredMutants.getMutantionDetails(id) + " killed by " + info
-                                            + "which is flaky. Ignore the result");
                                 }
+
                             }
                         }
                     }
-
-                    if (info != null) {
+                    if (!killed) {
+                        info = new TestInfo("testClass", "testMethod");
                         mutationResults.addKilledMutant(coveredMutants.getMutantionDetails(id), info);
+                        // Here we have passing tests AND failing tests?
+                        // throw new RuntimeException("Cannot find the test
+                        // killing Mutant " + id);
                     } else {
-                        // Is this an error ?
-                        throw new RuntimeException("Cannot find the killing test!");
+                        // Here t
+                        break;
                     }
-
-                    break;
 
                 case SURVIVED:
                     mutationResults.addAliveMutant(coveredMutants.getMutantionDetails(id));
@@ -232,6 +255,7 @@ public class MutationsEvaluator {
                 }
 
             } catch (Throwable e) {
+                e.printStackTrace(Main.infoStr);
                 // TODO Auto-generated catch block
                 if (e instanceof TimeoutException) {
                     Main.debug("Evaluation of the mutant stopped: it took more than " + TestSuite.TEST_TIMEOUT
@@ -241,7 +265,6 @@ public class MutationsEvaluator {
                             + " milliseconds. Discard mutant.");
                 } else {
                     Main.debug("Error in evaluating mutant:");
-                    e.printStackTrace(Main.debugStr);
                 }
                 continue;
             }
