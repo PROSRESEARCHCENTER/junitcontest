@@ -13,14 +13,20 @@
   **/
 package sbst.benchmark;
 
-import java.io.IOException;
-
 import org.junit.Test;
 
 public class TestMain {
 
-	@Test
-	public void test1() throws IOException {
-		Main.main(new String[] {});
-	}
+//    @Ignore
+//	@Test
+//	public void test1() throws IOException {
+////		Main.main(new String[] {});
+//	}
+    
+    @Test(timeout=1000)
+    public void test2() throws InterruptedException{
+        System.out.println("TestMain.test2()");
+        Thread.currentThread().sleep( 5000 );
+        System.out.println("TestMain.test2()");
+    }
 }

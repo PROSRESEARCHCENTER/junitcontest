@@ -35,12 +35,17 @@ public class MutationAnalysis {
 
 	/** Map to keep track of covered mutations **/
 	private MutationSet coveredMutants;
+	
+	/** Map to keep track of covered mutations **/
+    private List<MutationIdentifier> ignoredMutants;
 
 	/** Map to keep track of the mutation being killed **/
 	private Map<MutationIdentifier, Boolean> killData;
 
 	/** Map to keep track of tests killing/covering mutations **/
 	private Map<MutationIdentifier, List<TestInfo>> coveringTests;
+	
+	
 
 	/**
 	 * Simple constructor to initiate the coverage information
@@ -60,6 +65,8 @@ public class MutationAnalysis {
 			else
 				uncoveredMutants.addMutant(id, this.generatedMutants.getMutantion(id), this.generatedMutants.getMutantionDetails(id));
 		}
+		
+		this.ignoredMutants = new ArrayList<>();
 
 		this.killData = new HashMap<MutationIdentifier, Boolean>();
 		this.coveringTests = new HashMap<MutationIdentifier, List<TestInfo>>();
@@ -81,15 +88,19 @@ public class MutationAnalysis {
 			this.coveringTests.put(mutant.getId(), list);
 		}
 	}
+	
+    public void addIgnoreMutant(MutationDetails mutant) {
+        this.ignoredMutants.add(mutant.getId());
+    }
 
 	/**
 	 * Add mutation as uncovered/non-killed
 	 * @param mutant mutation being covered
 	 */
 	public void addAliveMutant(MutationDetails mutant){		
-                Boolean killed = this.killData.get(mutant.getId());
-                if (killed == null || !killed) // if it was killed => ignore
-                        this.killData.put(mutant.getId(), false);		
+	    Boolean killed = this.killData.get(mutant.getId());
+            if (killed == null || !killed) // if it was killed => ignore
+                this.killData.put(mutant.getId(), false);		
 	}
 
 	public int getNumberOfMutations(){
@@ -106,6 +117,10 @@ public class MutationAnalysis {
 		}
 		return count;
 	}
+	
+	public int numberOfIgnoredMutation(){
+        return this.ignoredMutants.size();
+    }
 
 	public int numberOfUncoveredMutation(){
 		return this.uncoveredMutants.getNumberOfMutations();
@@ -129,6 +144,7 @@ public class MutationAnalysis {
 		String info = "N. of generated mutants "+this.getNumberOfMutations()+"\n";
 		info = info + "N. of covered mutants "+this.getNumberOfCoveredMutants()+"\n";
 		info = info + "N. of killed mutants "+this.numberOfKilledMutation()+"\n";
+		info = info + "N. of ignored mutants "+this.numberOfIgnoredMutation()+"\n";
 		String mutation_list = "";
 		String test_info = "";
 		int count = 0;
@@ -178,5 +194,6 @@ public class MutationAnalysis {
 	public int getNumberOfCoveredMutants() {
 		return coveredMutants.getNumberOfMutations();
 	}
+
 
 }

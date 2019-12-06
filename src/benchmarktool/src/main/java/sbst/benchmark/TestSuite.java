@@ -69,6 +69,7 @@ public class TestSuite {
 
 	private int numberOfUncompilableTestClasses;
 	private int numberOfTestClasses;
+    private int d4jMutantsIgnored;
 
 	public TestSuite(IBenchmarkTask task, String toolName, String benchmark, File testCaseDir, List<File> extraCP,
 			String cut) {
@@ -480,7 +481,8 @@ public class TestSuite {
 	private void mutationAnalysis(String cut){
 		Main.info("\n=== Run PIT ===");
 		try {
-			Main.debug("Generate mutations via PIT");
+		    // TODO Is this misleading? I suspect mutants are already there....
+//			Main.debug("Generate mutations via PIT");
 			String cp = new Util.CPBuilder().and(Main.JUNIT_JAR).and(Main.JUNIT_DEP_JAR).and(getTask().getClassPath())
 					.and(getExtraCP()).and(getTestCaseBinDir(testCaseDir).getAbsolutePath()).build();
 
@@ -498,11 +500,11 @@ public class TestSuite {
 				}
 			}
 
-			Main.debug(" Running tests against generated Mutants");
-			Main.debug("Running PITWrapper with the following data:");
-			Main.debug("> CP = "+cp);
-			Main.debug("> CUT = "+cut);
-			Main.debug("> Test cases = "+fixedTestClasses);
+//			Main.debug("Running tests against generated Mutants");
+//			Main.debug("Running PITWrapper with the following data:");
+//			Main.debug("> CP = "+cp);
+//			Main.debug("> CUT = "+cut);
+//			Main.debug("> Test cases = "+fixedTestClasses);
 			PITWrapper wrapper = new PITWrapper(cp, cut, fixedTestClasses);
 
 			// prepare the mutant evaluator
@@ -511,16 +513,25 @@ public class TestSuite {
 			// compute mutation coverage
 			evaluator.computeCoveredMutants(wrapper.getGeneratedMutants(), jacoco_result);
 
-			Main.debug("Run tests against the covered mutations (i.e., mutants infecting on covered lines according to Jacoco)");
+//			Main.debug("Run tests against the covered mutations (i.e., mutants infecting on covered lines according to Jacoco)");
+			Main.info("Executing Mutation Analysis using " + wrapper.getGeneratedMutants().getNumberOfMutations() + " mutants ");
 			String mutated = this.getTestCaseBinDir(testCaseDir).getParent()+"/mutated_code"; // temporary folder where to save the mutated SUT
 
-			// compute killed mutations
-			evaluator.runMutations(mutated, new Util.CPBuilder().and(getTask().getClassPath()).build());
+            try {
+                // compute killed mutations
+                evaluator.runMutations(mutated, new Util.CPBuilder().and(getTask().getClassPath()).build());
+            } catch (InterruptedException e) {
+                Main.info("ERROR runMutation was interrupted !");
+                e.printStackTrace(Main.infoStr);
+                evaluator.setTimeoutReached();
+            }
 
 			// if timeout is reached, we create a file TIMEOUT.txt
 			if (evaluator.isTimeoutReached()){
 				File time_out = new File(this.getTestCaseDir().getAbsolutePath() + File.separator + "TIMEOUT.txt");
 				time_out.createNewFile();
+				Main.info("ERROR Evaluation not completed ignore it.");
+				return;
 			}
 
 			// mutation analysis results
@@ -528,12 +539,16 @@ public class TestSuite {
 
 			// remove from the count flaky tests, i.e., those tests that already fail in the original SUT)
 			cov.deleteFlakyTest(this.flakyTests);
-
+			
 			if (cov != null) {
-				this.d4jMutantsGenerated = cov.getNumberOfMutations();
-				this.d4jMutantsCovered = cov.getNumberOfCoveredMutants();
+			    // Remove the ignored tests from the total
+				this.d4jMutantsGenerated = cov.getNumberOfMutations() - cov.numberOfIgnoredMutation();
+				this.d4jMutantsLive = this.d4jMutantsGenerated  - cov.numberOfKilledMutation();
+				// Remove the ignored tests from the covered ones, since the ignored ran
+				this.d4jMutantsCovered = cov.getNumberOfCoveredMutants() - cov.numberOfIgnoredMutation();
+				//
+				this.d4jMutantsIgnored = cov.numberOfIgnoredMutation();
 				this.d4jMutantsKilled = cov.numberOfKilledMutation();
-				this.d4jMutantsLive = cov.getNumberOfMutations() - cov.numberOfKilledMutation();
 			}
 
 			//save data to file mutation_results.txt
@@ -546,6 +561,10 @@ public class TestSuite {
 			t.printStackTrace(Main.debugStr);
 		}
 	}
+	
+	public int getD4jMutantsIgnored(){
+	    return d4jMutantsIgnored;
+	} 
 
 	public int getD4jBrokenTests() {
 		return d4jBrokenTests;
