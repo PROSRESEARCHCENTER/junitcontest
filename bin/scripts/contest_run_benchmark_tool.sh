@@ -21,7 +21,7 @@ JAR=$TOOL_HOME/lib/benchmarktool-1.0.0-shaded.jar
 # dependencies
 JUNIT_JAR=$TOOL_HOME/lib/junit-4.12.jar
 JUNIT_DEP_JAR=$TOOL_HOME/lib/hamcrest-core-1.3.jar
-PITEST_JAR=$TOOL_HOME/lib/pitest-1.1.4.jar:$TOOL_HOME/lib/pitest-command-line-1.1.4.jar
+PITEST_JAR=$TOOL_HOME/lib/pitest-1.1.11.jar:$TOOL_HOME/lib/pitest-command-line-1.1.11.jar
 JACOCO_JAR=$TOOL_HOME/lib/jacocoagent.jar
 
 # Contest benchmarks (CUTs)
