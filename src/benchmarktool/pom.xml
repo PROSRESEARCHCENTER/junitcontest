@@ -47,13 +47,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 			<version>1.1.11</version>
 		</dependency>
 		<dependency>
-			<groupId>org.pitest</groupId>
-			<artifactId>pitest-command-line</artifactId>
-			<version>1.1.11</version>
-		</dependency>
-		<!-- dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-			<version>4.10</version> </dependency -->
-		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
