@@ -15,6 +15,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>benchmarktool</artifactId>
+	<parent>
+		<groupId>sbstcontest</groupId>
+		<artifactId>sbstcontest</artifactId>
+		<version>1.0.0</version>
+	</parent>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.ant</groupId>
@@ -24,12 +29,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>org.jacoco.core</artifactId>
-			<version>0.8.3</version>
+			<version>0.8.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jacoco</groupId>
 			<artifactId>org.jacoco.report</artifactId>
-			<version>0.8.3</version>
+			<version>0.8.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.pitest</groupId>
@@ -41,13 +46,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 			<artifactId>pitest-command-line</artifactId>
 			<version>1.1.11</version>
 		</dependency>
-		<dependency>
-			<groupId>org.pitest</groupId>
-			<artifactId>pitest-command-line</artifactId>
-			<version>1.1.11</version>
-		</dependency>
-		<!-- dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-			<version>4.10</version> </dependency -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -109,9 +107,4 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 			</plugin>
 		</plugins>
 	</build>
-	<parent>
-		<groupId>sbstcontest</groupId>
-		<artifactId>sbstcontest</artifactId>
-		<version>1.0.0</version>
-	</parent>
 </project>

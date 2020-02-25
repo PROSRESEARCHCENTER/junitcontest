@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import sbst.benchmark.Main;
-
 public class TestUtil {
 
 	public static URL[] createURLs(String cp) throws MalformedURLException{
