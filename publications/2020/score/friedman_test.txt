@@ -1,0 +1,6 @@
+"Friedman chi-squared"
+"statistic" "32.0294117647059"
+"parameter" "1"
+"p.value" "1.518559552352e-08"
+"method" "Friedman rank sum test"
+"data.name" "average.scores$score.mean, factor(average.scores$tool) and factor(average.scores$config)"
