@@ -39,7 +39,7 @@ The randoop folder under the Desktop folder in host machine is mapped to the ran
 
 * dockercontainervm/junitcontest:test: it is the name of the docker image. The first time the command is run, docker automatically downloads the image from a public repository. Once the image is in the system, docker simply uses it. The image is built upon the last version of Ubuntu (18.04 LTS).
 
-Once you execute the docker run command, you are in the docker container. Move to the container folder where you mapped the tool, using the -v option (in the example is /home/randoop). The tool folder must meet the requirements specified in [DETAILS](/DETAILS) . For an example of a correct tool folder please see: [RANDOOP](https://github.com/PROSRESEARCHCENTER/junitcontest/tree/master/tools/randoop).
+Once you execute the docker run command, you are in the docker container. Move to the container folder where you mapped the tool, using the -v option (in the example is /home/randoop). The tool folder must meet the requirements specified in [DETAILS.md](/DETAILS.md) . For an example of a correct tool folder please see: [RANDOOP](https://github.com/PROSRESEARCHCENTER/junitcontest/tree/master/tools/randoop).
 (If you use the randoop tool from the github repository above, make sure to change the variable JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 to JAVA_HOME=/usr in the "runtool" script)
 
 If the tool satisfies the requirements, from the tool folder (/home/randoop), run:
