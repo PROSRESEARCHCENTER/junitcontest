@@ -1,4 +1,4 @@
-#The contest
+# The contest
 
 The contest targets to evaluate tools that generate junit test cases for java programs at the class level.
 
@@ -32,8 +32,8 @@ Specific generated unit tests requirements:
 	- declare test methods public
 - The generated test cases will be compiled against
 	- JUnit 4.12
-    	- The benchmark SUT (System/Application Under Test)
-    	- Any dependencies of the benchmark SUT
+	- The benchmark SUT (System/Application Under Test)
+	- Any dependencies of the benchmark SUT
 
 Test generation time restrictions:
 - Scoring for each CUT (Class Under Test) takes place after a fixed amount of time budget (B)
@@ -47,7 +47,7 @@ over the standard input and output channels. The following table describes the p
 a line of text received by the runtool program on STDIN or sent to STDOUT:
 
 STEP  |	STDIN MESSAGES	      |	STDOUT MESSAGES	      |	DESCRIPTION
--------------------------------------------------------------------
+------|-----------------------|-----------------------|------------
    1  |             BENCHMARK |                       | Signals the start of a benchmark run; directory $HOME/temp is cleared
    2  |             directory |                       | Directory with the SUT' source code
    3  |             directory |                       | Directory with compiled class files of the SUT
