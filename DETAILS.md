@@ -1,5 +1,4 @@
-THE CONTEST
------------
+#The contest
 
 The contest targets to evaluate tools that generate junit test cases for java programs at the class level.
 
@@ -8,42 +7,39 @@ which have been selected by the contest organisation without favouring any speci
 The participating tools have a fixed time budget to generate tests for java classes.
 The score is calculated based on efficiency and effectiveness.
 
-RESTRICTIONS
-------------
+## Restrictions
 
 Only tools that can run automatically without human intervention can enter the contest.
 
 Target platform: Linux
 
-INSTRUCTIONS
-------------
+## Instructions
 
 Each participant can install a copy of their tool on the server (at $HOME) where the contest will be run.
 To this end, each participant will have SSH access to the contest server.
 
 Specific tool requirements:
-- $HOME/runtool script/binary must be implemented folllowing the protocol descrived below
-- $HOME/temp/testcases/ must contain the generated unit tests in JUnit4 format
+- `$HOME/runtool` script/binary must be implemented folllowing the protocol descrived below
+- `$HOME/temp/testcases/` must contain the generated unit tests in JUnit4 format
 Optional:
-- $HOME/temp/data/ must keep any intermediate data, which will be useful for offline analyses (debugging)
+- `$HOME/temp/data/` must keep any intermediate data, which will be useful for offline analyses (debugging)
 
 Specific generated unit tests requirements:
 - Must be stored as one or more java files containing JUnit4 tests
-	declare classes public
-	add zero-argument public constructor
-	annotate test methods with @Test
-	declare test methods public
+	- declare classes public
+	- add zero-argument public constructor
+	- annotate test methods with @Test
+	- declare test methods public
 - The generated test cases will be compiled against
-	JUnit 4.12
-    	The benchmark SUT (System/Application Under Test)
-    	Any dependencies of the benchmark SUT
+	- JUnit 4.12
+    	- The benchmark SUT (System/Application Under Test)
+    	- Any dependencies of the benchmark SUT
 
 Test generation time restrictions:
 - Scoring for each CUT (Class Under Test) takes place after a fixed amount of time budget (B)
 - Any test artefact generated after this time B is ignored by the contest infrastructure
 
-PROTOCOL
---------
+# Protocol
 
 The runtool script/binary is the interface between the contest infrastructure and the participating tools.
 The communication between the runtool and the contest infrastructure is done through a very simple line based protocol
@@ -66,7 +62,7 @@ STEP  |	STDIN MESSAGES	      |	STDOUT MESSAGES	      |	DESCRIPTION
   12  |            class name |                       | The name of the class for which unit tests must be generated
   13  |                       |                 READY | Signals that the testing tool is ready to receive more challenges
 
-Once the participant tool signals the READY message at step 13, test cases in $HOME/temp/testcases/ are analysed.
-Subsequently, $HOME/temp/testcases/ is cleared; then GOTO step 11 until M class names have been processed.
+Once the participant tool signals the READY message at step 13, test cases in `$HOME/temp/testcases/` are analysed.
+Subsequently, `$HOME/temp/testcases/` is cleared; then GOTO step 11 until M class names have been processed.
 
-A sample implementation of this protocol can be found at src/runtool/
+A sample implementation of this protocol can be found at `src/runtool/`
