@@ -1,25 +1,39 @@
+# 8th contest 2020
+* https://sbst20.github.io/tools/
+* 13th International Workshop on Search-Based Software Testing (SBST)
+* 2nd July 2020, Montreal (Canada)
+* Held in conjunction with [ICSE 2020](https://conf.researchr.org/home/icse-2020) - 42th International Conference on Software Engineering, 6th-11th July 2020, Seoul (South Korea)
+
+Title:    Java Unit Testing Tool Competition - Eighth Round  
+Authors:  Xavier Devroey, Sebastiano Panichella, Alessio Gambi  
+URL:      https://doi.org/ 10.1145/3387940.3392265  
+appendix: [detailed results](https://github.com/JUnitContest/junitcontest/tree/master/publications/2020/)  
+
+Title:    EvoSuite at the SBST 2020 tool competition  
+Authors:  Annibale Panichella, José Campos and Gordon Fraser  
+URL:      https://doi.org/10.1145/3387940.3392266
 
 # 7th contest 2019
 * https://sbst19.github.io/tools/
 * 12th International Workshop on Search-Based Software Testing (SBST)
-* 28th May 2018, Montreal (Canada)
+* 28th May 2019, Montreal (Canada)
 * Held in conjunction with [ICSE 2019](https://conf.researchr.org/home/icse-2019) - 41th International Conference on Software Engineering, 25th-31th May 2019, Montreal (Canada)
 
 Title:    Java Unit Testing Tool Competition - Seventh Round  
-Authors:  Fitsum Kifetew, Xavier Devroey and Urko Rueda Molina
+Authors:  Fitsum Kifetew, Xavier Devroey and Urko Rueda Molina  
 URL:      https://dl.acm.org/citation.cfm?id=3340884
 appendix: [detailed results](https://github.com/PROSRESEARCHCENTER/junitcontest/blob/master/publications/SBSTcontest2019_detailed_results.pdf)  
 
-Title:    Random testing with austere budgeting in T3: benchmarking at SBST2019 testing tool contest
+Title:    Random testing with austere budgeting in T3: benchmarking at SBST2019 testing tool contest  
 Authors:  I. S. W. B. Prasetya  
 URL:      https://dl.acm.org/citation.cfm?id=3340885
 
-Title:    SUSHI and TARDIS at the SBST2019 tool competition
-Authors:  Pietro Braione and Giovanni Denaro
+Title:    SUSHI and TARDIS at the SBST2019 tool competition  
+Authors:  Pietro Braione and Giovanni Denaro  
 URL:      https://dl.acm.org/citation.cfm?id=3340887
 
-Title:    EvoSuite at the SBST 2019 tool competition
-Authors:  José Campos, Annibale Panichella and Gordon Fraser
+Title:    EvoSuite at the SBST 2019 tool competition  
+Authors:  José Campos, Annibale Panichella and Gordon Fraser  
 URL:      https://dl.acm.org/citation.cfm?id=3340888
 
 # 6th contest 2018
