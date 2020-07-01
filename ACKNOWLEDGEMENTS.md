@@ -1,8 +1,12 @@
 ### Organization
 
+* 2020 8th contest: [Contest Committee](https://sbst20.github.io/tools/)
+    * [Xavier Devroey](http://xdevroey.be) (Chair), Delft University of Technology, Netherlands
+    * [Sebastiano Panichella](https://spanichella.github.io) (co-Chair), Zurich University of Applied Science (ZHAW), Switzerland
+    * [Alessio Gambi](https://staff.fim.uni-passau.de/~gambi/) (co-Chair), University of Passau, Germany
 * 2019 7th contest: [Contest Committee](https://sbst19.github.io/tools/)
     * Fitsum Kifetew (Chair), Fondazione Bruno Kessler
-    * Xavier Devroey (co-Chair), Delft University of Technology, Netherlands
+    * [Xavier Devroey](http://xdevroey.be) (co-Chair), Delft University of Technology, Netherlands
     * Urko Rueda Molina, Universitat Politècnica de València, Spain
 * 2018 6th contest: [Contest Committee](http://software.imdea.org/sbst18/committees.html)
     * Urko Rueda Molina (Chair), Universitat Politècnica de València
