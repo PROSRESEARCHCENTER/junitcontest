@@ -1,0 +1,843 @@
+{
+BCEL-1=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.classfile.Utility
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-2=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.verifier.structurals.InstConstraintVisitor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-3=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.generic.ConstantPoolGen
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+
+BCEL-4=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.generic.InstructionList
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-5=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.verifier.statics.Pass3aVerifier
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-6=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.verifier.structurals.LocalVariables
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-7=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.util.Class2HTML
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes,/var/benchmarks/projects/bcel-6.0-src/target/bcel-6.0-tests.jar
+  )
+}
+BCEL-8=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.generic.BranchInstruction
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-9=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.classfile.StackMapEntry
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+BCEL-10=
+{
+  src=/var/benchmarks/projects/bcel-6.0-src/src/main/java
+  bin=/var/benchmarks/projects/bcel-6.0-src/target/classes
+  classes=(
+    org.apache.bcel.verifier.structurals.Subroutines
+  )
+
+  classpath=(
+    /var/benchmarks/projects/bcel-6.0-src/target/classes
+  )
+}
+JXPATH-1=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.util.BasicTypeConverter
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-2=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.ri.compiler.Path
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-3=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.ri.compiler.CoreOperationCompare
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-4=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.util.MethodLookupUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-5=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.ri.compiler.Step
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-6=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.JXPathContext
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-7=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.ri.parser.XPathParserTokenManager
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-8=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.util.ValueUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-9=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.ri.model.beans.PropertyIterator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+JXPATH-10=
+{
+  src=/var/benchmarks/projects/commons-jxpath-1.3-src/src/java
+  bin=/var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  classes=(
+    org.apache.commons.jxpath.ri.axes.SimplePathInterpreter
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-jxpath-1.3-src/target/classes
+  )
+}
+GSON-1=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.internal.bind.ReflectiveTypeAdapterFactory
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-2=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.internal.LinkedHashTreeMap
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-3=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.JsonPrimitive
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-4=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.stream.JsonReader
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-5=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.internal.LinkedTreeMap
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-6=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.internal.bind.JsonTreeReader
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-7=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.GsonBuilder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-8=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.internal.bind.JsonTreeReader
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-9=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.reflect.TypeToken
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+GSON-10=
+{
+  src=/var/benchmarks/projects/gson/gson/src
+  bin=/var/benchmarks/projects/gson/gson/target/classes
+  classes=(
+    com.google.gson.internal.Excluder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/gson/gson/target/classes
+  )
+}
+FREEHEP-1=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnPlot
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-2=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnLineSearch
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-3=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnFunctionCross
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-4=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnAlgebraicSymMatrix
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-5=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnUserParameterState
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-6=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.SimplexBuilder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-7=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnHesse
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-8=
+{
+  src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnPrint
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-9=
+{
+ src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnMinos
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+FREEHEP-10=
+{
+ src=/var/benchmarks/projects/freehep/math/freehep-jminuit/src/main/java
+  bin=/var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  classes=(
+    org.freehep.math.minuit.MnUserTransformation
+  )
+
+  classpath=(
+    /var/benchmarks/projects/freehep/math/freehep-jminuit/target/classes
+  )
+}
+LA4J-1=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.vector.sparse.CompressedVector
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-2=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.decomposition.EigenDecompositor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-3=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.matrix.sparse.CRSMatrix
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-4=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.matrix.dense.Basic1DMatrix
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-5=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.Matrix
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-6=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.linear.ForwardBackSubstitutionSolver
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-7=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.matrix.sparse.CCSMatrix
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-8=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.matrix.dense.Basic2DMatrix
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-9=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.decomposition.SingularValueDecompositor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+LA4J-10=
+{
+ src=/var/benchmarks/projects/la4j-0.6.0/src/main/java
+ bin=/var/benchmarks/projects/la4j-0.6.0/target/classes
+  classes=(
+    org.la4j.linear.GaussianSolver
+  )
+
+  classpath=(
+    /var/benchmarks/projects/la4j-0.6.0/target/classes
+  )
+}
+RE2J-1=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.Parser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-2=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.CharClass
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-3=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.Simplify
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-4=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.Utils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-5=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.Compiler
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-6=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.Machine
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-7=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.Regexp
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+RE2J-8=
+{
+ src=/var/benchmarks/projects/re2j/java
+ bin=/var/benchmarks/projects/re2j/target/classes
+  classes=(
+    com.google.re2j.RE2
+  )
+
+  classpath=(
+    /var/benchmarks/projects/re2j/target/classes
+  )
+}
+OKHTTP-1=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+    okhttp3.Cookie
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-2=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.internal.platform.AndroidPlatform
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-3=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.ConnectionSpec
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-4=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.internal.http.HttpHeaders
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-5=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.internal.tls.DistinguishedNameParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-6=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.CacheControl
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-7=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.internal.tls.OkHostnameVerifier
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+OKHTTP-8=
+{
+ src=/var/benchmarks/projects/okhttp/okhttp/src/main/java
+ bin=/var/benchmarks/projects/okhttp/okhttp/target/classes
+  classes=(
+   okhttp3.HttpUrl
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okhttp/okhttp/target/classes
+  )
+}
+IMAGE-1=
+{
+ src=/var/benchmarks/projects/commons-imaging/src/main/java
+ bin=/var/benchmarks/projects/commons-imaging/target/classes
+  classes=(
+   org.apache.commons.imaging.formats.tiff.write.TiffImageWriterBase
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-imaging/target/classes
+  )
+}
+IMAGE-2=
+{
+ src=/var/benchmarks/projects/commons-imaging/src/main/java
+ bin=/var/benchmarks/projects/commons-imaging/target/classes
+  classes=(
+   org.apache.commons.imaging.common.RationalNumber
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-imaging/target/classes
+  )
+}
+IMAGE-3=
+{
+ src=/var/benchmarks/projects/commons-imaging/src/main/java
+ bin=/var/benchmarks/projects/commons-imaging/target/classes
+  classes=(
+   org.apache.commons.imaging.formats.bmp.BmpImageParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-imaging/target/classes
+  )
+}
+IMAGE-4=
+{
+ src=/var/benchmarks/projects/commons-imaging/src/main/java
+ bin=/var/benchmarks/projects/commons-imaging/target/classes
+  classes=(
+   org.apache.commons.imaging.formats.tiff.TiffField
+  )
+
+  classpath=(
+    /var/benchmarks/projects/commons-imaging/target/classes
+  )
+}
+}

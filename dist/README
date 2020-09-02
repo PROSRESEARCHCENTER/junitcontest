@@ -1,0 +1,75 @@
+Contest infrastructure
+----------------------
+- scripts:            copy contents to /usr/local/bin
+- lib:                copy contents to /usr/local/bin/lib
+- benchmarks_edition: copy contents of a particular edition (e.g. 6th) to /var/benchmarks
+
+Contest runtime requirements
+----------------------------
+- Java 8
+- R, for statistical Computing: apt-get install r-base r-recommended
+	-> R packages: R shell => install.packages() => data.table, effsize, pracma, PMCMR
+
+Contest Workflow
+----------------
+
+notes:
+	tool-name must not contain the '_' character
+	the scripts must be run inside the tool's folder (runtool script for the tool must be available)	
+	parallel_main_script.sh automates the contest for a bunch of tools, benchmarks and time-budgets
+	contest_run_benchmark_tool.sh (no args) displays the set of available benchmarks (useful for test purposes)
+
+1. Generating tests
+	->    run: contest_generate_tests.sh tool-name runs-number runs-start-from time-budget-seconds
+	-> output: results_tool-name_time-budget
+
+2. Computing metrics
+	->    run: contest_compute_metrics.sh results_tool-name_time-budget
+	-> output: CUT-name_run-number/metrics subfolders
+
+3. Generating more tests (more runs)
+	-> repeat 1. with a different starting run number
+	-> example: first we do 5 runs. If we want 3 more runs, then use:
+	            contest_generate_tests.sh tool-name 3 6 time-budget
+
+4. Recomputing metrics
+	->    run: cleanmetrics.sh
+        	   -> removes metrics subfolders
+		   -> target: results folder
+	-> repeat 2.
+
+5. Archiving interesting files:
+	->    run: taresults.sh
+  	-> output: archive file containing all the transcript.csv files
+
+6. Computing score
+	-> preprocess: contest_transcript_single.sh
+	               -> output: scans all transcript_metrics.csv in a directory and merges to single transcript
+		       ->   note: any missing metrics will appear with '?' in the single transcript
+	->        run: score.sh
+	->     output: described next ...
+
+  The overall score is computed as follows:
+    score_<TOOL,TIMEBUDGET,CLASS,RUN> = 
+    (
+        weight_line_coverage * lineCoverage
+      + weight_condition_coverage * conditionCoverage
+      + weight_mutation_score * mutationScore
+      + (real_fault_was_found ? weight_mutation_real_fault : 0 )
+    ) * overtime_generation_penalty
+    -
+    ((uncompilable_class_ratio == 1) ? 2 : (uncompilable_class_ratio +  flakey_test_ratio))
+
+    where:
+    * overtime_generation_penalty = min(1, (timeBudget / generationTime))
+    * weight_line_coverage=1
+    * weight_condition_coverage=2
+    * weight_mutation_score=4
+    * real_fault_was_found=4
+    Note that the maximum for generationTime is: timeBudget + (timeBudget * 100%)
+
+  Then, the score for each <TOOL,TIMEBUDGET,CLASS> is the average
+    score_<TOOL,TIMEBUDGET,CLASS> = AVG (score_<TOOL,TIMEBUDGET,CLASS,RUN>) for all RUNs
+
+  Finally, the score_TOOL is the sum of all averages
+    score_<TOOL,TIMEBUDGET> = SUM (score_<TOOL,TIMEBUDGET,CLASS>) for all CLASSes

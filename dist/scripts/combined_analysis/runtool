@@ -1,0 +1,91 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+local $| = 1 ;
+
+# -------------------------------------------------------------
+# Prototype runtool for combined analysis (based on T3 runtool)
+# -------------------------------------------------------------
+
+my $T3HOME = "t3" ;
+my $EVOSUITEHOME = "evosuite" ;
+
+# --------------------------------------------------------
+# Some help-functions first ...
+# --------------------------------------------------------
+
+sub BENCHMARKtoken {
+   my $token = readline(*STDIN) ; chomp $token ;
+   if ($token ne "BENCHMARK") { 
+      print STDERR "ERROR: expecting BENCHMARK token" ;
+      exit 0 ;
+   }
+}
+
+sub readPath {
+  my $t = <STDIN> ; chomp $t ; return $t ;
+}
+ 
+sub readNum {
+  my $N = <STDIN> ; chomp $N ;
+  return 0 + $N ;
+} 
+  
+sub readContextClassPaths {
+  my $N = $_[0] ;
+  my $paths = "." ;
+  my $k ;
+  for ($k=0; $k<$N; $k++) {
+     my $p = <STDIN> ;
+     chomp $p ;
+     $paths = $paths . ":" ;
+     $paths = $paths . $p ;
+  }
+  return $paths ;
+}
+ 
+sub announcePathToTestingTool {
+   print "CLASSPATH\n" ;
+   print "5\n" ;
+   # T3 libraries
+   print ($T3HOME . "/jars/T3_withoutdependencies.jar" . "\n") ;
+   print ($T3HOME . "/jars/junit.jar" . "\n") ;
+   print ($T3HOME . "/jars/hamcrest-core-1.3.jar" . "\n") ;
+   print ($T3HOME . "/jars/T3/commons-cli-1.2.jar" . "\n") ;
+   # evosuite libraries
+   print ($EVOSUITEHOME . "/lib/evosuite-master-1.0.6-SNAPSHOT.jar" . "\n") ;
+   # no jtexpert libraries
+   # no randoop libraries   
+   print ("READY\n") ;
+}
+
+# run tool n-times, for each of n CUTs
+sub runLoop {
+   my $N      = $_[0] ;
+   my $CUTsrcdir = $_[1] ;
+   my $CUTbindir = $_[2] ;
+   my $contextClassPaths = $_[3] ;
+   
+   my $k ;
+   for ($k=0; $k<$N; $k++) {
+      my $timebudget = readNum ;
+      my $CUT = <STDIN> ; chomp $CUT ;
+      print ("READY\n") ;
+   }
+}
+
+# --------------------------------------------------------
+# Here begins the protocol
+# --------------------------------------------------------
+ 
+BENCHMARKtoken() ;
+my $src = readPath() ;
+# print STDERR ("[debug:] src = " . $src) ;
+my $bin = readPath();
+my $numOfContextClassPaths  = readNum() ;
+my $contextClassPaths = readContextClassPaths($numOfContextClassPaths) ;
+my $numOfTargetClasses = readNum() ;
+announcePathToTestingTool() ;
+# Now the protocol is going to pass N x CUTs;
+runLoop($numOfTargetClasses,$src,$bin,$contextClassPaths) ;
+# DONE.
