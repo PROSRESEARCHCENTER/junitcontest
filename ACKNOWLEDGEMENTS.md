@@ -25,6 +25,7 @@
 * Matteo Biagiola
 * Xavier Devroey
 * Juan Galeotti
+* Alessio Gambi
 * Rene Just
 * Fitsum Kifetew
 * Annibale Panichella
