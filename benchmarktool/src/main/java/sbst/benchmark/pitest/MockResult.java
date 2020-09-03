@@ -1,10 +1,10 @@
 package sbst.benchmark.pitest;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MockResult extends Result {
     private static final long serialVersionUID = 1L;

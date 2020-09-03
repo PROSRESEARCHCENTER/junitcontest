@@ -1,13 +1,12 @@
 package sbst.benchmark;
 
+import org.junit.Assert;
+import org.junit.Test;
+import sbst.benchmark.pitest.MockResult;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-import org.junit.Assert;
-import org.junit.Test;
-
-import sbst.benchmark.pitest.MockResult;
 
 public class TestDeserialize {
 

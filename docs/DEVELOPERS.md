@@ -1,4 +1,4 @@
-# Developers documentation
+# Contributor guide
 
 ## Requirements
 
@@ -24,5 +24,11 @@ docker build -f Dockerfile -t junitcontest/infrastructure:latest .
 ```
 
 Produces a Docker image with the benchmark located at [`infrastructure/benchmarks`](../infrastructure/benchmarks).
+
+
+## Coding style
+
+The coding style is described in [`checkstyle.xml`](checkstyle.xml). Please (successfully) run the command `mvn checkstyle:check` before submitting a pull request.
+
 
 

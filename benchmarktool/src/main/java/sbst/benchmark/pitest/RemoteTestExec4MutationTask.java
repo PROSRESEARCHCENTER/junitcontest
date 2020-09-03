@@ -1,5 +1,13 @@
 package sbst.benchmark.pitest;
 
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.PumpStreamHandler;
+import org.pitest.mutationtest.engine.MutationIdentifier;
+import sbst.benchmark.Main;
+import sbst.benchmark.junit.StoppingJUnitCore;
+import sbst.benchmark.pitest.MutationResults.State;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,19 +15,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
-import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.PumpStreamHandler;
-import org.pitest.mutationtest.engine.MutationIdentifier;
-
-import sbst.benchmark.Main;
-import sbst.benchmark.junit.StoppingJUnitCore;
-import sbst.benchmark.pitest.MutationResults.State;
-
 public class RemoteTestExec4MutationTask extends TestExec4MutationTask {
 
     public RemoteTestExec4MutationTask(String cp, List<String> pTestClasses, Set<TestInfo> pFlakyTests,
-            MutationIdentifier id) {
+                                       MutationIdentifier id) {
         super(cp, pTestClasses, pFlakyTests, id);
     }
 

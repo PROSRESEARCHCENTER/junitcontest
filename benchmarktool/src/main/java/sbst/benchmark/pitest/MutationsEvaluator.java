@@ -1,17 +1,12 @@
-/**
-  * Copyright (c) 2017 Universitat Politècnica de València (UPV)
-
-  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-  * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-
-  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-  * 3. Neither the name of the UPV nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  **/
 package sbst.benchmark.pitest;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+import org.pitest.mutationtest.engine.MutationIdentifier;
+import sbst.benchmark.Main;
+import sbst.benchmark.TestSuite;
+import sbst.benchmark.coverage.JacocoResult;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,26 +16,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-import org.apache.commons.io.FileUtils;
-import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
-import org.pitest.mutationtest.engine.MutationIdentifier;
-
-import sbst.benchmark.Main;
-import sbst.benchmark.TestSuite;
-import sbst.benchmark.coverage.JacocoResult;
+import java.util.concurrent.*;
 
 public class MutationsEvaluator {
 
     public static final int MAX_THREAD;
+
     static {
         int parallelism = 1;
         try {
@@ -52,15 +33,18 @@ public class MutationsEvaluator {
     }
 
     private static final long GLOBAL_TIMEOUT = 300000; // global timeout for
-                                                       // mutation analysis
+    // mutation analysis
 
     public static final boolean ENABLE_REMOTE_EXECUTION;
+
     static {
         // TODO Will this throw an exception?
         ENABLE_REMOTE_EXECUTION = Boolean.parseBoolean(System.getProperty("sbst.benchmark.remoting", "false"));
     }
 
-    /** Folder where to save the mutated SUT **/
+    /**
+     * Folder where to save the mutated SUT
+     **/
     private String tempFolder;
 
     private String classPath;
@@ -77,16 +61,13 @@ public class MutationsEvaluator {
 
     /**
      * Build the infrastructure to run the generated tests against the mutations
-     * 
-     * @param pClassPath
-     *            classpath with all required libraries to run the tests
-     * @param pClassToMutate
-     *            name of the class to mutate
-     * @param pTargetTest
-     *            test to run against the mutations
+     *
+     * @param pClassPath     classpath with all required libraries to run the tests
+     * @param pClassToMutate name of the class to mutate
+     * @param pTargetTest    test to run against the mutations
      */
     public MutationsEvaluator(String pClassPath, String pClassToMutate, List<String> pTargetTest,
-            Set<TestInfo> pFlakyTests) {
+                              Set<TestInfo> pFlakyTests) {
         this.classPath = pClassPath;
         this.classToMutate = pClassToMutate;
         this.targetTest = pTargetTest;
@@ -99,11 +80,9 @@ public class MutationsEvaluator {
 
     /**
      * This method run all covered mutations. It makes a copy of the SUT in the
-     * 
-     * @param tempFolder
-     *            folder where the SUT will be copied for the mutation analysis
-     * @param path2SUT
-     *            path of the "original" SUT
+     *
+     * @param tempFolder folder where the SUT will be copied for the mutation analysis
+     * @param path2SUT   path of the "original" SUT
      * @throws ClassNotFoundException
      * @throws IOException
      * @throws InterruptedException
@@ -114,9 +93,10 @@ public class MutationsEvaluator {
             throws ClassNotFoundException, IOException, InterruptedException, ExecutionException {
         // create a temporary copy of the SUT for mutation analysis
         this.tempFolder = tempFolder;
-        if (tempFolder.equals(path2SUT))
+        if (tempFolder.equals(path2SUT)) {
             throw new IllegalArgumentException("Source and target directories should be different: \n "
                     + "source directory = " + path2SUT + "target directory = " + tempFolder);
+        }
 
         // create a copy of the SUT
         String newSUT = this.tempFolder + "/SUT";
@@ -125,8 +105,9 @@ public class MutationsEvaluator {
         // remove the original CUT
         String CUT = newSUT + "/" + classToMutate.replace('.', '/') + ".class";
         File fcut = new File(CUT);
-        if (fcut.exists())
+        if (fcut.exists()) {
             FileUtils.deleteQuietly(fcut);
+        }
 
         // Prepare the ExecutorService
         ExecutorService service = Executors.newScheduledThreadPool(MAX_THREAD);
@@ -189,69 +170,68 @@ public class MutationsEvaluator {
                 this.timeoutReached = true;
                 continue;
             }
-            
+
             try {
                 MutationResults mutationResult = future.get(TestSuite.TEST_TIMEOUT, TimeUnit.MILLISECONDS);
                 MutationIdentifier id = mutationResult.getMutation_id();
-                
 
-                
+
                 Main.info("mutationResult.getState() " + mutationResult.getState());
-                
+
                 switch (mutationResult.getState()) {
-                case KILLED:
-                    TestInfo info = null;
-                    boolean killed = false;
+                    case KILLED:
+                        TestInfo info = null;
+                        boolean killed = false;
 
-                    // Lookup the killing test information
-                    List<Result> executionResults = mutationResult.getJUnitResults();
-                    for (Result result : executionResults) {
-                        for (Failure fail : result.getFailures()) {
+                        // Lookup the killing test information
+                        List<Result> executionResults = mutationResult.getJUnitResults();
+                        for (Result result : executionResults) {
+                            for (Failure fail : result.getFailures()) {
 
-                            String header = fail.getTestHeader();
-                            // Skip results that have to be ignored anyway
-                            if (fail.getTrace().contains("java.lang.Exception: test timed out after")
-                                    || fail.getTrace().contains("java.io.FileNotFoundException")) {
-                                Main.debug("\n Discard test execution");
-                                continue;
-                            }
-                            // Check
-                            if (header.contains("(")) {
-                                String testMethod = header.substring(0, header.indexOf('('));
-                                String testClass = header.substring(header.indexOf('(') + 1, header.length());
-                                info = new TestInfo(testClass, testMethod);
-
-                                if (!this.flakyTests.contains(info)) {
-                                    mutationResults.addKilledMutant(coveredMutants.getMutantionDetails(id), info);
-                                    killed = true;
-                                    break;
+                                String header = fail.getTestHeader();
+                                // Skip results that have to be ignored anyway
+                                if (fail.getTrace().contains("java.lang.Exception: test timed out after")
+                                        || fail.getTrace().contains("java.io.FileNotFoundException")) {
+                                    Main.debug("\n Discard test execution");
+                                    continue;
                                 }
+                                // Check
+                                if (header.contains("(")) {
+                                    String testMethod = header.substring(0, header.indexOf('('));
+                                    String testClass = header.substring(header.indexOf('(') + 1, header.length());
+                                    info = new TestInfo(testClass, testMethod);
 
+                                    if (!this.flakyTests.contains(info)) {
+                                        mutationResults.addKilledMutant(coveredMutants.getMutantionDetails(id), info);
+                                        killed = true;
+                                        break;
+                                    }
+
+                                }
                             }
                         }
-                    }
-                    if (!killed) {
-                        info = new TestInfo("testClass", "testMethod");
-                        mutationResults.addKilledMutant(coveredMutants.getMutantionDetails(id), info);
-                        // Here we have passing tests AND failing tests?
-                        // throw new RuntimeException("Cannot find the test
-                        // killing Mutant " + id);
-                    } else {
-                        // Here t
+                        if (!killed) {
+                            info = new TestInfo("testClass", "testMethod");
+                            mutationResults.addKilledMutant(coveredMutants.getMutantionDetails(id), info);
+                            // Here we have passing tests AND failing tests?
+                            // throw new RuntimeException("Cannot find the test
+                            // killing Mutant " + id);
+                        } else {
+                            // Here t
+                            break;
+                        }
+
+                    case SURVIVED:
+                        mutationResults.addAliveMutant(coveredMutants.getMutantionDetails(id));
                         break;
-                    }
 
-                case SURVIVED:
-                    mutationResults.addAliveMutant(coveredMutants.getMutantionDetails(id));
-                    break;
+                    case IGNORED:
+                        mutationResults.addIgnoreMutant(coveredMutants.getMutantionDetails(id));
+                        break;
 
-                case IGNORED:
-                    mutationResults.addIgnoreMutant(coveredMutants.getMutantionDetails(id));
-                    break;
-
-                default: // NEVER_RUN
-                    mutationResults.addAliveMutant(coveredMutants.getMutantionDetails(id));
-                    break;
+                    default: // NEVER_RUN
+                        mutationResults.addAliveMutant(coveredMutants.getMutantionDetails(id));
+                        break;
                 }
 
             } catch (Throwable e) {
@@ -272,17 +252,16 @@ public class MutationsEvaluator {
 
         // remove temporary directory
         File dire2remove = new File(this.tempFolder);
-        if (dire2remove.exists() && dire2remove.isDirectory())
+        if (dire2remove.exists() && dire2remove.isDirectory()) {
             FileUtils.deleteDirectory(dire2remove);
+        }
     }
 
     /**
      * Create a copy of the SUT for mutation analysis
-     * 
-     * @param path2SUT
-     *            path to the SUT
-     * @param tempFolder
-     *            temporary file used for mutation analysis
+     *
+     * @param path2SUT   path to the SUT
+     * @param tempFolder temporary file used for mutation analysis
      */
     public static void createSUTCopy(String path2SUT, String tempFolder) {
         File source = new File(path2SUT);
@@ -295,15 +274,17 @@ public class MutationsEvaluator {
                     lib = lib.replace(":", "");
                     if (lib.length() > 0) {
                         File fileLib = new File(lib);
-                        if (fileLib.isDirectory())
+                        if (fileLib.isDirectory()) {
                             FileUtils.copyDirectory(fileLib, target);
-                        else
+                        } else {
                             FileUtils.copyFileToDirectory(fileLib, target);
+                        }
                     }
                 }
             } else {
-                if (!source.exists())
+                if (!source.exists()) {
                     throw new FileNotFoundException();
+                }
                 FileUtils.copyDirectory(source, target);
             }
 
@@ -316,11 +297,9 @@ public class MutationsEvaluator {
     /**
      * Method to write the mutated CUT on disk (in the folder specified by the
      * attribute tempFolder)
-     * 
-     * @param mu
-     *            bytecode of the mutated CUT (generated by PIT)
-     * @param location
-     *            temporary directory where to save the mutated CUT
+     *
+     * @param mu       bytecode of the mutated CUT (generated by PIT)
+     * @param location temporary directory where to save the mutated CUT
      */
     public void writeMutationOnDisk(byte[] mu, String location) {
 

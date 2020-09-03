@@ -1,21 +1,5 @@
 package sbst.benchmark.junit;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.junit.Test;
 import org.junit.runner.Description;
 import org.junit.runner.JUnitCore;
@@ -24,9 +8,18 @@ import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
-
 import sbst.benchmark.Main;
 import sbst.benchmark.pitest.TestInfo;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 // For very large number of test classes this might not work as you can not easily specify tons of inputs on the commandline !
 public class StoppingJUnitCore {
@@ -64,22 +57,22 @@ public class StoppingJUnitCore {
                     listener.testAssumptionFailure(failure);
                     return;
                 } else
-                // If the failed test is a timeout
-                if (failure.getTrace().contains("java.lang.Exception: test timed out after")) {
-                    // Keep going
-                    Main.debug("\t timeout test, ignore !");
-                    listener.testAssumptionFailure(failure);
-                } else if (failure.getException() instanceof InterruptedException) {
-                    // Keep going
-                    Main.debug(
-                            "\t test execution reached (probably GLOABL timeout), will stop test execution but do not report killing test !");
-                    globalTimeout.set(true);
-                    runNotifier.pleaseStop();
-                } else {
-                    Main.debug("\t actual test, will stop test execution !");
-                    listener.testFailure(failure);
-                    runNotifier.pleaseStop();
-                }
+                    // If the failed test is a timeout
+                    if (failure.getTrace().contains("java.lang.Exception: test timed out after")) {
+                        // Keep going
+                        Main.debug("\t timeout test, ignore !");
+                        listener.testAssumptionFailure(failure);
+                    } else if (failure.getException() instanceof InterruptedException) {
+                        // Keep going
+                        Main.debug(
+                                "\t test execution reached (probably GLOABL timeout), will stop test execution but do not report killing test !");
+                        globalTimeout.set(true);
+                        runNotifier.pleaseStop();
+                    } else {
+                        Main.debug("\t actual test, will stop test execution !");
+                        listener.testFailure(failure);
+                        runNotifier.pleaseStop();
+                    }
             } else {
                 // This might be a test suite ...
             }
@@ -144,14 +137,14 @@ public class StoppingJUnitCore {
     }
 
     public Result run(Class testClass, //
-            long timeout, //
-            final Set<TestInfo> flakyTests) {
+                      long timeout, //
+                      final Set<TestInfo> flakyTests) {
         return this.run(Collections.singletonList(testClass), timeout, flakyTests);
     }
 
     public Result run(List<Class> testClasses, //
-            long timeout, //
-            final Set<TestInfo> flakyTests) {
+                      long timeout, //
+                      final Set<TestInfo> flakyTests) {
         JUnitCore junit = new JUnitCore();
         final Result theResult = new Result();
         try {
@@ -180,7 +173,7 @@ public class StoppingJUnitCore {
                 }
             }
             // If no tests fail, this will return the Result object
-            return junit.run(testClasses.toArray(new Class[] {}));
+            return junit.run(testClasses.toArray(new Class[]{}));
         } catch (StoppedByUserException e) {
             // If this is triggered because of global timeout we should not
             // report any result !
@@ -296,8 +289,8 @@ public class StoppingJUnitCore {
                         break;
                     }
                 }
-                
-                if( ! killed ){
+
+                if (!killed) {
                     Main.debug("\n Mutant Ignored !\n");
                 } else {
                     Main.debug("\n Mutant Killed !\n");
@@ -309,7 +302,7 @@ public class StoppingJUnitCore {
             // result but apparently it does not
             // So we need to take care of it
             try (FileWriter fileWriter = new FileWriter(outputTo);
-                    PrintWriter printWriter = new PrintWriter(fileWriter);) {
+                 PrintWriter printWriter = new PrintWriter(fileWriter);) {
                 printWriter.println(result.getRunCount());
                 printWriter.println(result.getFailureCount());
                 for (Failure failure : result.getFailures()) {
