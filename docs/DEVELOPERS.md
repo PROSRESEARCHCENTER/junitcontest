@@ -23,6 +23,6 @@ Run the following command from the root directory of this repository:
 docker build -f Dockerfile -t junitcontest/infrastructure:latest .
 ```
 
-Produces a Docker image with the benchmark located at [`infrastructure/benchmarks`](infrastructure/benchmarks).
+Produces a Docker image with the benchmark located at [`infrastructure/benchmarks`](../infrastructure/benchmarks).
 
 
