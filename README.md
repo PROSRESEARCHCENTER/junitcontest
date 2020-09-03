@@ -3,6 +3,8 @@
 The JUnit tool contest is held at the SBST workshop co-located with ICSE.
 Here you will find the source code to the contest infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition.
 
+[![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
+
 # Important dates
 
 Definitive dates will be announce upon acceptance of the workshop at ICSE'20. Here are the planned periods:
