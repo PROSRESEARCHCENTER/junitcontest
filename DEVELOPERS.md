@@ -1,4 +1,4 @@
-# Developers Documentation
+# Developers documentation
 
 ## Requirements
 
@@ -7,23 +7,22 @@
 
 ## Building the infrastructure
 
+### Adapters
+
 ```shell script
 mvn package
 ``` 
 
-output: benchmarktool/target/benchmarktool-1.0.0-shaded.jar
+Produces the following artifacts: `benchmarktool/target/benchmarktool-1.0.0-shaded.jar`
 
-replace: ../bin/lib/benchmarktool-1.0.0-shaded.jar
+### Docker image 
 
+Run the following command from the root directory of this repository: 
 
-## Building the Docker image
-
-This folder contains the Dockerfile and related resources needed to build a docker image of the contest infrastructure. 
-To build the image, make sure you have docker installed and running, then follow these steps:
-```sh
-$git clone git@github.com:JUnitContest/junitcontest.git
-$cd junitcontest
-$docker build -f docker/Dockerfile -t <tag> .
+```shell script
+docker build -f Dockerfile -t junitcontest/infrastructure:latest .
 ```
 
-Once the image is built, see [instructions](/README.md) on how to execute your tool against the contest infrastructure.
+Produces a Docker image with the benchmark located at [`infrastructure/benchmarks`](infrastructure/benchmarks).
+
+

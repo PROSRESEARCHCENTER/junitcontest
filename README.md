@@ -88,7 +88,7 @@ Target: Linux (Ubuntu x64)
 
 Folder contents:
 
-* [bin](/dist):   Contest infrastructure binaries
+* [bin](/infrastructure):   Contest infrastructure binaries
 * [src](/src):   Contest infrastructure source code
 * [tools](/tools): Contest tools
 
