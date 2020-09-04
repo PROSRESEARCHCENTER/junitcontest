@@ -25,7 +25,7 @@ Then run the following command from the root directory of this repository:
 ```shell script
 docker build -f Dockerfile -t junitcontest/infrastructure:latest .
 ```
-It will pProduce a Docker image with the benchmark located at [`infrastructure/benchmarks`](../infrastructure/benchmarks). To change the classes under test, simply update [`infrastructure/benchmarks`](../infrastructure/benchmarks). For instance, with the CUTs of a previous edition of the competition available in [`infrastructure/`](../infrastructure/).
+It will produce a Docker image with the benchmark located at [`infrastructure/benchmarks`](../infrastructure/benchmarks). To change the classes under test, simply update [`infrastructure/benchmarks`](../infrastructure/benchmarks). For instance, with the CUTs of a previous edition of the competition available in [`infrastructure/`](../infrastructure/).
 
 ### Running a tool
 
