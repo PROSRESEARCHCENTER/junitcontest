@@ -6,11 +6,11 @@ Here you will find the source code to the compeition infrastructure and instruct
 
 # Important dates
 
-Definitive dates will be announce upon acceptance of the workshop at ICSE'20. Here are the planned periods:
+Here are the planned periods:
 
-- Tool submission: early February
-- Benchmark results communicated to authors: mid February
-- Authors submit camera ready paper: mid March
+- Tool submission: February 12
+- Benchmark results communicated to authors: March 2
+- Submission of camera-ready paper: March 12
 
 # Documentation
 
