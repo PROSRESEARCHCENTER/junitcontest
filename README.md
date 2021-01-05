@@ -1,6 +1,6 @@
 # JUnit Testing Tool Competition Infrastructure
 
-Here you will find the source code to the compeition infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition. For information about the current and past editions of the competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
+Here you will find the source code to the compeition infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition. For information about the past editions of the competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
 
 [![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
 
