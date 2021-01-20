@@ -68,6 +68,7 @@ contest_generate_tests.sh \
 
 For example:
 ```shell script
+cd /home/randoop 
 contest_generate_tests.sh randoop 1 1 10
 ```
 This script runs one execution of the test generation tool `randoop` for 10 seconds.
