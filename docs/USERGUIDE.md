@@ -46,6 +46,7 @@ docker run \
   --name=junitcontest \
 -it junitcontest/infrastructure:latest
 ```
+
 The `randoop` folder under the Desktop folder in host machine is mapped to the `randoop` folder under the home folder in the docker container (guest). The `randoop` folder in the host machine is shared with the container, therefore every file written in this folder will be in both the host and the guest machines.
 
 * `--name=junitcontest`: it is the name of the container (`junitcontest` in this case). The name is optional, if skipped Docker assigns a random name automatically.
@@ -53,6 +54,15 @@ The `randoop` folder under the Desktop folder in host machine is mapped to the `
 * `-it`: it means that the user can access the docker container interactively, as if the user was in the command line of the guest system.
 
 * `junitcontest/infrastructure:latest`: it is the name of the docker image. The first time the command is run, Docker tries automatically to download the image from a public repository. Once the image is in the system, docker simply uses it. You can also build the Docker image following the [procedure described here above](#build-the-docker-image).
+
+In case a container with the same name is already running and you want to remove it:
+#stop container with 
+```shell script
+docker container ls
+docker container stop $(docker container ls -aq)	
+docker system prune
+docker container ls
+```
 
 Once you execute the docker run command, you are in the docker container. Move to the container folder where you mapped the tool, using the `-v` option (in the example is `/home/randoop`). The tool folder must meet the requirements specified in [DETAILS.md](DETAILS.md) . For an example of a correct tool folder please see: [RANDOOP](/tools/randoop).
 (If you use the `randoop` tool from the github repository above, make sure to change the variable `JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64` to `JAVA_HOME=/usr` in the `runtool` script)
