@@ -1,6 +1,6 @@
 # User guide
 
-## Try it via Docker
+## Try it via Docker (to run the following commands in servers we suggest to use [Screen](https://www.howtoforge.com/linux_screen))
 
 For easier access and use, we have dockerized the contest infrastructure. Here are the instructions for testing your tool via docker:
 
