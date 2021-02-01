@@ -9,7 +9,7 @@ then
         exit 0;
 fi
 
-RSCRIPT=/usr/local/bin/statistical.analysis.R
+RSCRIPT=/usr/local/bin/statistical_analysis.R
 TRANSCRIPT=$1 # path to single transcript
 OUTPUT=$2 # directory where to save the results
 
