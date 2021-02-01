@@ -1,16 +1,16 @@
 # JUnit Testing Tool Competition Infrastructure
 
-Here you will find the source code to the compeition infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition. For information about the current and past editions of the competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
+Here you will find the source code to the compeition infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition. For information about the past editions of the competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
 
 [![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
 
 # Important dates
 
-Definitive dates will be announce upon acceptance of the workshop at ICSE'20. Here are the planned periods:
+Here are the planned periods:
 
-- Tool submission: early February
-- Benchmark results communicated to authors: mid February
-- Authors submit camera ready paper: mid March
+- Tool submission: February 12
+- Benchmark results communicated to authors: March 2
+- Submission of camera-ready paper: March 12
 
 # Documentation
 
