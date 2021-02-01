@@ -424,7 +424,11 @@ public class TestSuite {
 
             launcher.setJarInstrument(getTask().getClassPath());
 
-            String cp = new Util.CPBuilder().and(Main.JUNIT_DEP_JAR).and(Main.JUNIT_JAR).and(getExtraCP()).build();
+            String cp = new Util.CPBuilder()
+                    .and(Main.JUNIT_DEP_JAR)
+                    .and(Main.JUNIT_JAR)
+                    .and(getExtraCP())
+                    .build();
             cp = cp.replaceAll("::", ":");
             launcher.setClassPath(cp);
             launcher.setTargetClass(cut);
@@ -459,8 +463,13 @@ public class TestSuite {
         try {
             // TODO Is this misleading? I suspect mutants are already there....
 //			Main.debug("Generate mutations via PIT");
-            String cp = new Util.CPBuilder().and(Main.JUNIT_JAR).and(Main.JUNIT_DEP_JAR).and(getTask().getClassPath())
-                    .and(getExtraCP()).and(getTestCaseBinDir(testCaseDir).getAbsolutePath()).build();
+            String cp = new Util.CPBuilder()
+                    .and(Main.JUNIT_JAR)
+                    .and(Main.JUNIT_DEP_JAR)
+                    .and(getTask().getClassPath())
+                    .and(getExtraCP())
+                    .and(getTestCaseBinDir(testCaseDir).getAbsolutePath())
+                    .build();
 
             List<String> testClasses = getTestSrcFiles(testCaseDir);
 
