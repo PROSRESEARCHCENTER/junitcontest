@@ -105,7 +105,10 @@ Results stored:
 
 We show example of steps for Randoop with 3 different time budgets and 10 runs. 
 
-
+Commands to clone the container in the local repository with tag 2021:
+```shell script
+docker commit junitcontest junitcontest:2021
+```
 
 ### Other commands
 
