@@ -101,9 +101,11 @@ Results stored:
 -	results_randoop_10 -> *Project name*   ->  Metrics -> transcript.csv
 -	results_randoop_10 -> *Project name*   -> Metrics -> log_detailed.txt
 
-### How to make several copies of the docker image of the infrustructure (experiment with different time budgets or tools)
+### How to leverage several copies of the docker image of the infrustructure (e.g., to experiment with different time budgets or tools)
 
 We show example of steps for Randoop with 3 different time budgets and 10 runs. 
+
+
 
 ### Other commands
 
