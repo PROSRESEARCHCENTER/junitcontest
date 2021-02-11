@@ -104,10 +104,27 @@ Results stored:
 ### How to leverage several copies of the docker image of the infrustructure (e.g., to experiment with different time budgets or tools)
 
 We show example of steps for Randoop with 3 different time budgets and 10 runs. 
+Each of the following run executes in its own copy of the randoop/ folder (randoop60, randoop180, and randoop300)
 
-Commands to clone the container in the local repository with tag 2021:
+1) Commands to clone the container in the local repository with tag 2021:
 ```shell script
 docker commit junitcontest junitcontest:2021
+```
+
+2) Docker image for 60 seconds time budget (a similar command for 180 and 300 can be executed)
+
+```shell script
+docker run \
+  -v ~/Desktop/randoop60/:/home/randoop \
+  --name=junitcontest60 \
+-it junitcontest:2021
+```
+
+3) As previously seen, in the container, execute for 60 seconds time budget (a similar command for 180 and 300 can be executed after creating corresponding images):
+
+```shell script
+contest_generate_tests.sh randoop 10 1 60
+contest_compute_metrics.sh results_randoop_60 > stat_log.txt 2> error_log.txt
 ```
 
 ### Other commands
