@@ -8,7 +8,7 @@ Here you will find the source code to the compeition infrastructure and instruct
 
 ```
 The JUnit Infrustructure support the generation an comparison of JUnit testing tools for Java projects.
-Copyright (C) - Contributors and chair of the JUnit Infrustructure.
+Copyright (C) - Contributors and chairs of the JUnit Infrustructure.
 
 The JUnit Infrustructure is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
