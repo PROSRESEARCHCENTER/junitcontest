@@ -6,6 +6,9 @@ RUN apt-get update
 RUN apt-get install -y openjdk-8-jdk
 RUN apt-get install -y unzip
 
+# SMT Solver 
+RUN apt-get install -y cvc4
+
 # Copy the utility scripts to run the infrastructure
 COPY infrastructure/scripts/ /usr/local/bin/
 
