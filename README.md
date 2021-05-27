@@ -1,8 +1,22 @@
-# JUnit Testing Tool Competition Infrastructure
+# JUnit Generation Benchmarking Infrastructure (JUGE)
 
-Here you will find the source code to the compeition infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition. For information about the past editions of the competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
+Here you will find the source code to the JUGE and instructions on how to test your tool with the infrastructure. 
+
+For information about the past editions of the JUnit Competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
 
 [![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
+
+# JUnit Competition - Important Dates
+
+Here are the planned periods:
+
+- Tool submission: February 12
+- Benchmark results communicated to authors: March 2
+- Submission of camera-ready paper: March 12
+
+# Documentation
+
+See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide.
 
 ### License
 
@@ -23,15 +37,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>. 
 ```
-
-# Important dates
-
-Here are the planned periods:
-
-- Tool submission: February 12
-- Benchmark results communicated to authors: March 2
-- Submission of camera-ready paper: March 12
-
-# Documentation
-
-See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide.
