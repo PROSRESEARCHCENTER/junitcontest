@@ -5,6 +5,7 @@ Here you will find the source code to the JUGE and instructions on how to test y
 For information about the past editions of the JUnit Competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
 
 [![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4904393.svg)](https://doi.org/10.5281/zenodo.4904393)
 
 # JUnit Competition - Important Dates
 
