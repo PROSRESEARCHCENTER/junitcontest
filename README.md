@@ -17,9 +17,25 @@ Here are the planned periods:
 
 # Documentation
 
-See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide.
+See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide. 
 
-### License
+More information about the infrastructure and how it can be used to set up an empirical evaluation for unit test generators can be found in [Devroey, X., Gambi, A., Galeotti, J. P., Just, R., Kifetew, F., Panichella, A., Panichella, S. (2021). JUGE: An Infrastructure for Benchmarking Java Unit Test Generators. arXiv preprint arXiv:2106.07520.](https://arxiv.org/abs/2106.07520)
+
+## Referencing JUGE
+
+If you use JUGE in your evaluation, please include the following reference to your paper:
+```bibtex
+@misc{devroey2021juge,
+  title={JUGE: An Infrastructure for Benchmarking Java Unit Test Generators}, 
+  author={Xavier Devroey and Alessio Gambi and Juan Pablo Galeotti and René Just and Fitsum Kifetew and Annibale Panichella and Sebastiano Panichella},
+  year={2021},
+  eprint={2106.07520},
+  archivePrefix={arXiv},
+  primaryClass={cs.SE}
+}
+```
+
+# License
 
 ```
 The JUnit Infrustructure support the generation an comparison of JUnit testing tools for Java projects.
