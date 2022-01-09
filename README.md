@@ -1,10 +1,41 @@
-# JUnit Testing Tool Competition Infrastructure
+# JUnit Generation Benchmarking Infrastructure (JUGE)
 
-Here you will find the source code to the compeition infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition. For information about the past editions of the competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
+Here you will find the source code to the JUGE and instructions on how to test your tool with the infrastructure. 
+
+For information about the past editions of the JUnit Competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
 
 [![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4904393.svg)](https://doi.org/10.5281/zenodo.4904393)
 
-### License
+# JUnit Competition - Important Dates
+
+Here are the planned periods:
+
+- Tool submission: February 12
+- Benchmark results communicated to authors: March 2
+- Submission of camera-ready paper: March 12
+
+# Documentation
+
+See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide. 
+
+More information about the infrastructure and how it can be used to set up an empirical evaluation for unit test generators can be found in [Devroey, X., Gambi, A., Galeotti, J. P., Just, R., Kifetew, F., Panichella, A., Panichella, S. (2021). JUGE: An Infrastructure for Benchmarking Java Unit Test Generators. arXiv preprint arXiv:2106.07520.](https://arxiv.org/abs/2106.07520)
+
+## Referencing JUGE
+
+If you use JUGE in your evaluation, please include the following reference to your paper:
+```bibtex
+@misc{devroey2021juge,
+  title={JUGE: An Infrastructure for Benchmarking Java Unit Test Generators}, 
+  author={Xavier Devroey and Alessio Gambi and Juan Pablo Galeotti and René Just and Fitsum Kifetew and Annibale Panichella and Sebastiano Panichella},
+  year={2021},
+  eprint={2106.07520},
+  archivePrefix={arXiv},
+  primaryClass={cs.SE}
+}
+```
+
+# License
 
 ```
 The JUnit Infrustructure support the generation an comparison of JUnit testing tools for Java projects.
@@ -23,15 +54,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>. 
 ```
-
-# Important dates
-
-Here are the planned periods:
-
-- Tool submission: February 12
-- Benchmark results communicated to authors: March 2
-- Submission of camera-ready paper: March 12
-
-# Documentation
-
-See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide.
