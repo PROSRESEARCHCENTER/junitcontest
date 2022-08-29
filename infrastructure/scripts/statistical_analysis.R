@@ -9,7 +9,7 @@ library(data.table)
 library(effsize)
 library(pracma)
 #library(xtable)
-library(PMCMR)
+library(PMCMRplus)
 
 # weights for the score
 w_i <- 1
@@ -175,7 +175,7 @@ res = as.data.frame(do.call(rbind, res))
 write.table(res, file = paste(output_dir,"/friedman_test.txt", sep=""))
 
 # apply the post-hoc Kruskal's predecure 
-res <- posthoc.kruskal.conover.test(x = average.scores$score.mean, g=as.factor(average.scores$tool))
+res <- kwAllPairsConoverTest(x = average.scores$score.mean, g=as.factor(average.scores$tool))
 print(res)
 res = as.data.frame(res$p.value)
 write.table(res, file = paste(output_dir,"/kruskal.txt", sep=""))
