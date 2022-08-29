@@ -8,9 +8,12 @@ branches:
 jdk:
   - openjdk8
 
-script:
-  - mvn package checkstyle:check
+before_install:
+  - mvn install:install-file -Dfile=tools/bbc/lib/evosuite-bbc.jar -DgroupId=nl.tudelft -DartifactId=evosuite-bbc -Dversion=0.0.1 -Dpackaging=jar -DgeneratePom=true
 
 before_script:
   - mvn clean
+
+script:
+  - mvn package checkstyle:check
 

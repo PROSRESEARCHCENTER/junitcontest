@@ -41,6 +41,7 @@
     <modules>
         <module>runtool</module>
         <module>benchmarktool</module>
+        <module>bbc_runtool</module>
         <module>randoop_runtool</module>
         <module>manual_runtool</module>
         <module>jcrasher_runtool</module>
