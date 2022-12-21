@@ -25,13 +25,12 @@ More information about the infrastructure and how it can be used to set up an em
 
 If you use JUGE in your evaluation, please include the following reference to your paper:
 ```bibtex
-@misc{devroey2021juge,
-  title={JUGE: An Infrastructure for Benchmarking Java Unit Test Generators}, 
-  author={Xavier Devroey and Alessio Gambi and Juan Pablo Galeotti and René Just and Fitsum Kifetew and Annibale Panichella and Sebastiano Panichella},
-  year={2021},
-  eprint={2106.07520},
-  archivePrefix={arXiv},
-  primaryClass={cs.SE}
+@article{Devroey2022,
+  author = {Devroey, Xavier and Gambi, Alessio and Galeotti, Juan Pablo and Just, René and Kifetew, Fitsum and Panichella, Annibale and Panichella, Sebastiano},
+  title = {JUGE: An infrastructure for benchmarking Java unit test generators},
+  journal = {Software Testing, Verification and Reliability},
+  pages = {e1838},
+  doi = {https://doi.org/10.1002/stvr.1838},
 }
 ```
 
