@@ -1,0 +1,1178 @@
+{
+WEKA-673=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.functions.MultilayerPerceptron
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-460=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.pmml.consumer.TreeModel
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-983=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.bayes.net.EditableBayesNet
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-741=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.bayes.net.search.local.HillClimber
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-148=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.ParallelMultipleClassifiersCombiner
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-53=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.SetInstancesPanel
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-303=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.rules.RuleStats
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-1093=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.bayes.net.estimate.MultiNomialBMAEstimator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-1127=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.clusterers.EM
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-128=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.sql.QueryPanel
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-119=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.graphvisualizer.GraphVisualizer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-302=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.LogWindow
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-576=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.beans.Classifier
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-631=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.beans.FlowByExpressionCustomizer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-7=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.beans.ClustererPerformanceEvaluator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-592=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.beans.SubstringLabelerCustomizer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-871=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.core.matrix.FloatingPointFormat
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-79=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.core.OptionHandlerJavadoc
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-763=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.classifiers.trees.ht.GaussianConditionalSufficientStats
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-1088=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.beans.Associator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-1006=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.gui.beans.Saver
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-563=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.associations.FPGrowth
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-151=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.core.neighboursearch.NearestNeighbourSearch
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-143=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.knowledgeflow.FlowRunner
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+WEKA-577=
+{
+  src=/var/benchmarks/projects/weka/core/src/main/java/
+  bin=/var/benchmarks/projects/weka/core/target/classes
+  classes=(
+    weka.clusterers.SimpleKMeans
+  )
+
+  classpath=(
+    /var/benchmarks/projects/weka/dist/weka-stable-3.8.5-SNAPSHOT.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-1=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.pattern.internal.parameter.MapParameterInfo
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-25=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.reflect.visitor.MinimalImportScanner
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-35=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.reflect.visitor.EarlyTerminatingScanner
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-39=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.visitor.ProcessingVisitor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-46=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.comparator.QualifiedNameComparator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-57=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.testing.utils.Check
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-62=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.comparator.DeepRepresentationComparator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-74=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.pattern.internal.node.ForEachNode
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-77=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.javadoc.internal.JavadocInlineTag
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-82=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.DefaultCoreFactory
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-135=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.JavaOutputProcessor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-139=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.reflect.visitor.ListPrinter
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-142=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.visitor.equals.EqualsChecker
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-157=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.support.visitor.equals.EqualsVisitor
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+SPOON-178=
+{
+  src=/var/benchmarks/projects/spoon/core/src/main/java/
+  bin=/var/benchmarks/projects/spoon/core/target/classes
+  classes=(
+    spoon.reflect.visitor.PrintingContext
+  )
+
+  classpath=(
+    /var/benchmarks/projects/spoon/core/target/spoon-core-7.2.0.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-3=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.GuavaCodec
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-11=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.util.ParameterizedTypeImpl
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-17=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.JSONValidator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-29=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.deserializer.ASMDeserializerFactory
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-36=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.SimplePropertyPreFilter
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-45=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.AtomicCodec
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-49=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.MapSerializer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-57=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.ListSerializer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-61=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.serializer.ASMSerializerFactory
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-65=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.SymbolTable
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-72=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.asm.ClassWriter
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-78=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.JSON
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-79=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.JSONObject
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-86=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.JSONPath
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-94=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.JSONToken
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-99=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.util.RyuFloat
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-100=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.util.TypeUtils
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-108=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.parser.DefaultJSONParser
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-113=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.asm.TypeCollector
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+FASTJSON-120=
+{
+  src=/var/benchmarks/projects/fastjson/core/src/main/java/
+  bin=/var/benchmarks/projects/fastjson/core/target/classes
+  classes=(
+    com.alibaba.fastjson.asm.ByteVector
+  )
+
+  classpath=(
+    /var/benchmarks/projects/fastjson/target/fastjson-1.2.63_preview_01.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-9=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.Buffer
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-17=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.Okio
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-24=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.Timeout
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-3=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.AsyncTimeout
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-10=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.Utf8
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-14=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.ByteString
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+OKIO-30=
+{
+  src=/var/benchmarks/projects/okio/core/src/main/java/
+  bin=/var/benchmarks/projects/okio/core/target/classes
+  classes=(
+    okio.Options
+  )
+
+  classpath=(
+    /var/benchmarks/projects/okio/target/okio-1.16.0.jar,/var/benchmarks/projects/
+  )
+}
+SEATA-5=
+{
+  src=/var/benchmarks/projects/seata/core/src/main/java/
+  bin=/var/benchmarks/projects/seata/core/target/classes
+  classes=(
+    io.seata.core.rpc.netty.v1.ProtocolV1Decoder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/seata/core/target/seata-core-1.3.0.jar,/var/benchmarks/projects/./seata/core/target/dependency/commons-logging-1.2.jar,/var/benchmarks/projects/seata/core/target/dependency/config-1.2.1.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-common-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/error_prone_annotations-2.2.0.jar,/var/benchmarks/projects/seata/core/target/dependency/slf4j-api-1.7.22.jar,/var/benchmarks/projects/seata/core/target/dependency/h2-1.4.181.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-junit-jupiter-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-api-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/checker-qual-2.5.2.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-core-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-dbcp2-2.7.0.jar,/var/benchmarks/projects/seata/core/target/dependency/objenesis-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-params-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool-1.6.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/guava-27.0.1-jre.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-launcher-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-discovery-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-config-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-engine-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/j2objc-annotations-1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-commons-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/opentest4j-1.1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/netty-all-4.1.30.Final.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-agent-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/cglib-3.1.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-lang-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-engine-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/asm-4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/animal-sniffer-annotations-1.17.jar,/var/benchmarks/projects/seata/core/target/dependency/fastjson-1.2.60.jar,/var/benchmarks/projects/seata/core/target/dependency/jsr305-3.0.2.jar,/var/benchmarks/projects/seata/core/target/dependency/assertj-core-3.12.2.jar,/var/benchmarks/projects/seata/core/target/dependency/apiguardian-api-1.0.0.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool2-2.4.2.jar
+  )
+}
+SEATA-6=
+{
+  src=/var/benchmarks/projects/seata/core/src/main/java/
+  bin=/var/benchmarks/projects/seata/core/target/classes
+  classes=(
+    io.seata.core.rpc.ShutdownHook
+  )
+
+  classpath=(
+    /var/benchmarks/projects/seata/core/target/seata-core-1.3.0.jar,/var/benchmarks/projects/./seata/core/target/dependency/commons-logging-1.2.jar,/var/benchmarks/projects/seata/core/target/dependency/config-1.2.1.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-common-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/error_prone_annotations-2.2.0.jar,/var/benchmarks/projects/seata/core/target/dependency/slf4j-api-1.7.22.jar,/var/benchmarks/projects/seata/core/target/dependency/h2-1.4.181.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-junit-jupiter-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-api-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/checker-qual-2.5.2.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-core-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-dbcp2-2.7.0.jar,/var/benchmarks/projects/seata/core/target/dependency/objenesis-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-params-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool-1.6.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/guava-27.0.1-jre.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-launcher-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-discovery-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-config-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-engine-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/j2objc-annotations-1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-commons-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/opentest4j-1.1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/netty-all-4.1.30.Final.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-agent-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/cglib-3.1.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-lang-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-engine-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/asm-4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/animal-sniffer-annotations-1.17.jar,/var/benchmarks/projects/seata/core/target/dependency/fastjson-1.2.60.jar,/var/benchmarks/projects/seata/core/target/dependency/jsr305-3.0.2.jar,/var/benchmarks/projects/seata/core/target/dependency/assertj-core-3.12.2.jar,/var/benchmarks/projects/seata/core/target/dependency/apiguardian-api-1.0.0.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool2-2.4.2.jar
+  )
+}
+SEATA-11=
+{
+  src=/var/benchmarks/projects/seata/core/src/main/java/
+  bin=/var/benchmarks/projects/seata/core/target/classes
+  classes=(
+    io.seata.core.rpc.RpcContext
+  )
+
+  classpath=(
+    /var/benchmarks/projects/seata/core/target/seata-core-1.3.0.jar,/var/benchmarks/projects/./seata/core/target/dependency/commons-logging-1.2.jar,/var/benchmarks/projects/seata/core/target/dependency/config-1.2.1.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-common-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/error_prone_annotations-2.2.0.jar,/var/benchmarks/projects/seata/core/target/dependency/slf4j-api-1.7.22.jar,/var/benchmarks/projects/seata/core/target/dependency/h2-1.4.181.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-junit-jupiter-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-api-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/checker-qual-2.5.2.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-core-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-dbcp2-2.7.0.jar,/var/benchmarks/projects/seata/core/target/dependency/objenesis-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-params-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool-1.6.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/guava-27.0.1-jre.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-launcher-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-discovery-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-config-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-engine-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/j2objc-annotations-1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-commons-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/opentest4j-1.1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/netty-all-4.1.30.Final.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-agent-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/cglib-3.1.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-lang-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-engine-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/asm-4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/animal-sniffer-annotations-1.17.jar,/var/benchmarks/projects/seata/core/target/dependency/fastjson-1.2.60.jar,/var/benchmarks/projects/seata/core/target/dependency/jsr305-3.0.2.jar,/var/benchmarks/projects/seata/core/target/dependency/assertj-core-3.12.2.jar,/var/benchmarks/projects/seata/core/target/dependency/apiguardian-api-1.0.0.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool2-2.4.2.jar
+  )
+}
+SEATA-25=
+{
+  src=/var/benchmarks/projects/seata/core/src/main/java/
+  bin=/var/benchmarks/projects/seata/core/target/classes
+  classes=(
+    io.seata.core.rpc.netty.v1.ProtocolV1Encoder
+  )
+
+  classpath=(
+    /var/benchmarks/projects/seata/core/target/seata-core-1.3.0.jar,/var/benchmarks/projects/./seata/core/target/dependency/commons-logging-1.2.jar,/var/benchmarks/projects/seata/core/target/dependency/config-1.2.1.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-common-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/error_prone_annotations-2.2.0.jar,/var/benchmarks/projects/seata/core/target/dependency/slf4j-api-1.7.22.jar,/var/benchmarks/projects/seata/core/target/dependency/h2-1.4.181.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-junit-jupiter-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-api-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/checker-qual-2.5.2.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-core-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-dbcp2-2.7.0.jar,/var/benchmarks/projects/seata/core/target/dependency/objenesis-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-params-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool-1.6.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/guava-27.0.1-jre.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-launcher-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-discovery-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-config-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-engine-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/j2objc-annotations-1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-commons-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/opentest4j-1.1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/netty-all-4.1.30.Final.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-agent-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/cglib-3.1.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-lang-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-engine-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/asm-4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/animal-sniffer-annotations-1.17.jar,/var/benchmarks/projects/seata/core/target/dependency/fastjson-1.2.60.jar,/var/benchmarks/projects/seata/core/target/dependency/jsr305-3.0.2.jar,/var/benchmarks/projects/seata/core/target/dependency/assertj-core-3.12.2.jar,/var/benchmarks/projects/seata/core/target/dependency/apiguardian-api-1.0.0.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool2-2.4.2.jar
+  )
+}
+SEATA-27=
+{
+  src=/var/benchmarks/projects/seata/core/src/main/java/
+  bin=/var/benchmarks/projects/seata/core/target/classes
+  classes=(
+    io.seata.core.store.StoreMode
+  )
+
+  classpath=(
+    /var/benchmarks/projects/seata/core/target/seata-core-1.3.0.jar,/var/benchmarks/projects/./seata/core/target/dependency/commons-logging-1.2.jar,/var/benchmarks/projects/seata/core/target/dependency/config-1.2.1.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-common-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/error_prone_annotations-2.2.0.jar,/var/benchmarks/projects/seata/core/target/dependency/slf4j-api-1.7.22.jar,/var/benchmarks/projects/seata/core/target/dependency/h2-1.4.181.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-junit-jupiter-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-api-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/checker-qual-2.5.2.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-core-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-dbcp2-2.7.0.jar,/var/benchmarks/projects/seata/core/target/dependency/objenesis-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-params-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool-1.6.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/guava-27.0.1-jre.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-launcher-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-discovery-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-config-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-engine-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/j2objc-annotations-1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-commons-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/opentest4j-1.1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/netty-all-4.1.30.Final.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-agent-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/cglib-3.1.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-lang-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-engine-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/asm-4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/animal-sniffer-annotations-1.17.jar,/var/benchmarks/projects/seata/core/target/dependency/fastjson-1.2.60.jar,/var/benchmarks/projects/seata/core/target/dependency/jsr305-3.0.2.jar,/var/benchmarks/projects/seata/core/target/dependency/assertj-core-3.12.2.jar,/var/benchmarks/projects/seata/core/target/dependency/apiguardian-api-1.0.0.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool2-2.4.2.jar
+  )
+}
+SEATA-28=
+{
+  src=/var/benchmarks/projects/seata/core/src/main/java/
+  bin=/var/benchmarks/projects/seata/core/target/classes
+  classes=(
+    io.seata.core.serializer.SerializerType
+  )
+
+  classpath=(
+    /var/benchmarks/projects/seata/core/target/seata-core-1.3.0.jar,/var/benchmarks/projects/./seata/core/target/dependency/commons-logging-1.2.jar,/var/benchmarks/projects/seata/core/target/dependency/config-1.2.1.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-common-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/error_prone_annotations-2.2.0.jar,/var/benchmarks/projects/seata/core/target/dependency/slf4j-api-1.7.22.jar,/var/benchmarks/projects/seata/core/target/dependency/h2-1.4.181.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-junit-jupiter-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-api-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/checker-qual-2.5.2.jar,/var/benchmarks/projects/seata/core/target/dependency/mockito-core-2.23.4.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-dbcp2-2.7.0.jar,/var/benchmarks/projects/seata/core/target/dependency/objenesis-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-params-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool-1.6.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/guava-27.0.1-jre.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-launcher-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-discovery-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/seata-config-core-1.3.0.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-engine-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/j2objc-annotations-1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-platform-commons-1.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/opentest4j-1.1.1.jar,/var/benchmarks/projects/seata/core/target/dependency/netty-all-4.1.30.Final.jar,/var/benchmarks/projects/seata/core/target/dependency/byte-buddy-agent-1.9.3.jar,/var/benchmarks/projects/seata/core/target/dependency/cglib-3.1.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-lang-2.6.jar,/var/benchmarks/projects/seata/core/target/dependency/junit-jupiter-engine-5.4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/asm-4.2.jar,/var/benchmarks/projects/seata/core/target/dependency/animal-sniffer-annotations-1.17.jar,/var/benchmarks/projects/seata/core/target/dependency/fastjson-1.2.60.jar,/var/benchmarks/projects/seata/core/target/dependency/jsr305-3.0.2.jar,/var/benchmarks/projects/seata/core/target/dependency/assertj-core-3.12.2.jar,/var/benchmarks/projects/seata/core/target/dependency/apiguardian-api-1.0.0.jar,/var/benchmarks/projects/seata/core/target/dependency/commons-pool2-2.4.2.jar
+  )
+}
+GUAVA-108=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.collect.Range
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-134=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.collect.Ordering
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-71=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.escape.Escapers
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-273=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.collect.TreeRangeMap
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-46=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.collect.MinMaxPriorityQueue
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-11=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.collect.MapMaker
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-128=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.net.MediaType
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-181=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.cache.CacheStats
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-200=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.util.concurrent.MoreExecutors
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-237=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.hash.Hashing
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-254=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.hash.HashCode
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-192=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.reflect.TypeToken
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-231=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.reflect.TypeResolver
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-96=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.io.MoreFiles
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-267=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.io.Files
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-232=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.io.ByteStreams
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-227=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.graph.EndpointPair
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-156=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.math.Quantiles
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-82=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.primitives.Shorts
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-118=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.base.FinalizableReferenceQueue
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-61=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.base.CharMatcher
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-199=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.util.concurrent.Striped
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-226=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.io.ByteSource
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-213=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.math.PairedStatsAccumulator
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+GUAVA-148=
+{
+  src=/var/benchmarks/projects/guava/guava/src/
+  bin=/var/benchmarks/projects/guava/guava/target/classes
+  classes=(
+    com.google.common.base.Stopwatch
+  )
+
+  classpath=(
+    /var/benchmarks/projects/guava/guava/target/guava-29.0-jre.jar,/var/benchmarks/projects/./guava/guava/target/dependency/failureaccess-1.0.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/checker-qual-2.11.1.jar,/var/benchmarks/projects/guava/guava/target/dependency/error_prone_annotations-2.3.4.jar,/var/benchmarks/projects/guava/guava/target/dependency/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,/var/benchmarks/projects/guava/guava/target/dependency/srczip-999.jar,/var/benchmarks/projects/guava/guava/target/dependency/j2objc-annotations-1.3.jar,/var/benchmarks/projects/guava/guava/target/dependency/jsr305-3.0.2.jar
+  )
+}
+}

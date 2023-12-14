@@ -1,0 +1,51 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>sbstcontest</groupId>
+        <artifactId>sbstcontest</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>sbstcontest</groupId>
+    <artifactId>shaded</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>sbstcontest</groupId>
+            <artifactId>benchmarktool</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <createDependencyReducedPom>true</createDependencyReducedPom>
+                            <relocations>
+                                <relocation>
+                                    <pattern>sbst</pattern>
+                                    <!-- Note: besides this file, the prefix "shaded." will also be
+                                        used in other files, eg the log configuration ones -->
+                                    <shadedPattern>shaded</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

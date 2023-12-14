@@ -1,0 +1,28 @@
+# BlueJ files
+*.ctxt
+
+# intelliJ File #
+**.idea
+**.iml
+.Rapp.history
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Maven
+target/
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Generated website
+_site/
+Gemfile.lock

@@ -1,0 +1,8 @@
+# The following files and directories will be ignored
+
+.git
+.github
+*.md
+
+# Ignore benchmarks from previous competitions
+infrastructure/benchmarks_*

@@ -1,129 +1,57 @@
-# JUnit Tool Contest Infrastructure
+# JUnit Generation Benchmarking Infrastructure (JUGE)
 
-The seventh edition of the tool contest, held at the SBST workshop co-located with ICSE'19, May 26-27 2019, Montreal, Canada.
-Here you will find the source code to the contest infrastructure and instructions on how to test your tool with the infrastructure before submitting it to the competition.
+Here you will find the source code to the JUGE and instructions on how to test your tool with the infrastructure. 
 
-# Important dates
-- The tool submission: February 15
-- Benchmark results communicated to authors: February 28
-- Authors submit camera ready paper: March 15
+For information about the past editions of the JUnit Competition, see [https://junitcontest.github.io](https://junitcontest.github.io).
 
-# Try it via Docker
-For easier access and use, this year we have dockerized the contest infrastructure. Here are the instructions for testing your tool via docker:
-## Prerequisites:
-Install the docker software on your machine. Docker is available for Linux, Mac and Windows. For installation please follow the instructions for your operating system: 
-- Windows: https://docs.docker.com/docker-for-windows/install/ 
-- Mac: https://docs.docker.com/docker-for-mac/install/ 
-- Linux/Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/#extra-steps-for-aufs 
+[![Build Status](https://travis-ci.org/JUnitContest/junitcontest.svg?branch=master)](https://travis-ci.org/JUnitContest/junitcontest)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4904393.svg)](https://doi.org/10.5281/zenodo.4904393)
 
-The command to run the docker image that contains the junit contest infrastructure is the following:
-```sh
-$ docker run -v /path/to/host/folder:/path/to/container/folder --name=junitcontest -it dockercontainervm/junitcontest:test
+# JUnit Competition - Important Dates
+
+Here are the planned periods:
+
+- 01 Dec’23: Tool submission.
+- 04 Jan’24: Notification of the results for structural metrics (code coverage and mutation score).
+- 18 Jan’24: Notification of the smell results.
+- 25 Jan’24: Camera-ready tool paper (4 pages, references included) deadline.
+- 14 Apr’24: Official competition results and tool presentation live at SBFT workshop.
+
+# Documentation
+
+See [docs/README.md](docs/USERGUIDE.md) for the user guide and [docs/DEVELOPERS.md](docs/CONTRIBUTORGUIDE.md) for the contributor guide. 
+
+More information about the infrastructure and how it can be used to set up an empirical evaluation for unit test generators can be found in [Devroey, X., Gambi, A., Galeotti, J. P., Just, R., Kifetew, F., Panichella, A., Panichella, S. (2021). JUGE: An Infrastructure for Benchmarking Java Unit Test Generators. Softw. Test. Verification Reliab. 33(3) (2023)]([https://arxiv.org/abs/2106.07520](https://onlinelibrary.wiley.com/doi/full/10.1002/stvr.1838))
+
+## Referencing JUGE
+
+If you use JUGE in your evaluation, please include the following reference to your paper:
+```bibtex
+@article{Devroey2022,
+  author = {Devroey, Xavier and Gambi, Alessio and Galeotti, Juan Pablo and Just, René and Kifetew, Fitsum and Panichella, Annibale and Panichella, Sebastiano},
+  title = {JUGE: An infrastructure for benchmarking Java unit test generators},
+  journal = {Software Testing, Verification and Reliability},
+  pages = {e1838},
+  doi = {https://doi.org/10.1002/stvr.1838},
+}
 ```
 
-* -v: it is needed to specify the tool folder in the host machine that needs to be attached to the docker container. For example:
-```sh
-$ docker run -v ~/Desktop/randoop/:/home/randoop --name=junitcontest -it dockercontainervm/junitcontest:test
+# License
+
 ```
-The randoop folder under the Desktop folder in host machine is mapped to the randoop folder under the home folder in the docker container (guest). The randoop folder in the host machine is shared with the container, therefore every file written in this folder will be in both the host and the guest machines.
+The JUnit Infrustructure support the generation an comparison of JUnit testing tools for Java projects.
+Copyright (C) - Contributors and chairs of the JUnit Infrustructure.
 
-* --name=junitcontest: it is the name of the container (junitcontest in this case). The name is optional, if skipped Docker assigns a random name automatically.
+The JUnit Infrustructure is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-* -it: it means that the user can access the docker container interactively, as if the user was in the command line of the guest system.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-* dockercontainervm/junitcontest:test: it is the name of the docker image. The first time the command is run, docker automatically downloads the image from a public repository. Once the image is in the system, docker simply uses it. The image is built upon the last version of Ubuntu (18.04 LTS).
-
-Once you execute the docker run command, you are in the docker container. Move to the container folder where you mapped the tool, using the -v option (in the example is /home/randoop). The tool folder must meet the requirements specified in [DETAILS](/DETAILS) . For an example of a correct tool folder please see: [RANDOOP](https://github.com/PROSRESEARCHCENTER/junitcontest/tree/master/tools/randoop).
-(If you use the randoop tool from the github repository above, make sure to change the variable JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 to JAVA_HOME=/usr in the "runtool" script)
-
-If the tool satisfies the requirements, from the tool folder (/home/randoop), run: 
-```sh
-$ contest_generate_tests.sh tool-name runs-number runs-start-from time-budget-seconds
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>. 
 ```
-
-For example:
-```sh
-$ contest_generate_tests.sh randoop 1 1 10
-```
-This script runs one excution of the test generation tool randoop for 10 seconds.
-
-As the generation goes on, you should see files written in the shared folder in the host machine (in the example ~/Desktop/randoop).
-
-To compute the metrics (i.e., coverage and mutation score) for the test cases generated by the command in the previous example, run the following command, from the same directory:
-```sh
-$ contest_compute_metrics.sh results_randoop_10 > stat_log.txt 2> error_log.txt 
-```
-Note that the folder `results_randoop_10` is automatically generated by the `contest_generate_tests.sh` script and contains, among other things, the test cases generated.
-
-Once you are done, you can exit from the container by running: 
-```sh
-$ exit
-```
-The command brings you back to the host machine. 
-
-Optionally you can remove the container by running: 
-```sh
-$ docker rm <container-name>"
-```
-For the example, run: 
-```sh
-$ docker rm junitcontest
-```
-Other docker commands:
-```sh
-$ docker ps: shows all running containers
-$ docker ps -a: shows all containers (in every status)
-```
-
-# Try it via manual installation
-You can also install the contest infrastructure directly on your machine and test your tool. Below you find basic information and detailed instructions.
-
-Target: Linux (Ubuntu x64)
-
-Folder contents:
-
-* [bin](/bin):   Contest infrastructure binaries
-* [src](/src):   Contest infrastructure source code
-* [tools](/tools): Contest tools
-
-Requirements:
-
-Java8 (JDK):
-```sh
-$ apt-get install default-jdk
-```
-Installation instructions:
-
-For detailed instructions see [DETAILS](/DETAILS) 
-
-
-# About the contest 
-
-This is the source code for the contest infrastructure for junit testing tools.
-The contest was initiated during the FITTEST European project no. 257574 (2010-2013)
-and hence partly funded by the FP7 programme on ICT Software & Service Architectures and Infrastructures.
-
-The [FITTEST](http://crest.cs.ucl.ac.uk/fittest/) project, which developed an integrated environment for the automated and continuous testing of Future Internet Applications, was coordinated by:
-
-  Tanja E. J. Vos (tvos@pros.upv.es)
-  Software Quality & Testing
-  Research Center on Software Production Methods ([PROS](http://www.pros.webs.upv.es/))
-  Department of Information Systems and Computation ([DSIC](http://www.upv.es/entidades/DSIC/index.html))
-  Universitat Politècnica de València ([UPV](http://www.upv.es/))
-  Camino de Vera s/n, 46022 Valencia (Spain)
-
-The contest infrastructure has been used in testing contests during yearly events from 2013 till 2017 (check the [Acknowledgements](ACKNOWLEDGEMENTS.md) and [Publications](PUBLICATIONS.md)).
-
-The latest edition was in February 2018: the 6th round of the junit contest series, which was celebrated at the 11th International SBST workshop [1] held in conjunction with the ICSE conference [2]:
-* [1] SBST2018 - 11th International Workshop on Search-Based Software Testing, May 28-29 2018
-    * URL: http://software.imdea.org/sbst18/
-    * Contest Committee
-        * Urko Rueda Molina (Chair), Universitat Politècnica de València
-        * Fitsum Kifetew (co-Chair), Fondazione Bruno Kessler
-        * Annibale Panichella, University of Luxembourg and Delft University of Technology
-* [2] ICSE2018 - 40th International Conference on Software Engineering, May 27 - 3 June 2018, Gothenburg, Sweden https://www.icse2018.org/
-
-# Publications
-
-For publications from previous editions see [PUBLICATIONS](/PUBLICATIONS.md).
-
