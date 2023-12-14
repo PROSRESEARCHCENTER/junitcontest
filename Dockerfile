@@ -7,7 +7,15 @@ RUN apt-get install -y openjdk-8-jdk
 RUN apt-get install -y unzip
 
 # SMT Solver 
-RUN apt-get install -y cvc4
+#RUN apt-get install -y cvc4
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-x86_64-linux-opt
+RUN cp cvc4-1.8-x86_64-linux-opt /usr/local/bin/cvc4
+RUN chmod +x /usr/local/bin/cvc4
+RUN cvc4 --version
 
 # Copy the utility scripts to run the infrastructure
 COPY infrastructure/scripts/ /usr/local/bin/
